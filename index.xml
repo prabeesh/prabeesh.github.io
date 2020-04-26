@@ -54,6 +54,7 @@ Using the following command one can install docker. I have done the same using U
       
       <guid>https://prabeesh.github.io/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/</guid>
       <description>&lt;h2 id=&#34;update-for-apache-spark-2-refer-latest-postblog20161207install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os&#34;&gt;Update: For Apache Spark 2 refer latest &lt;a href=&#34;https://prabeesh.github.io/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/&#34;&gt;post&lt;/a&gt;&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;One of the &lt;a href=&#34;https://prabeesh.github.io/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/&#34;&gt;previous post&lt;/a&gt; mentioning about install &lt;strong&gt;Apache Spark-0.8.0&lt;/strong&gt; on Ubuntu-12.04. In this post  explain about detailed steps to set up &lt;strong&gt;Apache Spark-1.1.0&lt;/strong&gt; on Ubuntu. For running Spark in Ubuntu machine should install Java.  Using following commands  easily install Java in Ubuntu machine.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;	$ sudo apt-add-repository ppa:webupd8team/java
 	$ sudo apt-get update

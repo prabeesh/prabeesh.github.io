@@ -156,6 +156,7 @@ if (!doNotTrack) {
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="update-for-apache-spark-2-refer-latest-postblog20161207install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os">Update: For Apache Spark 2 refer latest <a href="/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/">post</a></h2>
+<!-- raw HTML omitted -->
 <p>One of the <a href="/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/">previous post</a> mentioning about install <strong>Apache Spark-0.8.0</strong> on Ubuntu-12.04. In this post  explain about detailed steps to set up <strong>Apache Spark-1.1.0</strong> on Ubuntu. For running Spark in Ubuntu machine should install Java.  Using following commands  easily install Java in Ubuntu machine.</p>
 <pre><code>	$ sudo apt-add-repository ppa:webupd8team/java
 	$ sudo apt-get update
@@ -185,7 +186,8 @@ untar the file and set path variable,</p>
 <p>Or just type scala. It goes to scala interactive shell</p>
 <pre><code>	$ scala
 	scala&gt;
-</code></pre><p>In next step install git. Spark build depends on git.</p>
+</code></pre><!-- raw HTML omitted -->
+<p>In next step install git. Spark build depends on git.</p>
 <pre><code>sudo apt-get install git
 </code></pre><p>Finally, download spark ditribution from <a href="http://d3kbcqa49mib13.cloudfront.net/spark-1.1.0.tgz">here</a></p>
 <pre><code>	$ wget http://d3kbcqa49mib13.cloudfront.net/spark-1.1.0.tgz
@@ -221,7 +223,8 @@ If you have already the build source package, rebuild it against the hadoop vers
 </code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">	scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">var</span> file <span style="color:#66d9ef">=</span> sc<span style="color:#f92672">.</span>textFile<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hdfs://IP:8020/path/to/textfile.txt&#34;</span><span style="color:#f92672">)</span>
 	scala<span style="color:#f92672">&gt;</span>  file<span style="color:#f92672">.</span>flatMap<span style="color:#f92672">(</span>line <span style="color:#66d9ef">=&gt;</span> line<span style="color:#f92672">.</span>split<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">)).</span>map<span style="color:#f92672">(</span>word <span style="color:#66d9ef">=&gt;</span> <span style="color:#f92672">(</span>word<span style="color:#f92672">,</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">)).</span>reduceByKey<span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">+</span><span style="color:#66d9ef">_</span><span style="color:#f92672">)</span>
 	scala<span style="color:#f92672">&gt;</span> count<span style="color:#f92672">.</span>saveAsTextFile<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hdfs://IP:8020/path/to/ouput&#34;</span><span style="color:#f92672">)</span>
-</code></pre></div><p>You may find more <a href="http://spark.apache.org/docs/1.1.1/quick-start.html">here</a></p><ul class="pa0">
+</code></pre></div><p>You may find more <a href="http://spark.apache.org/docs/1.1.1/quick-start.html">here</a></p>
+<!-- raw HTML omitted --><ul class="pa0">
   
    <li class="list">
      <a href="/tags/apache-spark" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Apache Spark</a>
@@ -255,7 +258,9 @@ If you have already the build source package, rebuild it against the hadoop vers
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
       
-      
+      <div id="commento"></div>
+<script defer src="https://cdn.commento.io/js/commento.js"></script>
+
       </div>
     </div>
 
