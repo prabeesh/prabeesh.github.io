@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Matplotlib on This is the one of the solutions</title>
+    <link>https://prabesh.github.io/tags/matplotlib/</link>
+    <description>Recent content in Matplotlib on This is the one of the solutions</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Sep 2011 01:39:00 +0530</lastBuildDate>
+    
+	<atom:link href="https://prabesh.github.io/tags/matplotlib/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AM Generation using Matplotlib Python</title>
+      <link>https://prabesh.github.io/blog/2011/09/25/am-plot-matplotlib/</link>
+      <pubDate>Sun, 25 Sep 2011 01:39:00 +0530</pubDate>
+      
+      <guid>https://prabesh.github.io/blog/2011/09/25/am-plot-matplotlib/</guid>
+      <description>&lt;p&gt;we can plot AM waves using matplotlib&lt;/p&gt;
+&lt;p&gt;It is the one of the most strongest tool in linux to plot the waves&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; matplotlib.pylab &lt;span style=&#34;color:#f92672&#34;&gt;as&lt;/span&gt; plt
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#f92672&#34;&gt;as&lt;/span&gt; num
+fc&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;;
+fm&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;;
+t&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;arange(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;0.001&lt;/span&gt;);
+c&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sin(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;pi&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;fc&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;t);
+m&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sin(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;pi&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;fm&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;t);     
+am&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;c&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;m);
+plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;plot(am,&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;’&lt;/span&gt;r&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;’&lt;/span&gt;)
+plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;{% img center /images/am.png 600 350 &amp;lsquo;image&amp;rsquo; &amp;lsquo;images&amp;rsquo; %}&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

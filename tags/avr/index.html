@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>This is the one of the solutions  | AVR</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+      <link href="/tags/avr/index.xml" rel="alternate" type="application/rss+xml" title="This is the one of the solutions" />
+      <link href="/tags/avr/index.xml" rel="feed" type="application/rss+xml" title="This is the one of the solutions" />
+      
+    
+    
+    <meta property="og:title" content="AVR" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://prabesh.github.io/tags/avr/" />
+<meta property="og:updated_time" content="2012-07-14T23:39:00+05:30" />
+<meta itemprop="name" content="AVR">
+<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="AVR"/>
+<meta name="twitter:description" content=""/>
+
+      
+    
+  </head>
+
+  <body class="ma0 avenir bg-near-white production">
+
+    
+
+  <header>
+    <div class="pb3-m pb6-l bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://prabesh.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
+      This is the one of the solutions
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv3 ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+          AVR
+        </h1>
+        
+      </div>
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
+  <article class="cf pa3 pa4-m pa4-l">
+    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links nested-img mid-gray">
+      <p>Below you will find pages that utilize the taxonomy term “AVR”</p>
+    </div>
+  </article>
+  <div class="mw8 center">    
+    <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog</span>
+    <h1 class="f3 near-black">
+      <a href="https://prabesh.github.io/blog/2012/07/14/finding-rc-constant-using-atmega8/" class="link black dim">
+        Finding RC constant using ATmega8
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>The time constant(sec) of an RC circuit is equal to the product of the resistance and the capacitance of the circuit.</p>
+<p>It is the time required to charge the capacitor through the resistor to 63. 2% of full charge,or to discharge it to 36.8% of its initial voltage.</p>
+<p>The voltage of the RC circuit is measured using adc of the ATmega8, input voltage for RC circuit is given from PB0. The timer is started at the time of the PB0 making 1 .</p>
+<p>The adc of ATmega8(ADCH) is 8 bit long so corresponding to 5V get 255 in ADCH. The TCNT1 value is taken to a variable when the output voltage of the RC circuit become 63.2% of the input voltage.That is  3.16 v corresponding to these voltage ADCH show 161(appr).</p>
+<p>Using an LCD can show the TCNT1 value. TCNT1 is 16 bit long.Here ATmega8 running in 8MHz clock,timer prescaled by 1024.</p>
+<p>So if you get the real time multiply the TCNT1 value to (1024/8000000).</p>
+<p>Some test examples:</p>
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog</span>
+    <h1 class="f3 near-black">
+      <a href="https://prabesh.github.io/blog/2012/07/04/simplest-and-low-cost-usb-avr/" class="link black dim">
+        Simplest and Low cost USB AVR Programmer USBtinyISP
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>This is the low cost AVR programmer using attiny2313. The schematic diagram is given below.</p>
+<p>{% img center /images/usbtiny_circuit.png 600 350 &lsquo;image&rsquo; &lsquo;images&rsquo; %}</p>
+<p>First setup the circuit as shown. Refer <a href="https://learn.adafruit.com/usbtinyisp">this site</a> for to burn program to this attiny 2313.</p>
+<p>One important care is taken to make fuse bit</p>
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog</span>
+    <h1 class="f3 near-black">
+      <a href="https://prabesh.github.io/blog/2012/02/21/introduction-to-avr-programing/" class="link black dim">
+        Introduction to AVR programming
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>Atmel AVR 8-bit and 32-bit microcontrollers deliver a unique combination of performance, power efficiency, and design flexibility. Optimized to speed time to market, they are based on the industry’s most code-efficient architecture for C and assembly programming. No other microcontrollers deliver more computing performance with better power efficiency. Industry-leading development tools and design support let you get to market faster. Once there, the large AVR family lets you reuse your knowledge when improving your products and expanding to new markets—easily and cost-effectively.</p>
+<p>package required in linux</p>
+<p>binutils: Programs to manipulate binary and object files that may have been created for Atmel’s AVR architecture. This package is primarily for AVR developers and cross-compilers.</p>
+<p>gcc-avr: The GNU C compiler, a fairly portable optimising compiler that supports multiple languages. This package includes C language support.</p>
+<p>avr-libc: Standard library used for developing C programs for Atmel AVR microcontrollers. This package contains static libraries, as well as needed header files.</p>
+<p>sample programme to blink  a LED.</p>
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+    </section>
+  </div>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://prabesh.github.io/" >
+    &copy;  This is the one of the solutions 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

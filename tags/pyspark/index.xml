@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PySpark on This is the one of the solutions</title>
+    <link>https://prabesh.github.io/tags/pyspark/</link>
+    <description>Recent content in PySpark on This is the one of the solutions</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 19 Jun 2015 23:08:08 +0400</lastBuildDate>
+    
+	<atom:link href="https://prabesh.github.io/tags/pyspark/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>pyspark notebook with docker</title>
+      <link>https://prabesh.github.io/blog/2015/06/19/pyspark-notebook-with-docker/</link>
+      <pubDate>Fri, 19 Jun 2015 23:08:08 +0400</pubDate>
+      
+      <guid>https://prabesh.github.io/blog/2015/06/19/pyspark-notebook-with-docker/</guid>
+      <description>&lt;p&gt;####Install Docker
+Using the following command one can install docker. I have done the same using Ubuntu-14-04 instance. For richer options refer the &lt;a href=&#34;https://docs.docker.com/&#34;&gt;docker official site&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; wget -qO- https://get.docker.com/ | sh
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now run the following command from any machine on which docker is installed.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker run -d -t -p 8888:8888 prabeeshk/pyspark-notebook
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After successfully running the pyspark-notebook docker container, access pyspark ipython notebook by&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Self Contained PySpark Application</title>
+      <link>https://prabesh.github.io/blog/2015/04/07/self-contained-pyspark-application/</link>
+      <pubDate>Tue, 07 Apr 2015 21:05:30 +0530</pubDate>
+      
+      <guid>https://prabesh.github.io/blog/2015/04/07/self-contained-pyspark-application/</guid>
+      <description>&lt;p&gt;In my &lt;a href=&#34;https://prabesh.github.io/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/&#34;&gt;previous post&lt;/a&gt;, I wrote about installation of Spark and Scala interactive shell. Here in this post, we&amp;rsquo;ll see how to do the same in Python.&lt;/p&gt;
+&lt;p&gt;Similar to Scala interactive shell, there is an interactive shell available for Python. You can run it with the below command from spark root folder:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;./bin/pyspark
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now you can enjoy Spark using Python interactive shell.&lt;/p&gt;
+&lt;p&gt;This shell might be sufficient for experimentations and developments. However, for production level, we should use a standalone application.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

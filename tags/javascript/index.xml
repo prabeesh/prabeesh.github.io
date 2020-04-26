@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaScript on This is the one of the solutions</title>
+    <link>https://prabesh.github.io/tags/javascript/</link>
+    <description>Recent content in JavaScript on This is the one of the solutions</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://prabesh.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Paint app using JavaScript and Canvas</title>
+      <link>https://prabesh.github.io/blog/1/01/01/paint-app-using-javascript-and-canvas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://prabesh.github.io/blog/1/01/01/paint-app-using-javascript-and-canvas/</guid>
+      <description>&lt;p&gt;An application to draw simple drawings using lines, rectangles and circles in different colours.&lt;/p&gt;
+&lt;p&gt;{% img center /images/paint.png 850 350 &amp;lsquo;image&amp;rsquo; &amp;lsquo;images&amp;rsquo; %}&lt;/p&gt;
+&lt;p&gt;The application is developed using JavaScript and HTML5. The canvas feature in HTML5 is used for providing a drawable region. The JavaScript is used to handle drawing functions in this region. The select button to select the different tools to draw.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
