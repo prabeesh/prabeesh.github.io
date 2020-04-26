@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Matplotlib on This is the one of the solutions </title>
-    <link>https://prabesh.github.io/tags/matplotlib/</link>
-    <description>Recent content in Matplotlib on This is the one of the solutions </description>
+    <title>Matplotlib on This is the one of the solutions</title>
+    <link>https://prabeesh.github.io/tags/matplotlib/</link>
+    <description>Recent content in Matplotlib on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 25 Sep 2011 01:39:00 +0530</lastBuildDate>
     
-	<atom:link href="https://prabesh.github.io/tags/matplotlib/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://prabeesh.github.io/tags/matplotlib/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>AM Generation using Matplotlib Python</title>
-      <link>https://prabesh.github.io/blog/2011/09/25/am-plot-matplotlib/</link>
+      <link>https://prabeesh.github.io/blog/2011/09/25/am-plot-matplotlib/</link>
       <pubDate>Sun, 25 Sep 2011 01:39:00 +0530</pubDate>
       
-      <guid>https://prabesh.github.io/blog/2011/09/25/am-plot-matplotlib/</guid>
+      <guid>https://prabeesh.github.io/blog/2011/09/25/am-plot-matplotlib/</guid>
       <description>&lt;p&gt;we can plot AM waves using matplotlib&lt;/p&gt;
 &lt;p&gt;It is the one of the most strongest tool in linux to plot the waves&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; matplotlib.pylab &lt;span style=&#34;color:#f92672&#34;&gt;as&lt;/span&gt; plt

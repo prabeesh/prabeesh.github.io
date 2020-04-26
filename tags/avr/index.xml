@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>AVR on This is the one of the solutions </title>
-    <link>https://prabesh.github.io/tags/avr/</link>
-    <description>Recent content in AVR on This is the one of the solutions </description>
+    <title>AVR on This is the one of the solutions</title>
+    <link>https://prabeesh.github.io/tags/avr/</link>
+    <description>Recent content in AVR on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 14 Jul 2012 23:39:00 +0530</lastBuildDate>
     
-	<atom:link href="https://prabesh.github.io/tags/avr/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://prabeesh.github.io/tags/avr/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Finding RC constant using ATmega8</title>
-      <link>https://prabesh.github.io/blog/2012/07/14/finding-rc-constant-using-atmega8/</link>
+      <link>https://prabeesh.github.io/blog/2012/07/14/finding-rc-constant-using-atmega8/</link>
       <pubDate>Sat, 14 Jul 2012 23:39:00 +0530</pubDate>
       
-      <guid>https://prabesh.github.io/blog/2012/07/14/finding-rc-constant-using-atmega8/</guid>
+      <guid>https://prabeesh.github.io/blog/2012/07/14/finding-rc-constant-using-atmega8/</guid>
       <description>&lt;p&gt;The time constant(sec) of an RC circuit is equal to the product of the resistance and the capacitance of the circuit.&lt;/p&gt;
 &lt;p&gt;It is the time required to charge the capacitor through the resistor to 63. 2% of full charge,or to discharge it to 36.8% of its initial voltage.&lt;/p&gt;
 &lt;p&gt;The voltage of the RC circuit is measured using adc of the ATmega8, input voltage for RC circuit is given from PB0. The timer is started at the time of the PB0 making 1 .&lt;/p&gt;
@@ -28,10 +28,10 @@
     
     <item>
       <title>Simplest and Low cost USB AVR Programmer USBtinyISP</title>
-      <link>https://prabesh.github.io/blog/2012/07/04/simplest-and-low-cost-usb-avr/</link>
+      <link>https://prabeesh.github.io/blog/2012/07/04/simplest-and-low-cost-usb-avr/</link>
       <pubDate>Wed, 04 Jul 2012 19:39:00 +0530</pubDate>
       
-      <guid>https://prabesh.github.io/blog/2012/07/04/simplest-and-low-cost-usb-avr/</guid>
+      <guid>https://prabeesh.github.io/blog/2012/07/04/simplest-and-low-cost-usb-avr/</guid>
       <description>&lt;p&gt;This is the low cost AVR programmer using attiny2313. The schematic diagram is given below.&lt;/p&gt;
 &lt;p&gt;{% img center /images/usbtiny_circuit.png 600 350 &amp;lsquo;image&amp;rsquo; &amp;lsquo;images&amp;rsquo; %}&lt;/p&gt;
 &lt;p&gt;First setup the circuit as shown. Refer &lt;a href=&#34;https://learn.adafruit.com/usbtinyisp&#34;&gt;this site&lt;/a&gt; for to burn program to this attiny 2313.&lt;/p&gt;
@@ -40,10 +40,10 @@
     
     <item>
       <title>Introduction to AVR programming</title>
-      <link>https://prabesh.github.io/blog/2012/02/21/introduction-to-avr-programing/</link>
+      <link>https://prabeesh.github.io/blog/2012/02/21/introduction-to-avr-programing/</link>
       <pubDate>Tue, 21 Feb 2012 02:39:00 +0530</pubDate>
       
-      <guid>https://prabesh.github.io/blog/2012/02/21/introduction-to-avr-programing/</guid>
+      <guid>https://prabeesh.github.io/blog/2012/02/21/introduction-to-avr-programing/</guid>
       <description>&lt;p&gt;Atmel AVR 8-bit and 32-bit microcontrollers deliver a unique combination of performance, power efficiency, and design flexibility. Optimized to speed time to market, they are based on the industry’s most code-efficient architecture for C and assembly programming. No other microcontrollers deliver more computing performance with better power efficiency. Industry-leading development tools and design support let you get to market faster. Once there, the large AVR family lets you reuse your knowledge when improving your products and expanding to new markets—easily and cost-effectively.&lt;/p&gt;
 &lt;p&gt;package required in linux&lt;/p&gt;
 &lt;p&gt;binutils: Programs to manipulate binary and object files that may have been created for Atmel’s AVR architecture. This package is primarily for AVR developers and cross-compilers.&lt;/p&gt;

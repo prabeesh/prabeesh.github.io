@@ -1,220 +1,220 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on This is the one of the solutions </title>
-    <link>https://prabesh.github.io/tags/</link>
-    <description>Recent content in Tags on This is the one of the solutions </description>
+    <title>Tags on This is the one of the solutions</title>
+    <link>https://prabeesh.github.io/tags/</link>
+    <description>Recent content in Tags on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 07 Dec 2016 11:45:18 +0400</lastBuildDate>
     
-	<atom:link href="https://prabesh.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://prabeesh.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Apache Spark</title>
-      <link>https://prabesh.github.io/tags/apache-spark/</link>
+      <link>https://prabeesh.github.io/tags/apache-spark/</link>
       <pubDate>Wed, 07 Dec 2016 11:45:18 +0400</pubDate>
       
-      <guid>https://prabesh.github.io/tags/apache-spark/</guid>
+      <guid>https://prabeesh.github.io/tags/apache-spark/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Big Data</title>
-      <link>https://prabesh.github.io/tags/big-data/</link>
+      <link>https://prabeesh.github.io/tags/big-data/</link>
       <pubDate>Wed, 07 Dec 2016 11:45:18 +0400</pubDate>
       
-      <guid>https://prabesh.github.io/tags/big-data/</guid>
+      <guid>https://prabeesh.github.io/tags/big-data/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mac OS X</title>
-      <link>https://prabesh.github.io/tags/mac-os-x/</link>
+      <link>https://prabeesh.github.io/tags/mac-os-x/</link>
       <pubDate>Wed, 07 Dec 2016 11:45:18 +0400</pubDate>
       
-      <guid>https://prabesh.github.io/tags/mac-os-x/</guid>
+      <guid>https://prabeesh.github.io/tags/mac-os-x/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ubuntu</title>
-      <link>https://prabesh.github.io/tags/ubuntu/</link>
+      <link>https://prabeesh.github.io/tags/ubuntu/</link>
       <pubDate>Wed, 07 Dec 2016 11:45:18 +0400</pubDate>
       
-      <guid>https://prabesh.github.io/tags/ubuntu/</guid>
+      <guid>https://prabeesh.github.io/tags/ubuntu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ipython Notebook</title>
-      <link>https://prabesh.github.io/tags/ipython-notebook/</link>
+      <link>https://prabeesh.github.io/tags/ipython-notebook/</link>
       <pubDate>Fri, 19 Jun 2015 23:08:08 +0400</pubDate>
       
-      <guid>https://prabesh.github.io/tags/ipython-notebook/</guid>
+      <guid>https://prabeesh.github.io/tags/ipython-notebook/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PySpark</title>
-      <link>https://prabesh.github.io/tags/pyspark/</link>
+      <link>https://prabeesh.github.io/tags/pyspark/</link>
       <pubDate>Fri, 19 Jun 2015 23:08:08 +0400</pubDate>
       
-      <guid>https://prabesh.github.io/tags/pyspark/</guid>
+      <guid>https://prabeesh.github.io/tags/pyspark/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://prabesh.github.io/tags/python/</link>
+      <link>https://prabeesh.github.io/tags/python/</link>
       <pubDate>Fri, 19 Jun 2015 23:08:08 +0400</pubDate>
       
-      <guid>https://prabesh.github.io/tags/python/</guid>
+      <guid>https://prabeesh.github.io/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SBT</title>
-      <link>https://prabesh.github.io/tags/sbt/</link>
+      <link>https://prabeesh.github.io/tags/sbt/</link>
       <pubDate>Tue, 08 Apr 2014 09:47:00 +0530</pubDate>
       
-      <guid>https://prabesh.github.io/tags/sbt/</guid>
+      <guid>https://prabeesh.github.io/tags/sbt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Scala</title>
-      <link>https://prabesh.github.io/tags/scala/</link>
+      <link>https://prabeesh.github.io/tags/scala/</link>
       <pubDate>Tue, 08 Apr 2014 09:47:00 +0530</pubDate>
       
-      <guid>https://prabesh.github.io/tags/scala/</guid>
+      <guid>https://prabeesh.github.io/tags/scala/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Apache Mesos</title>
-      <link>https://prabesh.github.io/tags/apache-mesos/</link>
+      <link>https://prabeesh.github.io/tags/apache-mesos/</link>
       <pubDate>Mon, 07 Oct 2013 10:53:00 +0530</pubDate>
       
-      <guid>https://prabesh.github.io/tags/apache-mesos/</guid>
+      <guid>https://prabeesh.github.io/tags/apache-mesos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MQTT Queue</title>
-      <link>https://prabesh.github.io/tags/mqtt-queue/</link>
+      <link>https://prabeesh.github.io/tags/mqtt-queue/</link>
       <pubDate>Mon, 26 Aug 2013 09:41:00 +0530</pubDate>
       
-      <guid>https://prabesh.github.io/tags/mqtt-queue/</guid>
+      <guid>https://prabeesh.github.io/tags/mqtt-queue/</guid>
       <description></description>
     </item>
     
     <item>
       <title>No SQL Data Base</title>
-      <link>https://prabesh.github.io/tags/no-sql-data-base/</link>
+      <link>https://prabeesh.github.io/tags/no-sql-data-base/</link>
       <pubDate>Sun, 31 Mar 2013 21:53:00 +0530</pubDate>
       
-      <guid>https://prabesh.github.io/tags/no-sql-data-base/</guid>
+      <guid>https://prabeesh.github.io/tags/no-sql-data-base/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python Flask</title>
-      <link>https://prabesh.github.io/tags/python-flask/</link>
+      <link>https://prabeesh.github.io/tags/python-flask/</link>
       <pubDate>Sun, 31 Mar 2013 21:53:00 +0530</pubDate>
       
-      <guid>https://prabesh.github.io/tags/python-flask/</guid>
+      <guid>https://prabeesh.github.io/tags/python-flask/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Google App Engine</title>
-      <link>https://prabesh.github.io/tags/google-app-engine/</link>
+      <link>https://prabeesh.github.io/tags/google-app-engine/</link>
       <pubDate>Sat, 09 Feb 2013 10:12:43 +0530</pubDate>
       
-      <guid>https://prabesh.github.io/tags/google-app-engine/</guid>
+      <guid>https://prabeesh.github.io/tags/google-app-engine/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HTML5</title>
-      <link>https://prabesh.github.io/tags/html5/</link>
+      <link>https://prabeesh.github.io/tags/html5/</link>
       <pubDate>Sat, 09 Feb 2013 10:12:43 +0530</pubDate>
       
-      <guid>https://prabesh.github.io/tags/html5/</guid>
+      <guid>https://prabeesh.github.io/tags/html5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>AVR</title>
-      <link>https://prabesh.github.io/tags/avr/</link>
+      <link>https://prabeesh.github.io/tags/avr/</link>
       <pubDate>Sat, 14 Jul 2012 23:39:00 +0530</pubDate>
       
-      <guid>https://prabesh.github.io/tags/avr/</guid>
+      <guid>https://prabeesh.github.io/tags/avr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Embedded</title>
-      <link>https://prabesh.github.io/tags/embedded/</link>
+      <link>https://prabeesh.github.io/tags/embedded/</link>
       <pubDate>Sat, 14 Jul 2012 23:39:00 +0530</pubDate>
       
-      <guid>https://prabesh.github.io/tags/embedded/</guid>
+      <guid>https://prabeesh.github.io/tags/embedded/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Arduino</title>
-      <link>https://prabesh.github.io/tags/arduino/</link>
+      <link>https://prabeesh.github.io/tags/arduino/</link>
       <pubDate>Sat, 14 Jul 2012 02:23:00 +0530</pubDate>
       
-      <guid>https://prabesh.github.io/tags/arduino/</guid>
+      <guid>https://prabeesh.github.io/tags/arduino/</guid>
       <description></description>
     </item>
     
     <item>
       <title>LCD Interfacing</title>
-      <link>https://prabesh.github.io/tags/lcd-interfacing/</link>
+      <link>https://prabeesh.github.io/tags/lcd-interfacing/</link>
       <pubDate>Wed, 04 Jul 2012 02:39:00 +0530</pubDate>
       
-      <guid>https://prabesh.github.io/tags/lcd-interfacing/</guid>
+      <guid>https://prabeesh.github.io/tags/lcd-interfacing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MSP430</title>
-      <link>https://prabesh.github.io/tags/msp430/</link>
+      <link>https://prabeesh.github.io/tags/msp430/</link>
       <pubDate>Wed, 04 Jul 2012 02:39:00 +0530</pubDate>
       
-      <guid>https://prabesh.github.io/tags/msp430/</guid>
+      <guid>https://prabeesh.github.io/tags/msp430/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Matplotlib</title>
-      <link>https://prabesh.github.io/tags/matplotlib/</link>
+      <link>https://prabeesh.github.io/tags/matplotlib/</link>
       <pubDate>Sun, 25 Sep 2011 01:39:00 +0530</pubDate>
       
-      <guid>https://prabesh.github.io/tags/matplotlib/</guid>
+      <guid>https://prabeesh.github.io/tags/matplotlib/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GoogleAppEngine</title>
-      <link>https://prabesh.github.io/tags/googleappengine/</link>
+      <link>https://prabeesh.github.io/tags/googleappengine/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://prabesh.github.io/tags/googleappengine/</guid>
+      <guid>https://prabeesh.github.io/tags/googleappengine/</guid>
       <description></description>
     </item>
     
     <item>
       <title>JavaScript</title>
-      <link>https://prabesh.github.io/tags/javascript/</link>
+      <link>https://prabeesh.github.io/tags/javascript/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://prabesh.github.io/tags/javascript/</guid>
+      <guid>https://prabeesh.github.io/tags/javascript/</guid>
       <description></description>
     </item>
     
