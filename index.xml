@@ -250,7 +250,7 @@ Take care in fuse bytes because arduino codes are running in 8MHz.Y ou can enabl
       
       <guid>https://prabeesh.github.io/blog/2012/07/04/simplest-and-low-cost-usb-avr/</guid>
       <description>&lt;p&gt;This is the low cost AVR programmer using attiny2313. The schematic diagram is given below.&lt;/p&gt;
-&lt;p&gt;{% img center /images/usbtiny_circuit.png 600 350 &amp;lsquo;image&amp;rsquo; &amp;lsquo;images&amp;rsquo; %}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://prabeesh.github.io/images/usbtiny_circuit.png&#34; alt=&#34;USB tiny circuit&#34;&gt;&lt;/p&gt;
 &lt;p&gt;First setup the circuit as shown. Refer &lt;a href=&#34;https://learn.adafruit.com/usbtinyisp&#34;&gt;this site&lt;/a&gt; for to burn program to this attiny 2313.&lt;/p&gt;
 &lt;p&gt;One important care is taken to make fuse bit&lt;/p&gt;</description>
     </item>

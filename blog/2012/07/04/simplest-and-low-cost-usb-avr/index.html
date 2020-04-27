@@ -6,7 +6,7 @@
     
     <title>This is the one of the solutions  | Simplest and Low cost USB AVR Programmer USBtinyISP</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.69.2" />
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -35,7 +35,7 @@
 <meta itemprop="description" content="Simplest and low cost AVR programmer using attiny2313 for burn attiny, atmega8, AVR family etc">
 <meta itemprop="datePublished" content="2012-07-04T19:39:00&#43;05:30" />
 <meta itemprop="dateModified" content="2012-07-04T19:39:00&#43;05:30" />
-<meta itemprop="wordCount" content="94">
+<meta itemprop="wordCount" content="85">
 
 
 
@@ -156,7 +156,7 @@ if (!doNotTrack) {
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>This is the low cost AVR programmer using attiny2313. The schematic diagram is given below.</p>
-<p>{% img center /images/usbtiny_circuit.png 600 350 &lsquo;image&rsquo; &lsquo;images&rsquo; %}</p>
+<p><img src="/images/usbtiny_circuit.png" alt="USB tiny circuit"></p>
 <p>First setup the circuit as shown. Refer <a href="https://learn.adafruit.com/usbtinyisp">this site</a> for to burn program to this attiny 2313.</p>
 <p>One important care is taken to make fuse bit</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">avrdude <span style="color:#f92672">-</span>c usbasp <span style="color:#f92672">-</span>p t2313 <span style="color:#f92672">-</span>U hfuse:w:<span style="color:#ae81ff">0xdf</span><span style="color:#f92672">:</span>m <span style="color:#f92672">-</span>U lfuse:w:<span style="color:#ae81ff">0xef</span><span style="color:#f92672">:</span>m
