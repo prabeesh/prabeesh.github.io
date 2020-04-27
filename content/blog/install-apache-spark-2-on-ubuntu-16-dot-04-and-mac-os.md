@@ -45,7 +45,7 @@ Finally, downloaded and untar the apache spark 2 distribution to some location, 
 	$ mkdir /usr/local/share/spark
 	$ curl http://d3kbcqa49mib13.cloudfront.net/spark-2.0.2.tgz | tar xvz -C /usr/local/share/spark
 ```
-###Building
+### Building
 
 Maven is used for building Spark, which is bundled with it. To build the apache spark run the following
 ```
