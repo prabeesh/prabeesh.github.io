@@ -14,7 +14,7 @@ $ tar xvf spark-0.8.0-incubating.tgz
 ```
 You need to have Scala installed, or the SCALA_HOME environment variable pointing to a Scala installation.
 
-###Building
+### Building
 SBT(Simple Build Tool) is used for building Spark, which is bundled with it. To compile the code <!--more-->
 ```
 $ cd spark-0.8.0-incubating
@@ -28,7 +28,7 @@ $./run-example org.apache.spark.examples.SparkPi local
 Then you get the output as 
 Pi is roughly 3.14634. Spark is ready to fire
 
-###Spark Interactive Shell
+### Spark Interactive Shell
 You can run Spark interactively through the Scala shell
 ```
 $./spark-shell
@@ -38,7 +38,7 @@ scala> val textFile = sc.textFile("README.md")
 scala> textFile.count()
 ```
 Using this you can check your code line by line.
-###Accessing Hadoop Filesystems
+### Accessing Hadoop Filesystems
 You can run Spark along with your existing Hadoop Cluster. To access Hadoop data from Spark, just use a hdfs://URL.  Run a word count example in the shell, taking input from hdfs and writing output back to hdfs. For using hdfs you must rebuild Spark against the same version that your hdfs cluster uses. From the Spark download page, you may download a prebuilt package.
 If you have already the build source package, rebuild it against the hadoop version as follows
 ```

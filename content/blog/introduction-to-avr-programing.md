@@ -50,6 +50,6 @@ avrdude -c usbasp -p m8 -U flash:w:led.hex:a
 ```
 for more details about USBASP [visit](http://achuwilson.wordpress.com/2011/12/15/usbasp-a-usb-programmer-for-avr-microcontrollers/)
 
-####Code Explanation
+#### Code Explanation
 
 The GNU C compiler for the Atmel family identifies all functional units within the microcontroller with meaningful names. Thus, writing `PORTC=0xff’ will result in the compiler generating machine code that writes 0xff to I/O port C, which will set all port C pins to logic high. Because ports are bidirectional, we must decide whether each pin should act as input or output. If the i’th bit of a register called DDRC (data direction register C) is 1, then the i’th pin of PORTC’s i’th pin will be an output. Otherwise, it will act as an input pin. (Note that pin and bit numbers start at zero.) To make a LED blink, you have to make a pin high, then low. (Here, we use PORTC’s 2nd port. That is, PC2 will be the 25th pin.) There should be a delay between the two. This is what the rest of the code does.

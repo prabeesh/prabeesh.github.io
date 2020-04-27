@@ -15,7 +15,7 @@ You can download the Mesos distribution from [here](http://www.apache.org/dyn/cl
 ```
 $ tar xvf mesos-0.13.0.tar.gz
 ```
-###Building and Installing
+### Building and Installing
 ``` 
 $ cd mesos-0.13.0
 $ mkdir build
@@ -48,7 +48,7 @@ Run the command to launch the slave.
 $ sh mesos-slave  --master=[IP of the mesos master machine ]:5050
 ```
 The slave will show up on the mesos master's web UI.
-###Mesos Client
+### Mesos Client
 Copy the libmesos.so from prefix folder(/home/user/mesos/lib) of the mesos master to /usr/local/lib of the client machine and install the following package
 ```
 $ sudo apt-get install libunwind7-dev

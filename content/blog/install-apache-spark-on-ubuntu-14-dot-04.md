@@ -72,7 +72,7 @@ Finally, download spark ditribution from [here](http://d3kbcqa49mib13.cloudfront
 	$ wget http://d3kbcqa49mib13.cloudfront.net/spark-1.1.0.tgz
 	$ tar xvf spark-1.1.0.tgz 
 ```
-###Building
+### Building
 
 SBT(Simple Build Tool) is used for building Spark, which is bundled with it. To compile the code
 ```
@@ -88,7 +88,7 @@ Then you get the output as Pi is roughly 3.14634. Spark is ready to fire
 
 For more detail [visit](http://spark.apache.org/docs/1.1.1/)
 
-###Spark Interactive Shell
+### Spark Interactive Shell
 You can run Spark interactively through the Scala shell
 ```
 	$ ./bin/spark-shell
@@ -109,7 +109,7 @@ external/mqtt/target/scala-2.10/spark-streaming-mqtt_2.10-1.1.0.jar
 	scala > import org.apache.spark.streaming.mqtt._
 ```
 Using this you can check your code line by line.
-###Accessing Hadoop Filesystems
+### Accessing Hadoop Filesystems
 If you have already the build source package, rebuild it against the hadoop version as follows
 ```
 	$ sbt/sbt clean
