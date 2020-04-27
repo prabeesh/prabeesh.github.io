@@ -8,7 +8,7 @@ description: Simplest and low cost AVR programmer using attiny2313 for burn atti
 
 This is the low cost AVR programmer using attiny2313. The schematic diagram is given below.
 
-{% img center /images/usbtiny_circuit.png 600 350 'image' 'images' %}
+![USB tiny circuit](/images/usbtiny_circuit.png)
 
 First setup the circuit as shown. Refer [this site](https://learn.adafruit.com/usbtinyisp) for to burn program to this attiny 2313.
 
