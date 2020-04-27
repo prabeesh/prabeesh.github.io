@@ -160,7 +160,7 @@ if (!doNotTrack) {
 </code></pre><p>You need to have Java installed, or the JAVA_HOME environment variable pointing to a Java installation.</p>
 <p>You can download the Mesos distribution from <a href="http://www.apache.org/dyn/closer.cgi/mesos/0.13.0/">here</a>. After that untar the downloaded file</p>
 <pre><code>$ tar xvf mesos-0.13.0.tar.gz
-</code></pre><p>###Building and Installing</p>
+</code></pre><h3 id="building-and-installing">Building and Installing</h3>
 <pre><code>$ cd mesos-0.13.0
 $ mkdir build
 $ cd build
@@ -181,9 +181,9 @@ URL of master: <strong>mesos://[IP of the machine]:5050</strong>. View the maste
 <pre><code>$ cd mesos-0.13.0/build/src
 </code></pre><p>Run the command to launch the slave.</p>
 <pre><code>$ sh mesos-slave  --master=[IP of the mesos master machine ]:5050
-</code></pre><p>The slave will show up on the mesos master&rsquo;s web UI.
-###Mesos Client
-Copy the libmesos.so from prefix folder(/home/user/mesos/lib) of the mesos master to /usr/local/lib of the client machine and install the following package</p>
+</code></pre><p>The slave will show up on the mesos master&rsquo;s web UI.</p>
+<h3 id="mesos-client">Mesos Client</h3>
+<p>Copy the libmesos.so from prefix folder(/home/user/mesos/lib) of the mesos master to /usr/local/lib of the client machine and install the following package</p>
 <pre><code>$ sudo apt-get install libunwind7-dev
 </code></pre><p>Now you can  run  applications against the Mesos cluster from the client machine.</p><ul class="pa0">
   

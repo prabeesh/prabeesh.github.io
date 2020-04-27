@@ -31,7 +31,7 @@ Apache Spark is an open source in memory cluster computing framework. Initially 
 You can download the Apache Spark distribution(0.8.0-incubating) from here. After that untar the downloaded file.
 $ tar xvf spark-0.8.0-incubating.tgz
 You need to have Scala installed, or the SCALA_HOME environment variable pointing to a Scala installation.
-###Building
+Building
 SBT(Simple Build Tool) is used for building Spark, which is bundled with it. To compile the code" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://prabeesh.github.io/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/" />
@@ -43,7 +43,7 @@ Apache Spark is an open source in memory cluster computing framework. Initially 
 You can download the Apache Spark distribution(0.8.0-incubating) from here. After that untar the downloaded file.
 $ tar xvf spark-0.8.0-incubating.tgz
 You need to have Scala installed, or the SCALA_HOME environment variable pointing to a Scala installation.
-###Building
+Building
 SBT(Simple Build Tool) is used for building Spark, which is bundled with it. To compile the code">
 <meta itemprop="datePublished" content="2013-11-26T12:24:00&#43;05:30" />
 <meta itemprop="dateModified" content="2013-11-26T12:24:00&#43;05:30" />
@@ -58,7 +58,7 @@ Apache Spark is an open source in memory cluster computing framework. Initially 
 You can download the Apache Spark distribution(0.8.0-incubating) from here. After that untar the downloaded file.
 $ tar xvf spark-0.8.0-incubating.tgz
 You need to have Scala installed, or the SCALA_HOME environment variable pointing to a Scala installation.
-###Building
+Building
 SBT(Simple Build Tool) is used for building Spark, which is bundled with it. To compile the code"/>
 
       
@@ -178,8 +178,8 @@ if (!doNotTrack) {
 <p>You can download the Apache Spark distribution(0.8.0-incubating) from <a href="http://d3kbcqa49mib13.cloudfront.net/spark-0.8.0-incubating.tgz">here</a>. After that untar the downloaded file.</p>
 <pre><code>$ tar xvf spark-0.8.0-incubating.tgz
 </code></pre><p>You need to have Scala installed, or the SCALA_HOME environment variable pointing to a Scala installation.</p>
-<p>###Building
-SBT(Simple Build Tool) is used for building Spark, which is bundled with it. To compile the code</p>
+<h3 id="building">Building</h3>
+<p>SBT(Simple Build Tool) is used for building Spark, which is bundled with it. To compile the code</p>
 <pre><code>$ cd spark-0.8.0-incubating
 
 $sbt/sbt assembly
@@ -187,14 +187,14 @@ $sbt/sbt assembly
 <pre><code>$./run-example org.apache.spark.examples.SparkPi local
 </code></pre><p>Then you get the output as
 Pi is roughly 3.14634. Spark is ready to fire</p>
-<p>###Spark Interactive Shell
-You can run Spark interactively through the Scala shell</p>
+<h3 id="spark-interactive-shell">Spark Interactive Shell</h3>
+<p>You can run Spark interactively through the Scala shell</p>
 <pre><code>$./spark-shell
 </code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> textFile <span style="color:#66d9ef">=</span> sc<span style="color:#f92672">.</span>textFile<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;README.md&#34;</span><span style="color:#f92672">)</span>
 scala<span style="color:#f92672">&gt;</span> textFile<span style="color:#f92672">.</span>count<span style="color:#f92672">()</span>
-</code></pre></div><p>Using this you can check your code line by line.
-###Accessing Hadoop Filesystems
-You can run Spark along with your existing Hadoop Cluster. To access Hadoop data from Spark, just use a hdfs://URL.  Run a word count example in the shell, taking input from hdfs and writing output back to hdfs. For using hdfs you must rebuild Spark against the same version that your hdfs cluster uses. From the Spark download page, you may download a prebuilt package.
+</code></pre></div><p>Using this you can check your code line by line.</p>
+<h3 id="accessing-hadoop-filesystems">Accessing Hadoop Filesystems</h3>
+<p>You can run Spark along with your existing Hadoop Cluster. To access Hadoop data from Spark, just use a hdfs://URL.  Run a word count example in the shell, taking input from hdfs and writing output back to hdfs. For using hdfs you must rebuild Spark against the same version that your hdfs cluster uses. From the Spark download page, you may download a prebuilt package.
 If you have already the build source package, rebuild it against the hadoop version as follows</p>
 <pre><code>$sbt/sbt clean
 </code></pre><p>You can change this by setting the SPARK_HADOOP_VERSION variable. Here uses Hadoop 2.0.0-cdh4.3.0</p>
