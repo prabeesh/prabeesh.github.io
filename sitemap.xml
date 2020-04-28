@@ -185,6 +185,27 @@
   </url>
   
   <url>
+    <loc>https://prabeesh.github.io/tags/googleappengine/</loc>
+    <lastmod>2013-03-30T12:44:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/javascript/</loc>
+    <lastmod>2013-03-30T12:44:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/blog/2013/03/30/paint-app-using-javascript-and-canvas/</loc>
+    <lastmod>2013-03-30T12:44:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://prabeesh.github.io/blog/2013/03/07/a-simple-cuda-program/</loc>
     <lastmod>2013-03-07T11:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
@@ -305,24 +326,6 @@
   
   <url>
     <loc>https://prabeesh.github.io/categories/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prabeesh.github.io/tags/googleappengine/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prabeesh.github.io/tags/javascript/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prabeesh.github.io/blog/1/01/01/paint-app-using-javascript-and-canvas/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
