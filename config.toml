@@ -15,3 +15,8 @@ SectionPagesMenu = "main"
   filename = "sitemap.xml"
 [permalinks]
     blog = "/blog/:year/:month/:day/:filename/"
+[params]
+    favicon = "/images/favicon.png"
+    recent_posts_number = 15
+    twitter = "https://twitter.com/prabeesh_k"
+    linkedin = "https://www.linkedin.com/in/prabeeshk/"
