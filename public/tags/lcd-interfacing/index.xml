@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LCD Interfacing on This is the one of the solutions</title>
+    <link>https://prabeesh.github.io/tags/lcd-interfacing/</link>
+    <description>Recent content in LCD Interfacing on This is the one of the solutions</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 Jul 2012 02:39:00 +0530</lastBuildDate>
+    
+	<atom:link href="https://prabeesh.github.io/tags/lcd-interfacing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LCD Interfacing using msp430</title>
+      <link>https://prabeesh.github.io/blog/2012/07/04/lcd-interfacing-using-msp430/</link>
+      <pubDate>Wed, 04 Jul 2012 02:39:00 +0530</pubDate>
+      
+      <guid>https://prabeesh.github.io/blog/2012/07/04/lcd-interfacing-using-msp430/</guid>
+      <description>&lt;p&gt;There is a pot connect to the ADC of msp430 Ao(pin p1.0). The values  of  ADC10MEM displayed using LCD.&lt;/p&gt;
+&lt;p&gt;The Vcc for pot is taken from msp430 launchpad.so maximum voltage is 3.6v.&lt;/p&gt;
+&lt;p&gt;The msp430 10 bit ADC operates in the range 0 to 3.6V. If the input voltage is 0V,&lt;/p&gt;
+&lt;p&gt;the ADC generates a 10 bit value:&lt;/p&gt;
+&lt;p&gt;0 0 0 0 0 0 0 0 0 0&lt;/p&gt;
+&lt;p&gt;which is numerically equal to 0.&lt;/p&gt;
+&lt;p&gt;When the input voltage is 3.6V, the ADC&lt;/p&gt;
+&lt;p&gt;generates a 10 bit pattern:&lt;/p&gt;
+&lt;p&gt;1 1 1 1 1 1 1 1 1 1&lt;/p&gt;
+&lt;p&gt;which is numerically equal to 1023.&lt;/p&gt;
+&lt;p&gt;These values are stored in ADC10MEM.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

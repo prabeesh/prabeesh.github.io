@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>No SQL Data Base on This is the one of the solutions</title>
+    <link>https://prabeesh.github.io/tags/no-sql-data-base/</link>
+    <description>Recent content in No SQL Data Base on This is the one of the solutions</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 31 Mar 2013 21:53:00 +0530</lastBuildDate>
+    
+	<atom:link href="https://prabeesh.github.io/tags/no-sql-data-base/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Paint App using Flask with MongoDB</title>
+      <link>https://prabeesh.github.io/blog/2013/03/31/paint-app-using-flask-with-mongodb/</link>
+      <pubDate>Sun, 31 Mar 2013 21:53:00 +0530</pubDate>
+      
+      <guid>https://prabeesh.github.io/blog/2013/03/31/paint-app-using-flask-with-mongodb/</guid>
+      <description>&lt;p&gt;Here the paint app is modified using with a new database system. The MongoDB is a famous NoSQL database system. The NoSQL database is a simple lightweight mechanism. It provides high scalability and availability. It provides horizontal scaling of data. This system redefined the database concept from the traditional relational database system.
+MongoDB is an open-source, document-oriented database designed for ease of development and scaling. The main features of MongoDB are flexibility, power, speed, and ease of use. The MongoDB can installed in local machine by following the instructions from &lt;a href=&#34;http://docs.mongodb.org/manual/installation/&#34;&gt;official website&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Some commands used in the MonoDB operations are given below:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;db&lt;/code&gt; :- After starting the mongo shell your session will use the test database for context, by default. At any time issue the above operation at the mongo to report the current database.
+&lt;code&gt;show dbs&lt;/code&gt; :- Display the list of databases from the mongo shell.
+&lt;code&gt;use mydb&lt;/code&gt; :- Switch to a new database named mydb.
+&lt;code&gt;help&lt;/code&gt; :- At any point you can access help for the mango shell using this operation.
+&lt;code&gt;db.things.insert()&lt;/code&gt; :- Insert documents into the collection things.When you insert the first document, the mangod will create both the database and the things collection.
+&lt;code&gt;show collections&lt;/code&gt; :- Displays the available collections in the database.
+&lt;code&gt;db.things.find()&lt;/code&gt; :- Finds the documents in the collection. The documents to be found can be specified through arguments of the find function. The cursor of the MongoDB displays only the first 20 output documents. it command is used to display the rest of the documents.&lt;/p&gt;
+&lt;p&gt;The source code is available in&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

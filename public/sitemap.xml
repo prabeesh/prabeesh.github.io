@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/apache-spark/</loc>
+    <lastmod>2016-12-07T11:45:18+04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/big-data/</loc>
+    <lastmod>2016-12-07T11:45:18+04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/blog/</loc>
+    <lastmod>2016-12-07T11:45:18+04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/</loc>
+    <lastmod>2016-12-07T11:45:18+04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/mac-os-x/</loc>
+    <lastmod>2016-12-07T11:45:18+04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/</loc>
+    <lastmod>2016-12-07T11:45:18+04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/</loc>
+    <lastmod>2016-12-07T11:45:18+04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/ubuntu/</loc>
+    <lastmod>2016-12-07T11:45:18+04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/ipython-notebook/</loc>
+    <lastmod>2015-06-19T23:08:08+04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/pyspark/</loc>
+    <lastmod>2015-06-19T23:08:08+04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/blog/2015/06/19/pyspark-notebook-with-docker/</loc>
+    <lastmod>2015-06-19T23:08:08+04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/python/</loc>
+    <lastmod>2015-06-19T23:08:08+04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/blog/2015/04/07/self-contained-pyspark-application/</loc>
+    <lastmod>2015-04-07T21:05:30+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/</loc>
+    <lastmod>2014-10-31T13:58:31+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/blog/2014/04/08/creating-uber-jar-for-spark-project-using-sbt-assembly/</loc>
+    <lastmod>2014-04-08T09:47:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/sbt/</loc>
+    <lastmod>2014-04-08T09:47:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/scala/</loc>
+    <lastmod>2014-04-08T09:47:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/blog/2014/04/01/a-standalone-spark-application-in-scala/</loc>
+    <lastmod>2014-04-01T22:56:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/</loc>
+    <lastmod>2013-11-26T12:24:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/apache-mesos/</loc>
+    <lastmod>2013-10-07T10:53:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/blog/2013/10/07/running-mesos-0130-on-ubuntu-1204/</loc>
+    <lastmod>2013-10-07T10:53:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/mqtt-queue/</loc>
+    <lastmod>2013-08-26T09:41:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/</loc>
+    <lastmod>2013-08-26T09:41:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/no-sql-data-base/</loc>
+    <lastmod>2013-03-31T21:53:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/blog/2013/03/31/paint-app-using-flask-with-mongodb/</loc>
+    <lastmod>2013-03-31T21:53:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/python-flask/</loc>
+    <lastmod>2013-03-31T21:53:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/googleappengine/</loc>
+    <lastmod>2013-03-30T12:44:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/javascript/</loc>
+    <lastmod>2013-03-30T12:44:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/blog/2013/03/30/paint-app-using-javascript-and-canvas/</loc>
+    <lastmod>2013-03-30T12:44:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/blog/2013/03/07/a-simple-cuda-program/</loc>
+    <lastmod>2013-03-07T11:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/blog/2013/02/22/introduction-to-parallel-programing/</loc>
+    <lastmod>2013-02-22T23:16:54+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/blog/2013/02/09/developing-a-simple-game-with-html5-slash-canvas/</loc>
+    <lastmod>2013-02-09T10:12:43+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/google-app-engine/</loc>
+    <lastmod>2013-02-09T10:12:43+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/html5/</loc>
+    <lastmod>2013-02-09T10:12:43+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/avr/</loc>
+    <lastmod>2012-07-14T23:39:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/embedded/</loc>
+    <lastmod>2012-07-14T23:39:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/blog/2012/07/14/finding-rc-constant-using-atmega8/</loc>
+    <lastmod>2012-07-14T23:39:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/arduino/</loc>
+    <lastmod>2012-07-14T02:23:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/blog/2012/07/14/running-arduino-codes-in-stand-alone/</loc>
+    <lastmod>2012-07-14T02:23:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/blog/2012/07/04/simplest-and-low-cost-usb-avr/</loc>
+    <lastmod>2012-07-04T19:39:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/lcd-interfacing/</loc>
+    <lastmod>2012-07-04T02:39:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/blog/2012/07/04/lcd-interfacing-using-msp430/</loc>
+    <lastmod>2012-07-04T02:39:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/msp430/</loc>
+    <lastmod>2012-07-04T02:39:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/blog/2012/02/21/introduction-to-avr-programing/</loc>
+    <lastmod>2012-02-21T02:39:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/blog/2011/09/25/am-plot-matplotlib/</loc>
+    <lastmod>2011-09-25T01:39:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/tags/matplotlib/</loc>
+    <lastmod>2011-09-25T01:39:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/categories/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+</urlset>
