@@ -9,10 +9,6 @@ MetaDataFormat = "yaml"
 Paginate = 9
 DefaultContentLanguage = "en"
 SectionPagesMenu = "main"
-[sitemap]
-  changefreq = "monthly"
-  priority = 0.5
-  filename = "sitemap.xml"
 [permalinks]
     blog = "/blog/:year/:month/:day/:filename/"
 [params]
