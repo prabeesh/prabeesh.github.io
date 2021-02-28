@@ -9,8 +9,10 @@ MetaDataFormat = "yaml"
 Paginate = 9
 DefaultContentLanguage = "en"
 SectionPagesMenu = "main"
+
 [permalinks]
     blog = "/blog/:year/:month/:day/:filename/"
+
 [params]
     favicon = "/images/favicon.png"
     recent_posts_number = 15
