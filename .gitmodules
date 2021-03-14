@@ -1,6 +1,6 @@
 [submodule "public"]
 	path = public
-	url = https://github.com/prabeesh/prabeesh.github.io.git
+	url = git@github.com:prabeesh/prabeesh.github.io.git
 	branch = master
 [submodule "themes/ananke"]
 	path = themes/ananke
