@@ -1,6 +1,6 @@
 For new setup
 ```bash
-git clone git@github.com:prabeesh/prabeesh.github.io.git
+git clone --single-branch --branch source git@github.com:prabeesh/prabeesh.github.io.git
 
 git submodule add --force git@github.com:prabeesh/prabeesh.github.io.git public
 
