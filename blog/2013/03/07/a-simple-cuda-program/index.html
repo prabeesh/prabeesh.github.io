@@ -179,8 +179,18 @@ if (!doNotTrack) {
       <aside class="instapaper_ignoref b helvetica tracked">
           
         BLOGS
-      </aside>
-      
+      </aside><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1368619820510426"
+     data-ad-slot="5766415503"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 
 
 
@@ -274,7 +284,18 @@ cudaMalloc((<span style="color:#66d9ef">void</span><span style="color:#f92672">*
 <p>Just know that this is the way;that CUDA knows this code is a kernel as opposed to CPU code. Next we have void. Void just means the kernel doesn&rsquo;t return a value. Instead it writes the;output into the pointer specified in its argument list. This kernel takes two arguments. These are pointers to the output and the input arrays.</p>
 <p>Let&rsquo;s walk through the body of the kernel. So the first line of the body here. CUDA has a built in variable called thread index, threadIDX, and that&rsquo;s going to tell each thread its index within a block. threadIDX is actually a c struct with 3 members. .x, .y, and .z. the c struct is called a dim 3. Now, we will launch 64 threads. So for the first instance of those threads, threadIDX.x will return zero, for the second instance, 1. And so on, up to 63 for the last element. Everything else in this kernel just looks like straightforward C. It looks just like a serial program.</p>
 <p>For each thread, we&rsquo;re going to first read the array element corresponding to this thread index from global memory. We are going to store it in this float;variable f. We are then going to square f, and we&rsquo;re going to write that value back to global memory, in the output array element that corresponds to our thread index.</p>
-<p>This blog is my short notes as part of the course now I am doing in the Udacity <a href="https://www.udacity.com/course/cs344">Intro to Parallel Programming</a></p><ul class="pa0">
+<p>This blog is my short notes as part of the course now I am doing in the Udacity <a href="https://www.udacity.com/course/cs344">Intro to Parallel Programming</a></p><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1368619820510426"
+     data-ad-slot="5766415503"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<ul class="pa0">
   
 </ul>
 <div class="mt6 instapaper_ignoref">
