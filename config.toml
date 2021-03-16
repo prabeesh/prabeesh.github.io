@@ -18,3 +18,6 @@ SectionPagesMenu = "main"
     recent_posts_number = 15
     twitter = "https://twitter.com/prabeesh_k"
     linkedin = "https://www.linkedin.com/in/prabeeshk/"
+
+[markup.goldmark.renderer]
+    unsafe= true
