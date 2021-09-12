@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://prabeesh.github.io/notes/</loc>
+    <lastmod>2021-09-12T16:22:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/notes/performance-tuning-on-apache-spark/</loc>
+    <lastmod>2021-09-12T16:22:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://prabeesh.github.io/</loc>
+    <lastmod>2021-09-12T16:22:23+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://prabeesh.github.io/tags/apache-spark/</loc>
     <lastmod>2016-12-07T11:45:18+04:00</lastmod>
   </url>
@@ -29,11 +44,6 @@
   
   <url>
     <loc>https://prabeesh.github.io/tags/</loc>
-    <lastmod>2016-12-07T11:45:18+04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://prabeesh.github.io/</loc>
     <lastmod>2016-12-07T11:45:18+04:00</lastmod>
   </url>
   

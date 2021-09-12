@@ -4,10 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Introduction to Parallel Programing | This is the one of the solutions</title>
+    <title>Performance Tuning on Apache Spark | This is the one of the solutions</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="This post focuses on parallel computing on the GPU. Parallel computing is a way of solving large problems by breaking them into smaller pieces and run these smaller pieces at the same time.
-Main reasons of technical trends in the parallel computing on the GPU Modern processors are made from transistors. And each year, those transistors get smaller and smaller. The feature size is the minimum size of a transistor on a chip.">
+    <meta name="description" content="Below are the notes were taken while attending the data bricks training on Performance Tuning on Apache Spark by Charles Harding.
+Most egregious problems are
+ Spill Skew Shuffle Storage Serialization  Spill The wrting of temp files to disk due to lack o memory
+Skew An Imbalance in the size of the partitions
+Shuffle The act of moving data between executors
+Storage A set of problems directly related to how the data is stored on disk">
     <meta name="generator" content="Hugo 0.69.2" />
     
     
@@ -33,26 +37,38 @@ Main reasons of technical trends in the parallel computing on the GPU Modern pro
 
     
     
-    <meta property="og:title" content="Introduction to Parallel Programing" />
-<meta property="og:description" content="This post focuses on parallel computing on the GPU. Parallel computing is a way of solving large problems by breaking them into smaller pieces and run these smaller pieces at the same time.
-Main reasons of technical trends in the parallel computing on the GPU Modern processors are made from transistors. And each year, those transistors get smaller and smaller. The feature size is the minimum size of a transistor on a chip." />
+    <meta property="og:title" content="Performance Tuning on Apache Spark" />
+<meta property="og:description" content="Below are the notes were taken while attending the data bricks training on Performance Tuning on Apache Spark by Charles Harding.
+Most egregious problems are
+ Spill Skew Shuffle Storage Serialization  Spill The wrting of temp files to disk due to lack o memory
+Skew An Imbalance in the size of the partitions
+Shuffle The act of moving data between executors
+Storage A set of problems directly related to how the data is stored on disk" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://prabeesh.github.io/blog/2013/02/22/introduction-to-parallel-programing/" />
-<meta property="article:published_time" content="2013-02-22T23:16:54+05:30" />
-<meta property="article:modified_time" content="2013-02-22T23:16:54+05:30" />
-<meta itemprop="name" content="Introduction to Parallel Programing">
-<meta itemprop="description" content="This post focuses on parallel computing on the GPU. Parallel computing is a way of solving large problems by breaking them into smaller pieces and run these smaller pieces at the same time.
-Main reasons of technical trends in the parallel computing on the GPU Modern processors are made from transistors. And each year, those transistors get smaller and smaller. The feature size is the minimum size of a transistor on a chip.">
-<meta itemprop="datePublished" content="2013-02-22T23:16:54&#43;05:30" />
-<meta itemprop="dateModified" content="2013-02-22T23:16:54&#43;05:30" />
-<meta itemprop="wordCount" content="568">
+<meta property="og:url" content="https://prabeesh.github.io/notes/performance-tuning-on-apache-spark/" />
+<meta property="article:published_time" content="2021-09-12T16:22:23+02:00" />
+<meta property="article:modified_time" content="2021-09-12T16:22:23+02:00" />
+<meta itemprop="name" content="Performance Tuning on Apache Spark">
+<meta itemprop="description" content="Below are the notes were taken while attending the data bricks training on Performance Tuning on Apache Spark by Charles Harding.
+Most egregious problems are
+ Spill Skew Shuffle Storage Serialization  Spill The wrting of temp files to disk due to lack o memory
+Skew An Imbalance in the size of the partitions
+Shuffle The act of moving data between executors
+Storage A set of problems directly related to how the data is stored on disk">
+<meta itemprop="datePublished" content="2021-09-12T16:22:23&#43;02:00" />
+<meta itemprop="dateModified" content="2021-09-12T16:22:23&#43;02:00" />
+<meta itemprop="wordCount" content="347">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Introduction to Parallel Programing"/>
-<meta name="twitter:description" content="This post focuses on parallel computing on the GPU. Parallel computing is a way of solving large problems by breaking them into smaller pieces and run these smaller pieces at the same time.
-Main reasons of technical trends in the parallel computing on the GPU Modern processors are made from transistors. And each year, those transistors get smaller and smaller. The feature size is the minimum size of a transistor on a chip."/>
+<meta name="twitter:title" content="Performance Tuning on Apache Spark"/>
+<meta name="twitter:description" content="Below are the notes were taken while attending the data bricks training on Performance Tuning on Apache Spark by Charles Harding.
+Most egregious problems are
+ Spill Skew Shuffle Storage Serialization  Spill The wrting of temp files to disk due to lack o memory
+Skew An Imbalance in the size of the partitions
+Shuffle The act of moving data between executors
+Storage A set of problems directly related to how the data is stored on disk"/>
 
       
 <script type="application/javascript">
@@ -156,7 +172,7 @@ if (!doNotTrack) {
     <header class="mt4 w-100">
       <aside class="instapaper_ignoref b helvetica tracked">
           
-        BLOGS
+        NOTES
       </aside>
       
 
@@ -166,20 +182,20 @@ if (!doNotTrack) {
   <div id="sharing" class="mt3">
 
     
-    <a href="https://www.facebook.com/sharer.php?u=https://prabeesh.github.io/blog/2013/02/22/introduction-to-parallel-programing/" class="facebook no-underline" aria-label="share on Facebook">
+    <a href="https://www.facebook.com/sharer.php?u=https://prabeesh.github.io/notes/performance-tuning-on-apache-spark/" class="facebook no-underline" aria-label="share on Facebook">
       <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
 
     </a>
 
     
     
-    <a href="https://twitter.com/share?url=https://prabeesh.github.io/blog/2013/02/22/introduction-to-parallel-programing/&amp;text=Introduction%20to%20Parallel%20Programing" class="twitter no-underline" aria-label="share on Twitter">
+    <a href="https://twitter.com/share?url=https://prabeesh.github.io/notes/performance-tuning-on-apache-spark/&amp;text=Performance%20Tuning%20on%20Apache%20Spark" class="twitter no-underline" aria-label="share on Twitter">
       <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
 
     </a>
 
     
-    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://prabeesh.github.io/blog/2013/02/22/introduction-to-parallel-programing/&amp;title=Introduction%20to%20Parallel%20Programing" class="linkedin no-underline" aria-label="share on LinkedIn">
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://prabeesh.github.io/notes/performance-tuning-on-apache-spark/&amp;title=Performance%20Tuning%20on%20Apache%20Spark" class="linkedin no-underline" aria-label="share on LinkedIn">
       <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
 </svg>
@@ -188,23 +204,76 @@ if (!doNotTrack) {
   </div>
 
 
-      <h1 class="f1 athelas mt3 mb1">Introduction to Parallel Programing</h1>
+      <h1 class="f1 athelas mt3 mb1">Performance Tuning on Apache Spark</h1>
       
       
-      <time class="f6 mv4 dib tracked" datetime="2013-02-22T23:16:54+05:30">February 22, 2013</time>
+      <time class="f6 mv4 dib tracked" datetime="2021-09-12T16:22:23+02:00">September 12, 2021</time>
 
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>This post focuses on parallel computing on the GPU. Parallel computing is a way of solving large problems by breaking them into smaller pieces and run these smaller pieces at the same time.</p>
-<h3 id="main-reasons-of-technical-trends-in-the-parallel-computing-on-the-gpu">Main reasons of technical trends in the parallel computing on the GPU</h3>
-<p>Modern processors are made from transistors. And each year, those transistors get smaller and smaller. The feature size is the minimum size of a transistor on a chip. As the feature size decreases, transistors get smaller, run faster, use less power, and put more of them on a chip. And the consequence is that ,more and more resources for computation every single year. One of the primary features of processors is clock speed . Over many years, the clock speeds continue to go up. However, over the last decade, that have essentially remained constant. Even though transistors are continuing to get smaller and faster and consume less energy per transistor, Running a billion transistors generates a high amount of heat . since we can&rsquo;t keep all these processors cool, Power has emerged as a primary driving factor.</p>
-<p>Traditional CPUs has very complicated control hardware. This allows flexibility in performance, but as control hardware gets more complicated, it becomes more expensive in terms of power and design complexity. <!-- more--> So might choose to build simpler control structures. And the way is that going to build that data path in the GPU is by building a large number of parallel compute units. Individually, those compute units are small, simple and power efficient. So put a very large number of them on a single chip. More generally program them in such a way that they can all work together to solve complex problems. A high-end GPU contains over 3,000 arithmetic units, ALUs, that can simultaneously run 3,000 arithmetic operations. GPUs can have tens of thousands of parallel pieces which are active at the same time. each of those pieces of work a thread, and a modern GPU may be running up to 65,000 concurrent threads. Together, all this computing power has the potential to solve the problems faster.</p>
-<p>To build a power efficient processor, the choice is minimising latency. Latency is the amount of time to complete a task. The other choice is throughput. Throughput is tasks completed per unit time. Regulating throughput is the right approach, because Latency Lags Bandwidth</p>
-<h3 id="cudacomputer-unified-device-architecture">CUDA(Computer Unified Device Architecture)</h3>
-<p>CUDA is a parallel programming platform. The programming model implemented by the GPU is created by NVIDIA. CUDA gives developers to access the virtual instruction set memory of the parallel computational elements in CUDA GPUs. Unlike CPUs, GPU has a parallel throughput architecture that emphasizes executing many concurrent threads slowly, rather than executing a single thread very quickly. This approach for solving general purpose problems on GPU is known as GPGPU.</p>
-<p>The CUDA programming model allows us to program both CPU and GPU with one program so that the power of the GPU in programs. At First, the CPU allocates storage space on the GPU. Then, the CPU copies some input data from the CPU to the GPU.and the Next step is, CPU calls some kernels watching these kernels on the GPU that process this data. And finally, the CPU copies the results back to the CPU from the GPU.</p>
-<p>This blog is my short notes as part of the course now I am doing in the Udacity <a href="https://www.udacity.com/course/cs344">Intro to Parallel Programming</a>.</p>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Below are the notes were taken while attending the data bricks training on Performance Tuning on Apache Spark by Charles Harding.</p>
+<p>Most egregious problems are</p>
+<ul>
+<li>Spill</li>
+<li>Skew</li>
+<li>Shuffle</li>
+<li>Storage</li>
+<li>Serialization</li>
+</ul>
+<h3 id="spill">Spill</h3>
+<p>The wrting of temp files to disk due to lack o memory</p>
+<h3 id="skew">Skew</h3>
+<p>An Imbalance in the size of the partitions</p>
+<h3 id="shuffle">Shuffle</h3>
+<p>The act of moving data between executors</p>
+<h3 id="storage">Storage</h3>
+<p>A set of problems directly related to how the data is stored on disk</p>
+<h3 id="serilization">Serilization</h3>
+<p>The distribution of code segments across the cluster</p>
+<p>Always specify the schema for reading. It will reduce the reading time(not true for all cases)</p>
+<p>Use sc.setJobDescription(&quot;&quot;) in the code. It will help to see the named description of the current job in the Spark UI and help us to debug a specific job very easily.</p>
+<p>Data typically as 128MB partitions and evenly distributed</p>
+<p>Small amount of skew &lt; 20% is ignorable</p>
+<p>Check each stage and ensure that almost equal shuffle</p>
+<p>Avoid spills - use salted jon or adaptive query execution</p>
+<p>Shuffling is a side effect og wide transformation</p>
+<ul>
+<li>join()</li>
+<li>distinct()</li>
+<li>groupBy()</li>
+<li>orderBy()</li>
+</ul>
+<p>Wide transformation shuffle is involved in this, depedency on the previous parttion. Narrow transformation indepedent of other partitons, no shuffle involved.</p>
+<p>Broadcast smaller table (~10MB)</p>
+<p>For join pre-shuffle(to eliminate the exchange and sort) the data with a bucketed dataset. one bucket per core.</p>
+<h2 id="storage-1">Storage</h2>
+<ol>
+<li>Tiny file problem</li>
+<li>Scanning</li>
+<li>Schemas, merging schemas and schema evolution</li>
+</ol>
+<p>mitigate the impact tiny files (&lt; 10 MB)
+the ideal part-file is between 128MB and 1GB</p>
+<ul>
+<li>
+<p>smaller than 128MB and we creep into the Tiny files problem and it cousins.</p>
+</li>
+<li>
+<p>Larger than 1GB part-files are genera advised against mainly due in part to the problem associated with creating these large Spark-partitions.</p>
+</li>
+</ul>
+<p>Manual compaction
+Instead of check the disk size, read and cache the data and see the original size.</p>
+<p>Automatic compaction support with databricks delta.</p>
+<p>Storage:- Directory scanning</p>
+<p>Serialization: Tugsten(own serilization project) instead of using Java serilization Spark build their own.</p>
+<p>Serilazation:- Python overhead</p>
+<ul>
+<li>Use Python higher order function instead of UDF.</li>
+<li>Pandas/Vectorized UDF perform than UDF</li>
+<li>The SQL higher order function are very robust</li>
+</ul>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
      style="display:block; text-align:center;"
