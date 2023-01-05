@@ -6,11 +6,7 @@
     <description>Recent content in Embedded on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Jul 2012 23:39:00 +0530</lastBuildDate>
-    
-	<atom:link href="https://prabeesh.github.io/tags/embedded/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 14 Jul 2012 23:39:00 +0530</lastBuildDate><atom:link href="https://prabeesh.github.io/tags/embedded/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Finding RC constant using ATmega8</title>
       <link>https://prabeesh.github.io/blog/2012/07/14/finding-rc-constant-using-atmega8/</link>
@@ -37,8 +33,8 @@ If you wish to study the arduino codes ,then one of the major problems is the av
 &lt;p&gt;First download the arduino IDE(I am using Arduino 1.0). Next you have to an avr  programmer(I am using usbasp and usbtiny).
 Launch the arduino IDE as root.Then select your programmer from tools and also select your board  in this case select ATmega8.
 Take care in fuse bytes because arduino codes are running in 8MHz.Y ou can enable internal 8MHz clock by&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;U lfuse:w:&lt;span style=&#34;color:#ae81ff&#34;&gt;0xa4&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;m &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;U hfuse:w:&lt;span style=&#34;color:#ae81ff&#34;&gt;0xcc&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;m
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Or you can enable the external crystal by setting the fuse byte as&lt;/p&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;U lfuse:w:&lt;span style=&#34;color:#ae81ff&#34;&gt;0xa4&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;m &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;U hfuse:w:&lt;span style=&#34;color:#ae81ff&#34;&gt;0xcc&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;m
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Or you can enable the external crystal by setting the fuse byte as&lt;/p&gt;</description>
     </item>
     
     <item>

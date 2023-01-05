@@ -6,11 +6,7 @@
     <description>Recent content in Python on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Jun 2015 23:08:08 +0400</lastBuildDate>
-    
-	<atom:link href="https://prabeesh.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 19 Jun 2015 23:08:08 +0400</lastBuildDate><atom:link href="https://prabeesh.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>pyspark notebook with docker</title>
       <link>https://prabeesh.github.io/blog/2015/06/19/pyspark-notebook-with-docker/</link>
@@ -19,9 +15,9 @@
       <guid>https://prabeesh.github.io/blog/2015/06/19/pyspark-notebook-with-docker/</guid>
       <description>&lt;h4 id=&#34;install-docker&#34;&gt;Install Docker&lt;/h4&gt;
 &lt;p&gt;Using the following command one can install docker. I have done the same using Ubuntu-14-04 instance. For richer options refer the &lt;a href=&#34;https://docs.docker.com/&#34;&gt;docker official site&lt;/a&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt; wget -qO- https://get.docker.com/ | sh
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; wget -qO- https://get.docker.com/ | sh
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now run the following command from any machine on which docker is installed.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;docker run -d -t -p 8888:8888 prabeeshk/pyspark-notebook
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker run -d -t -p 8888:8888 prabeeshk/pyspark-notebook
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After successfully running the pyspark-notebook docker container, access pyspark ipython notebook by&lt;/p&gt;</description>
     </item>
     
@@ -33,7 +29,7 @@
       <guid>https://prabeesh.github.io/blog/2015/04/07/self-contained-pyspark-application/</guid>
       <description>&lt;p&gt;In my &lt;a href=&#34;https://prabeesh.github.io/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/&#34;&gt;previous post&lt;/a&gt;, I wrote about installation of Spark and Scala interactive shell. Here in this post, we&amp;rsquo;ll see how to do the same in Python.&lt;/p&gt;
 &lt;p&gt;Similar to Scala interactive shell, there is an interactive shell available for Python. You can run it with the below command from spark root folder:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;./bin/pyspark
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;./bin/pyspark
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now you can enjoy Spark using Python interactive shell.&lt;/p&gt;
 &lt;p&gt;This shell might be sufficient for experimentations and developments. However, for production level, we should use a standalone application.&lt;/p&gt;</description>
     </item>
@@ -57,15 +53,15 @@
       <guid>https://prabeesh.github.io/blog/2013/02/09/developing-a-simple-game-with-html5-slash-canvas/</guid>
       <description>&lt;p&gt;HTML5 is the new HTML standard. One of the most interesting new features in HTML5 is the canvas element &lt;strong&gt;canvas&lt;/strong&gt; for 2D drawing. A canvas is a rectangular area on an HTML page. All drawing on the canvas must be done using JavaScript. This post goes through the basics of implementing a 2D canvas context, and using the basic canvas functions for developing a simple game.
 Creating a canvad context, adding the &lt;strong&gt;canvas&lt;/strong&gt; element to your HTML document like so&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;canvas&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Canvas&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;800&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;450&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;canvas&lt;/span&gt;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To draw inside the canvas need to use Javascript. First find the canvas element using  getElementById, then initialize the context.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;	&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;script&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
-	&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;canvas&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;documnet&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;getElementById&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Canvas&amp;#34;&lt;/span&gt;);
-	&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;context&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;canvas&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;getContext&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;2d&amp;#34;&lt;/span&gt;)
-
-
-	&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/script&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To draw text on a canvas, the most import property and methods are:&lt;/p&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;canvas&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Canvas&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;800&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;450&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;canvas&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To draw inside the canvas need to use Javascript. First find the canvas element using  getElementById, then initialize the context.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;script&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;canvas&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;documnet&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;getElementById&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Canvas&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;context&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;canvas&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;getContext&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;2d&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/script&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To draw text on a canvas, the most import property and methods are:&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -76,17 +72,17 @@ Creating a canvad context, adding the &lt;strong&gt;canvas&lt;/strong&gt; elemen
       <guid>https://prabeesh.github.io/blog/2011/09/25/am-plot-matplotlib/</guid>
       <description>&lt;p&gt;we can plot AM waves using matplotlib&lt;/p&gt;
 &lt;p&gt;It is the one of the most strongest tool in linux to plot the waves&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; matplotlib.pylab &lt;span style=&#34;color:#f92672&#34;&gt;as&lt;/span&gt; plt
-&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#f92672&#34;&gt;as&lt;/span&gt; num
-fc&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;;
-fm&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;;
-t&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;arange(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;0.001&lt;/span&gt;);
-c&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sin(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;pi&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;fc&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;t);
-m&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sin(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;pi&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;fm&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;t);     
-am&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;c&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;m);
-plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;plot(am,&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;’&lt;/span&gt;r&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;’&lt;/span&gt;)
-plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;{% img center /images/am.png 600 350 &amp;lsquo;image&amp;rsquo; &amp;lsquo;images&amp;rsquo; %}&lt;/p&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; matplotlib.pylab &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; plt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; num
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fc&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fm&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;t&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;arange(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;0.001&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;c&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sin(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;pi&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;fc&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;t);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;m&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sin(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;pi&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;fm&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;t);     
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;am&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;c&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;m);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;plot(am,&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;’&lt;/span&gt;r&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;’&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;{% img center /images/am.png 600 350 &amp;lsquo;image&amp;rsquo; &amp;lsquo;images&amp;rsquo; %}&lt;/p&gt;</description>
     </item>
     
   </channel>

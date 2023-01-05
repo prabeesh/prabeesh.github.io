@@ -6,11 +6,7 @@
     <description>Recent content in JavaScript on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 30 Mar 2013 12:44:00 +0530</lastBuildDate>
-    
-	<atom:link href="https://prabeesh.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 30 Mar 2013 12:44:00 +0530</lastBuildDate><atom:link href="https://prabeesh.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Paint app using JavaScript and Canvas</title>
       <link>https://prabeesh.github.io/blog/2013/03/30/paint-app-using-javascript-and-canvas/</link>

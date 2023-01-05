@@ -7,22 +7,21 @@
     <title>Finding RC constant using ATmega8 | This is the one of the solutions</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="This blog post is about finding RC constants using atmega8 microcontroller.">
-    <meta name="generator" content="Hugo 0.69.2" />
+    <meta name="generator" content="Hugo 0.109.0">
     
     
-      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+    
+      <meta name="robots" content="index, follow">
     
 
     
-
-  
-  
-    <link rel="stylesheet" href="/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css" >
-  
+<link rel="stylesheet" href="/ananke/css/main.min.9fd9fa2e85d47f2129854290323c39a3ac54e524ed21004a7d9278a5188721f7.css" >
 
 
 
-
+    
+    
     
       
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
@@ -35,17 +34,13 @@
     <meta property="og:title" content="Finding RC constant using ATmega8" />
 <meta property="og:description" content="This blog post is about finding RC constants using atmega8 microcontroller." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://prabeesh.github.io/blog/2012/07/14/finding-rc-constant-using-atmega8/" />
+<meta property="og:url" content="https://prabeesh.github.io/blog/2012/07/14/finding-rc-constant-using-atmega8/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2012-07-14T23:39:00+05:30" />
 <meta property="article:modified_time" content="2012-07-14T23:39:00+05:30" />
 <meta itemprop="name" content="Finding RC constant using ATmega8">
-<meta itemprop="description" content="This blog post is about finding RC constants using atmega8 microcontroller.">
-<meta itemprop="datePublished" content="2012-07-14T23:39:00&#43;05:30" />
-<meta itemprop="dateModified" content="2012-07-14T23:39:00&#43;05:30" />
-<meta itemprop="wordCount" content="449">
-
-
-
+<meta itemprop="description" content="This blog post is about finding RC constants using atmega8 microcontroller."><meta itemprop="datePublished" content="2012-07-14T23:39:00+05:30" />
+<meta itemprop="dateModified" content="2012-07-14T23:39:00+05:30" />
+<meta itemprop="wordCount" content="450">
 <meta itemprop="keywords" content="AVR,Embedded," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Finding RC constant using ATmega8"/>
 <meta name="twitter:description" content="This blog post is about finding RC constants using atmega8 microcontroller."/>
@@ -54,14 +49,15 @@
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 	ga('create', 'UA-56250765-2', 'auto');
 	
 	ga('send', 'pageview');
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
     
 	<script data-ad-client="ca-pub-1368619820510426" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -94,47 +90,36 @@ if (!doNotTrack) {
             </a>
           </li>
           
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/notes/" title="Notes page">
-              Notes
-            </a>
-          </li>
-          
         </ul>
       
       
-
-
-
-
-<a href="https://twitter.com/prabeesh_k" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
-  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+<div class="ananke-socials">
+  
+    
+    <a href="https://twitter.com/prabeesh_k" target="_blank" rel="noopener" class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" aria-label="follow on Twitter——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
 </svg>
 </span></a>
-
-
-
-
-<a href="https://www.linkedin.com/in/prabeeshk/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
-  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+  
+    
+    <a href="https://www.linkedin.com/in/prabeeshk/" target="_blank" rel="noopener" class="linkedin ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
 </svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
 </svg>
 </span></a>
-
-
-
-
-
-
-
-
+  
+</div>
 
     </div>
   </div>
@@ -159,28 +144,32 @@ if (!doNotTrack) {
 
 
 
-  <div id="sharing" class="mt3">
 
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
     
-    <a href="https://www.facebook.com/sharer.php?u=https://prabeesh.github.io/blog/2012/07/14/finding-rc-constant-using-atmega8/" class="facebook no-underline" aria-label="share on Facebook">
-      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
-
-    </a>
-
+      
+      <a href="https://twitter.com/share?url=https://prabeesh.github.io/blog/2012/07/14/finding-rc-constant-using-atmega8/&amp;text=Finding%20RC%20constant%20using%20ATmega8" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
+        
+        <span class="icon"> <svg style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+</span>
+        
+      </a>
     
-    
-    <a href="https://twitter.com/share?url=https://prabeesh.github.io/blog/2012/07/14/finding-rc-constant-using-atmega8/&amp;text=Finding%20RC%20constant%20using%20ATmega8" class="twitter no-underline" aria-label="share on Twitter">
-      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
-
-    </a>
-
-    
-    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://prabeesh.github.io/blog/2012/07/14/finding-rc-constant-using-atmega8/&amp;title=Finding%20RC%20constant%20using%20ATmega8" class="linkedin no-underline" aria-label="share on LinkedIn">
-      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+      
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://prabeesh.github.io/blog/2012/07/14/finding-rc-constant-using-atmega8/&amp;title=Finding%20RC%20constant%20using%20ATmega8" class="ananke-social-link linkedin no-underline" aria-label="share on LinkedIn">
+        
+        <span class="icon"> <svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
 </svg>
-
-    </a>
+</span>
+        
+      </a>
+    
   </div>
 
 
@@ -199,129 +188,129 @@ if (!doNotTrack) {
 <p>Using an LCD can show the TCNT1 value. TCNT1 is 16 bit long.Here ATmega8 running in 8MHz clock,timer prescaled by 1024.</p>
 <p>So if you get the real time multiply the TCNT1 value to (1024/8000000).</p>
 <p>Some test examples:</p>
-<pre><code>	 R=1kΩ  C=100µF  the calculated RC constant is 0.1S.
+<pre tabindex="0"><code>	 R=1kΩ  C=100µF  the calculated RC constant is 0.1S.
 </code></pre><p>The value of  TCNT1 is 846.Which is equal to 0.108288s.</p>
-<pre><code>	 R=2kΩ  C=100µF  the calculated RC constant is 0.2S.
+<pre tabindex="0"><code>	 R=2kΩ  C=100µF  the calculated RC constant is 0.2S.
 </code></pre><p>The value of  TCNT1 is 1864.Which is equal to 0.238592s.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">
-<span style="color:#75715e">#include</span><span style="color:#75715e">&lt;avr/io.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e">#define F_CPU 8000000UL
-</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;util/delay.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">#define RS 6 </span><span style="color:#75715e">//PD6
-</span><span style="color:#75715e"></span><span style="color:#75715e">#define EN 7 </span><span style="color:#75715e">//PD7
-</span><span style="color:#75715e"></span><span style="color:#75715e">#define databits PORTC </span><span style="color:#75715e">//PC0 to PC3
-</span><span style="color:#75715e"></span><span style="color:#75715e">#define row1 cmd(0x80)
-</span><span style="color:#75715e">#define row2 cmd(0xc0)
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">adc_init</span>()
-{
-   <span style="color:#75715e">//select AVCC reference voltage , left alignment of data and ADC4
-</span><span style="color:#75715e"></span>   ADMUX<span style="color:#f92672">=</span>((<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>REFS0)<span style="color:#f92672">|</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>ADLAR)<span style="color:#f92672">|</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>MUX2));
-
-   <span style="color:#75715e">//enable ADC, set prescaler to divide the clock by 64 and auto triggering mode
-</span><span style="color:#75715e"></span>   ADCSRA<span style="color:#f92672">=</span>((<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>ADEN)<span style="color:#f92672">|</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>ADFR)<span style="color:#f92672">|</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>ADPS2)<span style="color:#f92672">|</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>ADPS1)<span style="color:#f92672">|</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>ADPS0));
-
-}
-
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">conversion</span>()
-{
-   <span style="color:#75715e">//start conversion
-</span><span style="color:#75715e"></span>   ADCSRA<span style="color:#f92672">|=</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>ADSC);
-}
-
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">port_init</span>()
-{
-   DDRC <span style="color:#f92672">=</span> <span style="color:#ae81ff">0xcf</span>;
-   DDRD <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> RS)<span style="color:#f92672">|</span>(<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> EN);
-}
-
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">LCD_STROBE</span>(<span style="color:#66d9ef">void</span>)
-{
-   PORTD <span style="color:#f92672">|=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> EN);
-   _delay_us(<span style="color:#ae81ff">1</span>);
-   PORTD <span style="color:#f92672">&amp;=</span> <span style="color:#f92672">~</span>(<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> EN);
-}
-
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">data</span>(<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> c)
-{
-   PORTD <span style="color:#f92672">|=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> RS);
-   _delay_us(<span style="color:#ae81ff">50</span>);
-   databits <span style="color:#f92672">=</span> (c <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">4</span>);
-   LCD_STROBE();
-   databits <span style="color:#f92672">=</span> (c);
-   LCD_STROBE();
-}
-
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">cmd</span>(<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> c)
-{
-   PORTD <span style="color:#f92672">&amp;=</span> <span style="color:#f92672">~</span>(<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> RS);
-   _delay_us(<span style="color:#ae81ff">50</span>);
-   databits <span style="color:#f92672">=</span> (c <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">4</span>);
-   LCD_STROBE();
-   databits <span style="color:#f92672">=</span> (c);
-   LCD_STROBE();
-}
-
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">clear</span>(<span style="color:#66d9ef">void</span>)
-{
-   cmd(<span style="color:#ae81ff">0x01</span>);
-   _delay_ms(<span style="color:#ae81ff">5</span>);
-}
-
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">lcd_init</span>()
-{
-   _delay_ms(<span style="color:#ae81ff">15</span>);
-   cmd(<span style="color:#ae81ff">0x30</span>);
-   _delay_ms(<span style="color:#ae81ff">1</span>);
-   cmd(<span style="color:#ae81ff">0x30</span>);
-   _delay_us(<span style="color:#ae81ff">100</span>);
-   cmd(<span style="color:#ae81ff">0x30</span>);
-   cmd(<span style="color:#ae81ff">0x28</span>); <span style="color:#75715e">// Function set (4-bit interface, 2 lines, 5*7Pixels)
-</span><span style="color:#75715e"></span>   cmd(<span style="color:#ae81ff">0x28</span>); <span style="color:#75715e">// Function set (4-bit interface, 2 lines, 5*7Pixels)
-</span><span style="color:#75715e"></span>   cmd(<span style="color:#ae81ff">0x0c</span>); <span style="color:#75715e">// Make cursorinvisible
-</span><span style="color:#75715e"></span>   clear(); <span style="color:#75715e">// Clear screen
-</span><span style="color:#75715e"></span>   cmd(<span style="color:#ae81ff">0x6</span>); <span style="color:#75715e">// Set entry Mode(auto increment of cursor)
-</span><span style="color:#75715e"></span>}
-
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>p)
-{
-   <span style="color:#66d9ef">while</span>(<span style="color:#f92672">*</span>p) data(<span style="color:#f92672">*</span>p<span style="color:#f92672">++</span>);
-}
-
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>()
-{
-   <span style="color:#66d9ef">char</span> a[<span style="color:#ae81ff">5</span>],b[<span style="color:#ae81ff">5</span>];
-   <span style="color:#66d9ef">int</span> c,d; 
-   DDRB<span style="color:#f92672">=</span><span style="color:#ae81ff">0x01</span>;
-   _delay_ms(<span style="color:#ae81ff">50</span>);
-   TCCR1B<span style="color:#f92672">|=</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>CS10)<span style="color:#f92672">|</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>CS12);<span style="color:#75715e">//prescale 1024
-</span><span style="color:#75715e"></span>   port_init();
-   adc_init();
-   lcd_init();
-   PORTB<span style="color:#f92672">=</span><span style="color:#ae81ff">0x01</span>;<span style="color:#75715e">//applying vcc to RC circuit
-</span><span style="color:#75715e"></span>   TCNT1<span style="color:#f92672">=</span><span style="color:#ae81ff">0x00</span>;<span style="color:#75715e">//start the timer
-</span><span style="color:#75715e"></span>
-   <span style="color:#66d9ef">while</span>(<span style="color:#ae81ff">1</span>)
-   { 
-      conversion();
-
-      <span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span>( ADIF));
-
-      <span style="color:#66d9ef">if</span>(ADCH<span style="color:#f92672">==</span><span style="color:#ae81ff">161</span>)<span style="color:#75715e">//63% of the input voltage
-</span><span style="color:#75715e"></span>      { 
-         c<span style="color:#f92672">=</span>TCNT1; 
-         d<span style="color:#f92672">=</span>ADCH;
-         itoa(c,a,<span style="color:#ae81ff">10</span>);<span style="color:#75715e">//integer to ASCII
-</span><span style="color:#75715e"></span>         itoa(d,b,<span style="color:#ae81ff">10</span>);<span style="color:#75715e">//integer to ASCII
-</span><span style="color:#75715e"></span>         row1; 
-         print(a);<span style="color:#75715e">//showing timer value
-</span><span style="color:#75715e"></span>         row2;
-         print(b);<span style="color:#75715e">//showing adc value
-</span><span style="color:#75715e"></span>      }
-   } 
-}
-</code></pre></div><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;avr/io.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define F_CPU 8000000UL
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;util/delay.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define RS 6 </span><span style="color:#75715e">//PD6
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define EN 7 </span><span style="color:#75715e">//PD7
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define databits PORTC </span><span style="color:#75715e">//PC0 to PC3
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define row1 cmd(0x80)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define row2 cmd(0xc0)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">adc_init</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">//select AVCC reference voltage , left alignment of data and ADC4
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   ADMUX<span style="color:#f92672">=</span>((<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>REFS0)<span style="color:#f92672">|</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>ADLAR)<span style="color:#f92672">|</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>MUX2));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">//enable ADC, set prescaler to divide the clock by 64 and auto triggering mode
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   ADCSRA<span style="color:#f92672">=</span>((<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>ADEN)<span style="color:#f92672">|</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>ADFR)<span style="color:#f92672">|</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>ADPS2)<span style="color:#f92672">|</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>ADPS1)<span style="color:#f92672">|</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>ADPS0));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">conversion</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">//start conversion
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   ADCSRA<span style="color:#f92672">|=</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>ADSC);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">port_init</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   DDRC <span style="color:#f92672">=</span> <span style="color:#ae81ff">0xcf</span>;
+</span></span><span style="display:flex;"><span>   DDRD <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> RS)<span style="color:#f92672">|</span>(<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> EN);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">LCD_STROBE</span>(<span style="color:#66d9ef">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   PORTD <span style="color:#f92672">|=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> EN);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">_delay_us</span>(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>   PORTD <span style="color:#f92672">&amp;=</span> <span style="color:#f92672">~</span>(<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> EN);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">data</span>(<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> c)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   PORTD <span style="color:#f92672">|=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> RS);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">_delay_us</span>(<span style="color:#ae81ff">50</span>);
+</span></span><span style="display:flex;"><span>   databits <span style="color:#f92672">=</span> (c <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">4</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">LCD_STROBE</span>();
+</span></span><span style="display:flex;"><span>   databits <span style="color:#f92672">=</span> (c);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">LCD_STROBE</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">cmd</span>(<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> c)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   PORTD <span style="color:#f92672">&amp;=</span> <span style="color:#f92672">~</span>(<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> RS);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">_delay_us</span>(<span style="color:#ae81ff">50</span>);
+</span></span><span style="display:flex;"><span>   databits <span style="color:#f92672">=</span> (c <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">4</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">LCD_STROBE</span>();
+</span></span><span style="display:flex;"><span>   databits <span style="color:#f92672">=</span> (c);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">LCD_STROBE</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">clear</span>(<span style="color:#66d9ef">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">cmd</span>(<span style="color:#ae81ff">0x01</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">_delay_ms</span>(<span style="color:#ae81ff">5</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">lcd_init</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">_delay_ms</span>(<span style="color:#ae81ff">15</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">cmd</span>(<span style="color:#ae81ff">0x30</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">_delay_ms</span>(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">cmd</span>(<span style="color:#ae81ff">0x30</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">_delay_us</span>(<span style="color:#ae81ff">100</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">cmd</span>(<span style="color:#ae81ff">0x30</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">cmd</span>(<span style="color:#ae81ff">0x28</span>); <span style="color:#75715e">// Function set (4-bit interface, 2 lines, 5*7Pixels)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#a6e22e">cmd</span>(<span style="color:#ae81ff">0x28</span>); <span style="color:#75715e">// Function set (4-bit interface, 2 lines, 5*7Pixels)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#a6e22e">cmd</span>(<span style="color:#ae81ff">0x0c</span>); <span style="color:#75715e">// Make cursorinvisible
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#a6e22e">clear</span>(); <span style="color:#75715e">// Clear screen
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#a6e22e">cmd</span>(<span style="color:#ae81ff">0x6</span>); <span style="color:#75715e">// Set entry Mode(auto increment of cursor)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>p)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">while</span>(<span style="color:#f92672">*</span>p) <span style="color:#a6e22e">data</span>(<span style="color:#f92672">*</span>p<span style="color:#f92672">++</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">char</span> a[<span style="color:#ae81ff">5</span>],b[<span style="color:#ae81ff">5</span>];
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">int</span> c,d; 
+</span></span><span style="display:flex;"><span>   DDRB<span style="color:#f92672">=</span><span style="color:#ae81ff">0x01</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">_delay_ms</span>(<span style="color:#ae81ff">50</span>);
+</span></span><span style="display:flex;"><span>   TCCR1B<span style="color:#f92672">|=</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>CS10)<span style="color:#f92672">|</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;&lt;</span>CS12);<span style="color:#75715e">//prescale 1024
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#a6e22e">port_init</span>();
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">adc_init</span>();
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">lcd_init</span>();
+</span></span><span style="display:flex;"><span>   PORTB<span style="color:#f92672">=</span><span style="color:#ae81ff">0x01</span>;<span style="color:#75715e">//applying vcc to RC circuit
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   TCNT1<span style="color:#f92672">=</span><span style="color:#ae81ff">0x00</span>;<span style="color:#75715e">//start the timer
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">while</span>(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>   { 
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">conversion</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span>( ADIF));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span>(ADCH<span style="color:#f92672">==</span><span style="color:#ae81ff">161</span>)<span style="color:#75715e">//63% of the input voltage
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      { 
+</span></span><span style="display:flex;"><span>         c<span style="color:#f92672">=</span>TCNT1; 
+</span></span><span style="display:flex;"><span>         d<span style="color:#f92672">=</span>ADCH;
+</span></span><span style="display:flex;"><span>         <span style="color:#a6e22e">itoa</span>(c,a,<span style="color:#ae81ff">10</span>);<span style="color:#75715e">//integer to ASCII
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>         <span style="color:#a6e22e">itoa</span>(d,b,<span style="color:#ae81ff">10</span>);<span style="color:#75715e">//integer to ASCII
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>         row1; 
+</span></span><span style="display:flex;"><span>         <span style="color:#a6e22e">print</span>(a);<span style="color:#75715e">//showing timer value
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>         row2;
+</span></span><span style="display:flex;"><span>         <span style="color:#a6e22e">print</span>(b);<span style="color:#75715e">//showing adc value
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      }
+</span></span><span style="display:flex;"><span>   } 
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
      style="display:block; text-align:center;"
      data-ad-layout="in-article"
@@ -333,12 +322,12 @@ if (!doNotTrack) {
 </script>
 <ul class="pa0">
   
-   <li class="list">
-     <a href="/tags/avr" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">AVR</a>
+   <li class="list di">
+     <a href="/tags/avr/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">AVR</a>
    </li>
   
-   <li class="list">
-     <a href="/tags/embedded" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Embedded</a>
+   <li class="list di">
+     <a href="/tags/embedded/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Embedded</a>
    </li>
   
 </ul>
@@ -346,7 +335,7 @@ if (!doNotTrack) {
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -420,41 +409,36 @@ if (!doNotTrack) {
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://prabeesh.github.io/" >
-    &copy;  This is the one of the solutions 2021 
+    &copy;  This is the one of the solutions 2023 
   </a>
     <div>
-
-
-
-
-<a href="https://twitter.com/prabeesh_k" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
-  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+<div class="ananke-socials">
+  
+    
+    <a href="https://twitter.com/prabeesh_k" target="_blank" rel="noopener" class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" aria-label="follow on Twitter——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
 </svg>
 </span></a>
-
-
-
-
-<a href="https://www.linkedin.com/in/prabeeshk/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
-  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+  
+    
+    <a href="https://www.linkedin.com/in/prabeeshk/" target="_blank" rel="noopener" class="linkedin ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
 </svg>
-
-<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
 </svg>
 </span></a>
-
-
-
-
-
-
-
-
+  
+</div>
 </div>
   </div>
 </footer>

@@ -6,11 +6,7 @@
     <description>Recent content in Tags on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Dec 2016 11:45:18 +0400</lastBuildDate>
-    
-	<atom:link href="https://prabeesh.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 07 Dec 2016 11:45:18 +0400</lastBuildDate><atom:link href="https://prabeesh.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Apache Spark</title>
       <link>https://prabeesh.github.io/tags/apache-spark/</link>

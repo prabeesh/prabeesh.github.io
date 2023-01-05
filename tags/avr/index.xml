@@ -6,11 +6,7 @@
     <description>Recent content in AVR on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Jul 2012 23:39:00 +0530</lastBuildDate>
-    
-	<atom:link href="https://prabeesh.github.io/tags/avr/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 14 Jul 2012 23:39:00 +0530</lastBuildDate><atom:link href="https://prabeesh.github.io/tags/avr/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Finding RC constant using ATmega8</title>
       <link>https://prabeesh.github.io/blog/2012/07/14/finding-rc-constant-using-atmega8/</link>
