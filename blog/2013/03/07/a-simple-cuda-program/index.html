@@ -6,15 +6,7 @@
     
     <title>Simple CUDA program | This is the one of the solutions</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="In my previous post I wrote about an introduction to parallel programming with CUDA. In this post explaining a simple example CUDA code to compute squares of 64 numbers. A typical GPU program consists of following steps.
-1- CPU allocates storage on GPU
-2- CPU copies input data from CPU to GPU
-3- CPU launch kernels on GPU to process the data
-4- CPU copies result back to CPU from GPU
-
-nvcc -o square square.cu
-Here is instead of running the regular C compiler we are running nvcc, the Nvidia C Compiler. The output is going to go an executable called square and our input file is &ldquo;square.cu&rdquo;. cu is the convention for how we name.Source code is available on github
-We are going to walk through the CPU code first.">
+    <meta name="description" content="Get a comprehensive overview of GPU programming with CUDA in this blog post. From using the Nvidia C Compiler and allocating GPU memory, to launching kernels and transferring data between the CPU and GPU, you&#39;ll find all the key concepts and functions explained in detail. You&#39;ll also see how to set the CUDA grid size and block size, and how to use CUDA conventions, cudaMalloc, cudaMemcpy, and the CUDA kernel launch operator in a simple example code that computes the squares of 64 numbers. Plus, learn how to check for errors and get the source code on GitHub.">
     <meta name="generator" content="Hugo 0.109.0">
     
     
@@ -40,42 +32,18 @@ We are going to walk through the CPU code first.">
     
     
     <meta property="og:title" content="Simple CUDA program" />
-<meta property="og:description" content="In my previous post I wrote about an introduction to parallel programming with CUDA. In this post explaining a simple example CUDA code to compute squares of 64 numbers. A typical GPU program consists of following steps.
-1- CPU allocates storage on GPU
-2- CPU copies input data from CPU to GPU
-3- CPU launch kernels on GPU to process the data
-4- CPU copies result back to CPU from GPU
-
-nvcc -o square square.cu
-Here is instead of running the regular C compiler we are running nvcc, the Nvidia C Compiler. The output is going to go an executable called square and our input file is &ldquo;square.cu&rdquo;. cu is the convention for how we name.Source code is available on github
-We are going to walk through the CPU code first." />
+<meta property="og:description" content="Get a comprehensive overview of GPU programming with CUDA in this blog post. From using the Nvidia C Compiler and allocating GPU memory, to launching kernels and transferring data between the CPU and GPU, you&#39;ll find all the key concepts and functions explained in detail. You&#39;ll also see how to set the CUDA grid size and block size, and how to use CUDA conventions, cudaMalloc, cudaMemcpy, and the CUDA kernel launch operator in a simple example code that computes the squares of 64 numbers. Plus, learn how to check for errors and get the source code on GitHub." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://prabeesh.github.io/blog/2013/03/07/a-simple-cuda-program/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2013-03-07T11:00:00+05:30" />
 <meta property="article:modified_time" content="2013-03-07T11:00:00+05:30" />
 <meta itemprop="name" content="Simple CUDA program">
-<meta itemprop="description" content="In my previous post I wrote about an introduction to parallel programming with CUDA. In this post explaining a simple example CUDA code to compute squares of 64 numbers. A typical GPU program consists of following steps.
-1- CPU allocates storage on GPU
-2- CPU copies input data from CPU to GPU
-3- CPU launch kernels on GPU to process the data
-4- CPU copies result back to CPU from GPU
-
-nvcc -o square square.cu
-Here is instead of running the regular C compiler we are running nvcc, the Nvidia C Compiler. The output is going to go an executable called square and our input file is &ldquo;square.cu&rdquo;. cu is the convention for how we name.Source code is available on github
-We are going to walk through the CPU code first."><meta itemprop="datePublished" content="2013-03-07T11:00:00+05:30" />
+<meta itemprop="description" content="Get a comprehensive overview of GPU programming with CUDA in this blog post. From using the Nvidia C Compiler and allocating GPU memory, to launching kernels and transferring data between the CPU and GPU, you&#39;ll find all the key concepts and functions explained in detail. You&#39;ll also see how to set the CUDA grid size and block size, and how to use CUDA conventions, cudaMalloc, cudaMemcpy, and the CUDA kernel launch operator in a simple example code that computes the squares of 64 numbers. Plus, learn how to check for errors and get the source code on GitHub."><meta itemprop="datePublished" content="2013-03-07T11:00:00+05:30" />
 <meta itemprop="dateModified" content="2013-03-07T11:00:00+05:30" />
-<meta itemprop="wordCount" content="1070">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta itemprop="wordCount" content="1317">
+<meta itemprop="keywords" content="CUDA,Parallel programming,GPU programming," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Simple CUDA program"/>
-<meta name="twitter:description" content="In my previous post I wrote about an introduction to parallel programming with CUDA. In this post explaining a simple example CUDA code to compute squares of 64 numbers. A typical GPU program consists of following steps.
-1- CPU allocates storage on GPU
-2- CPU copies input data from CPU to GPU
-3- CPU launch kernels on GPU to process the data
-4- CPU copies result back to CPU from GPU
-
-nvcc -o square square.cu
-Here is instead of running the regular C compiler we are running nvcc, the Nvidia C Compiler. The output is going to go an executable called square and our input file is &ldquo;square.cu&rdquo;. cu is the convention for how we name.Source code is available on github
-We are going to walk through the CPU code first."/>
+<meta name="twitter:description" content="Get a comprehensive overview of GPU programming with CUDA in this blog post. From using the Nvidia C Compiler and allocating GPU memory, to launching kernels and transferring data between the CPU and GPU, you&#39;ll find all the key concepts and functions explained in detail. You&#39;ll also see how to set the CUDA grid size and block size, and how to use CUDA conventions, cudaMalloc, cudaMemcpy, and the CUDA kernel launch operator in a simple example code that computes the squares of 64 numbers. Plus, learn how to check for errors and get the source code on GitHub."/>
 
       
 <script type="application/javascript">
@@ -213,7 +181,16 @@ if (!doNotTrack) {
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>In my <a href="/blog/2013/02/22/introduction-to-parallel-programing/">previous post</a> I wrote about an introduction to parallel programming with CUDA. In this post explaining a simple example CUDA code to compute squares of 64 numbers. A typical GPU program consists of following steps.</p>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>This blog post is an introduction to the world of GPU programming with CUDA. We will cover the fundamental concepts and tools necessary to get started with CUDA, including:</p>
+<ul>
+<li>The steps involved in a typical GPU program, such as allocating storage on the GPU, transferring data between the CPU and GPU, and launching kernels on the GPU to process the data.</li>
+<li>How to use the Nvidia C Compiler (nvcc) to compile CUDA code and follow conventions like naming GPU data with a &ldquo;d&rdquo; prefix.</li>
+<li>Key functions like cudaMalloc and cudaMemcpy that are used to allocate GPU memory and transfer data between the host and device.</li>
+<li>The kernel launch operator and how to set the number of blocks and threads in the grid, as well as how to pass arguments to the kernel function.</li>
+<li>The importance of error checking in CUDA code.</li>
+</ul>
+<p>To help illustrate these concepts, provided a simple example code that computes the squares of 64 numbers using CUDA. By the end of this post, you will have a basic foundation in GPU programming with CUDA and be ready to write your own programs and experience the performance benefits of using the GPU for parallel processing.</p>
+<p>In my <a href="/blog/2013/02/22/introduction-to-parallel-programing/">previous post</a> I wrote about an introduction to parallel programming with CUDA. In this post explaining a simple example CUDA code to compute squares of 64 numbers. A typical GPU program consists of following steps.</p>
 <pre><code>1- CPU allocates storage on GPU
 2- CPU copies input data from CPU to GPU
 3- CPU launch kernels on GPU to process the data
@@ -269,7 +246,8 @@ if (!doNotTrack) {
 <p>Just know that this is the way;that CUDA knows this code is a kernel as opposed to CPU code. Next we have void. Void just means the kernel doesn&rsquo;t return a value. Instead it writes the;output into the pointer specified in its argument list. This kernel takes two arguments. These are pointers to the output and the input arrays.</p>
 <p>Let&rsquo;s walk through the body of the kernel. So the first line of the body here. CUDA has a built in variable called thread index, threadIDX, and that&rsquo;s going to tell each thread its index within a block. threadIDX is actually a c struct with 3 members. .x, .y, and .z. the c struct is called a dim 3. Now, we will launch 64 threads. So for the first instance of those threads, threadIDX.x will return zero, for the second instance, 1. And so on, up to 63 for the last element. Everything else in this kernel just looks like straightforward C. It looks just like a serial program.</p>
 <p>For each thread, we&rsquo;re going to first read the array element corresponding to this thread index from global memory. We are going to store it in this float;variable f. We are then going to square f, and we&rsquo;re going to write that value back to global memory, in the output array element that corresponds to our thread index.</p>
-<p>This blog is my short notes as part of the course now I am doing in the Udacity <a href="https://www.udacity.com/course/cs344">Intro to Parallel Programming</a></p><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<p>This blog is my short notes as part of the course now I am doing in the Udacity <a href="https://www.udacity.com/course/cs344">Intro to Parallel Programming</a></p>
+<p>Thank you for reading this introduction to GPU programming with CUDA! I hope you now have a good understanding of the basic concepts and tools needed to get started with CUDA and write your own GPU programs. Good luck on your journey into the world of GPU programming with CUDA!</p><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
      style="display:block; text-align:center;"
      data-ad-layout="in-article"
@@ -280,6 +258,18 @@ if (!doNotTrack) {
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 <ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/cuda/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">CUDA</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/parallel-programming/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Parallel programming</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/gpu-programming/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">GPU programming</a>
+   </li>
   
 </ul>
 <div class="mt6 instapaper_ignoref">
@@ -319,10 +309,6 @@ if (!doNotTrack) {
     <ul class="pa0 list">
 	   
 	     <li  class="mb2">
-          <a href="/blog/2013/02/09/developing-a-simple-game-with-html5-slash-canvas/">Developing a simple game with HTML5/canvas</a>
-        </li>
-	    
-	     <li  class="mb2">
           <a href="/blog/2012/02/21/introduction-to-avr-programing/">Introduction to AVR programming</a>
         </li>
 	    
@@ -331,11 +317,7 @@ if (!doNotTrack) {
         </li>
 	    
 	     <li  class="mb2">
-          <a href="/blog/2012/07/04/lcd-interfacing-using-msp430/">LCD Interfacing using msp430</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/blog/2011/09/25/am-plot-matplotlib/">AM Generation using Matplotlib Python</a>
+          <a href="/blog/2012/07/04/simplest-and-low-cost-usb-avr/">Simplest and Low cost USB AVR Programmer USBtinyISP</a>
         </li>
 	    
     </ul>
