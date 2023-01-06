@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Performance Tuning on Apache Spark | This is the one of the solutions</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Performance tuning Apache Spark is essential to ensure that your data processing tasks are efficient and run smoothly. This blog post covers common issues to consider when optimizing Apache Spark, including spill prevention, skew reduction, shuffle minimization, storage optimization, and serialization optimization. Tips and examples are provided to help you implement techniques like salted joins, adaptive query execution, repartition() usage, bucketing, sampling, narrow transformation usage, pre-shuffling, broadcasting, manual compaction, data bricks delta, Tungsten, higher-order functions, Pandas, vectorized UDFs, SQL higher-order functions, and PySpark usage. By properly addressing these issues, you can optimize your Apache Spark tasks and improve their performance.">
+    <meta name="generator" content="Hugo 0.109.0">
+    
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.9fd9fa2e85d47f2129854290323c39a3ac54e524ed21004a7d9278a5188721f7.css" >
+
+
+
+    
+    
+    
+      
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+
+    
+
+    
+    
+    <meta property="og:title" content="Performance Tuning on Apache Spark" />
+<meta property="og:description" content="Performance tuning Apache Spark is essential to ensure that your data processing tasks are efficient and run smoothly. This blog post covers common issues to consider when optimizing Apache Spark, including spill prevention, skew reduction, shuffle minimization, storage optimization, and serialization optimization. Tips and examples are provided to help you implement techniques like salted joins, adaptive query execution, repartition() usage, bucketing, sampling, narrow transformation usage, pre-shuffling, broadcasting, manual compaction, data bricks delta, Tungsten, higher-order functions, Pandas, vectorized UDFs, SQL higher-order functions, and PySpark usage. By properly addressing these issues, you can optimize your Apache Spark tasks and improve their performance." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://prabeesh.github.io/blog/2023/01/06/performance-tuning-on-apache-spark/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-01-06T11:51:39+01:00" />
+<meta property="article:modified_time" content="2023-01-06T11:51:39+01:00" />
+<meta itemprop="name" content="Performance Tuning on Apache Spark">
+<meta itemprop="description" content="Performance tuning Apache Spark is essential to ensure that your data processing tasks are efficient and run smoothly. This blog post covers common issues to consider when optimizing Apache Spark, including spill prevention, skew reduction, shuffle minimization, storage optimization, and serialization optimization. Tips and examples are provided to help you implement techniques like salted joins, adaptive query execution, repartition() usage, bucketing, sampling, narrow transformation usage, pre-shuffling, broadcasting, manual compaction, data bricks delta, Tungsten, higher-order functions, Pandas, vectorized UDFs, SQL higher-order functions, and PySpark usage. By properly addressing these issues, you can optimize your Apache Spark tasks and improve their performance."><meta itemprop="datePublished" content="2023-01-06T11:51:39+01:00" />
+<meta itemprop="dateModified" content="2023-01-06T11:51:39+01:00" />
+<meta itemprop="wordCount" content="1252">
+<meta itemprop="keywords" content="Apache Spark,Performance Tuning,Pyspark,Big Data," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Performance Tuning on Apache Spark"/>
+<meta name="twitter:description" content="Performance tuning Apache Spark is essential to ensure that your data processing tasks are efficient and run smoothly. This blog post covers common issues to consider when optimizing Apache Spark, including spill prevention, skew reduction, shuffle minimization, storage optimization, and serialization optimization. Tips and examples are provided to help you implement techniques like salted joins, adaptive query execution, repartition() usage, bucketing, sampling, narrow transformation usage, pre-shuffling, broadcasting, manual compaction, data bricks delta, Tungsten, higher-order functions, Pandas, vectorized UDFs, SQL higher-order functions, and PySpark usage. By properly addressing these issues, you can optimize your Apache Spark tasks and improve their performance."/>
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-56250765-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+	<script data-ad-client="ca-pub-1368619820510426" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        This is the one of the solutions
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/" title="Blogs page">
+              Blogs
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+    
+    <a href="https://twitter.com/prabeesh_k" target="_blank" rel="noopener" class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" aria-label="follow on Twitter——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    
+    <a href="https://www.linkedin.com/in/prabeeshk/" target="_blank" rel="noopener" class="linkedin ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        BLOGS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+      
+      <a href="https://twitter.com/share?url=https://prabeesh.github.io/blog/2023/01/06/performance-tuning-on-apache-spark/&amp;text=Performance%20Tuning%20on%20Apache%20Spark" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
+        
+        <span class="icon"> <svg style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+</span>
+        
+      </a>
+    
+      
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://prabeesh.github.io/blog/2023/01/06/performance-tuning-on-apache-spark/&amp;title=Performance%20Tuning%20on%20Apache%20Spark" class="ananke-social-link linkedin no-underline" aria-label="share on LinkedIn">
+        
+        <span class="icon"> <svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+        
+      </a>
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Performance Tuning on Apache Spark</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2023-01-06T11:51:39+01:00">January 6, 2023</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Performance tuning is an important aspect of working with Apache Spark, as it can help ensure that your data processing tasks are efficient and run smoothly. In this blog post, we wil delve into the common issues that can be considered when tuning the performance of Apache Spark. These issues include spill, skew, shuffle, storage, and serialization.</p>
+<h3 id="spill">Spill</h3>
+<p>One problem that can occur is spill, which is the writing of temp files to disk due to a lack of memory. This can happen when the data being processed is too large to fit into memory, and it can significantly impact the performance of your tasks.</p>
+<p>To avoid spill, you can try using techniques like salted joins or adaptive query execution. For example, you can use a salted join in PySpark as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#75715e"># Use a salted join to avoid spill</span>
+</span></span><span style="display:flex;"><span>df1 <span style="color:#f92672">=</span> df1<span style="color:#f92672">.</span>withColumn(<span style="color:#e6db74">&#34;salt&#34;</span>, functions<span style="color:#f92672">.</span>monotonically_increasing_id())
+</span></span><span style="display:flex;"><span>df2 <span style="color:#f92672">=</span> df2<span style="color:#f92672">.</span>withColumn(<span style="color:#e6db74">&#34;salt&#34;</span>, functions<span style="color:#f92672">.</span>monotonically_increasing_id())
+</span></span><span style="display:flex;"><span>df1<span style="color:#f92672">.</span>join(df2, on<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;key&#34;</span>, <span style="color:#e6db74">&#34;salt&#34;</span>], how<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inner&#34;</span>)<span style="color:#f92672">.</span>drop(<span style="color:#e6db74">&#34;salt&#34;</span>)
+</span></span></code></pre></div><p>Also it is important to ensure that you have enough memory available to avoid spills. One way to do this is by increasing the amount of memory available to the JVM. You can do this by using the following code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>spark<span style="color:#f92672">.</span>conf<span style="color:#f92672">.</span>set(<span style="color:#e6db74">&#34;spark.executor.memory&#34;</span>, <span style="color:#e6db74">&#34;16g&#34;</span>)
+</span></span></code></pre></div><h3 id="skew">Skew</h3>
+<p>Another issue that can arise is skew, which refers to an imbalance in the size of the partitions. When the size of the partitions is not evenly distributed, it can lead to a skewed workload, which can negatively impact performance, which can lead to some tasks taking longer than others. This can be mitigated by ensuring that the data is evenly distributed across the partitions. One way to do this is by using the repartition() function to redistribute the data evenly.</p>
+<p>You can also try manually redistributing the data or using techniques like bucketing or sampling. For example, you can use bucketing in PySpark as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#75715e"># Use bucketing to address skew</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>bucketBy(<span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#34;key&#34;</span>)
+</span></span></code></pre></div><p>If you do encounter skew, it&rsquo;s important to check each stage and ensure that the shuffle is almost equal. A small amount of skew, less than 20%, is usually ignorable.</p>
+<h3 id="shuffle">Shuffle</h3>
+<p>Shuffle is another problem that can arise during performance tuning. Shuffle refers to the act of moving data between executors, and it can be resource-intensive and lead to slower processing times. To minimize the impact of shuffle, you can try to avoid wide transformations, such as joins, distinct, groupBy, and orderBy, whenever possible. One way to do this is by using narrow transformations, which are independent of other partitions and do not involve shuffling. Examples of narrow transformations include map(), filter(), and reduce(). These operations can be much faster than wide transformations, which involve shuffling.</p>
+<p>You can also try using techniques like pre-shuffling and broadcasting smaller tables(~10MB) to reduce the amount of data that needs to be shuffled.</p>
+<p>For example, you can use pre-shuffling in PySpark as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#75715e"># Use pre-shuffling to reduce shuffle</span>
+</span></span><span style="display:flex;"><span>df1 <span style="color:#f92672">=</span> df1<span style="color:#f92672">.</span>repartition(<span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#34;key&#34;</span>)
+</span></span><span style="display:flex;"><span>df2 <span style="color:#f92672">=</span> df2<span style="color:#f92672">.</span>repartition(<span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#34;key&#34;</span>)
+</span></span></code></pre></div><h3 id="storage">Storage</h3>
+<p>Storage is another area that can impact performance, and it refers to a set of problems related to how the data is stored on disk. Issues like the tiny file problem, directory scanning, and schema evolution can all impact performance and should be addressed during tuning.</p>
+<p>One issue to be aware of is the tiny file problem, where small files can cause performance issues when reading and processing data. It&rsquo;s important to ensure that you have large enough part-files to avoid this issue. A general rule of thumb is to aim for part-files that are between 128MB and 1GB in size. One way to address the tiny file problem is by compact small files into larger ones.</p>
+<p>For example, you can use manual compaction in PySpark as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#75715e"># Use manual compaction to address the tiny file problem</span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>coalesce(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>write<span style="color:#f92672">.</span>mode(<span style="color:#e6db74">&#34;overwrite&#34;</span>)<span style="color:#f92672">.</span>parquet(<span style="color:#e6db74">&#34;output_path&#34;</span>)
+</span></span></code></pre></div><p>One tip is to always specify the schema when reading data. This can help reduce reading time, as Spark won&rsquo;t have to infer the schema on its own. For example, in PySpark you can specify the schema as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pyspark.sql.types <span style="color:#f92672">import</span> StructType, StructField, StringType, IntegerType
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>schema <span style="color:#f92672">=</span> StructType([
+</span></span><span style="display:flex;"><span>    StructField(<span style="color:#e6db74">&#34;name&#34;</span>, StringType(), <span style="color:#66d9ef">True</span>),
+</span></span><span style="display:flex;"><span>    StructField(<span style="color:#e6db74">&#34;age&#34;</span>, IntegerType(), <span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> spark<span style="color:#f92672">.</span>read<span style="color:#f92672">.</span>format(<span style="color:#e6db74">&#34;csv&#34;</span>) \
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span>option(<span style="color:#e6db74">&#34;header&#34;</span>, <span style="color:#e6db74">&#34;true&#34;</span>) \
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span>schema(schema) \
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span>load(<span style="color:#e6db74">&#34;data.csv&#34;</span>)
+</span></span></code></pre></div><h3 id="serialization">Serialization</h3>
+<p>Serialization is the distribution of code segments across the cluster. It&rsquo;s important to use efficient serialization techniques, such as Tungsten, to ensure that your data processing tasks are completed quickly. Tungsten is a serialization project developed specifically for Apache Spark, and it can significantly improve the performance of your data processing tasks. To enable Tungsten serialization in your Spark code, you can use the following code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#75715e"># Use Tungsten for serialization</span>
+</span></span><span style="display:flex;"><span>spark<span style="color:#f92672">.</span>conf<span style="color:#f92672">.</span>set(<span style="color:#e6db74">&#34;spark.sql.tungsten.enabled&#34;</span>, <span style="color:#e6db74">&#34;true&#34;</span>)
+</span></span></code></pre></div><p>One issue with serialization is Python overhead, which occurs when using Python User Defined Functions (UDFs) in Spark. Python UDFs can be slower than their Scala or Java counterparts due to the overhead of serializing and deserializing the data between the JVM and Python. This overhead can significantly impact the performance of your data processing tasks, especially if you are using a large number of UDFs.</p>
+<p>To mitigate this issue, it&rsquo;s recommended to use Python&rsquo;s higher-order functions instead of UDFs wherever possible. Higher-order functions are functions that operate on other functions, and they can often be more efficient than UDFs. For example, the map() function is a higher-order function that applies a given function to each element in a list. Here&rsquo;s an example of how you can use the map() function in place of a UDF:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#75715e"># Use the map() function to apply a function to each element in a list</span>
+</span></span><span style="display:flex;"><span>numbers <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>]
+</span></span><span style="display:flex;"><span>doubled_numbers <span style="color:#f92672">=</span> map(<span style="color:#66d9ef">lambda</span> x: x <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>, numbers)
+</span></span></code></pre></div><p>Another option is to use Pandas or vectorized UDFs, which can also be more performant than traditional UDFs. Pandas UDFs are functions that operate on Pandas DataFrames and Series, and they can be used to apply custom functions to large amounts of data in a highly efficient manner. Vectorized UDFs are similar to Pandas UDFs, but they operate on Apache Arrow data structures, which are even more efficient.</p>
+<p>To use a Pandas UDF in PySpark, you can use the following code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#75715e"># Define a Pandas UDF</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@pandas_udf</span>(returnType<span style="color:#f92672">=</span>DoubleType())
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">double</span>(x: pd<span style="color:#f92672">.</span>Series) <span style="color:#f92672">-&gt;</span> pd<span style="color:#f92672">.</span>Series:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Apply the Pandas UDF to a Spark DataFrame</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>withColumn(<span style="color:#e6db74">&#34;doubled_col&#34;</span>, double(df[<span style="color:#e6db74">&#34;col&#34;</span>]))
+</span></span></code></pre></div><p>Another option is to use SQL higher-order functions, which are very robust and efficient. These functions operate on a column of data and can be used in place of UDFs to improve performance. For example, the AVG() function is a SQL higher-order function that calculates the average value of a column. Here&rsquo;s an example of how you can use the AVG() function in a Spark SQL query:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#75715e"># Use the AVG() function to calculate the average value of a column</span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>createOrReplaceTempView(<span style="color:#e6db74">&#34;data&#34;</span>)
+</span></span><span style="display:flex;"><span>spark<span style="color:#f92672">.</span>sql(<span style="color:#e6db74">&#34;SELECT AVG(col) FROM data&#34;</span>)<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p>Overall, it&rsquo;s important to consider serialization when performance tuning on Apache Spark. By using more efficient serialization techniques, such as higher-order functions, Pandas or vectorized UDFs, and SQL higher-order functions, you can significantly improve the performance of your data processing tasks.</p>
+<p>It is also a good idea to use the sc.setJobDescription() function in your code. This will help you see the named description of the current job in the Spark UI, which can make it easier to debug specific jobs. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>sc<span style="color:#f92672">.</span>setJobDescription(<span style="color:#e6db74">&#34;Processing data for analysis&#34;</span>)
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>filter(df<span style="color:#f92672">.</span>age <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">30</span>)
+</span></span></code></pre></div><p>Overall, performance tuning on Apache Spark involves addressing a variety of issues, including spill, skew, shuffle, storage, and serialization. By properly addressing these problems, you can ensure that your data processing tasks are efficient and run smoothly.</p>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1368619820510426"
+     data-ad-slot="8785891120"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/apache-spark/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Apache Spark</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/performance-tuning/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Performance Tuning</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/pyspark/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Pyspark</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/big-data/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Big Data</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "prabeeshk" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/blog/2012/07/14/finding-rc-constant-using-atmega8/">Finding RC constant using ATmega8</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/2015/04/07/self-contained-pyspark-application/">Self Contained PySpark Application</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/2012/07/04/lcd-interfacing-using-msp430/">LCD Interfacing using msp430</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/2012/07/04/simplest-and-low-cost-usb-avr/">Simplest and Low cost USB AVR Programmer USBtinyISP</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/2013/03/31/paint-app-using-flask-with-mongodb/">Paint App using Flask with MongoDB</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/2015/06/19/pyspark-notebook-with-docker/">pyspark notebook with docker</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/2014/04/08/creating-uber-jar-for-spark-project-using-sbt-assembly/">Creating assembled JAR for Standalone Spark Application</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/2013/03/30/paint-app-using-javascript-and-canvas/">Paint app using JavaScript and Canvas</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/">Install Apache Spark 2 on Ubuntu 16.04 and Mac OS</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/">Install Apache Spark on Ubuntu-14.04</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/2014/04/01/a-standalone-spark-application-in-scala/">A Standalone Spark Application in Scala</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/">Installing Apache Spark on Ubuntu-12.04</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/2013/10/07/running-mesos-0130-on-ubuntu-1204/">Running Mesos-0.13.0  on Ubuntu-12.04</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/">MQTT Scala Publisher and Subscriber using Eclipse Paho</a>
+        </li>
+	    
+    </ul>
+</div>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1368619820510426"
+     data-ad-slot="3784614376"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://prabeesh.github.io/" >
+    &copy;  This is the one of the solutions 2023 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+    
+    <a href="https://twitter.com/prabeesh_k" target="_blank" rel="noopener" class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" aria-label="follow on Twitter——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    
+    <a href="https://www.linkedin.com/in/prabeeshk/" target="_blank" rel="noopener" class="linkedin ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

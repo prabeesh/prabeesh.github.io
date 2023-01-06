@@ -3,13 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://prabeesh.github.io/tags/apache-spark/</loc>
-    <lastmod>2016-12-07T11:45:18+04:00</lastmod>
+    <lastmod>2023-01-06T11:51:39+01:00</lastmod>
   </url><url>
     <loc>https://prabeesh.github.io/tags/big-data/</loc>
-    <lastmod>2016-12-07T11:45:18+04:00</lastmod>
+    <lastmod>2023-01-06T11:51:39+01:00</lastmod>
   </url><url>
     <loc>https://prabeesh.github.io/blog/</loc>
-    <lastmod>2016-12-07T11:45:18+04:00</lastmod>
+    <lastmod>2023-01-06T11:51:39+01:00</lastmod>
+  </url><url>
+    <loc>https://prabeesh.github.io/tags/performance-tuning/</loc>
+    <lastmod>2023-01-06T11:51:39+01:00</lastmod>
+  </url><url>
+    <loc>https://prabeesh.github.io/blog/2023/01/06/performance-tuning-on-apache-spark/</loc>
+    <lastmod>2023-01-06T11:51:39+01:00</lastmod>
+  </url><url>
+    <loc>https://prabeesh.github.io/tags/pyspark/</loc>
+    <lastmod>2023-01-06T11:51:39+01:00</lastmod>
+  </url><url>
+    <loc>https://prabeesh.github.io/tags/</loc>
+    <lastmod>2023-01-06T11:51:39+01:00</lastmod>
+  </url><url>
+    <loc>https://prabeesh.github.io/</loc>
+    <lastmod>2023-01-06T11:51:39+01:00</lastmod>
   </url><url>
     <loc>https://prabeesh.github.io/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/</loc>
     <lastmod>2016-12-07T11:45:18+04:00</lastmod>
@@ -17,19 +32,10 @@
     <loc>https://prabeesh.github.io/tags/mac-os-x/</loc>
     <lastmod>2016-12-07T11:45:18+04:00</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/</loc>
-    <lastmod>2016-12-07T11:45:18+04:00</lastmod>
-  </url><url>
-    <loc>https://prabeesh.github.io/</loc>
-    <lastmod>2016-12-07T11:45:18+04:00</lastmod>
-  </url><url>
     <loc>https://prabeesh.github.io/tags/ubuntu/</loc>
     <lastmod>2016-12-07T11:45:18+04:00</lastmod>
   </url><url>
     <loc>https://prabeesh.github.io/tags/ipython-notebook/</loc>
-    <lastmod>2015-06-19T23:08:08+04:00</lastmod>
-  </url><url>
-    <loc>https://prabeesh.github.io/tags/pyspark/</loc>
     <lastmod>2015-06-19T23:08:08+04:00</lastmod>
   </url><url>
     <loc>https://prabeesh.github.io/blog/2015/06/19/pyspark-notebook-with-docker/</loc>
