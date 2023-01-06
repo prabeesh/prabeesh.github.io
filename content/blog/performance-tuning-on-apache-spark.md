@@ -1,12 +1,12 @@
 ---
 title: "Performance Tuning on Apache Spark"
 date: 2023-01-06T11:51:39+01:00
-tags: [Apache Spark, Performance Tuning, Pyspark, Big Data]
+tags: [Apache Spark, Performance Tuning, PySpark, Big Data]
 keywords: Performance tuning Apache Spark, Apache Spark optimization, data processing tasks, preventing spills, reducing skew, minimizing shuffle, optimizing storage, optimizing serialization, avoiding temp files, optimizing memory, using salted joins, implementing adaptive query execution, increasing JVM memory, using repartition() function, implementing bucketing, using sampling, avoiding wide transformations, using narrow transformations, using map() function, using filter() function, using reduce() function, implementing pre-shuffling, broadcasting smaller tables, preventing tiny file problem, implementing manual compaction, using data bricks delta, optimizing directory scanning, optimizing schema evolution, using Tungsten, avoiding Python UDFs, using higher-order functions, using Pandas, using vectorized UDFs, using SQL higher-order functions, avoiding Java serialization, reducing Python overhead, using Spark UI, specifying job descriptions, specifying schema, using PySpark, using 128MB partitions, optimizing shuffle, optimizing data distribution, using join() function, using distinct() function, using groupBy() function, using orderBy() function, avoiding wide transformation shuffle, using narrow transformations, broadcasting 10MB tables, using bucketed datasets, avoiding 1GB part-files, implementing automatic compaction, optimizing schema merging, optimizing PySpark usage.
 description: Performance tuning Apache Spark is essential to ensure that your data processing tasks are efficient and run smoothly. This blog post covers common issues to consider when optimizing Apache Spark, including spill prevention, skew reduction, shuffle minimization, storage optimization, and serialization optimization. Tips and examples are provided to help you implement techniques like salted joins, adaptive query execution, repartition() usage, bucketing, sampling, narrow transformation usage, pre-shuffling, broadcasting, manual compaction, data bricks delta, Tungsten, higher-order functions, Pandas, vectorized UDFs, SQL higher-order functions, and PySpark usage. By properly addressing these issues, you can optimize your Apache Spark tasks and improve their performance.
 ---
 
-Performance tuning is an important aspect of working with Apache Spark, as it can help ensure that your data processing tasks are efficient and run smoothly. In this blog post, we wil delve into the common issues that can be considered when tuning the performance of Apache Spark. These issues include spill, skew, shuffle, storage, and serialization.
+Performance tuning is an important aspect of working with Apache Spark, as it can help ensure that your data processing tasks are efficient and run smoothly. In this blog post, we will delve into the common issues that can be considered when tuning the performance of Apache Spark. These issues include spill, skew, shuffle, storage, and serialization.
 
 ### Spill
 One problem that can occur is spill, which is the writing of temp files to disk due to a lack of memory. This can happen when the data being processed is too large to fit into memory, and it can significantly impact the performance of your tasks. 
@@ -78,7 +78,7 @@ df = spark.read.format("csv") \
 ```
 
 ### Serialization
-Serialization is the distribution of code segments across the cluster. It's important to use efficient serialization techniques, such as Tungsten, to ensure that your data processing tasks are completed quickly. Tungsten is a serialization project developed specifically for Apache Spark, and it can significantly improve the performance of your data processing tasks. To enable Tungsten serialization in your Spark code, you can use the following code:
+Serialization is the distribution of code segments across the cluster. It's important to use efficient serialization techniques, such as Tungsten. Tungsten is a serialization project developed specifically for Apache Spark, and it can significantly improve the performance of your data processing tasks. To enable Tungsten serialization in your Spark code, you can use the following code:
 
 ```Python
 # Use Tungsten for serialization
