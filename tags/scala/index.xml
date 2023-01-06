@@ -33,7 +33,8 @@
       <pubDate>Tue, 01 Apr 2014 22:56:00 +0530</pubDate>
       
       <guid>https://prabeesh.github.io/blog/2014/04/01/a-standalone-spark-application-in-scala/</guid>
-      <description>&lt;p&gt;Sharing  some ideas about how to create a Spark-streaming stand-alone application and how to run the Spark applications in scala-SDK (Eclipse IDE).&lt;/p&gt;
+      <description>&lt;p&gt;This blog post will guide you through the process of building a Spark application in Scala that calculates popular hashtags from a Twitter stream. You will also learn how to use the sbt eclipse plugin to run the application in the Eclipse Integrated Development Environment (IDE). Whether you are new to big data processing or looking to improve your skills in data enginering and analytics, this tutorial has something to offer. Follow along with our step-by-step guide to develop your own stand alone Spark application and enhance your abilities in this exciting field.&lt;/p&gt;
+&lt;p&gt;Sharing  some ideas about how to create a Spark-streaming stand-alone application and how to run the Spark applications in scala-SDK (Eclipse IDE).&lt;/p&gt;
 &lt;h2 id=&#34;building-spark-application-using-sbt&#34;&gt;Building Spark Application using SBT&lt;/h2&gt;
 &lt;p&gt;A Standalone application in Scala using Apache Spark API. The application is build using Simple Build Tool(SBT).&lt;/p&gt;
 &lt;p&gt;For  creating a stand alone app take the twitter popular tag &lt;a href=&#34;https://github.com/apache/spark/blob/branch-0.9/examples/src/main/scala/org/apache/spark/streaming/examples/TwitterPopularTags.scala&#34;&gt;example&lt;/a&gt;&lt;/p&gt;
