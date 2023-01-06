@@ -41,7 +41,7 @@
 <meta itemprop="description" content="Performance tuning Apache Spark is essential to ensure that your data processing tasks are efficient and run smoothly. This blog post covers common issues to consider when optimizing Apache Spark, including spill prevention, skew reduction, shuffle minimization, storage optimization, and serialization optimization. Tips and examples are provided to help you implement techniques like salted joins, adaptive query execution, repartition() usage, bucketing, sampling, narrow transformation usage, pre-shuffling, broadcasting, manual compaction, data bricks delta, Tungsten, higher-order functions, Pandas, vectorized UDFs, SQL higher-order functions, and PySpark usage. By properly addressing these issues, you can optimize your Apache Spark tasks and improve their performance."><meta itemprop="datePublished" content="2023-01-06T11:51:39+01:00" />
 <meta itemprop="dateModified" content="2023-01-06T11:51:39+01:00" />
 <meta itemprop="wordCount" content="1252">
-<meta itemprop="keywords" content="Apache Spark,Performance Tuning,Pyspark,Big Data," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Apache Spark,Performance Tuning,PySpark,Big Data," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Performance Tuning on Apache Spark"/>
 <meta name="twitter:description" content="Performance tuning Apache Spark is essential to ensure that your data processing tasks are efficient and run smoothly. This blog post covers common issues to consider when optimizing Apache Spark, including spill prevention, skew reduction, shuffle minimization, storage optimization, and serialization optimization. Tips and examples are provided to help you implement techniques like salted joins, adaptive query execution, repartition() usage, bucketing, sampling, narrow transformation usage, pre-shuffling, broadcasting, manual compaction, data bricks delta, Tungsten, higher-order functions, Pandas, vectorized UDFs, SQL higher-order functions, and PySpark usage. By properly addressing these issues, you can optimize your Apache Spark tasks and improve their performance."/>
 
@@ -181,7 +181,7 @@ if (!doNotTrack) {
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Performance tuning is an important aspect of working with Apache Spark, as it can help ensure that your data processing tasks are efficient and run smoothly. In this blog post, we wil delve into the common issues that can be considered when tuning the performance of Apache Spark. These issues include spill, skew, shuffle, storage, and serialization.</p>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Performance tuning is an important aspect of working with Apache Spark, as it can help ensure that your data processing tasks are efficient and run smoothly. In this blog post, we will delve into the common issues that can be considered when tuning the performance of Apache Spark. These issues include spill, skew, shuffle, storage, and serialization.</p>
 <h3 id="spill">Spill</h3>
 <p>One problem that can occur is spill, which is the writing of temp files to disk due to a lack of memory. This can happen when the data being processed is too large to fit into memory, and it can significantly impact the performance of your tasks.</p>
 <p>To avoid spill, you can try using techniques like salted joins or adaptive query execution. For example, you can use a salted join in PySpark as follows:</p>
@@ -270,7 +270,7 @@ if (!doNotTrack) {
    </li>
   
    <li class="list di">
-     <a href="/tags/pyspark/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Pyspark</a>
+     <a href="/tags/pyspark/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">PySpark</a>
    </li>
   
    <li class="list di">

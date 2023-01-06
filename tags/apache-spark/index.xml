@@ -13,7 +13,7 @@
       <pubDate>Fri, 06 Jan 2023 11:51:39 +0100</pubDate>
       
       <guid>https://prabeesh.github.io/blog/2023/01/06/performance-tuning-on-apache-spark/</guid>
-      <description>Performance tuning is an important aspect of working with Apache Spark, as it can help ensure that your data processing tasks are efficient and run smoothly. In this blog post, we wil delve into the common issues that can be considered when tuning the performance of Apache Spark. These issues include spill, skew, shuffle, storage, and serialization.
+      <description>Performance tuning is an important aspect of working with Apache Spark, as it can help ensure that your data processing tasks are efficient and run smoothly. In this blog post, we will delve into the common issues that can be considered when tuning the performance of Apache Spark. These issues include spill, skew, shuffle, storage, and serialization.
 Spill One problem that can occur is spill, which is the writing of temp files to disk due to a lack of memory.</description>
     </item>
     
