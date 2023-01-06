@@ -1,12 +1,15 @@
 ---
 title: "A Standalone Spark Application in Scala"
 date: 2014-04-01T22:56:00+05:30
-tags: [Apache Spark, SBT, Scala, Big Data]
-keywords: self contained spark application, stand alone spark application, spark streaming twitter example, spark eclipse plugin, apache spark tutorial, spark twitter streaming, scala spark, spark eclipse, apache spark example, apache spark scala, apache spark eclipse, spark stream, how to stand alone application in spark, spark sbt stand alone examples, spark stand alone examples, application in spark
-description: Self Contained Spark Applications Example, Spark Application in Scala, Building Spark Applications, Developing Spark Applications
+author: Prabeesh Keezhathra
+tags: [Apache Spark, SBT, Scala, Big Data, Data Engineering]
+keywords: Apache Spark tutorial, SBT for Spark applications, Scala and Spark integration, Big Data analytics with Spark, Spark streaming Twitter example, Eclipse plugin for Spark development, Spark Twitter streaming tutorial, Scala and Spark in Eclipse, Apache Spark Scala example, How to use Spark stream, Creating a standalone Spark application, Spark SBT stand alone examples for beginners, Spark stand alone examples for beginners, Developing Spark applications in Scala, Self contained Spark applications tutorial, Scala and Spark for big data processing, Building Spark applications with SBT, Spark-streaming standalone application tutorial
+description: Learn how to create a standalone Spark application in Scala using the Simple Build Tool (SBT) and run it on the Eclipse IDE. This tutorial covers building a Spark application to calculate popular hashtags over sliding windows from a Twitter stream and authenticating with Twitter credentials. Also provide instructions for using the sbt eclipse plugin to run a sbt project in Eclipse. Follow the step-by-step guide to develop your own Spark application and improve your skills in data engineering and analytics.
 ---
+This blog post will guide you through the process of building a Spark application in Scala that calculates popular hashtags from a Twitter stream. You will also learn how to use the sbt eclipse plugin to run the application in the Eclipse Integrated Development Environment (IDE). Whether you are new to big data processing or looking to improve your skills in data enginering and analytics, this tutorial has something to offer. Follow along with our step-by-step guide to develop your own stand alone Spark application and enhance your abilities in this exciting field.
 
-Sharing  some ideas about how to create a Spark-streaming stand-alone application and how to run the Spark applications in scala-SDK (Eclipse IDE). 
+Sharing  some ideas about how to create a Spark-streaming stand-alone application and how to run the Spark applications in scala-SDK (Eclipse IDE).
+
 ## Building Spark Application using SBT 
 A Standalone application in Scala using Apache Spark API. The application is build using Simple Build Tool(SBT). 
 
@@ -69,3 +72,5 @@ EclipseKeys.relativizeLibs := true
 
 (unmanagedSourceDirectories in Test) <<= (scalaSource in Test)(Seq(_))  
 ```
+
+It is hoped that this tutorial has provided you with the knowledge and resources needed to create your own standalone Spark application in Scala. By following the steps outlined in this blog post, you should now be able to build a Spark application that calculates popular hashtags from a Twitter stream and authenticate with Twitter credentials. You should also have the skills to use the sbt eclipse plugin to run the application in the Eclipse IDE. As you continue to learn and grow in the field of big data processing, it is important to remember to keep practicing and experimenting with different techniques and tools. With time and dedication, you can become a proficient data engineer and be able to tackle even the most complex data challenges.
