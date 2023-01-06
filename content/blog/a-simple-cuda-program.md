@@ -1,8 +1,20 @@
 ---
 title: Simple CUDA program
 date: 2013-03-07T11:00:00+05:30
-keywords: simple CUDA program, CUDA basic example, introduction to CUDA programming, CUDA for beginners, CUDA examples
+tags: [CUDA, Parallel programming, GPU programming]
+keywords: CUDA parallel programming, GPU programming steps, Nvidia C Compiler (nvcc), CUDA conventions (e.g. data on CPU starting with "h" and data on GPU starting with "d"), cudaMalloc, cudaMemcpy, CUDA kernel launch operator, GPU memory pointers, Memcpy function, CUDA dim3 grid size, CUDA block size, CUDA kernel arguments, CUDA kernel function, cudaDeviceSynchronize, cudaFree, CUDA error checking, CUDA code example for computing squares of 64 numbers
+description: Get a comprehensive overview of GPU programming with CUDA in this blog post. From using the Nvidia C Compiler and allocating GPU memory, to launching kernels and transferring data between the CPU and GPU, you'll find all the key concepts and functions explained in detail. You'll also see how to set the CUDA grid size and block size, and how to use CUDA conventions, cudaMalloc, cudaMemcpy, and the CUDA kernel launch operator in a simple example code that computes the squares of 64 numbers. Plus, learn how to check for errors and get the source code on GitHub.
 ---
+This blog post is an introduction to the world of GPU programming with CUDA. We will cover the fundamental concepts and tools necessary to get started with CUDA, including:
+
+- The steps involved in a typical GPU program, such as allocating storage on the GPU, transferring data between the CPU and GPU, and launching kernels on the GPU to process the data.
+- How to use the Nvidia C Compiler (nvcc) to compile CUDA code and follow conventions like naming GPU data with a "d" prefix.
+- Key functions like cudaMalloc and cudaMemcpy that are used to allocate GPU memory and transfer data between the host and device.
+- The kernel launch operator and how to set the number of blocks and threads in the grid, as well as how to pass arguments to the kernel function.
+- The importance of error checking in CUDA code.
+
+To help illustrate these concepts, provided a simple example code that computes the squares of 64 numbers using CUDA. By the end of this post, you will have a basic foundation in GPU programming with CUDA and be ready to write your own programs and experience the performance benefits of using the GPU for parallel processing.
+
 In my [previous post](/blog/2013/02/22/introduction-to-parallel-programing/) I wrote about an introduction to parallel programming with CUDA. In this post explaining a simple example CUDA code to compute squares of 64 numbers. A typical GPU program consists of following steps.
 
     1- CPU allocates storage on GPU
@@ -86,3 +98,5 @@ Let's walk through the body of the kernel. So the first line of the body here. C
 For each thread, we're going to first read the array element corresponding to this thread index from global memory. We are going to store it in this float;variable f. We are then going to square f, and we're going to write that value back to global memory, in the output array element that corresponds to our thread index.
 
 This blog is my short notes as part of the course now I am doing in the Udacity [Intro to Parallel Programming](https://www.udacity.com/course/cs344)
+
+Thank you for reading this introduction to GPU programming with CUDA! I hope you now have a good understanding of the basic concepts and tools needed to get started with CUDA and write your own GPU programs. Good luck on your journey into the world of GPU programming with CUDA!
