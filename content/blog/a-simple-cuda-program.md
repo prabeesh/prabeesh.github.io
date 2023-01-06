@@ -1,6 +1,7 @@
 ---
 title: Simple CUDA program
 date: 2013-03-07T11:00:00+05:30
+author: Prabeesh Keezhathra
 tags: [CUDA, Parallel programming, GPU programming]
 keywords: CUDA parallel programming, GPU programming steps, Nvidia C Compiler (nvcc), CUDA conventions (e.g. data on CPU starting with "h" and data on GPU starting with "d"), cudaMalloc, cudaMemcpy, CUDA kernel launch operator, GPU memory pointers, Memcpy function, CUDA dim3 grid size, CUDA block size, CUDA kernel arguments, CUDA kernel function, cudaDeviceSynchronize, cudaFree, CUDA error checking, CUDA code example for computing squares of 64 numbers
 description: Get a comprehensive overview of GPU programming with CUDA in this blog post. From using the Nvidia C Compiler and allocating GPU memory, to launching kernels and transferring data between the CPU and GPU, you'll find all the key concepts and functions explained in detail. You'll also see how to set the CUDA grid size and block size, and how to use CUDA conventions, cudaMalloc, cudaMemcpy, and the CUDA kernel launch operator in a simple example code that computes the squares of 64 numbers. Plus, learn how to check for errors and get the source code on GitHub.
