@@ -1,5 +1,5 @@
 ---
-title: "AM Generation using Matplotlib Python"
+title: "AM Wave Generation and Plotting with Matplotlib Python: A Detailed Guide"
 date: 2011-09-25T1:39:00+05:30
 author: Prabeesh Keezhathra
 tags: [Python, Matplotlib]

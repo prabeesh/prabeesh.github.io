@@ -1,5 +1,5 @@
 ---
-title: Simple CUDA program
+title: "Introduction to GPU Programming with CUDA: A Step-by-Step Guide to Key Concepts and Functions"
 date: 2013-03-07T11:00:00+05:30
 author: Prabeesh Keezhathra
 tags: [CUDA, Parallel programming, GPU programming]

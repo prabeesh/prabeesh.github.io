@@ -1,5 +1,5 @@
 ---
-title: "A Standalone Spark Application in Scala"
+title: "Creating a Standalone Spark Application in Scala: A Step-by-Step Guide with Twitter Streaming Example"
 date: 2014-04-01T22:56:00+05:30
 author: Prabeesh Keezhathra
 tags: [Apache Spark, SBT, Scala, Big Data, Data Engineering]
