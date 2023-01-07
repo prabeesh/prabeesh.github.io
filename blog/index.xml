@@ -32,7 +32,7 @@ Spill One problem that can occur is spill, which is the writing of temp files to
       <pubDate>Fri, 19 Jun 2015 23:08:08 +0400</pubDate>
       
       <guid>https://prabeesh.github.io/blog/2015/06/19/pyspark-notebook-with-docker/</guid>
-      <description>Apache Spark is a powerful big data processing engine that is well-suited for use in a distributed environment. One way to interact with Spark is through the use of an IPython Notebook, which allows you to run and debug your Spark code in an interactive manner. In this tutorial, we will guide you through the process of setting up and running a PySpark Notebook using Docker.
+      <description>Apache Spark is a powerful big data processing engine that is well-suited for use in a distributed environment. One way to interact with Spark is through the use of an IPython Notebook, which allows you to run and debug your Spark code in an interactive manner. This tutorial will guide you through the process of setting up and running a PySpark Notebook using Docker.
 Installing Docker Docker is a containerization platform that allows you to package and deploy your applications in a predictable and isolated environment.</description>
     </item>
     

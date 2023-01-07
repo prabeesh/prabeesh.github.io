@@ -40,7 +40,7 @@
 <meta itemprop="name" content="How to Run a PySpark Notebook with Docker">
 <meta itemprop="description" content="This tutorial will show you how to run a PySpark Notebook using Docker. Apache Spark is a powerful big data processing engine that can be used in a distributed environment. Learn how to install and use Docker to set up and run a PySpark Notebook."><meta itemprop="datePublished" content="2015-06-19T23:08:08+04:00" />
 <meta itemprop="dateModified" content="2015-06-19T23:08:08+04:00" />
-<meta itemprop="wordCount" content="271">
+<meta itemprop="wordCount" content="837">
 <meta itemprop="keywords" content="Apache Spark,IPython Notebook,Python,Big Data,PySpark,Docker," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="How to Run a PySpark Notebook with Docker"/>
 <meta name="twitter:description" content="This tutorial will show you how to run a PySpark Notebook using Docker. Apache Spark is a powerful big data processing engine that can be used in a distributed environment. Learn how to install and use Docker to set up and run a PySpark Notebook."/>
@@ -189,7 +189,7 @@ if (!doNotTrack) {
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Apache Spark is a powerful big data processing engine that is well-suited for use in a distributed environment. One way to interact with Spark is through the use of an IPython Notebook, which allows you to run and debug your Spark code in an interactive manner. In this tutorial, we will guide you through the process of setting up and running a PySpark Notebook using Docker.</p>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Apache Spark is a powerful big data processing engine that is well-suited for use in a distributed environment. One way to interact with Spark is through the use of an IPython Notebook, which allows you to run and debug your Spark code in an interactive manner. This tutorial will guide you through the process of setting up and running a PySpark Notebook using Docker.</p>
 <h3 id="installing-docker">Installing Docker</h3>
 <p>Docker is a containerization platform that allows you to package and deploy your applications in a predictable and isolated environment.</p>
 <p>To install Docker, use the following command. This command was run on an Ubuntu-14-04 instance, but you can find more options on the <a href="https://docs.docker.com/">Docker official site</a>.</p>
@@ -200,7 +200,96 @@ if (!doNotTrack) {
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># This command runs the pyspark-notebook Docker container and exposes port 8888 for access to the notebook</span>
 </span></span><span style="display:flex;"><span>docker run -d -t -p 8888:8888 prabeeshk/pyspark-notebook
 </span></span></code></pre></div><p>After the pyspark-notebook Docker container is up and running, you can access the PySpark Notebook by directing your web browser to <a href="http://127.0.0.1:8888">http://127.0.0.1:8888</a> or <a href="http://localhost:8888">http://localhost:8888</a>.</p>
-<p>For more information on the Docker image, check out the <a href="https://registry.hub.docker.com/u/prabeeshk">Dockerhub repository</a>. The source code can be found in the <a href="https://github.com/prabeesh/pyspark-notebook">GitHub repository</a>.</p>
+<p>For more information on the Docker image, check out the <a href="https://registry.hub.docker.com/u/prabeeshk">Dockerhub repository</a>.</p>
+<p>The source code can be found in the <a href="https://github.com/prabeesh/pyspark-notebook">GitHub repository</a>. Below, you will find the the custom PySpark startup script and the <code>Dockerfile</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#75715e">## PySpark Startup Script</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Import required modules</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> sys
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get the value of the SPARK_HOME environment variable</span>
+</span></span><span style="display:flex;"><span>spark_home <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>environ<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;SPARK_HOME&#39;</span>, <span style="color:#66d9ef">None</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If SPARK_HOME is not set, raise an error</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> spark_home:
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#39;SPARK_HOME environment variable is not set&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add the paths to the Python libraries for Spark and py4j to the system path</span>
+</span></span><span style="display:flex;"><span>sys<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>insert(<span style="color:#ae81ff">0</span>, os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(spark_home, <span style="color:#e6db74">&#39;python&#39;</span>))
+</span></span><span style="display:flex;"><span>sys<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>insert(<span style="color:#ae81ff">0</span>, os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(spark_home, <span style="color:#e6db74">&#39;python/lib/py4j-0.8.2.1-src.zip&#39;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Execute the pyspark shell script to launch PySpark</span>
+</span></span><span style="display:flex;"><span>execfile(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(spark_home, <span style="color:#e6db74">&#39;python/pyspark/shell.py&#39;</span>))
+</span></span></code></pre></div><p>This script is used to start PySpark in an IPython Notebook. It does this by importing the necessary <code>os</code> and <code>sys</code> modules and getting the value of the <code>SPARK_HOME</code> environment variable. If <code>SPARK_HOME</code> is not set, the script raises a <code>ValueError</code>. The script then adds the paths to the Python libraries for Spark and <code>py4j</code> to the system path and executes the pyspark shell script to launch PySpark in the IPython Notebook. The purpose of this script is to ensure that the required Python libraries for working with PySpark are present and that PySpark is properly initialized when the IPython Notebook is launched.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#75715e">## Dockerfile</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> ubuntu:trusty</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">MAINTAINER</span><span style="color:#e6db74"> Prabeesh Keezhathra.</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Update the package list and install Java</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    apt-get -y update <span style="color:#f92672">&amp;&amp;</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    echo <span style="color:#e6db74">&#34;deb http://ppa.launchpad.net/webupd8team/java/ubuntu precise main&#34;</span> &gt; /etc/apt/sources.list.d/webupd8team-java.list <span style="color:#f92672">&amp;&amp;</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    echo <span style="color:#e6db74">&#34;deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu precise main&#34;</span> &gt;&gt; /etc/apt/sources.list.d/webupd8team-java.list <span style="color:#f92672">&amp;&amp;</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886 <span style="color:#f92672">&amp;&amp;</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    apt-get -y update <span style="color:#f92672">&amp;&amp;</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    echo oracle-java7-installer shared/accepted-oracle-license-v1-1 <span style="color:#66d9ef">select</span> true | /usr/bin/debconf-set-selections <span style="color:#f92672">&amp;&amp;</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    apt-get install -y oracle-java7-installer <span style="color:#f92672">&amp;&amp;</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    apt-get install -y curl<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Set the version of Spark to install and the installation directory</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> SPARK_VERSION 1.4.0<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> SPARK_HOME /usr/local/src/spark-$SPARK_VERSION<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Download and extract Spark to the installation directory and build Spark</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    mkdir -p $SPARK_HOME <span style="color:#f92672">&amp;&amp;</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    curl -s http://d3kbcqa49mib13.cloudfront.net/spark-$SPARK_VERSION.tgz | tar -xz -C $SPARK_HOME --strip-components<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    cd $SPARK_HOME <span style="color:#f92672">&amp;&amp;</span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    build/mvn -DskipTests clean package<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Set the Python path to include the Spark installation</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> PYTHONPATH $SPARK_HOME/python/:$PYTHONPATH<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Install build essentials, Python, and the Python package manager pip</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt-get install -y build-essential<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>python<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>python-dev<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>python-pip<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Install Python libraries for interacting with Spark</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt-get install -y build-essential <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    python <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    python-dev <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    python-pip <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    python-zmq<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> pip install py4j <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    ipython<span style="color:#f92672">[</span>notebook<span style="color:#f92672">]==</span>3.2 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    jsonschema <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    jinja2 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    terminado <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    tornado<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Create an IPython profile for PySpark</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> ipython profile create pyspark<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Copy the custom PySpark startup script to the IPython profile directory</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> pyspark-notebook.py /root/.ipython/profile_pyspark/startup/pyspark-notebook.py<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Create a volume for the notebook directory</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">VOLUME</span><span style="color:#e6db74"> /notebook</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Set the working directory to the notebook directory</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /notebook</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Expose port 8888 for the IPython Notebook server</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 8888</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Run IPython with the PySpark profile and bind to all interfaces</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> ipython notebook --no-browser --profile<span style="color:#f92672">=</span>pyspark --ip<span style="color:#f92672">=</span>*<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>This Dockerfile creates a Docker image for running a PySpark Notebook. It does this by using the <code>ubuntu:trusty</code> base image and installing Java and several required packages, such as build essentials and Python. It then downloads and installs Apache Spark, sets the Python path to include the Spark installation, and installs Python libraries for interacting with Spark. The Dockerfile also creates an IPython profile for PySpark and copies a custom PySpark startup script to the profile directory. Finally, it creates a volume for the notebook directory, sets the working directory to the notebook directory, exposes port <code>8888</code> for the IPython Notebook server, and runs IPython with the PySpark profile, binding to all interfaces.</p>
 <p>This tutorial has shown you how to run a PySpark Notebook using Docker. The steps outlined in this tutorial guided you through installing Docker and running a PySpark Notebook, allowing you to take advantage of the interactive and debugging capabilities of the IPython Notebook while working with Spark, making it easier to analyze your data.</p>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
