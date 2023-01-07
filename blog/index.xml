@@ -89,7 +89,7 @@ instructions to set up Scala.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>A Standalone Spark Application in Scala</title>
+      <title>Creating a Standalone Spark Application in Scala: A Step-by-Step Guide with Twitter Streaming Example</title>
       <link>https://prabeesh.github.io/blog/2014/04/01/a-standalone-spark-application-in-scala/</link>
       <pubDate>Tue, 01 Apr 2014 22:56:00 +0530</pubDate>
       
@@ -180,7 +180,7 @@ MongoDB is an open-source, document-oriented database designed for ease of devel
     </item>
     
     <item>
-      <title>Simple CUDA program</title>
+      <title>Introduction to GPU Programming with CUDA: A Step-by-Step Guide to Key Concepts and Functions</title>
       <link>https://prabeesh.github.io/blog/2013/03/07/a-simple-cuda-program/</link>
       <pubDate>Thu, 07 Mar 2013 11:00:00 +0530</pubDate>
       
@@ -310,7 +310,7 @@ Take care in fuse bytes because arduino codes are running in 8MHz.Y ou can enabl
     </item>
     
     <item>
-      <title>AM Generation using Matplotlib Python</title>
+      <title>AM Wave Generation and Plotting with Matplotlib Python: A Detailed Guide</title>
       <link>https://prabeesh.github.io/blog/2011/09/25/am-plot-matplotlib/</link>
       <pubDate>Sun, 25 Sep 2011 01:39:00 +0530</pubDate>
       
