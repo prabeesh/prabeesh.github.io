@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>IPython Notebook on This is the one of the solutions</title>
-    <link>https://prabeesh.github.io/tags/ipython-notebook/</link>
-    <description>Recent content in IPython Notebook on This is the one of the solutions</description>
+    <title>Docker on This is the one of the solutions</title>
+    <link>https://prabeesh.github.io/tags/docker/</link>
+    <description>Recent content in Docker on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Jun 2015 23:08:08 +0400</lastBuildDate><atom:link href="https://prabeesh.github.io/tags/ipython-notebook/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Jun 2015 23:08:08 +0400</lastBuildDate><atom:link href="https://prabeesh.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Run a PySpark Notebook with Docker</title>
       <link>https://prabeesh.github.io/blog/2015/06/19/pyspark-notebook-with-docker/</link>
