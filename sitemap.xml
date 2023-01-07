@@ -77,7 +77,13 @@
     <loc>https://prabeesh.github.io/blog/2013/10/07/running-mesos-0130-on-ubuntu-1204/</loc>
     <lastmod>2013-10-07T10:53:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/mqtt-queue/</loc>
+    <loc>https://prabeesh.github.io/tags/iot/</loc>
+    <lastmod>2013-08-26T09:41:00+05:30</lastmod>
+  </url><url>
+    <loc>https://prabeesh.github.io/tags/message-queue/</loc>
+    <lastmod>2013-08-26T09:41:00+05:30</lastmod>
+  </url><url>
+    <loc>https://prabeesh.github.io/tags/mqtt/</loc>
     <lastmod>2013-08-26T09:41:00+05:30</lastmod>
   </url><url>
     <loc>https://prabeesh.github.io/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/</loc>

@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>MQTT Scala Publisher and Subscriber using Eclipse Paho | This is the one of the solutions</title>
+    <title>MQTT Publisher and Subscriber in Scala: A Step-by-Step Guide Using Eclipse Paho | This is the one of the solutions</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Implementation of MQTT in Scala, MQTT Publisher and Subscriber">
+    <meta name="description" content="Learn how to set up an MQTT publisher and subscriber in Scala using the Eclipse Paho library. MQTT (Message Queuing Telemetry Transport) is a popular protocol for machine-to-machine communication and Internet of Things (IoT) applications. Eclipse Paho is an open source project that provides MQTT client libraries in multiple programming languages. In this tutorial, we will go through the steps to install the Eclipse Paho library and use it to create an MQTT publisher and subscriber in Scala.">
     <meta name="generator" content="Hugo 0.109.0">
     
     
@@ -31,19 +31,19 @@
 
     
     
-    <meta property="og:title" content="MQTT Scala Publisher and Subscriber using Eclipse Paho" />
-<meta property="og:description" content="Implementation of MQTT in Scala, MQTT Publisher and Subscriber" />
+    <meta property="og:title" content="MQTT Publisher and Subscriber in Scala: A Step-by-Step Guide Using Eclipse Paho" />
+<meta property="og:description" content="Learn how to set up an MQTT publisher and subscriber in Scala using the Eclipse Paho library. MQTT (Message Queuing Telemetry Transport) is a popular protocol for machine-to-machine communication and Internet of Things (IoT) applications. Eclipse Paho is an open source project that provides MQTT client libraries in multiple programming languages. In this tutorial, we will go through the steps to install the Eclipse Paho library and use it to create an MQTT publisher and subscriber in Scala." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://prabeesh.github.io/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2013-08-26T09:41:00+05:30" />
 <meta property="article:modified_time" content="2013-08-26T09:41:00+05:30" />
-<meta itemprop="name" content="MQTT Scala Publisher and Subscriber using Eclipse Paho">
-<meta itemprop="description" content="Implementation of MQTT in Scala, MQTT Publisher and Subscriber"><meta itemprop="datePublished" content="2013-08-26T09:41:00+05:30" />
+<meta itemprop="name" content="MQTT Publisher and Subscriber in Scala: A Step-by-Step Guide Using Eclipse Paho">
+<meta itemprop="description" content="Learn how to set up an MQTT publisher and subscriber in Scala using the Eclipse Paho library. MQTT (Message Queuing Telemetry Transport) is a popular protocol for machine-to-machine communication and Internet of Things (IoT) applications. Eclipse Paho is an open source project that provides MQTT client libraries in multiple programming languages. In this tutorial, we will go through the steps to install the Eclipse Paho library and use it to create an MQTT publisher and subscriber in Scala."><meta itemprop="datePublished" content="2013-08-26T09:41:00+05:30" />
 <meta itemprop="dateModified" content="2013-08-26T09:41:00+05:30" />
-<meta itemprop="wordCount" content="99">
-<meta itemprop="keywords" content="Big Data,MQTT Queue," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="MQTT Scala Publisher and Subscriber using Eclipse Paho"/>
-<meta name="twitter:description" content="Implementation of MQTT in Scala, MQTT Publisher and Subscriber"/>
+<meta itemprop="wordCount" content="1525">
+<meta itemprop="keywords" content="Big Data,MQTT,Scala,Message Queue,IoT," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MQTT Publisher and Subscriber in Scala: A Step-by-Step Guide Using Eclipse Paho"/>
+<meta name="twitter:description" content="Learn how to set up an MQTT publisher and subscriber in Scala using the Eclipse Paho library. MQTT (Message Queuing Telemetry Transport) is a popular protocol for machine-to-machine communication and Internet of Things (IoT) applications. Eclipse Paho is an open source project that provides MQTT client libraries in multiple programming languages. In this tutorial, we will go through the steps to install the Eclipse Paho library and use it to create an MQTT publisher and subscriber in Scala."/>
 
       
 <script type="application/javascript">
@@ -153,7 +153,7 @@ if (!doNotTrack) {
   <div id="sharing" class="mt3 ananke-socials">
     
       
-      <a href="https://twitter.com/share?url=https://prabeesh.github.io/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/&amp;text=MQTT%20Scala%20Publisher%20and%20Subscriber%20using%20Eclipse%20Paho" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
+      <a href="https://twitter.com/share?url=https://prabeesh.github.io/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/&amp;text=MQTT%20Publisher%20and%20Subscriber%20in%20Scala:%20A%20Step-by-Step%20Guide%20Using%20Eclipse%20Paho" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
         
         <span class="icon"> <svg style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
 </span>
@@ -161,7 +161,7 @@ if (!doNotTrack) {
       </a>
     
       
-      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://prabeesh.github.io/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/&amp;title=MQTT%20Scala%20Publisher%20and%20Subscriber%20using%20Eclipse%20Paho" class="ananke-social-link linkedin no-underline" aria-label="share on LinkedIn">
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://prabeesh.github.io/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/&amp;title=MQTT%20Publisher%20and%20Subscriber%20in%20Scala:%20A%20Step-by-Step%20Guide%20Using%20Eclipse%20Paho" class="ananke-social-link linkedin no-underline" aria-label="share on LinkedIn">
         
         <span class="icon"> <svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
@@ -173,7 +173,15 @@ if (!doNotTrack) {
   </div>
 
 
-      <h1 class="f1 athelas mt3 mb1">MQTT Scala Publisher and Subscriber using Eclipse Paho</h1>
+      <h1 class="f1 athelas mt3 mb1">MQTT Publisher and Subscriber in Scala: A Step-by-Step Guide Using Eclipse Paho</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Prabeesh Keezhathra
+          
+          </strong>
+      </p>
       
       
       <time class="f6 mv4 dib tracked" datetime="2013-08-26T09:41:00+05:30">August 26, 2013</time>
@@ -181,11 +189,214 @@ if (!doNotTrack) {
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>MQTT is a machine-to-machine (M2M)/Internet of Things connectivity protocol. It was designed with extremely lightweight that support embedded and low power processing device. You may read more about it <a href="http://mqtt.org/">here</a>. MQTT is broker based message queuing system. To work with Mqtt, Mqtt Message broker/server required. <a href="http://mosquitto.org/">Mosquitto</a> is an open source Mqtt Broker. In ubuntu mosquitto can be installed using the command</p>
-<pre tabindex="0"><code>$ sudo apt-get install mosquitto
-</code></pre><p>Eclipse Paho is one mqtt client work well with mosquitto. You may read more about it <a href="http://www.eclipse.org/paho/">here</a>.</p>
-<p>MQTT Scala subscriber and publisher code based on eclipse paho library 0.4.0 is available in</p>
-<p><a href="https://github.com/prabeesh/MQTTScalaClient">github</a></p><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h3 id="what-is-mqtt">What is MQTT?</h3>
+<p>MQTT (Message Queuing Telemetry Transport) is a publish-subscribe based lightweight messaging protocol for use on top of the TCP/IP protocol. It was designed to be used in resource-constrained environments and for communication between devices with low-bandwidth or unreliable networks. MQTT is often used in Internet of Things (IoT) applications to communicate between devices and a central server, as well as in other types of messaging systems. In an MQTT system, there is a central broker that receives messages from publishers and routes them to subscribers that are subscribed to the relevant topic. MQTT is a lightweight and efficient protocol that makes it well-suited for IoT and messaging use cases.</p>
+<h4 id="message-broker">Message broker</h4>
+<p>Mosquitto is an open source message broker that implements the MQTT protocol. It is written in C and is designed to be lightweight and efficient, making it well-suited for use in resource-constrained environments such as those found in IoT devices. Mosquitto is often used as a central message broker in an MQTT system, receiving messages from publishers and routing them to subscribers that are subscribed to the relevant topic.</p>
+<p>One of the key features of Mosquitto is its ability to support multiple messaging patterns, including publish-subscribe, request-response, and event-driven messaging. This makes it a versatile choice for a wide range of MQTT-based applications. Additionally, Mosquitto supports secure communication using Transport Layer Security (TLS) and Secure Sockets Layer (SSL), making it suitable for use in secure environments.</p>
+<p>Overall, Mosquitto is a reliable and widely-used message broker that is well-suited for use in MQTT-based systems, particularly in the IoT space. In ubuntu mosquitto can be installed using the command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt-get install mosquitto
+</span></span></code></pre></div><h3 id="what-is-eclipse-paho">What is Eclipse Paho?</h3>
+<p>Eclipse Paho is an open source project that provides MQTT client libraries in multiple programming languages. It is a part of the Eclipse Foundation, a not-for-profit organization that supports the open source community. The Paho project was created in order to provide reliable open source implementations of MQTT and MQTT-SN messaging protocols that can be used by IoT developers and system integrators.</p>
+<p>The Eclipse Paho client libraries provide an easy-to-use API for developers to implement MQTT clients and applications. They support a wide range of programming languages, including Java, C, C++, Python, Scala and many others. The libraries are available under the Eclipse Public License (EPL) and are actively maintained by a community of developers.</p>
+<p>Overall, the Eclipse Paho client libraries are a reliable and widely-used choice for implementing MQTT clients and applications. They provide a simple API and support for multiple programming languages, making them a good choice for developers working on MQTT-based projects.</p>
+<p>Eclipse Paho is one mqtt client work well with mosquitto. You may read more about it <a href="http://www.eclipse.org/paho/">here</a>.</p>
+<h3 id="mqtt-publisher-and-subscriber-in-scala">MQTT Publisher and Subscriber in Scala</h3>
+<p>MQTT Scala subscriber and publisher code based on eclipse paho library 0.4.0 is available in the <a href="https://github.com/prabeesh/MQTTScalaClient">GitHub repository</a></p>
+<p>First, you will need to install the Eclipse Paho library. You can do this by adding the following dependency to your <code>build.sbt</code> file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Scala" data-lang="Scala"><span style="display:flex;"><span><span style="color:#75715e">// build.sbt
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// The name of the project
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>name <span style="color:#66d9ef">:</span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;MQTTScalaClient&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// The version of the project
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>version <span style="color:#66d9ef">:</span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0.2.0&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// The version of Scala used by the project
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>scalaVersion <span style="color:#66d9ef">:</span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;2.10.3&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Add the MQTT client library as a dependency
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>libraryDependencies <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;org.eclipse.paho&#34;</span> <span style="color:#f92672">%</span> <span style="color:#e6db74">&#34;mqtt-client&#34;</span> <span style="color:#f92672">%</span> <span style="color:#e6db74">&#34;0.4.0&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Add the MQTT repository as a resolver
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>resolvers <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;MQTT Repository&#34;</span> at <span style="color:#e6db74">&#34;https://repo.eclipse.org/content/repositories/paho-releases/&#34;</span>
+</span></span></code></pre></div><p>This <code>build.sbt</code> file specifies the name, version, and Scala version for the project, as well as the dependencies and repository needed to build and run the MQTT Scala client.</p>
+<p>Once the library is installed, you can start writing your publisher and subscriber code.</p>
+<h4 id="mqtt-publisher-in-scala">MQTT Publisher in Scala</h4>
+<p>To create an MQTT publisher in Scala, you will need to create an instance of the <code>MqttClient</code> class and connect to the MQTT broker. You can then use the <code>MqttClient#publish</code> method to send a message to a specific topic.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Scala" data-lang="Scala"><span style="display:flex;"><span><span style="color:#75715e">// Publisher.scala
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">package</span> main.scala
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> org.eclipse.paho.client.mqttv3.MqttClient
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> org.eclipse.paho.client.mqttv3.MqttException
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> org.eclipse.paho.client.mqttv3.MqttMessage
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * MQTT publisher
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @author Prabeesh Keezhathra
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @mail prabsmails@gmail.com
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">object</span> <span style="color:#a6e22e">Publisher</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> main<span style="color:#f92672">(</span>args<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Array</span><span style="color:#f92672">[</span><span style="color:#66d9ef">String</span><span style="color:#f92672">])</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// URL of the MQTT broker
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">val</span> brokerUrl <span style="color:#66d9ef">=</span> <span style="color:#e6db74">&#34;tcp://localhost:1883&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// MQTT topic to publish to
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">val</span> topic <span style="color:#66d9ef">=</span> <span style="color:#e6db74">&#34;foo&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Message to publish
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">val</span> msg <span style="color:#66d9ef">=</span> <span style="color:#e6db74">&#34;Hello world test data&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> client<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">MqttClient</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Creating new persistence for MQTT client
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">val</span> persistence <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MqttDefaultFilePersistence</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/tmp&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Create MQTT client with specific URL and client ID
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      client <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MqttClient</span><span style="color:#f92672">(</span>brokerUrl<span style="color:#f92672">,</span> <span style="color:#a6e22e">MqttClient</span><span style="color:#f92672">.</span>generateClientId<span style="color:#f92672">,</span> persistence<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Connect to the broker
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      client<span style="color:#f92672">.</span>connect<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Get the MQTT topic
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">val</span> msgTopic <span style="color:#66d9ef">=</span> client<span style="color:#f92672">.</span>getTopic<span style="color:#f92672">(</span>topic<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Create a new MQTT message with the message string
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">val</span> message <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MqttMessage</span><span style="color:#f92672">(</span>msg<span style="color:#f92672">.</span>getBytes<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;utf-8&#34;</span><span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Publish the message to the topic and print a message
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        msgTopic<span style="color:#f92672">.</span>publish<span style="color:#f92672">(</span>message<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Publishing Data, Topic : %s, Message : %s&#34;</span><span style="color:#f92672">.</span>format<span style="color:#f92672">(</span>msgTopic<span style="color:#f92672">.</span>getName<span style="color:#f92672">,</span> message<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">Thread</span><span style="color:#f92672">.</span>sleep<span style="color:#f92672">(</span><span style="color:#ae81ff">100</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">catch</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">case</span> e<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">MqttException</span> <span style="color:#f92672">=&gt;</span> println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Exception Caught: &#34;</span> <span style="color:#f92672">+</span> e<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">finally</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Disconnect from the broker
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      client<span style="color:#f92672">.</span>disconnect<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>The above code is an MQTT publisher in Scala that connects to an MQTT broker, publishes a message to a specific topic, and then disconnects from the broker.</p>
+<p>Here is a brief overview of how the code works:</p>
+<ul>
+<li>
+<p>The <code>brokerUrl</code>, <code>topic</code>, and <code>msg</code> variables are defined and initialized with the URL of the MQTT broker, the topic to publish to, and the message to be published, respectively.</p>
+</li>
+<li>
+<p>An <code>MqttClient</code> instance is created with the specified broker URL, a generated client ID, and a new <code>MqttDefaultFilePersistence</code> instance for storing client data.</p>
+</li>
+<li>
+<p>The MQTT client connects to the broker.</p>
+</li>
+<li>
+<p>The <code>getTopic</code> method is called on the client to get the MQTT topic, and a new <code>MqttMessage</code> is created with the message string.</p>
+</li>
+<li>
+<p>The message is published to the topic in a loop, and a message is printed to the console each time it is published.</p>
+</li>
+<li>
+<p>If an exception is thrown while running the loop, it is caught and a message is printed.</p>
+</li>
+<li>
+<p>Finally, the MQTT client is disconnected from the broker.</p>
+</li>
+</ul>
+<h4 id="mqtt-subscriber-in-scala">MQTT Subscriber in Scala</h4>
+<p>To create an MQTT subscriber in Scala, you will need to create an instance of the <code>MqttClient</code> class and connect to the MQTT broker. You can then use the <code>MqttClient#subscribe</code> method to subscribe to a specific topic, and the <code>MqttClient#Callback</code> method to set a callback function that will be called whenever a message is received on that topic.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Scala" data-lang="Scala"><span style="display:flex;"><span><span style="color:#75715e">// Subscriber.scala
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">package</span> main.scala
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> org.eclipse.paho.client.mqttv3._
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> org.eclipse.paho.client.mqttv3.persist.MemoryPersistence
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * MQTT subscriber
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @author Prabeesh Keezhathra
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @mail prabsmails@gmail.com
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">object</span> <span style="color:#a6e22e">Subscriber</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> main<span style="color:#f92672">(</span>args<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Array</span><span style="color:#f92672">[</span><span style="color:#66d9ef">String</span><span style="color:#f92672">])</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// URL of the MQTT broker
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">val</span> brokerUrl <span style="color:#66d9ef">=</span> <span style="color:#e6db74">&#34;tcp://localhost:1883&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// MQTT topic to subscribe to
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">val</span> topic <span style="color:#66d9ef">=</span> <span style="color:#e6db74">&#34;foo&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Set up persistence for messages
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">val</span> persistence <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MemoryPersistence</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Initialize MQTT client with broker URL, client ID, and persistence
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">val</span> client <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MqttClient</span><span style="color:#f92672">(</span>brokerUrl<span style="color:#f92672">,</span> <span style="color:#a6e22e">MqttClient</span><span style="color:#f92672">.</span>generateClientId<span style="color:#f92672">,</span> persistence<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Connect to the MQTT broker
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    client<span style="color:#f92672">.</span>connect
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Subscribe to the MQTT topic
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    client<span style="color:#f92672">.</span>subscribe<span style="color:#f92672">(</span>topic<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Set up a callback to handle incoming messages
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// Callback that is triggered when a new message arrives on the specified topic
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">val</span> callback <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MqttCallback</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">def</span> messageArrived<span style="color:#f92672">(</span>topic<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> message<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">MqttMessage</span><span style="color:#f92672">)</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Unit</span> <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Print the received message to the console
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Receiving Data, Topic : %s, Message : %s&#34;</span><span style="color:#f92672">.</span>format<span style="color:#f92672">(</span>topic<span style="color:#f92672">,</span> message<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Callback that is triggered if the connection to the broker is lost
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">def</span> connectionLost<span style="color:#f92672">(</span>cause<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Throwable</span><span style="color:#f92672">)</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Unit</span> <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#75715e">// Print the cause of the connection loss
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>         println<span style="color:#f92672">(</span>cause<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Callback that is triggered when a message has been successfully delivered
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">def</span> deliveryComplete<span style="color:#f92672">(</span>token<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">IMqttDeliveryToken</span><span style="color:#f92672">)</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Unit</span> <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Set up callback for MqttClient
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    client<span style="color:#f92672">.</span>setCallback<span style="color:#f92672">(</span>callback<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>The MQTT subscriber code in Scala connects to an MQTT broker, subscribes to a specific topic, and then waits for messages to be published to that topic. When a new message is received, it is processed by a callback function that is triggered by the MQTT client.</p>
+<p>Here is a brief overview of how the code works:</p>
+<ul>
+<li>
+<p>The <code>brokerUrl</code> and <code>topic</code> variables are defined and initialized with the URL of the MQTT broker and the topic to subscribe to, respectively.</p>
+</li>
+<li>
+<p>A new <code>MemoryPersistence</code> instance is created to store messages, and an <code>MqttClient</code> instance is initialized with the specified broker URL, a generated client ID, and the <code>MemoryPersistence</code> instance.</p>
+</li>
+<li>
+<p>The MQTT client connects to the broker and subscribes to the specified topic.</p>
+</li>
+<li>
+<p>A callback object is defined with three functions: <code>messageArrived</code>, <code>connectionLost</code>, and <code>deliveryComplete</code>.</p>
+</li>
+<li>
+<p>The <code>messageArrived</code> function is called when a new message is received on the subscribed topic and prints the received message to the console.</p>
+</li>
+<li>
+<p>The <code>connectionLost</code> function is called if the connection to the broker is lost and prints the cause of the connection loss.</p>
+</li>
+<li>
+<p>The <code>deliveryComplete</code> function is called when a message has been successfully delivered.</p>
+</li>
+<li>
+<p>The callback object is set as the callback for the MQTT client.</p>
+</li>
+</ul>
+<p>This tutorial demonstrated how to use the Eclipse Paho library to create an MQTT publisher and subscriber in Scala. It showed how to connect to an MQTT broker, publish and receive messages, and handle connection loss and message delivery. I hope you found this tutorial helpful and that you now have a better understanding of how to use MQTT with Scala. Happy coding!</p>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
      style="display:block; text-align:center;"
      data-ad-layout="in-article"
@@ -202,7 +413,19 @@ if (!doNotTrack) {
    </li>
   
    <li class="list di">
-     <a href="/tags/mqtt-queue/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">MQTT Queue</a>
+     <a href="/tags/mqtt/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">MQTT</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/scala/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Scala</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/message-queue/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Message Queue</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/iot/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">IoT</a>
    </li>
   
 </ul>

@@ -125,11 +125,29 @@
     </item>
     
     <item>
-      <title>MQTT Queue</title>
-      <link>https://prabeesh.github.io/tags/mqtt-queue/</link>
+      <title>IoT</title>
+      <link>https://prabeesh.github.io/tags/iot/</link>
       <pubDate>Mon, 26 Aug 2013 09:41:00 +0530</pubDate>
       
-      <guid>https://prabeesh.github.io/tags/mqtt-queue/</guid>
+      <guid>https://prabeesh.github.io/tags/iot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Message Queue</title>
+      <link>https://prabeesh.github.io/tags/message-queue/</link>
+      <pubDate>Mon, 26 Aug 2013 09:41:00 +0530</pubDate>
+      
+      <guid>https://prabeesh.github.io/tags/message-queue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MQTT</title>
+      <link>https://prabeesh.github.io/tags/mqtt/</link>
+      <pubDate>Mon, 26 Aug 2013 09:41:00 +0530</pubDate>
+      
+      <guid>https://prabeesh.github.io/tags/mqtt/</guid>
       <description></description>
     </item>
     
