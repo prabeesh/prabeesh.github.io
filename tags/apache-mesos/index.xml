@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apache Mesos on This is the one of the solutions</title>
-    <link>https://prabeesh.github.io/tags/apache-mesos/</link>
+    <link>https://blog.prabeeshk.com/tags/apache-mesos/</link>
     <description>Recent content in Apache Mesos on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Oct 2013 10:53:00 +0530</lastBuildDate><atom:link href="https://prabeesh.github.io/tags/apache-mesos/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Oct 2013 10:53:00 +0530</lastBuildDate><atom:link href="https://blog.prabeeshk.com/tags/apache-mesos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Running Mesos-0.13.0  on Ubuntu-12.04</title>
-      <link>https://prabeesh.github.io/blog/2013/10/07/running-mesos-0130-on-ubuntu-1204/</link>
+      <link>https://blog.prabeeshk.com/blog/2013/10/07/running-mesos-0130-on-ubuntu-1204/</link>
       <pubDate>Mon, 07 Oct 2013 10:53:00 +0530</pubDate>
       
-      <guid>https://prabeesh.github.io/blog/2013/10/07/running-mesos-0130-on-ubuntu-1204/</guid>
+      <guid>https://blog.prabeeshk.com/blog/2013/10/07/running-mesos-0130-on-ubuntu-1204/</guid>
       <description>&lt;p&gt;You will need the following packages to run Mesos.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ sudo apt-get install python2.7-dev g++ libcppunit-dev libunwind7-dev git libcurl4-nss-dev
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You need to have Java installed, or the JAVA_HOME environment variable pointing to a Java installation.&lt;/p&gt;
