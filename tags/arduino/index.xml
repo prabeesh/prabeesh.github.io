@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Arduino on This is the one of the solutions</title>
-    <link>https://blog.prabeeshk.com/tags/arduino/</link>
+    <link>http://prabeesh.github.io/tags/arduino/</link>
     <description>Recent content in Arduino on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Jul 2012 02:23:00 +0530</lastBuildDate><atom:link href="https://blog.prabeeshk.com/tags/arduino/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Jul 2012 02:23:00 +0530</lastBuildDate><atom:link href="http://prabeesh.github.io/tags/arduino/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Running Arduino codes in stand alone atmega8</title>
-      <link>https://blog.prabeeshk.com/blog/2012/07/14/running-arduino-codes-in-stand-alone/</link>
+      <link>http://prabeesh.github.io/blog/2012/07/14/running-arduino-codes-in-stand-alone/</link>
       <pubDate>Sat, 14 Jul 2012 02:23:00 +0530</pubDate>
       
-      <guid>https://blog.prabeeshk.com/blog/2012/07/14/running-arduino-codes-in-stand-alone/</guid>
+      <guid>http://prabeesh.github.io/blog/2012/07/14/running-arduino-codes-in-stand-alone/</guid>
       <description>&lt;p&gt;An Arduino board consists of an 8-bit Atmel AVR microcontroller with complementary components to facilitate programming and incorporation into other circuits.
 If you wish to study the arduino codes ,then one of the major problems is the availability and cost of the Arduino board. If you have an atmega8 microcontroller  then you have to study the Arduino codes by simply changing some options in Arduino IDE.&lt;/p&gt;
 &lt;p&gt;First download the arduino IDE(I am using Arduino 1.0). Next you have to an avr  programmer(I am using usbasp and usbtiny).

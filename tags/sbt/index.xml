@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SBT on This is the one of the solutions</title>
-    <link>https://blog.prabeeshk.com/tags/sbt/</link>
+    <link>http://prabeesh.github.io/tags/sbt/</link>
     <description>Recent content in SBT on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Apr 2014 09:47:00 +0530</lastBuildDate><atom:link href="https://blog.prabeeshk.com/tags/sbt/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Apr 2014 09:47:00 +0530</lastBuildDate><atom:link href="http://prabeesh.github.io/tags/sbt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Creating assembled JAR for Standalone Spark Application</title>
-      <link>https://blog.prabeeshk.com/blog/2014/04/08/creating-uber-jar-for-spark-project-using-sbt-assembly/</link>
+      <link>http://prabeesh.github.io/blog/2014/04/08/creating-uber-jar-for-spark-project-using-sbt-assembly/</link>
       <pubDate>Tue, 08 Apr 2014 09:47:00 +0530</pubDate>
       
-      <guid>https://blog.prabeeshk.com/blog/2014/04/08/creating-uber-jar-for-spark-project-using-sbt-assembly/</guid>
-      <description>&lt;p&gt;In the &lt;a href=&#34;https://blog.prabeeshk.com/blog/2014/04/01/a-standalone-spark-application-in-scala/&#34;&gt;previous post&lt;/a&gt; shared how to use sbt in Spark-streaming project. This post is about how to create a fat jar for spark streaming project using sbt plugin. sbt-assembly is an sbt plugin to create a fat JAR of sbt project with all of its dependencies.&lt;/p&gt;
+      <guid>http://prabeesh.github.io/blog/2014/04/08/creating-uber-jar-for-spark-project-using-sbt-assembly/</guid>
+      <description>&lt;p&gt;In the &lt;a href=&#34;http://prabeesh.github.io/blog/2014/04/01/a-standalone-spark-application-in-scala/&#34;&gt;previous post&lt;/a&gt; shared how to use sbt in Spark-streaming project. This post is about how to create a fat jar for spark streaming project using sbt plugin. sbt-assembly is an sbt plugin to create a fat JAR of sbt project with all of its dependencies.&lt;/p&gt;
 &lt;p&gt;Add sbt-assembly plugin in &lt;strong&gt;&lt;em&gt;project/plugin.sbt&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-scala&#34; data-lang=&#34;scala&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;addSbtPlugin&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;com.eed3si9n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;sbt-assembly&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;0.9.1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Specify sbt-assembly.git as a dependency in project/project/build.scala&lt;/p&gt;
@@ -29,10 +29,10 @@
     
     <item>
       <title>Creating a Standalone Spark Application in Scala: A Step-by-Step Guide with Twitter Streaming Example</title>
-      <link>https://blog.prabeeshk.com/blog/2014/04/01/a-standalone-spark-application-in-scala/</link>
+      <link>http://prabeesh.github.io/blog/2014/04/01/a-standalone-spark-application-in-scala/</link>
       <pubDate>Tue, 01 Apr 2014 22:56:00 +0530</pubDate>
       
-      <guid>https://blog.prabeeshk.com/blog/2014/04/01/a-standalone-spark-application-in-scala/</guid>
+      <guid>http://prabeesh.github.io/blog/2014/04/01/a-standalone-spark-application-in-scala/</guid>
       <description>&lt;p&gt;This blog post will guide you through the process of building a Spark application in Scala that calculates popular hashtags from a Twitter stream. You will also learn how to use the sbt eclipse plugin to run the application in the Eclipse Integrated Development Environment (IDE). Whether you are new to big data processing or looking to improve your skills in data enginering and analytics, this tutorial has something to offer. Follow along with our step-by-step guide to develop your own stand alone Spark application and enhance your abilities in this exciting field.&lt;/p&gt;
 &lt;p&gt;Sharing  some ideas about how to create a Spark-streaming stand-alone application and how to run the Spark applications in scala-SDK (Eclipse IDE).&lt;/p&gt;
 &lt;h2 id=&#34;building-spark-application-using-sbt&#34;&gt;Building Spark Application using SBT&lt;/h2&gt;
