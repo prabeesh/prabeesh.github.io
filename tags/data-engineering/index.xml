@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data Engineering on This is the one of the solutions</title>
-    <link>/tags/data-engineering/</link>
+    <link>https://blog.prabeeshk.com/tags/data-engineering/</link>
     <description>Recent content in Data Engineering on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Apr 2014 22:56:00 +0530</lastBuildDate><atom:link href="/tags/data-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Apr 2014 22:56:00 +0530</lastBuildDate><atom:link href="https://blog.prabeeshk.com/tags/data-engineering/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Creating a Standalone Spark Application in Scala: A Step-by-Step Guide with Twitter Streaming Example</title>
-      <link>/blog/2014/04/01/a-standalone-spark-application-in-scala/</link>
+      <link>https://blog.prabeeshk.com/blog/2014/04/01/a-standalone-spark-application-in-scala/</link>
       <pubDate>Tue, 01 Apr 2014 22:56:00 +0530</pubDate>
       
-      <guid>/blog/2014/04/01/a-standalone-spark-application-in-scala/</guid>
+      <guid>https://blog.prabeeshk.com/blog/2014/04/01/a-standalone-spark-application-in-scala/</guid>
       <description>&lt;p&gt;This blog post will guide you through the process of building a Spark application in Scala that calculates popular hashtags from a Twitter stream. You will also learn how to use the sbt eclipse plugin to run the application in the Eclipse Integrated Development Environment (IDE). Whether you are new to big data processing or looking to improve your skills in data enginering and analytics, this tutorial has something to offer. Follow along with our step-by-step guide to develop your own stand alone Spark application and enhance your abilities in this exciting field.&lt;/p&gt;
 &lt;p&gt;Sharing  some ideas about how to create a Spark-streaming stand-alone application and how to run the Spark applications in scala-SDK (Eclipse IDE).&lt;/p&gt;
 &lt;h2 id=&#34;building-spark-application-using-sbt&#34;&gt;Building Spark Application using SBT&lt;/h2&gt;

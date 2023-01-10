@@ -2,323 +2,323 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on This is the one of the solutions</title>
-    <link>/tags/</link>
+    <link>https://blog.prabeeshk.com/tags/</link>
     <description>Recent content in Tags on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Jan 2023 11:51:39 +0100</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Jan 2023 11:51:39 +0100</lastBuildDate><atom:link href="https://blog.prabeeshk.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Apache Spark</title>
-      <link>/tags/apache-spark/</link>
+      <link>https://blog.prabeeshk.com/tags/apache-spark/</link>
       <pubDate>Fri, 06 Jan 2023 11:51:39 +0100</pubDate>
       
-      <guid>/tags/apache-spark/</guid>
+      <guid>https://blog.prabeeshk.com/tags/apache-spark/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Big Data</title>
-      <link>/tags/big-data/</link>
+      <link>https://blog.prabeeshk.com/tags/big-data/</link>
       <pubDate>Fri, 06 Jan 2023 11:51:39 +0100</pubDate>
       
-      <guid>/tags/big-data/</guid>
+      <guid>https://blog.prabeeshk.com/tags/big-data/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Performance Tuning</title>
-      <link>/tags/performance-tuning/</link>
+      <link>https://blog.prabeeshk.com/tags/performance-tuning/</link>
       <pubDate>Fri, 06 Jan 2023 11:51:39 +0100</pubDate>
       
-      <guid>/tags/performance-tuning/</guid>
+      <guid>https://blog.prabeeshk.com/tags/performance-tuning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PySpark</title>
-      <link>/tags/pyspark/</link>
+      <link>https://blog.prabeeshk.com/tags/pyspark/</link>
       <pubDate>Fri, 06 Jan 2023 11:51:39 +0100</pubDate>
       
-      <guid>/tags/pyspark/</guid>
+      <guid>https://blog.prabeeshk.com/tags/pyspark/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mac OS X</title>
-      <link>/tags/mac-os-x/</link>
+      <link>https://blog.prabeeshk.com/tags/mac-os-x/</link>
       <pubDate>Wed, 07 Dec 2016 11:45:18 +0400</pubDate>
       
-      <guid>/tags/mac-os-x/</guid>
+      <guid>https://blog.prabeeshk.com/tags/mac-os-x/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ubuntu</title>
-      <link>/tags/ubuntu/</link>
+      <link>https://blog.prabeeshk.com/tags/ubuntu/</link>
       <pubDate>Wed, 07 Dec 2016 11:45:18 +0400</pubDate>
       
-      <guid>/tags/ubuntu/</guid>
+      <guid>https://blog.prabeeshk.com/tags/ubuntu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Docker</title>
-      <link>/tags/docker/</link>
+      <link>https://blog.prabeeshk.com/tags/docker/</link>
       <pubDate>Fri, 19 Jun 2015 23:08:08 +0400</pubDate>
       
-      <guid>/tags/docker/</guid>
+      <guid>https://blog.prabeeshk.com/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>IPython Notebook</title>
-      <link>/tags/ipython-notebook/</link>
+      <link>https://blog.prabeeshk.com/tags/ipython-notebook/</link>
       <pubDate>Fri, 19 Jun 2015 23:08:08 +0400</pubDate>
       
-      <guid>/tags/ipython-notebook/</guid>
+      <guid>https://blog.prabeeshk.com/tags/ipython-notebook/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>/tags/python/</link>
+      <link>https://blog.prabeeshk.com/tags/python/</link>
       <pubDate>Fri, 19 Jun 2015 23:08:08 +0400</pubDate>
       
-      <guid>/tags/python/</guid>
+      <guid>https://blog.prabeeshk.com/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SBT</title>
-      <link>/tags/sbt/</link>
+      <link>https://blog.prabeeshk.com/tags/sbt/</link>
       <pubDate>Tue, 08 Apr 2014 09:47:00 +0530</pubDate>
       
-      <guid>/tags/sbt/</guid>
+      <guid>https://blog.prabeeshk.com/tags/sbt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Scala</title>
-      <link>/tags/scala/</link>
+      <link>https://blog.prabeeshk.com/tags/scala/</link>
       <pubDate>Tue, 08 Apr 2014 09:47:00 +0530</pubDate>
       
-      <guid>/tags/scala/</guid>
+      <guid>https://blog.prabeeshk.com/tags/scala/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data Engineering</title>
-      <link>/tags/data-engineering/</link>
+      <link>https://blog.prabeeshk.com/tags/data-engineering/</link>
       <pubDate>Tue, 01 Apr 2014 22:56:00 +0530</pubDate>
       
-      <guid>/tags/data-engineering/</guid>
+      <guid>https://blog.prabeeshk.com/tags/data-engineering/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Apache Mesos</title>
-      <link>/tags/apache-mesos/</link>
+      <link>https://blog.prabeeshk.com/tags/apache-mesos/</link>
       <pubDate>Mon, 07 Oct 2013 10:53:00 +0530</pubDate>
       
-      <guid>/tags/apache-mesos/</guid>
+      <guid>https://blog.prabeeshk.com/tags/apache-mesos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>IoT</title>
-      <link>/tags/iot/</link>
+      <link>https://blog.prabeeshk.com/tags/iot/</link>
       <pubDate>Mon, 26 Aug 2013 09:41:00 +0530</pubDate>
       
-      <guid>/tags/iot/</guid>
+      <guid>https://blog.prabeeshk.com/tags/iot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Message Queue</title>
-      <link>/tags/message-queue/</link>
+      <link>https://blog.prabeeshk.com/tags/message-queue/</link>
       <pubDate>Mon, 26 Aug 2013 09:41:00 +0530</pubDate>
       
-      <guid>/tags/message-queue/</guid>
+      <guid>https://blog.prabeeshk.com/tags/message-queue/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MQTT</title>
-      <link>/tags/mqtt/</link>
+      <link>https://blog.prabeeshk.com/tags/mqtt/</link>
       <pubDate>Mon, 26 Aug 2013 09:41:00 +0530</pubDate>
       
-      <guid>/tags/mqtt/</guid>
+      <guid>https://blog.prabeeshk.com/tags/mqtt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>No SQL Data Base</title>
-      <link>/tags/no-sql-data-base/</link>
+      <link>https://blog.prabeeshk.com/tags/no-sql-data-base/</link>
       <pubDate>Sun, 31 Mar 2013 21:53:00 +0530</pubDate>
       
-      <guid>/tags/no-sql-data-base/</guid>
+      <guid>https://blog.prabeeshk.com/tags/no-sql-data-base/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python Flask</title>
-      <link>/tags/python-flask/</link>
+      <link>https://blog.prabeeshk.com/tags/python-flask/</link>
       <pubDate>Sun, 31 Mar 2013 21:53:00 +0530</pubDate>
       
-      <guid>/tags/python-flask/</guid>
+      <guid>https://blog.prabeeshk.com/tags/python-flask/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GoogleAppEngine</title>
-      <link>/tags/googleappengine/</link>
+      <link>https://blog.prabeeshk.com/tags/googleappengine/</link>
       <pubDate>Sat, 30 Mar 2013 12:44:00 +0530</pubDate>
       
-      <guid>/tags/googleappengine/</guid>
+      <guid>https://blog.prabeeshk.com/tags/googleappengine/</guid>
       <description></description>
     </item>
     
     <item>
       <title>JavaScript</title>
-      <link>/tags/javascript/</link>
+      <link>https://blog.prabeeshk.com/tags/javascript/</link>
       <pubDate>Sat, 30 Mar 2013 12:44:00 +0530</pubDate>
       
-      <guid>/tags/javascript/</guid>
+      <guid>https://blog.prabeeshk.com/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CUDA</title>
-      <link>/tags/cuda/</link>
+      <link>https://blog.prabeeshk.com/tags/cuda/</link>
       <pubDate>Thu, 07 Mar 2013 11:00:00 +0530</pubDate>
       
-      <guid>/tags/cuda/</guid>
+      <guid>https://blog.prabeeshk.com/tags/cuda/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GPU programming</title>
-      <link>/tags/gpu-programming/</link>
+      <link>https://blog.prabeeshk.com/tags/gpu-programming/</link>
       <pubDate>Thu, 07 Mar 2013 11:00:00 +0530</pubDate>
       
-      <guid>/tags/gpu-programming/</guid>
+      <guid>https://blog.prabeeshk.com/tags/gpu-programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Parallel programming</title>
-      <link>/tags/parallel-programming/</link>
+      <link>https://blog.prabeeshk.com/tags/parallel-programming/</link>
       <pubDate>Thu, 07 Mar 2013 11:00:00 +0530</pubDate>
       
-      <guid>/tags/parallel-programming/</guid>
+      <guid>https://blog.prabeeshk.com/tags/parallel-programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Google App Engine</title>
-      <link>/tags/google-app-engine/</link>
+      <link>https://blog.prabeeshk.com/tags/google-app-engine/</link>
       <pubDate>Sat, 09 Feb 2013 10:12:43 +0530</pubDate>
       
-      <guid>/tags/google-app-engine/</guid>
+      <guid>https://blog.prabeeshk.com/tags/google-app-engine/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HTML5</title>
-      <link>/tags/html5/</link>
+      <link>https://blog.prabeeshk.com/tags/html5/</link>
       <pubDate>Sat, 09 Feb 2013 10:12:43 +0530</pubDate>
       
-      <guid>/tags/html5/</guid>
+      <guid>https://blog.prabeeshk.com/tags/html5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>AVR</title>
-      <link>/tags/avr/</link>
+      <link>https://blog.prabeeshk.com/tags/avr/</link>
       <pubDate>Sat, 14 Jul 2012 23:39:00 +0530</pubDate>
       
-      <guid>/tags/avr/</guid>
+      <guid>https://blog.prabeeshk.com/tags/avr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Embedded</title>
-      <link>/tags/embedded/</link>
+      <link>https://blog.prabeeshk.com/tags/embedded/</link>
       <pubDate>Sat, 14 Jul 2012 23:39:00 +0530</pubDate>
       
-      <guid>/tags/embedded/</guid>
+      <guid>https://blog.prabeeshk.com/tags/embedded/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Arduino</title>
-      <link>/tags/arduino/</link>
+      <link>https://blog.prabeeshk.com/tags/arduino/</link>
       <pubDate>Sat, 14 Jul 2012 02:23:00 +0530</pubDate>
       
-      <guid>/tags/arduino/</guid>
+      <guid>https://blog.prabeeshk.com/tags/arduino/</guid>
       <description></description>
     </item>
     
     <item>
       <title>attiny2313</title>
-      <link>/tags/attiny2313/</link>
+      <link>https://blog.prabeeshk.com/tags/attiny2313/</link>
       <pubDate>Wed, 04 Jul 2012 19:39:00 +0530</pubDate>
       
-      <guid>/tags/attiny2313/</guid>
+      <guid>https://blog.prabeeshk.com/tags/attiny2313/</guid>
       <description></description>
     </item>
     
     <item>
       <title>embedded systems</title>
-      <link>/tags/embedded-systems/</link>
+      <link>https://blog.prabeeshk.com/tags/embedded-systems/</link>
       <pubDate>Wed, 04 Jul 2012 19:39:00 +0530</pubDate>
       
-      <guid>/tags/embedded-systems/</guid>
+      <guid>https://blog.prabeeshk.com/tags/embedded-systems/</guid>
       <description></description>
     </item>
     
     <item>
       <title>microcontroller</title>
-      <link>/tags/microcontroller/</link>
+      <link>https://blog.prabeeshk.com/tags/microcontroller/</link>
       <pubDate>Wed, 04 Jul 2012 19:39:00 +0530</pubDate>
       
-      <guid>/tags/microcontroller/</guid>
+      <guid>https://blog.prabeeshk.com/tags/microcontroller/</guid>
       <description></description>
     </item>
     
     <item>
       <title>USBtinyISP</title>
-      <link>/tags/usbtinyisp/</link>
+      <link>https://blog.prabeeshk.com/tags/usbtinyisp/</link>
       <pubDate>Wed, 04 Jul 2012 19:39:00 +0530</pubDate>
       
-      <guid>/tags/usbtinyisp/</guid>
+      <guid>https://blog.prabeeshk.com/tags/usbtinyisp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>LCD Interfacing</title>
-      <link>/tags/lcd-interfacing/</link>
+      <link>https://blog.prabeeshk.com/tags/lcd-interfacing/</link>
       <pubDate>Wed, 04 Jul 2012 02:39:00 +0530</pubDate>
       
-      <guid>/tags/lcd-interfacing/</guid>
+      <guid>https://blog.prabeeshk.com/tags/lcd-interfacing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MSP430</title>
-      <link>/tags/msp430/</link>
+      <link>https://blog.prabeeshk.com/tags/msp430/</link>
       <pubDate>Wed, 04 Jul 2012 02:39:00 +0530</pubDate>
       
-      <guid>/tags/msp430/</guid>
+      <guid>https://blog.prabeeshk.com/tags/msp430/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Matplotlib</title>
-      <link>/tags/matplotlib/</link>
+      <link>https://blog.prabeeshk.com/tags/matplotlib/</link>
       <pubDate>Sun, 25 Sep 2011 01:39:00 +0530</pubDate>
       
-      <guid>/tags/matplotlib/</guid>
+      <guid>https://blog.prabeeshk.com/tags/matplotlib/</guid>
       <description></description>
     </item>
     

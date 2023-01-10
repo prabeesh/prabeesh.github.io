@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>GoogleAppEngine on This is the one of the solutions</title>
-    <link>/tags/googleappengine/</link>
+    <link>https://blog.prabeeshk.com/tags/googleappengine/</link>
     <description>Recent content in GoogleAppEngine on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 30 Mar 2013 12:44:00 +0530</lastBuildDate><atom:link href="/tags/googleappengine/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Mar 2013 12:44:00 +0530</lastBuildDate><atom:link href="https://blog.prabeeshk.com/tags/googleappengine/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Paint app using JavaScript and Canvas</title>
-      <link>/blog/2013/03/30/paint-app-using-javascript-and-canvas/</link>
+      <link>https://blog.prabeeshk.com/blog/2013/03/30/paint-app-using-javascript-and-canvas/</link>
       <pubDate>Sat, 30 Mar 2013 12:44:00 +0530</pubDate>
       
-      <guid>/blog/2013/03/30/paint-app-using-javascript-and-canvas/</guid>
+      <guid>https://blog.prabeeshk.com/blog/2013/03/30/paint-app-using-javascript-and-canvas/</guid>
       <description>&lt;p&gt;An application to draw simple drawings using lines, rectangles and circles in different colours.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/images/paint.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.prabeeshk.com/images/paint.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The application is developed using JavaScript and HTML5. The canvas feature in HTML5 is used for providing a drawable region. The JavaScript is used to handle drawing functions in this region. The select button to select the different tools to draw.&lt;/p&gt;</description>
     </item>
     
