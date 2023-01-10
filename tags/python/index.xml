@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on This is the one of the solutions</title>
-    <link>https://blog.prabeeshk.com/tags/python/</link>
+    <link>https://prabeesh.github.io/tags/python/</link>
     <description>Recent content in Python on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Jun 2015 23:08:08 +0400</lastBuildDate><atom:link href="https://blog.prabeeshk.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Jun 2015 23:08:08 +0400</lastBuildDate><atom:link href="https://prabeesh.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Run a PySpark Notebook with Docker</title>
-      <link>https://blog.prabeeshk.com/blog/2015/06/19/pyspark-notebook-with-docker/</link>
+      <link>https://prabeesh.github.io/blog/2015/06/19/pyspark-notebook-with-docker/</link>
       <pubDate>Fri, 19 Jun 2015 23:08:08 +0400</pubDate>
       
-      <guid>https://blog.prabeeshk.com/blog/2015/06/19/pyspark-notebook-with-docker/</guid>
+      <guid>https://prabeesh.github.io/blog/2015/06/19/pyspark-notebook-with-docker/</guid>
       <description>Apache Spark is a powerful big data processing engine that is well-suited for use in a distributed environment. One way to interact with Spark is through the use of an IPython Notebook, which allows you to run and debug your Spark code in an interactive manner. This tutorial will guide you through the process of setting up and running a PySpark Notebook using Docker.
 Installing Docker Docker is a containerization platform that allows you to package and deploy your applications in a predictable and isolated environment.</description>
     </item>
     
     <item>
       <title>Self Contained PySpark Application</title>
-      <link>https://blog.prabeeshk.com/blog/2015/04/07/self-contained-pyspark-application/</link>
+      <link>https://prabeesh.github.io/blog/2015/04/07/self-contained-pyspark-application/</link>
       <pubDate>Tue, 07 Apr 2015 21:05:30 +0530</pubDate>
       
-      <guid>https://blog.prabeeshk.com/blog/2015/04/07/self-contained-pyspark-application/</guid>
-      <description>&lt;p&gt;In my &lt;a href=&#34;https://blog.prabeeshk.com/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/&#34;&gt;previous post&lt;/a&gt;, I wrote about installation of Spark and Scala interactive shell. Here in this post, we&amp;rsquo;ll see how to do the same in Python.&lt;/p&gt;
+      <guid>https://prabeesh.github.io/blog/2015/04/07/self-contained-pyspark-application/</guid>
+      <description>&lt;p&gt;In my &lt;a href=&#34;https://prabeesh.github.io/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/&#34;&gt;previous post&lt;/a&gt;, I wrote about installation of Spark and Scala interactive shell. Here in this post, we&amp;rsquo;ll see how to do the same in Python.&lt;/p&gt;
 &lt;p&gt;Similar to Scala interactive shell, there is an interactive shell available for Python. You can run it with the below command from spark root folder:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;./bin/pyspark
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now you can enjoy Spark using Python interactive shell.&lt;/p&gt;
@@ -32,21 +32,21 @@ Installing Docker Docker is a containerization platform that allows you to packa
     
     <item>
       <title>Paint app using JavaScript and Canvas</title>
-      <link>https://blog.prabeeshk.com/blog/2013/03/30/paint-app-using-javascript-and-canvas/</link>
+      <link>https://prabeesh.github.io/blog/2013/03/30/paint-app-using-javascript-and-canvas/</link>
       <pubDate>Sat, 30 Mar 2013 12:44:00 +0530</pubDate>
       
-      <guid>https://blog.prabeeshk.com/blog/2013/03/30/paint-app-using-javascript-and-canvas/</guid>
+      <guid>https://prabeesh.github.io/blog/2013/03/30/paint-app-using-javascript-and-canvas/</guid>
       <description>&lt;p&gt;An application to draw simple drawings using lines, rectangles and circles in different colours.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.prabeeshk.com/images/paint.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://prabeesh.github.io/images/paint.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The application is developed using JavaScript and HTML5. The canvas feature in HTML5 is used for providing a drawable region. The JavaScript is used to handle drawing functions in this region. The select button to select the different tools to draw.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Developing a simple game with HTML5/canvas</title>
-      <link>https://blog.prabeeshk.com/blog/2013/02/09/developing-a-simple-game-with-html5-slash-canvas/</link>
+      <link>https://prabeesh.github.io/blog/2013/02/09/developing-a-simple-game-with-html5-slash-canvas/</link>
       <pubDate>Sat, 09 Feb 2013 10:12:43 +0530</pubDate>
       
-      <guid>https://blog.prabeeshk.com/blog/2013/02/09/developing-a-simple-game-with-html5-slash-canvas/</guid>
+      <guid>https://prabeesh.github.io/blog/2013/02/09/developing-a-simple-game-with-html5-slash-canvas/</guid>
       <description>&lt;p&gt;HTML5 is the new HTML standard. One of the most interesting new features in HTML5 is the canvas element &lt;strong&gt;canvas&lt;/strong&gt; for 2D drawing. A canvas is a rectangular area on an HTML page. All drawing on the canvas must be done using JavaScript. This post goes through the basics of implementing a 2D canvas context, and using the basic canvas functions for developing a simple game.
 Creating a canvad context, adding the &lt;strong&gt;canvas&lt;/strong&gt; element to your HTML document like so&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;canvas&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Canvas&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;800&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;450&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;canvas&lt;/span&gt;&amp;gt;
@@ -62,10 +62,10 @@ Creating a canvad context, adding the &lt;strong&gt;canvas&lt;/strong&gt; elemen
     
     <item>
       <title>AM Wave Generation and Plotting with Matplotlib Python: A Detailed Guide</title>
-      <link>https://blog.prabeeshk.com/blog/2011/09/25/am-plot-matplotlib/</link>
+      <link>https://prabeesh.github.io/blog/2011/09/25/am-plot-matplotlib/</link>
       <pubDate>Sun, 25 Sep 2011 01:39:00 +0530</pubDate>
       
-      <guid>https://blog.prabeeshk.com/blog/2011/09/25/am-plot-matplotlib/</guid>
+      <guid>https://prabeesh.github.io/blog/2011/09/25/am-plot-matplotlib/</guid>
       <description>Amplitude Modulation (AM) is a type of analog communication in which the amplitude of a carrier signal is varied in proportion to the message signal. It is one of the oldest and most widely used forms of radio communication, and it is still used in many applications today, including AM radio broadcasting and certain types of military and aviation communications.
 In this blog post, we will learn how to generate and plot AM waves using the Python library Matplotlib.</description>
     </item>

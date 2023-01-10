@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Matplotlib on This is the one of the solutions</title>
-    <link>https://blog.prabeeshk.com/tags/matplotlib/</link>
+    <link>https://prabeesh.github.io/tags/matplotlib/</link>
     <description>Recent content in Matplotlib on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Sep 2011 01:39:00 +0530</lastBuildDate><atom:link href="https://blog.prabeeshk.com/tags/matplotlib/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Sep 2011 01:39:00 +0530</lastBuildDate><atom:link href="https://prabeesh.github.io/tags/matplotlib/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AM Wave Generation and Plotting with Matplotlib Python: A Detailed Guide</title>
-      <link>https://blog.prabeeshk.com/blog/2011/09/25/am-plot-matplotlib/</link>
+      <link>https://prabeesh.github.io/blog/2011/09/25/am-plot-matplotlib/</link>
       <pubDate>Sun, 25 Sep 2011 01:39:00 +0530</pubDate>
       
-      <guid>https://blog.prabeeshk.com/blog/2011/09/25/am-plot-matplotlib/</guid>
+      <guid>https://prabeesh.github.io/blog/2011/09/25/am-plot-matplotlib/</guid>
       <description>Amplitude Modulation (AM) is a type of analog communication in which the amplitude of a carrier signal is varied in proportion to the message signal. It is one of the oldest and most widely used forms of radio communication, and it is still used in many applications today, including AM radio broadcasting and certain types of military and aviation communications.
 In this blog post, we will learn how to generate and plot AM waves using the Python library Matplotlib.</description>
     </item>

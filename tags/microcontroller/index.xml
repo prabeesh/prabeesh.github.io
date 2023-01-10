@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>microcontroller on This is the one of the solutions</title>
-    <link>https://blog.prabeeshk.com/tags/microcontroller/</link>
+    <link>https://prabeesh.github.io/tags/microcontroller/</link>
     <description>Recent content in microcontroller on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Jul 2012 19:39:00 +0530</lastBuildDate><atom:link href="https://blog.prabeeshk.com/tags/microcontroller/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Jul 2012 19:39:00 +0530</lastBuildDate><atom:link href="https://prabeesh.github.io/tags/microcontroller/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AVR Programming Made Easy: How to Build a USBtinyISP with an attiny2313</title>
-      <link>https://blog.prabeeshk.com/blog/2012/07/04/simplest-and-low-cost-usb-avr/</link>
+      <link>https://prabeesh.github.io/blog/2012/07/04/simplest-and-low-cost-usb-avr/</link>
       <pubDate>Wed, 04 Jul 2012 19:39:00 +0530</pubDate>
       
-      <guid>https://blog.prabeeshk.com/blog/2012/07/04/simplest-and-low-cost-usb-avr/</guid>
+      <guid>https://prabeesh.github.io/blog/2012/07/04/simplest-and-low-cost-usb-avr/</guid>
       <description>AVR microcontrollers are a popular choice for use in a wide range of applications, including embedded systems, robotics, and more. They are known for their low cost, versatility, and efficient use of resources, which make them an attractive choice for many developers. If you are working with AVR chips, you will need a programmer to burn programs onto them.
 One option for an AVR programmer is the USBtinyISP, which is a simple and low cost solution based on the attiny2313 microcontroller.</description>
     </item>

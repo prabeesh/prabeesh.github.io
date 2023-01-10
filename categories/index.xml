@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on This is the one of the solutions</title>
-    <link>https://blog.prabeeshk.com/categories/</link>
+    <link>https://prabeesh.github.io/categories/</link>
     <description>Recent content in Categories on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://blog.prabeeshk.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://prabeesh.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
