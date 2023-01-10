@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Message Queue on This is the one of the solutions</title>
-    <link>http://prabeesh.github.io/tags/message-queue/</link>
+    <link>https://blog.prabeeshk.com/tags/message-queue/</link>
     <description>Recent content in Message Queue on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 26 Aug 2013 09:41:00 +0530</lastBuildDate><atom:link href="http://prabeesh.github.io/tags/message-queue/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Aug 2013 09:41:00 +0530</lastBuildDate><atom:link href="https://blog.prabeeshk.com/tags/message-queue/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MQTT Publisher and Subscriber in Scala: A Step-by-Step Guide Using Eclipse Paho</title>
-      <link>http://prabeesh.github.io/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/</link>
+      <link>https://blog.prabeeshk.com/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/</link>
       <pubDate>Mon, 26 Aug 2013 09:41:00 +0530</pubDate>
       
-      <guid>http://prabeesh.github.io/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/</guid>
+      <guid>https://blog.prabeeshk.com/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/</guid>
       <description>What is MQTT? MQTT (Message Queuing Telemetry Transport) is a publish-subscribe based lightweight messaging protocol for use on top of the TCP/IP protocol. It was designed to be used in resource-constrained environments and for communication between devices with low-bandwidth or unreliable networks. MQTT is often used in Internet of Things (IoT) applications to communicate between devices and a central server, as well as in other types of messaging systems. In an MQTT system, there is a central broker that receives messages from publishers and routes them to subscribers that are subscribed to the relevant topic.</description>
     </item>
     

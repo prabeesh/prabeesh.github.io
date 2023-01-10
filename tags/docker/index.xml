@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on This is the one of the solutions</title>
-    <link>http://prabeesh.github.io/tags/docker/</link>
+    <link>https://blog.prabeeshk.com/tags/docker/</link>
     <description>Recent content in Docker on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Jun 2015 23:08:08 +0400</lastBuildDate><atom:link href="http://prabeesh.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Jun 2015 23:08:08 +0400</lastBuildDate><atom:link href="https://blog.prabeeshk.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Run a PySpark Notebook with Docker</title>
-      <link>http://prabeesh.github.io/blog/2015/06/19/pyspark-notebook-with-docker/</link>
+      <link>https://blog.prabeeshk.com/blog/2015/06/19/pyspark-notebook-with-docker/</link>
       <pubDate>Fri, 19 Jun 2015 23:08:08 +0400</pubDate>
       
-      <guid>http://prabeesh.github.io/blog/2015/06/19/pyspark-notebook-with-docker/</guid>
+      <guid>https://blog.prabeeshk.com/blog/2015/06/19/pyspark-notebook-with-docker/</guid>
       <description>Apache Spark is a powerful big data processing engine that is well-suited for use in a distributed environment. One way to interact with Spark is through the use of an IPython Notebook, which allows you to run and debug your Spark code in an interactive manner. This tutorial will guide you through the process of setting up and running a PySpark Notebook using Docker.
 Installing Docker Docker is a containerization platform that allows you to package and deploy your applications in a predictable and isolated environment.</description>
     </item>

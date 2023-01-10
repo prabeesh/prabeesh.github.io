@@ -2,47 +2,47 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>This is the one of the solutions</title>
-    <link>http://prabeesh.github.io/</link>
+    <link>https://blog.prabeeshk.com/</link>
     <description>Recent content on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Jan 2023 11:51:39 +0100</lastBuildDate><atom:link href="http://prabeesh.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Jan 2023 11:51:39 +0100</lastBuildDate><atom:link href="https://blog.prabeeshk.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Performance Tuning on Apache Spark</title>
-      <link>http://prabeesh.github.io/blog/2023/01/06/performance-tuning-on-apache-spark/</link>
+      <link>https://blog.prabeeshk.com/blog/2023/01/06/performance-tuning-on-apache-spark/</link>
       <pubDate>Fri, 06 Jan 2023 11:51:39 +0100</pubDate>
       
-      <guid>http://prabeesh.github.io/blog/2023/01/06/performance-tuning-on-apache-spark/</guid>
+      <guid>https://blog.prabeeshk.com/blog/2023/01/06/performance-tuning-on-apache-spark/</guid>
       <description>Performance tuning is an important aspect of working with Apache Spark, as it can help ensure that your data processing tasks are efficient and run smoothly. In this blog post, we will delve into the common issues that can be considered when tuning the performance of Apache Spark. These issues include spill, skew, shuffle, storage, and serialization.
 Spill One problem that can occur is spill, which is the writing of temp files to disk due to a lack of memory.</description>
     </item>
     
     <item>
       <title>Install Apache Spark 2 on Ubuntu 16.04 and Mac OS</title>
-      <link>http://prabeesh.github.io/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/</link>
+      <link>https://blog.prabeeshk.com/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/</link>
       <pubDate>Wed, 07 Dec 2016 11:45:18 +0400</pubDate>
       
-      <guid>http://prabeesh.github.io/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/</guid>
-      <description>&lt;p&gt;Two of the earlier posts are discussing installing &lt;a href=&#34;http://prabeesh.github.io/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/&#34;&gt;Apache Spark-0.8.0&lt;/a&gt; and &lt;a href=&#34;http://prabeesh.github.io/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/&#34;&gt;Apache Spark-1.1.0&lt;/a&gt; on Ubuntu-12.04 and Ubuntu-14.04 respectively. In this post you can discover necessary actions to set up &lt;strong&gt;Apache Spark-2.0.2&lt;/strong&gt; on Ubuntu 16.04 and Mac OS X Sierra. For enhanced guidance refer above mentioned posts.&lt;/p&gt;</description>
+      <guid>https://blog.prabeeshk.com/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/</guid>
+      <description>&lt;p&gt;Two of the earlier posts are discussing installing &lt;a href=&#34;https://blog.prabeeshk.com/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/&#34;&gt;Apache Spark-0.8.0&lt;/a&gt; and &lt;a href=&#34;https://blog.prabeeshk.com/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/&#34;&gt;Apache Spark-1.1.0&lt;/a&gt; on Ubuntu-12.04 and Ubuntu-14.04 respectively. In this post you can discover necessary actions to set up &lt;strong&gt;Apache Spark-2.0.2&lt;/strong&gt; on Ubuntu 16.04 and Mac OS X Sierra. For enhanced guidance refer above mentioned posts.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>How to Run a PySpark Notebook with Docker</title>
-      <link>http://prabeesh.github.io/blog/2015/06/19/pyspark-notebook-with-docker/</link>
+      <link>https://blog.prabeeshk.com/blog/2015/06/19/pyspark-notebook-with-docker/</link>
       <pubDate>Fri, 19 Jun 2015 23:08:08 +0400</pubDate>
       
-      <guid>http://prabeesh.github.io/blog/2015/06/19/pyspark-notebook-with-docker/</guid>
+      <guid>https://blog.prabeeshk.com/blog/2015/06/19/pyspark-notebook-with-docker/</guid>
       <description>Apache Spark is a powerful big data processing engine that is well-suited for use in a distributed environment. One way to interact with Spark is through the use of an IPython Notebook, which allows you to run and debug your Spark code in an interactive manner. This tutorial will guide you through the process of setting up and running a PySpark Notebook using Docker.
 Installing Docker Docker is a containerization platform that allows you to package and deploy your applications in a predictable and isolated environment.</description>
     </item>
     
     <item>
       <title>Self Contained PySpark Application</title>
-      <link>http://prabeesh.github.io/blog/2015/04/07/self-contained-pyspark-application/</link>
+      <link>https://blog.prabeeshk.com/blog/2015/04/07/self-contained-pyspark-application/</link>
       <pubDate>Tue, 07 Apr 2015 21:05:30 +0530</pubDate>
       
-      <guid>http://prabeesh.github.io/blog/2015/04/07/self-contained-pyspark-application/</guid>
-      <description>&lt;p&gt;In my &lt;a href=&#34;http://prabeesh.github.io/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/&#34;&gt;previous post&lt;/a&gt;, I wrote about installation of Spark and Scala interactive shell. Here in this post, we&amp;rsquo;ll see how to do the same in Python.&lt;/p&gt;
+      <guid>https://blog.prabeeshk.com/blog/2015/04/07/self-contained-pyspark-application/</guid>
+      <description>&lt;p&gt;In my &lt;a href=&#34;https://blog.prabeeshk.com/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/&#34;&gt;previous post&lt;/a&gt;, I wrote about installation of Spark and Scala interactive shell. Here in this post, we&amp;rsquo;ll see how to do the same in Python.&lt;/p&gt;
 &lt;p&gt;Similar to Scala interactive shell, there is an interactive shell available for Python. You can run it with the below command from spark root folder:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;./bin/pyspark
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now you can enjoy Spark using Python interactive shell.&lt;/p&gt;
@@ -51,12 +51,12 @@ Installing Docker Docker is a containerization platform that allows you to packa
     
     <item>
       <title>Install Apache Spark on Ubuntu-14.04</title>
-      <link>http://prabeesh.github.io/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/</link>
+      <link>https://blog.prabeeshk.com/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/</link>
       <pubDate>Fri, 31 Oct 2014 13:58:31 +0530</pubDate>
       
-      <guid>http://prabeesh.github.io/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/</guid>
-      <description>&lt;h2 id=&#34;update-for-apache-spark-2-refer-latest-postblog20161207install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os&#34;&gt;Update: For Apache Spark 2 refer latest &lt;a href=&#34;http://prabeesh.github.io/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/&#34;&gt;post&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;One of the &lt;a href=&#34;http://prabeesh.github.io/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/&#34;&gt;previous post&lt;/a&gt; mentioning about install &lt;strong&gt;Apache Spark-0.8.0&lt;/strong&gt; on Ubuntu-12.04. In this post  explain about detailed steps to set up &lt;strong&gt;Apache Spark-1.1.0&lt;/strong&gt; on Ubuntu. For running Spark in Ubuntu machine should install Java.  Using following commands  easily install Java in Ubuntu machine.&lt;/p&gt;
+      <guid>https://blog.prabeeshk.com/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/</guid>
+      <description>&lt;h2 id=&#34;update-for-apache-spark-2-refer-latest-postblog20161207install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os&#34;&gt;Update: For Apache Spark 2 refer latest &lt;a href=&#34;https://blog.prabeeshk.com/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/&#34;&gt;post&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;One of the &lt;a href=&#34;https://blog.prabeeshk.com/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/&#34;&gt;previous post&lt;/a&gt; mentioning about install &lt;strong&gt;Apache Spark-0.8.0&lt;/strong&gt; on Ubuntu-12.04. In this post  explain about detailed steps to set up &lt;strong&gt;Apache Spark-1.1.0&lt;/strong&gt; on Ubuntu. For running Spark in Ubuntu machine should install Java.  Using following commands  easily install Java in Ubuntu machine.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;	$ sudo apt-add-repository ppa:webupd8team/java
 	$ sudo apt-get update
 	$ sudo apt-get install oracle-java7-installer
@@ -70,11 +70,11 @@ instructions to set up Scala.&lt;/p&gt;</description>
     
     <item>
       <title>Creating assembled JAR for Standalone Spark Application</title>
-      <link>http://prabeesh.github.io/blog/2014/04/08/creating-uber-jar-for-spark-project-using-sbt-assembly/</link>
+      <link>https://blog.prabeeshk.com/blog/2014/04/08/creating-uber-jar-for-spark-project-using-sbt-assembly/</link>
       <pubDate>Tue, 08 Apr 2014 09:47:00 +0530</pubDate>
       
-      <guid>http://prabeesh.github.io/blog/2014/04/08/creating-uber-jar-for-spark-project-using-sbt-assembly/</guid>
-      <description>&lt;p&gt;In the &lt;a href=&#34;http://prabeesh.github.io/blog/2014/04/01/a-standalone-spark-application-in-scala/&#34;&gt;previous post&lt;/a&gt; shared how to use sbt in Spark-streaming project. This post is about how to create a fat jar for spark streaming project using sbt plugin. sbt-assembly is an sbt plugin to create a fat JAR of sbt project with all of its dependencies.&lt;/p&gt;
+      <guid>https://blog.prabeeshk.com/blog/2014/04/08/creating-uber-jar-for-spark-project-using-sbt-assembly/</guid>
+      <description>&lt;p&gt;In the &lt;a href=&#34;https://blog.prabeeshk.com/blog/2014/04/01/a-standalone-spark-application-in-scala/&#34;&gt;previous post&lt;/a&gt; shared how to use sbt in Spark-streaming project. This post is about how to create a fat jar for spark streaming project using sbt plugin. sbt-assembly is an sbt plugin to create a fat JAR of sbt project with all of its dependencies.&lt;/p&gt;
 &lt;p&gt;Add sbt-assembly plugin in &lt;strong&gt;&lt;em&gt;project/plugin.sbt&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-scala&#34; data-lang=&#34;scala&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;addSbtPlugin&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;com.eed3si9n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;sbt-assembly&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;0.9.1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Specify sbt-assembly.git as a dependency in project/project/build.scala&lt;/p&gt;
@@ -90,10 +90,10 @@ instructions to set up Scala.&lt;/p&gt;</description>
     
     <item>
       <title>Creating a Standalone Spark Application in Scala: A Step-by-Step Guide with Twitter Streaming Example</title>
-      <link>http://prabeesh.github.io/blog/2014/04/01/a-standalone-spark-application-in-scala/</link>
+      <link>https://blog.prabeeshk.com/blog/2014/04/01/a-standalone-spark-application-in-scala/</link>
       <pubDate>Tue, 01 Apr 2014 22:56:00 +0530</pubDate>
       
-      <guid>http://prabeesh.github.io/blog/2014/04/01/a-standalone-spark-application-in-scala/</guid>
+      <guid>https://blog.prabeeshk.com/blog/2014/04/01/a-standalone-spark-application-in-scala/</guid>
       <description>&lt;p&gt;This blog post will guide you through the process of building a Spark application in Scala that calculates popular hashtags from a Twitter stream. You will also learn how to use the sbt eclipse plugin to run the application in the Eclipse Integrated Development Environment (IDE). Whether you are new to big data processing or looking to improve your skills in data enginering and analytics, this tutorial has something to offer. Follow along with our step-by-step guide to develop your own stand alone Spark application and enhance your abilities in this exciting field.&lt;/p&gt;
 &lt;p&gt;Sharing  some ideas about how to create a Spark-streaming stand-alone application and how to run the Spark applications in scala-SDK (Eclipse IDE).&lt;/p&gt;
 &lt;h2 id=&#34;building-spark-application-using-sbt&#34;&gt;Building Spark Application using SBT&lt;/h2&gt;
@@ -105,11 +105,11 @@ instructions to set up Scala.&lt;/p&gt;</description>
     
     <item>
       <title>Installing Apache Spark on Ubuntu-12.04</title>
-      <link>http://prabeesh.github.io/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/</link>
+      <link>https://blog.prabeeshk.com/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/</link>
       <pubDate>Tue, 26 Nov 2013 12:24:00 +0530</pubDate>
       
-      <guid>http://prabeesh.github.io/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/</guid>
-      <description>&lt;h2 id=&#34;update-to-install-apache-spark-10-follow-this-postblog20141031install-apache-spark-on-ubuntu-14-dot-04&#34;&gt;Update: To install Apache Spark-1.0 follow &lt;a href=&#34;http://prabeesh.github.io/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/&#34;&gt;this post&lt;/a&gt;&lt;/h2&gt;
+      <guid>https://blog.prabeeshk.com/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/</guid>
+      <description>&lt;h2 id=&#34;update-to-install-apache-spark-10-follow-this-postblog20141031install-apache-spark-on-ubuntu-14-dot-04&#34;&gt;Update: To install Apache Spark-1.0 follow &lt;a href=&#34;https://blog.prabeeshk.com/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/&#34;&gt;this post&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Apache Spark is an open source in memory cluster computing framework. Initially developed in UC Berkely AMPLab and now an Apache Incubator Project. Apache Spark is a cluster computing framework designed for low-latency iterative jobs and interactive use from an interpreter. It provides clean, language-integrated APIs in Scala, Java, and Python, with a rich array of parallel operators. You may read more about it &lt;a href=&#34;http://spark.apache.org/&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;You can download the Apache Spark distribution(0.8.0-incubating) from &lt;a href=&#34;http://d3kbcqa49mib13.cloudfront.net/spark-0.8.0-incubating.tgz&#34;&gt;here&lt;/a&gt;. After that untar the downloaded file.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ tar xvf spark-0.8.0-incubating.tgz
@@ -120,10 +120,10 @@ instructions to set up Scala.&lt;/p&gt;</description>
     
     <item>
       <title>Running Mesos-0.13.0  on Ubuntu-12.04</title>
-      <link>http://prabeesh.github.io/blog/2013/10/07/running-mesos-0130-on-ubuntu-1204/</link>
+      <link>https://blog.prabeeshk.com/blog/2013/10/07/running-mesos-0130-on-ubuntu-1204/</link>
       <pubDate>Mon, 07 Oct 2013 10:53:00 +0530</pubDate>
       
-      <guid>http://prabeesh.github.io/blog/2013/10/07/running-mesos-0130-on-ubuntu-1204/</guid>
+      <guid>https://blog.prabeeshk.com/blog/2013/10/07/running-mesos-0130-on-ubuntu-1204/</guid>
       <description>&lt;p&gt;You will need the following packages to run Mesos.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ sudo apt-get install python2.7-dev g++ libcppunit-dev libunwind7-dev git libcurl4-nss-dev
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You need to have Java installed, or the JAVA_HOME environment variable pointing to a Java installation.&lt;/p&gt;
@@ -142,19 +142,19 @@ $ sudo make install
     
     <item>
       <title>MQTT Publisher and Subscriber in Scala: A Step-by-Step Guide Using Eclipse Paho</title>
-      <link>http://prabeesh.github.io/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/</link>
+      <link>https://blog.prabeeshk.com/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/</link>
       <pubDate>Mon, 26 Aug 2013 09:41:00 +0530</pubDate>
       
-      <guid>http://prabeesh.github.io/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/</guid>
+      <guid>https://blog.prabeeshk.com/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/</guid>
       <description>What is MQTT? MQTT (Message Queuing Telemetry Transport) is a publish-subscribe based lightweight messaging protocol for use on top of the TCP/IP protocol. It was designed to be used in resource-constrained environments and for communication between devices with low-bandwidth or unreliable networks. MQTT is often used in Internet of Things (IoT) applications to communicate between devices and a central server, as well as in other types of messaging systems. In an MQTT system, there is a central broker that receives messages from publishers and routes them to subscribers that are subscribed to the relevant topic.</description>
     </item>
     
     <item>
       <title>Paint App using Flask with MongoDB</title>
-      <link>http://prabeesh.github.io/blog/2013/03/31/paint-app-using-flask-with-mongodb/</link>
+      <link>https://blog.prabeeshk.com/blog/2013/03/31/paint-app-using-flask-with-mongodb/</link>
       <pubDate>Sun, 31 Mar 2013 21:53:00 +0530</pubDate>
       
-      <guid>http://prabeesh.github.io/blog/2013/03/31/paint-app-using-flask-with-mongodb/</guid>
+      <guid>https://blog.prabeeshk.com/blog/2013/03/31/paint-app-using-flask-with-mongodb/</guid>
       <description>&lt;p&gt;Here the paint app is modified using with a new database system. The MongoDB is a famous NoSQL database system. The NoSQL database is a simple lightweight mechanism. It provides high scalability and availability. It provides horizontal scaling of data. This system redefined the database concept from the traditional relational database system.
 MongoDB is an open-source, document-oriented database designed for ease of development and scaling. The main features of MongoDB are flexibility, power, speed, and ease of use. The MongoDB can installed in local machine by following the instructions from &lt;a href=&#34;http://docs.mongodb.org/manual/installation/&#34;&gt;official website&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Some commands used in the MonoDB operations are given below:&lt;/p&gt;
@@ -170,21 +170,21 @@ MongoDB is an open-source, document-oriented database designed for ease of devel
     
     <item>
       <title>Paint app using JavaScript and Canvas</title>
-      <link>http://prabeesh.github.io/blog/2013/03/30/paint-app-using-javascript-and-canvas/</link>
+      <link>https://blog.prabeeshk.com/blog/2013/03/30/paint-app-using-javascript-and-canvas/</link>
       <pubDate>Sat, 30 Mar 2013 12:44:00 +0530</pubDate>
       
-      <guid>http://prabeesh.github.io/blog/2013/03/30/paint-app-using-javascript-and-canvas/</guid>
+      <guid>https://blog.prabeeshk.com/blog/2013/03/30/paint-app-using-javascript-and-canvas/</guid>
       <description>&lt;p&gt;An application to draw simple drawings using lines, rectangles and circles in different colours.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://prabeesh.github.io/images/paint.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.prabeeshk.com/images/paint.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The application is developed using JavaScript and HTML5. The canvas feature in HTML5 is used for providing a drawable region. The JavaScript is used to handle drawing functions in this region. The select button to select the different tools to draw.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Introduction to GPU Programming with CUDA: A Step-by-Step Guide to Key Concepts and Functions</title>
-      <link>http://prabeesh.github.io/blog/2013/03/07/a-simple-cuda-program/</link>
+      <link>https://blog.prabeeshk.com/blog/2013/03/07/a-simple-cuda-program/</link>
       <pubDate>Thu, 07 Mar 2013 11:00:00 +0530</pubDate>
       
-      <guid>http://prabeesh.github.io/blog/2013/03/07/a-simple-cuda-program/</guid>
+      <guid>https://blog.prabeeshk.com/blog/2013/03/07/a-simple-cuda-program/</guid>
       <description>&lt;p&gt;This blog post is an introduction to the world of GPU programming with CUDA. We will cover the fundamental concepts and tools necessary to get started with CUDA, including:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The steps involved in a typical GPU program, such as allocating storage on the GPU, transferring data between the CPU and GPU, and launching kernels on the GPU to process the data.&lt;/li&gt;
@@ -194,7 +194,7 @@ MongoDB is an open-source, document-oriented database designed for ease of devel
 &lt;li&gt;The importance of error checking in CUDA code.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;To help illustrate these concepts, provided a simple example code that computes the squares of 64 numbers using CUDA. By the end of this post, you will have a basic foundation in GPU programming with CUDA and be ready to write your own programs and experience the performance benefits of using the GPU for parallel processing.&lt;/p&gt;
-&lt;p&gt;In my &lt;a href=&#34;http://prabeesh.github.io/blog/2013/02/22/introduction-to-parallel-programing/&#34;&gt;previous post&lt;/a&gt; I wrote about an introduction to parallel programming with CUDA. In this post explaining a simple example CUDA code to compute squares of 64 numbers. A typical GPU program consists of following steps.&lt;/p&gt;
+&lt;p&gt;In my &lt;a href=&#34;https://blog.prabeeshk.com/blog/2013/02/22/introduction-to-parallel-programing/&#34;&gt;previous post&lt;/a&gt; I wrote about an introduction to parallel programming with CUDA. In this post explaining a simple example CUDA code to compute squares of 64 numbers. A typical GPU program consists of following steps.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;1- CPU allocates storage on GPU
 2- CPU copies input data from CPU to GPU
 3- CPU launch kernels on GPU to process the data
@@ -207,20 +207,20 @@ MongoDB is an open-source, document-oriented database designed for ease of devel
     
     <item>
       <title>Introduction to Parallel Programing</title>
-      <link>http://prabeesh.github.io/blog/2013/02/22/introduction-to-parallel-programing/</link>
+      <link>https://blog.prabeeshk.com/blog/2013/02/22/introduction-to-parallel-programing/</link>
       <pubDate>Fri, 22 Feb 2013 23:16:54 +0530</pubDate>
       
-      <guid>http://prabeesh.github.io/blog/2013/02/22/introduction-to-parallel-programing/</guid>
+      <guid>https://blog.prabeeshk.com/blog/2013/02/22/introduction-to-parallel-programing/</guid>
       <description>This post focuses on parallel computing on the GPU. Parallel computing is a way of solving large problems by breaking them into smaller pieces and run these smaller pieces at the same time.
 Main reasons of technical trends in the parallel computing on the GPU Modern processors are made from transistors. And each year, those transistors get smaller and smaller. The feature size is the minimum size of a transistor on a chip.</description>
     </item>
     
     <item>
       <title>Developing a simple game with HTML5/canvas</title>
-      <link>http://prabeesh.github.io/blog/2013/02/09/developing-a-simple-game-with-html5-slash-canvas/</link>
+      <link>https://blog.prabeeshk.com/blog/2013/02/09/developing-a-simple-game-with-html5-slash-canvas/</link>
       <pubDate>Sat, 09 Feb 2013 10:12:43 +0530</pubDate>
       
-      <guid>http://prabeesh.github.io/blog/2013/02/09/developing-a-simple-game-with-html5-slash-canvas/</guid>
+      <guid>https://blog.prabeeshk.com/blog/2013/02/09/developing-a-simple-game-with-html5-slash-canvas/</guid>
       <description>&lt;p&gt;HTML5 is the new HTML standard. One of the most interesting new features in HTML5 is the canvas element &lt;strong&gt;canvas&lt;/strong&gt; for 2D drawing. A canvas is a rectangular area on an HTML page. All drawing on the canvas must be done using JavaScript. This post goes through the basics of implementing a 2D canvas context, and using the basic canvas functions for developing a simple game.
 Creating a canvad context, adding the &lt;strong&gt;canvas&lt;/strong&gt; element to your HTML document like so&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;canvas&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Canvas&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;800&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;450&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;canvas&lt;/span&gt;&amp;gt;
@@ -236,10 +236,10 @@ Creating a canvad context, adding the &lt;strong&gt;canvas&lt;/strong&gt; elemen
     
     <item>
       <title>Finding RC constant using ATmega8</title>
-      <link>http://prabeesh.github.io/blog/2012/07/14/finding-rc-constant-using-atmega8/</link>
+      <link>https://blog.prabeeshk.com/blog/2012/07/14/finding-rc-constant-using-atmega8/</link>
       <pubDate>Sat, 14 Jul 2012 23:39:00 +0530</pubDate>
       
-      <guid>http://prabeesh.github.io/blog/2012/07/14/finding-rc-constant-using-atmega8/</guid>
+      <guid>https://blog.prabeeshk.com/blog/2012/07/14/finding-rc-constant-using-atmega8/</guid>
       <description>&lt;p&gt;The time constant(sec) of an RC circuit is equal to the product of the resistance and the capacitance of the circuit.&lt;/p&gt;
 &lt;p&gt;It is the time required to charge the capacitor through the resistor to 63. 2% of full charge,or to discharge it to 36.8% of its initial voltage.&lt;/p&gt;
 &lt;p&gt;The voltage of the RC circuit is measured using adc of the ATmega8, input voltage for RC circuit is given from PB0. The timer is started at the time of the PB0 making 1 .&lt;/p&gt;
@@ -251,10 +251,10 @@ Creating a canvad context, adding the &lt;strong&gt;canvas&lt;/strong&gt; elemen
     
     <item>
       <title>Running Arduino codes in stand alone atmega8</title>
-      <link>http://prabeesh.github.io/blog/2012/07/14/running-arduino-codes-in-stand-alone/</link>
+      <link>https://blog.prabeeshk.com/blog/2012/07/14/running-arduino-codes-in-stand-alone/</link>
       <pubDate>Sat, 14 Jul 2012 02:23:00 +0530</pubDate>
       
-      <guid>http://prabeesh.github.io/blog/2012/07/14/running-arduino-codes-in-stand-alone/</guid>
+      <guid>https://blog.prabeeshk.com/blog/2012/07/14/running-arduino-codes-in-stand-alone/</guid>
       <description>&lt;p&gt;An Arduino board consists of an 8-bit Atmel AVR microcontroller with complementary components to facilitate programming and incorporation into other circuits.
 If you wish to study the arduino codes ,then one of the major problems is the availability and cost of the Arduino board. If you have an atmega8 microcontroller  then you have to study the Arduino codes by simply changing some options in Arduino IDE.&lt;/p&gt;
 &lt;p&gt;First download the arduino IDE(I am using Arduino 1.0). Next you have to an avr  programmer(I am using usbasp and usbtiny).
@@ -266,20 +266,20 @@ Take care in fuse bytes because arduino codes are running in 8MHz.Y ou can enabl
     
     <item>
       <title>AVR Programming Made Easy: How to Build a USBtinyISP with an attiny2313</title>
-      <link>http://prabeesh.github.io/blog/2012/07/04/simplest-and-low-cost-usb-avr/</link>
+      <link>https://blog.prabeeshk.com/blog/2012/07/04/simplest-and-low-cost-usb-avr/</link>
       <pubDate>Wed, 04 Jul 2012 19:39:00 +0530</pubDate>
       
-      <guid>http://prabeesh.github.io/blog/2012/07/04/simplest-and-low-cost-usb-avr/</guid>
+      <guid>https://blog.prabeeshk.com/blog/2012/07/04/simplest-and-low-cost-usb-avr/</guid>
       <description>AVR microcontrollers are a popular choice for use in a wide range of applications, including embedded systems, robotics, and more. They are known for their low cost, versatility, and efficient use of resources, which make them an attractive choice for many developers. If you are working with AVR chips, you will need a programmer to burn programs onto them.
 One option for an AVR programmer is the USBtinyISP, which is a simple and low cost solution based on the attiny2313 microcontroller.</description>
     </item>
     
     <item>
       <title>LCD Interfacing using msp430</title>
-      <link>http://prabeesh.github.io/blog/2012/07/04/lcd-interfacing-using-msp430/</link>
+      <link>https://blog.prabeeshk.com/blog/2012/07/04/lcd-interfacing-using-msp430/</link>
       <pubDate>Wed, 04 Jul 2012 02:39:00 +0530</pubDate>
       
-      <guid>http://prabeesh.github.io/blog/2012/07/04/lcd-interfacing-using-msp430/</guid>
+      <guid>https://blog.prabeeshk.com/blog/2012/07/04/lcd-interfacing-using-msp430/</guid>
       <description>&lt;p&gt;There is a pot connect to the ADC of msp430 Ao(pin p1.0). The values  of  ADC10MEM displayed using LCD.&lt;/p&gt;
 &lt;p&gt;The Vcc for pot is taken from msp430 launchpad.so maximum voltage is 3.6v.&lt;/p&gt;
 &lt;p&gt;The msp430 10 bit ADC operates in the range 0 to 3.6V. If the input voltage is 0V,&lt;/p&gt;
@@ -295,10 +295,10 @@ One option for an AVR programmer is the USBtinyISP, which is a simple and low co
     
     <item>
       <title>Introduction to AVR programming</title>
-      <link>http://prabeesh.github.io/blog/2012/02/21/introduction-to-avr-programing/</link>
+      <link>https://blog.prabeeshk.com/blog/2012/02/21/introduction-to-avr-programing/</link>
       <pubDate>Tue, 21 Feb 2012 02:39:00 +0530</pubDate>
       
-      <guid>http://prabeesh.github.io/blog/2012/02/21/introduction-to-avr-programing/</guid>
+      <guid>https://blog.prabeeshk.com/blog/2012/02/21/introduction-to-avr-programing/</guid>
       <description>&lt;p&gt;Atmel AVR 8-bit and 32-bit microcontrollers deliver a unique combination of performance, power efficiency, and design flexibility. Optimized to speed time to market, they are based on the industry’s most code-efficient architecture for C and assembly programming. No other microcontrollers deliver more computing performance with better power efficiency. Industry-leading development tools and design support let you get to market faster. Once there, the large AVR family lets you reuse your knowledge when improving your products and expanding to new markets—easily and cost-effectively.&lt;/p&gt;
 &lt;p&gt;package required in linux&lt;/p&gt;
 &lt;p&gt;binutils: Programs to manipulate binary and object files that may have been created for Atmel’s AVR architecture. This package is primarily for AVR developers and cross-compilers.&lt;/p&gt;
@@ -309,10 +309,10 @@ One option for an AVR programmer is the USBtinyISP, which is a simple and low co
     
     <item>
       <title>AM Wave Generation and Plotting with Matplotlib Python: A Detailed Guide</title>
-      <link>http://prabeesh.github.io/blog/2011/09/25/am-plot-matplotlib/</link>
+      <link>https://blog.prabeeshk.com/blog/2011/09/25/am-plot-matplotlib/</link>
       <pubDate>Sun, 25 Sep 2011 01:39:00 +0530</pubDate>
       
-      <guid>http://prabeesh.github.io/blog/2011/09/25/am-plot-matplotlib/</guid>
+      <guid>https://blog.prabeeshk.com/blog/2011/09/25/am-plot-matplotlib/</guid>
       <description>Amplitude Modulation (AM) is a type of analog communication in which the amplitude of a carrier signal is varied in proportion to the message signal. It is one of the oldest and most widely used forms of radio communication, and it is still used in many applications today, including AM radio broadcasting and certain types of military and aviation communications.
 In this blog post, we will learn how to generate and plot AM waves using the Python library Matplotlib.</description>
     </item>
