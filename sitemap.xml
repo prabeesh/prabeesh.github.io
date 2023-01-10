@@ -2,183 +2,183 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://prabeesh.github.io/tags/apache-spark/</loc>
+    <loc>/tags/apache-spark/</loc>
     <lastmod>2023-01-06T11:51:39+01:00</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/big-data/</loc>
+    <loc>/tags/big-data/</loc>
     <lastmod>2023-01-06T11:51:39+01:00</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/blog/</loc>
+    <loc>/blog/</loc>
     <lastmod>2023-01-06T11:51:39+01:00</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/performance-tuning/</loc>
+    <loc>/tags/performance-tuning/</loc>
     <lastmod>2023-01-06T11:51:39+01:00</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/blog/2023/01/06/performance-tuning-on-apache-spark/</loc>
+    <loc>/blog/2023/01/06/performance-tuning-on-apache-spark/</loc>
     <lastmod>2023-01-06T11:51:39+01:00</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/pyspark/</loc>
+    <loc>/tags/pyspark/</loc>
     <lastmod>2023-01-06T11:51:39+01:00</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2023-01-06T11:51:39+01:00</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/</loc>
+    <loc>/</loc>
     <lastmod>2023-01-06T11:51:39+01:00</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/</loc>
+    <loc>/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/</loc>
     <lastmod>2016-12-07T11:45:18+04:00</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/mac-os-x/</loc>
+    <loc>/tags/mac-os-x/</loc>
     <lastmod>2016-12-07T11:45:18+04:00</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/ubuntu/</loc>
+    <loc>/tags/ubuntu/</loc>
     <lastmod>2016-12-07T11:45:18+04:00</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/docker/</loc>
+    <loc>/tags/docker/</loc>
     <lastmod>2015-06-19T23:08:08+04:00</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/blog/2015/06/19/pyspark-notebook-with-docker/</loc>
+    <loc>/blog/2015/06/19/pyspark-notebook-with-docker/</loc>
     <lastmod>2015-06-19T23:08:08+04:00</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/ipython-notebook/</loc>
+    <loc>/tags/ipython-notebook/</loc>
     <lastmod>2015-06-19T23:08:08+04:00</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/python/</loc>
+    <loc>/tags/python/</loc>
     <lastmod>2015-06-19T23:08:08+04:00</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/blog/2015/04/07/self-contained-pyspark-application/</loc>
+    <loc>/blog/2015/04/07/self-contained-pyspark-application/</loc>
     <lastmod>2015-04-07T21:05:30+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/</loc>
+    <loc>/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/</loc>
     <lastmod>2014-10-31T13:58:31+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/blog/2014/04/08/creating-uber-jar-for-spark-project-using-sbt-assembly/</loc>
+    <loc>/blog/2014/04/08/creating-uber-jar-for-spark-project-using-sbt-assembly/</loc>
     <lastmod>2014-04-08T09:47:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/sbt/</loc>
+    <loc>/tags/sbt/</loc>
     <lastmod>2014-04-08T09:47:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/scala/</loc>
+    <loc>/tags/scala/</loc>
     <lastmod>2014-04-08T09:47:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/blog/2014/04/01/a-standalone-spark-application-in-scala/</loc>
+    <loc>/blog/2014/04/01/a-standalone-spark-application-in-scala/</loc>
     <lastmod>2014-04-01T22:56:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/data-engineering/</loc>
+    <loc>/tags/data-engineering/</loc>
     <lastmod>2014-04-01T22:56:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/</loc>
+    <loc>/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/</loc>
     <lastmod>2013-11-26T12:24:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/apache-mesos/</loc>
+    <loc>/tags/apache-mesos/</loc>
     <lastmod>2013-10-07T10:53:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/blog/2013/10/07/running-mesos-0130-on-ubuntu-1204/</loc>
+    <loc>/blog/2013/10/07/running-mesos-0130-on-ubuntu-1204/</loc>
     <lastmod>2013-10-07T10:53:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/iot/</loc>
+    <loc>/tags/iot/</loc>
     <lastmod>2013-08-26T09:41:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/message-queue/</loc>
+    <loc>/tags/message-queue/</loc>
     <lastmod>2013-08-26T09:41:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/mqtt/</loc>
+    <loc>/tags/mqtt/</loc>
     <lastmod>2013-08-26T09:41:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/</loc>
+    <loc>/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/</loc>
     <lastmod>2013-08-26T09:41:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/no-sql-data-base/</loc>
+    <loc>/tags/no-sql-data-base/</loc>
     <lastmod>2013-03-31T21:53:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/blog/2013/03/31/paint-app-using-flask-with-mongodb/</loc>
+    <loc>/blog/2013/03/31/paint-app-using-flask-with-mongodb/</loc>
     <lastmod>2013-03-31T21:53:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/python-flask/</loc>
+    <loc>/tags/python-flask/</loc>
     <lastmod>2013-03-31T21:53:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/googleappengine/</loc>
+    <loc>/tags/googleappengine/</loc>
     <lastmod>2013-03-30T12:44:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/javascript/</loc>
+    <loc>/tags/javascript/</loc>
     <lastmod>2013-03-30T12:44:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/blog/2013/03/30/paint-app-using-javascript-and-canvas/</loc>
+    <loc>/blog/2013/03/30/paint-app-using-javascript-and-canvas/</loc>
     <lastmod>2013-03-30T12:44:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/cuda/</loc>
+    <loc>/tags/cuda/</loc>
     <lastmod>2013-03-07T11:00:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/gpu-programming/</loc>
+    <loc>/tags/gpu-programming/</loc>
     <lastmod>2013-03-07T11:00:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/blog/2013/03/07/a-simple-cuda-program/</loc>
+    <loc>/blog/2013/03/07/a-simple-cuda-program/</loc>
     <lastmod>2013-03-07T11:00:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/parallel-programming/</loc>
+    <loc>/tags/parallel-programming/</loc>
     <lastmod>2013-03-07T11:00:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/blog/2013/02/22/introduction-to-parallel-programing/</loc>
+    <loc>/blog/2013/02/22/introduction-to-parallel-programing/</loc>
     <lastmod>2013-02-22T23:16:54+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/blog/2013/02/09/developing-a-simple-game-with-html5-slash-canvas/</loc>
+    <loc>/blog/2013/02/09/developing-a-simple-game-with-html5-slash-canvas/</loc>
     <lastmod>2013-02-09T10:12:43+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/google-app-engine/</loc>
+    <loc>/tags/google-app-engine/</loc>
     <lastmod>2013-02-09T10:12:43+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/html5/</loc>
+    <loc>/tags/html5/</loc>
     <lastmod>2013-02-09T10:12:43+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/avr/</loc>
+    <loc>/tags/avr/</loc>
     <lastmod>2012-07-14T23:39:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/embedded/</loc>
+    <loc>/tags/embedded/</loc>
     <lastmod>2012-07-14T23:39:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/blog/2012/07/14/finding-rc-constant-using-atmega8/</loc>
+    <loc>/blog/2012/07/14/finding-rc-constant-using-atmega8/</loc>
     <lastmod>2012-07-14T23:39:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/arduino/</loc>
+    <loc>/tags/arduino/</loc>
     <lastmod>2012-07-14T02:23:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/blog/2012/07/14/running-arduino-codes-in-stand-alone/</loc>
+    <loc>/blog/2012/07/14/running-arduino-codes-in-stand-alone/</loc>
     <lastmod>2012-07-14T02:23:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/attiny2313/</loc>
+    <loc>/tags/attiny2313/</loc>
     <lastmod>2012-07-04T19:39:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/blog/2012/07/04/simplest-and-low-cost-usb-avr/</loc>
+    <loc>/blog/2012/07/04/simplest-and-low-cost-usb-avr/</loc>
     <lastmod>2012-07-04T19:39:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/embedded-systems/</loc>
+    <loc>/tags/embedded-systems/</loc>
     <lastmod>2012-07-04T19:39:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/microcontroller/</loc>
+    <loc>/tags/microcontroller/</loc>
     <lastmod>2012-07-04T19:39:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/usbtinyisp/</loc>
+    <loc>/tags/usbtinyisp/</loc>
     <lastmod>2012-07-04T19:39:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/lcd-interfacing/</loc>
+    <loc>/tags/lcd-interfacing/</loc>
     <lastmod>2012-07-04T02:39:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/blog/2012/07/04/lcd-interfacing-using-msp430/</loc>
+    <loc>/blog/2012/07/04/lcd-interfacing-using-msp430/</loc>
     <lastmod>2012-07-04T02:39:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/msp430/</loc>
+    <loc>/tags/msp430/</loc>
     <lastmod>2012-07-04T02:39:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/blog/2012/02/21/introduction-to-avr-programing/</loc>
+    <loc>/blog/2012/02/21/introduction-to-avr-programing/</loc>
     <lastmod>2012-02-21T02:39:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/blog/2011/09/25/am-plot-matplotlib/</loc>
+    <loc>/blog/2011/09/25/am-plot-matplotlib/</loc>
     <lastmod>2011-09-25T01:39:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/tags/matplotlib/</loc>
+    <loc>/tags/matplotlib/</loc>
     <lastmod>2011-09-25T01:39:00+05:30</lastmod>
   </url><url>
-    <loc>https://prabeesh.github.io/categories/</loc>
+    <loc>/categories/</loc>
   </url>
 </urlset>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Parallel programming on This is the one of the solutions</title>
-    <link>https://prabeesh.github.io/tags/parallel-programming/</link>
+    <link>/tags/parallel-programming/</link>
     <description>Recent content in Parallel programming on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 Mar 2013 11:00:00 +0530</lastBuildDate><atom:link href="https://prabeesh.github.io/tags/parallel-programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Mar 2013 11:00:00 +0530</lastBuildDate><atom:link href="/tags/parallel-programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introduction to GPU Programming with CUDA: A Step-by-Step Guide to Key Concepts and Functions</title>
-      <link>https://prabeesh.github.io/blog/2013/03/07/a-simple-cuda-program/</link>
+      <link>/blog/2013/03/07/a-simple-cuda-program/</link>
       <pubDate>Thu, 07 Mar 2013 11:00:00 +0530</pubDate>
       
-      <guid>https://prabeesh.github.io/blog/2013/03/07/a-simple-cuda-program/</guid>
+      <guid>/blog/2013/03/07/a-simple-cuda-program/</guid>
       <description>&lt;p&gt;This blog post is an introduction to the world of GPU programming with CUDA. We will cover the fundamental concepts and tools necessary to get started with CUDA, including:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The steps involved in a typical GPU program, such as allocating storage on the GPU, transferring data between the CPU and GPU, and launching kernels on the GPU to process the data.&lt;/li&gt;
@@ -22,7 +22,7 @@
 &lt;li&gt;The importance of error checking in CUDA code.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;To help illustrate these concepts, provided a simple example code that computes the squares of 64 numbers using CUDA. By the end of this post, you will have a basic foundation in GPU programming with CUDA and be ready to write your own programs and experience the performance benefits of using the GPU for parallel processing.&lt;/p&gt;
-&lt;p&gt;In my &lt;a href=&#34;https://prabeesh.github.io/blog/2013/02/22/introduction-to-parallel-programing/&#34;&gt;previous post&lt;/a&gt; I wrote about an introduction to parallel programming with CUDA. In this post explaining a simple example CUDA code to compute squares of 64 numbers. A typical GPU program consists of following steps.&lt;/p&gt;
+&lt;p&gt;In my &lt;a href=&#34;/blog/2013/02/22/introduction-to-parallel-programing/&#34;&gt;previous post&lt;/a&gt; I wrote about an introduction to parallel programming with CUDA. In this post explaining a simple example CUDA code to compute squares of 64 numbers. A typical GPU program consists of following steps.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;1- CPU allocates storage on GPU
 2- CPU copies input data from CPU to GPU
 3- CPU launch kernels on GPU to process the data
