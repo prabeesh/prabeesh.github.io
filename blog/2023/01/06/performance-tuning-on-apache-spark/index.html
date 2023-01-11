@@ -6,7 +6,7 @@
     
     <title>Performance Tuning on Apache Spark | This is the one of the solutions</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Performance tuning Apache Spark is essential to ensure that your data processing tasks are efficient and run smoothly. This blog post covers common issues to consider when optimizing Apache Spark, including spill prevention, skew reduction, shuffle minimization, storage optimization, and serialization optimization. Tips and examples are provided to help you implement techniques like salted joins, adaptive query execution, repartition() usage, bucketing, sampling, narrow transformation usage, pre-shuffling, broadcasting, manual compaction, Tungsten, higher-order functions, Pandas, vectorized UDFs, SQL higher-order functions, and PySpark usage. By properly addressing these issues, you can optimize your Apache Spark tasks and improve their performance.">
+    <meta name="description" content="Optimize Apache Spark for better performance. Tips for spill prevention, skew reduction, storage &amp; serialization optimization provided">
     <meta name="generator" content="Hugo 0.109.0">
     
     
@@ -32,18 +32,18 @@
     
     
     <meta property="og:title" content="Performance Tuning on Apache Spark" />
-<meta property="og:description" content="Performance tuning Apache Spark is essential to ensure that your data processing tasks are efficient and run smoothly. This blog post covers common issues to consider when optimizing Apache Spark, including spill prevention, skew reduction, shuffle minimization, storage optimization, and serialization optimization. Tips and examples are provided to help you implement techniques like salted joins, adaptive query execution, repartition() usage, bucketing, sampling, narrow transformation usage, pre-shuffling, broadcasting, manual compaction, Tungsten, higher-order functions, Pandas, vectorized UDFs, SQL higher-order functions, and PySpark usage. By properly addressing these issues, you can optimize your Apache Spark tasks and improve their performance." />
+<meta property="og:description" content="Optimize Apache Spark for better performance. Tips for spill prevention, skew reduction, storage &amp; serialization optimization provided" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.prabeeshk.com/blog/2023/01/06/performance-tuning-on-apache-spark/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2023-01-06T11:51:39+01:00" />
 <meta property="article:modified_time" content="2023-01-06T11:51:39+01:00" />
 <meta itemprop="name" content="Performance Tuning on Apache Spark">
-<meta itemprop="description" content="Performance tuning Apache Spark is essential to ensure that your data processing tasks are efficient and run smoothly. This blog post covers common issues to consider when optimizing Apache Spark, including spill prevention, skew reduction, shuffle minimization, storage optimization, and serialization optimization. Tips and examples are provided to help you implement techniques like salted joins, adaptive query execution, repartition() usage, bucketing, sampling, narrow transformation usage, pre-shuffling, broadcasting, manual compaction, Tungsten, higher-order functions, Pandas, vectorized UDFs, SQL higher-order functions, and PySpark usage. By properly addressing these issues, you can optimize your Apache Spark tasks and improve their performance."><meta itemprop="datePublished" content="2023-01-06T11:51:39+01:00" />
+<meta itemprop="description" content="Optimize Apache Spark for better performance. Tips for spill prevention, skew reduction, storage &amp; serialization optimization provided"><meta itemprop="datePublished" content="2023-01-06T11:51:39+01:00" />
 <meta itemprop="dateModified" content="2023-01-06T11:51:39+01:00" />
 <meta itemprop="wordCount" content="1242">
 <meta itemprop="keywords" content="Apache Spark,Performance Tuning,PySpark,Big Data," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Performance Tuning on Apache Spark"/>
-<meta name="twitter:description" content="Performance tuning Apache Spark is essential to ensure that your data processing tasks are efficient and run smoothly. This blog post covers common issues to consider when optimizing Apache Spark, including spill prevention, skew reduction, shuffle minimization, storage optimization, and serialization optimization. Tips and examples are provided to help you implement techniques like salted joins, adaptive query execution, repartition() usage, bucketing, sampling, narrow transformation usage, pre-shuffling, broadcasting, manual compaction, Tungsten, higher-order functions, Pandas, vectorized UDFs, SQL higher-order functions, and PySpark usage. By properly addressing these issues, you can optimize your Apache Spark tasks and improve their performance."/>
+<meta name="twitter:description" content="Optimize Apache Spark for better performance. Tips for spill prevention, skew reduction, storage &amp; serialization optimization provided"/>
 
       
 <script type="application/javascript">
