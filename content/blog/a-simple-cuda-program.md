@@ -4,7 +4,7 @@ date: 2013-03-07T11:00:00+05:30
 author: Prabeesh Keezhathra
 tags: [CUDA, Parallel programming, GPU programming]
 keywords: CUDA parallel programming, GPU programming steps, Nvidia C Compiler (nvcc), CUDA conventions (e.g. data on CPU starting with "h" and data on GPU starting with "d"), cudaMalloc, cudaMemcpy, CUDA kernel launch operator, GPU memory pointers, Memcpy function, CUDA dim3 grid size, CUDA block size, CUDA kernel arguments, CUDA kernel function, cudaDeviceSynchronize, cudaFree, CUDA error checking, CUDA code example for computing squares of 64 numbers
-description: Learn about GPU programming with CUDA in this blog post. Cover key concepts and functions, like using the Nvidia C Compiler and allocating GPU memory, launching kernels, and transferring data between the CPU and GPU. We also show you how to set the grid and block size, and use cudaMalloc, cudaMemcpy, and the kernel launch operator in an example code. Plus, learn how to check for errors and get the source code on GitHub.
+description: Dive into the world of GPU programming with CUDA in this technical blog post. Discover key concepts and functions such as using the Nvidia C Compiler, allocating GPU memory, launching kernels, and transferring data between the CPU and GPU. Learn how to set the grid and block size, use cudaMalloc, cudaMemcpy, and the kernel launch operator with example code. Get tips on how to check for errors and access the source code on GitHub for further learning.
 ---
 This blog post is an introduction to the world of GPU programming with CUDA. We will cover the fundamental concepts and tools necessary to get started with CUDA, including:
 
