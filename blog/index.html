@@ -144,6 +144,24 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blogs</span>
     <h1 class="f3 near-black">
+      <a href="/blog/2023/01/14/implementing-design-patterns-in-pyspark-data-pipelines/" class="link black dim">
+        Improve PySpark Data Pipelines with Design Patterns: Learn about Factory, Singleton, Builder, Observer, and Pipeline Patterns
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      The complexity and criticality of data pipelines require the implementation of best practices to ensure their quality, readability, and maintainability. Design patterns, which provide reusable solutions to common software design problems, can greatly improve the quality of data pipelines. In this article, we will explore how to apply design patterns in PySpark data pipelines to improve their reliability, efficiency, and scalability. We will focus on five common design patterns:
+Factory Pattern Singleton Pattern Builder Pattern Observer Pattern Pipeline Pattern By following clean code principles and implementing these design patterns, data pipelines can become more robust and maintainable.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blogs</span>
+    <h1 class="f3 near-black">
       <a href="/blog/2023/01/06/performance-tuning-on-apache-spark/" class="link black dim">
         Performance Tuning on Apache Spark
       </a>
@@ -310,36 +328,6 @@ instructions to set up Scala.</p>
 </code></pre><p>You need to have Scala installed, or the SCALA_HOME environment variable pointing to a Scala installation.</p>
 <h3 id="building">Building</h3>
 <p>SBT(Simple Build Tool) is used for building Spark, which is bundled with it. To compile the code</p>
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blogs</span>
-    <h1 class="f3 near-black">
-      <a href="/blog/2013/10/07/running-mesos-0130-on-ubuntu-1204/" class="link black dim">
-        Running Mesos-0.13.0  on Ubuntu-12.04
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>You will need the following packages to run Mesos.</p>
-<pre tabindex="0"><code>$ sudo apt-get install python2.7-dev g++ libcppunit-dev libunwind7-dev git libcurl4-nss-dev
-</code></pre><p>You need to have Java installed, or the JAVA_HOME environment variable pointing to a Java installation.</p>
-<p>You can download the Mesos distribution from <a href="http://www.apache.org/dyn/closer.cgi/mesos/0.13.0/">here</a>. After that untar the downloaded file</p>
-<pre tabindex="0"><code>$ tar xvf mesos-0.13.0.tar.gz
-</code></pre><h3 id="building-and-installing">Building and Installing</h3>
-<pre tabindex="0"><code>$ cd mesos-0.13.0
-$ mkdir build
-$ cd build
-$ sudo  ../configure --prefix=/home/user/mesos
-$ sudo make
-$ sudo make check
-$ sudo make install
-</code></pre><p>You can pass the &ndash;prefix option while configuring to tell where to install. For example</p>
     </div>
   </div>
 </div>
