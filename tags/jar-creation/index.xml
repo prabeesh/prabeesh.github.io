@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Scala on This is the one of the solutions</title>
-    <link>https://blog.prabeeshk.com/tags/scala/</link>
-    <description>Recent content in Scala on This is the one of the solutions</description>
+    <title>JAR creation on This is the one of the solutions</title>
+    <link>https://blog.prabeeshk.com/tags/jar-creation/</link>
+    <description>Recent content in JAR creation on This is the one of the solutions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Apr 2014 09:47:00 +0530</lastBuildDate><atom:link href="https://blog.prabeeshk.com/tags/scala/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Apr 2014 09:47:00 +0530</lastBuildDate><atom:link href="https://blog.prabeeshk.com/tags/jar-creation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Creating an Assembled JAR for a Standalone Spark Application</title>
       <link>https://blog.prabeeshk.com/blog/2014/04/08/creating-uber-jar-for-spark-project-using-sbt-assembly/</link>
@@ -27,30 +27,6 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In the build.sbt file, add the following contents:&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Creating a Standalone Spark Application in Scala: A Step-by-Step Guide with Twitter Streaming Example</title>
-      <link>https://blog.prabeeshk.com/blog/2014/04/01/a-standalone-spark-application-in-scala/</link>
-      <pubDate>Tue, 01 Apr 2014 22:56:00 +0530</pubDate>
-      
-      <guid>https://blog.prabeeshk.com/blog/2014/04/01/a-standalone-spark-application-in-scala/</guid>
-      <description>&lt;p&gt;This blog post will guide you through the process of building a Spark application in Scala that calculates popular hashtags from a Twitter stream. You will also learn how to use the sbt eclipse plugin to run the application in the Eclipse Integrated Development Environment (IDE). Whether you are new to big data processing or looking to improve your skills in data enginering and analytics, this tutorial has something to offer. Follow along with our step-by-step guide to develop your own stand alone Spark application and enhance your abilities in this exciting field.&lt;/p&gt;
-&lt;p&gt;Sharing  some ideas about how to create a Spark-streaming stand-alone application and how to run the Spark applications in scala-SDK (Eclipse IDE).&lt;/p&gt;
-&lt;h2 id=&#34;building-spark-application-using-sbt&#34;&gt;Building Spark Application using SBT&lt;/h2&gt;
-&lt;p&gt;A Standalone application in Scala using Apache Spark API. The application is build using Simple Build Tool(SBT).&lt;/p&gt;
-&lt;p&gt;For  creating a stand alone app take the twitter popular tag &lt;a href=&#34;https://github.com/apache/spark/blob/branch-0.9/examples/src/main/scala/org/apache/spark/streaming/examples/TwitterPopularTags.scala&#34;&gt;example&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;This program calculates popular hashtags (popular topics) over sliding 10 and 60 second windows from a Twitter stream. The stream is instantiated with credentials and optionally filters supplied by the command line arguments.&lt;/p&gt;
-&lt;p&gt;But here modified the code for talking twitter authentication credentials through command line argument. So it needs to give the arguments as&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>MQTT Publisher and Subscriber in Scala: A Step-by-Step Guide Using Eclipse Paho</title>
-      <link>https://blog.prabeeshk.com/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/</link>
-      <pubDate>Mon, 26 Aug 2013 09:41:00 +0530</pubDate>
-      
-      <guid>https://blog.prabeeshk.com/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/</guid>
-      <description>What is MQTT? MQTT (Message Queuing Telemetry Transport) is a publish-subscribe based lightweight messaging protocol for use on top of the TCP/IP protocol. It was designed to be used in resource-constrained environments and for communication between devices with low-bandwidth or unreliable networks. MQTT is often used in Internet of Things (IoT) applications to communicate between devices and a central server, as well as in other types of messaging systems. In an MQTT system, there is a central broker that receives messages from publishers and routes them to subscribers that are subscribed to the relevant topic.</description>
     </item>
     
   </channel>
