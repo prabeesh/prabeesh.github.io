@@ -1,7 +1,7 @@
 ---
-title: "Implementing Design Patterns in Pyspark Data Pipelines"
+title: "Improve PySpark Data Pipelines with Design Patterns: Learn about Factory, Singleton, Builder, Observer, and Pipeline Patterns"
 date: 2023-01-14T14:37:59+01:00
-draft: true
+draft: false
 author: Prabeesh Keezhathra
 tags: [PySpark, design patterns, data pipelines, data processing, best practices, factory pattern, singleton pattern, builder pattern, observer pattern, pipeline pattern]
 keywords: PySpark design patterns, data pipeline design patterns, design patterns for data processing, PySpark data pipeline best practices, factory pattern in PySpark, singleton pattern in PySpark, builder pattern in PySpark, observer pattern in PySpark, pipeline pattern in PySpark, PySpark data pipeline design patterns
@@ -303,7 +303,7 @@ To use the pipeline pattern in a PySpark data pipeline, you would create a serie
 
 In this article, we explored how to use design patterns in PySpark data pipelines to improve code quality, readability, and maintainability. We covered five common design patterns: the factory pattern, the singleton pattern, the builder pattern, the observer pattern, and the pipeline pattern. By following clean code principles and implementing these design patterns in your PySpark data pipelines, you can create more reliable, efficient, and scalable data processing systems.
 
-You can find my other blogs on PySpark and Apache Spark by following the links below.
+If you are new to my blog, you can explore my other posts on [PySpark](https://blog.prabeeshk.com/tags/apache-spark/) and [Apache Spark](https://blog.prabeeshk.com/tags/pyspark/) by following the links provided below.
 
 - [Performance Tuning on Apache Spark](/blog/2023/01/06/performance-tuning-on-apache-spark/)
 - [How to Run a PySpark Notebook with Docker](/blog/2015/06/19/pyspark-notebook-with-docker/)
