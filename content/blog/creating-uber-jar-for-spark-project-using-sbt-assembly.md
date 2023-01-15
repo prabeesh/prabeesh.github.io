@@ -1,19 +1,23 @@
 ---
-title: "Creating assembled JAR for Standalone Spark Application"
+title: "Creating an Assembled JAR for a Standalone Spark Application"
 date: 2014-04-08T09:47:00+05:30
-tags: [Apache Spark, SBT, Scala, Big Data]
-keywords: spark single jar, spark executable jar, running spark, stand alone spark jar, spark sbt assembled jar, spark sbt assembly jar, sbt-assembly, sbt spark fat jar, sbt assembly spark jar,spark sbt assembly tutorial, sbt spark uber jar, sbt-assembly tutorial, sbt spark, single jar spark application, introduction to Spark jar creation, spark jar creation, jar spark app
-description: creating a single executable jar for spark project, creating fat jar for spark application, creating spark single jar using sbt-assembly, spark using sbt-assembly
+author: Prabeesh Keezhathra
+tags: [Apache Spark, SBT, Scala, Big Data, JAR creation]
+keywords: spark single jar, spark executable jar, running spark, stand alone spark jar, spark sbt assembled jar, spark sbt assembly jar, sbt-assembly, sbt spark fat jar, sbt assembly spark jar, spark sbt assembly tutorial, sbt spark uber jar, sbt-assembly tutorial, sbt spark, single jar spark application, introduction to Spark jar creation, spark jar creation, jar spark app
+description: Learn how to create a single executable JAR for your Spark project using the sbt-assembly plugin. This guide covers adding the plugin, configuring assembly settings, creating the fat JAR and example project to follow along.
 ---
-In the [previous post](/blog/2014/04/01/a-standalone-spark-application-in-scala/) shared how to use sbt in Spark-streaming project. This post is about how to create a fat jar for spark streaming project using sbt plugin. sbt-assembly is an sbt plugin to create a fat JAR of sbt project with all of its dependencies.
 
-Add sbt-assembly plugin in **_project/plugin.sbt_**
+In this post, we will discuss how to create an assembled JAR for a standalone Spark application using the `sbt-assembly` plugin. One of my previous posts, we discussed [how to build a stand alone Spark Application using SBT eclipse plugin](/blog/2014/04/01/a-standalone-spark-application-in-scala/). Now, we will take it one step further and show you how to create a fat JAR for your Spark project using the sbt-assembly plugin.
+
+### Adding the sbt-assembly Plugin
+The first step in creating an assembled JAR for your Spark application is to add the sbt-assembly plugin. To do this, you will need to add the following line to the `project/plugin.sbt` file:
+
 ```scala
 addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.9.1")
 ```
 
-Specify sbt-assembly.git as a dependency in project/project/build.scala
-
+### Configuring Assembly Settings
+Next, you will need to specify sbt-assembly.git as a dependency in the project/project/build.scala file:
 
 ```scala
 import sbt._
@@ -24,19 +28,22 @@ object Plugins extends Build {
   )
 }
 ```
-In build.sbt file add the following contents <!--more-->
+In the build.sbt file, add the following contents: <!--more-->
 ```scala
 import AssemblyKeys._ // put this at the top of the file,leave the next line blank
 
 assemblySettings
 ```
-Use full keys to configure the assembly plugin. For more details [refer](https://github.com/sbt/sbt-assembly)
+
+You can use the full keys to configure the assembly plugin for more details [refer](https://github.com/sbt/sbt-assembly)
 ```
 target                        assembly-jar-name             test
 assembly-option               main-class                    full-classpath
 dependency-classpath          assembly-excluded-files       assembly-excluded-jars
 ```
-If multiple files share the same relative path the default strategy is to verify that all candidates have the same contents and error out otherwise. This behaviour can be configured for Spark projects using assembly-merge-strategy as follows.
+
+### Configuring Merge Strategy
+If multiple files share the same relative path, the default strategy is to verify that all candidates have the same contents and error out otherwise. This behavior can be configured for Spark projects using the assembly-merge-strategy as follows:
 
 ```scala
 mergeStrategy in assembly <<= (mergeStrategy in assembly) { (old) =>
@@ -49,10 +56,15 @@ mergeStrategy in assembly <<= (mergeStrategy in assembly) { (old) =>
   }
 }
 ```
-From the root folder run
+
+### Creating the Fat JAR
+Once you have added the sbt-assembly plugin and configured the assembly settings and merge strategy, you can create the fat JAR for your Spark application. From the root folder of your project, run the following command:
 ```
 sbt/sbt assembly
 ```
-the assembly plugin then packs the class files and all the dependencies into a single JAR file: target/scala_2.10/TwitterPopularTags-assembly-0.3.0.jar.
 
-You can find an example project from [here](https://github.com/prabeesh/SparkTwitterAnalysis)
+This will create the JAR file in the `target/scala_2.10/ directory`. The name of the JAR file will be in the format of `<ProjectName>-assembly-<version>.jar`.
+
+You can find an example project on how to create an assembled JAR for a Spark application on [GitHub](https://github.com/prabeesh/SparkTwitterAnalysis).
+
+Creating an assembled JAR for a standalone Spark application is a straightforward process when using the `sbt-assembly` plugin. By following the steps outlined in this guide, you can easily create a fat JAR for your Spark application.
