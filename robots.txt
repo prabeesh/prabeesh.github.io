@@ -1,5 +1,3 @@
 User-agent: *
-Disallow: /tags/
-Disallow: /categories/
-
+Allow: /
 Sitemap: https://blog.prabeeshk.com/sitemap.xml
