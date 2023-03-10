@@ -1,6 +1,6 @@
 ---
 title: "Paint app using JavaScript and Canvas"
-date: 2013-03-30 12:44:00 +05:30
+date: 2013-03-30T12:44:00+05:30
 tags: [JavaScript, GoogleAppEngine, Python, Python Flask]
 keywords: Flask Application, Flask Example, Flask with Python, beginner Flask example, Python flask introduction, flask example, introduction to flask, beginner guide to Flask, flask with example
 description: This post is about developing a simple app using Javascript and HTML5 and Canvas for beginners 

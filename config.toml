@@ -2,7 +2,6 @@ baseURL = "https://blog.prabeeshk.com/"
 languageCode = "en-us"
 title = "This is the one of the solutions"
 theme = "ananke"
-googleAnalytics = "UA-56250765-2"
 enableRobotsTXT = true
 disqusShortname = "prabeeshk"
 MetaDataFormat = "yaml"
