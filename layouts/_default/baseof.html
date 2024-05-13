@@ -22,6 +22,25 @@
     {{ else }}
       <meta name="robots" content="noindex, nofollow">
     {{ end }}
+    {{ if .IsPage }}
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "{{ .Title }}",
+          "description": "{{ .Description }}",
+          "datePublished": "{{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" }}",
+          "author": {
+            "@type": "Person",
+            "name": "Prabeesh Keezhathra"
+          },
+        }
+      </script>
+      <meta property="og:type" content="article">
+      <meta property="og:title" content="{{ .Title }}">
+      <meta property="og:description" content="{{ .Description }}">
+      <meta property="og:url" content="{{ .Permalink }}">
+    {{ end }}
 
     {{ partial "site-style.html" . }}
     {{ partial "site-scripts.html" . }}
