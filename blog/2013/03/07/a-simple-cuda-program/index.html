@@ -6,7 +6,7 @@
     
     <title>Introduction to GPU Programming with CUDA: A Step-by-Step Guide to Key Concepts and Functions</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Dive into the world of GPU programming with CUDA in this technical blog post. Discover key concepts and functions such as using the Nvidia C Compiler, allocating GPU memory, launching kernels, and transferring data between the CPU and GPU. Learn how to set the grid and block size, use cudaMalloc, cudaMemcpy, and the kernel launch operator with example code. Get tips on how to check for errors and access the source code on GitHub for further learning.">
+    <meta name="description" content="Explore the fundamentals of GPU programming with CUDA in this comprehensive blog post. Gain insights into key concepts and functions, including using the Nvidia C Compiler, allocating GPU memory, launching kernels, and transferring data between the CPU and GPU. Learn how to set the grid and block size, utilize cudaMalloc and cudaMemcpy, and leverage the kernel launch operator with a practical code example. Discover the importance of error checking and access the source code on GitHub for further learning and experimentation.">
     <meta name="generator" content="Hugo 0.109.0">
     
     
@@ -20,7 +20,7 @@
           "@context": "https://schema.org",
           "@type": "BlogPosting",
           "headline": "Introduction to GPU Programming with CUDA: A Step-by-Step Guide to Key Concepts and Functions",
-          "description": "Dive into the world of GPU programming with CUDA in this technical blog post. Discover key concepts and functions such as using the Nvidia C Compiler, allocating GPU memory, launching kernels, and transferring data between the CPU and GPU. Learn how to set the grid and block size, use cudaMalloc, cudaMemcpy, and the kernel launch operator with example code. Get tips on how to check for errors and access the source code on GitHub for further learning.",
+          "description": "Explore the fundamentals of GPU programming with CUDA in this comprehensive blog post. Gain insights into key concepts and functions, including using the Nvidia C Compiler, allocating GPU memory, launching kernels, and transferring data between the CPU and GPU. Learn how to set the grid and block size, utilize cudaMalloc and cudaMemcpy, and leverage the kernel launch operator with a practical code example. Discover the importance of error checking and access the source code on GitHub for further learning and experimentation.",
           "datePublished": "2013-03-07T11:00:00\u002b05:30",
           "author": {
             "@type": "Person",
@@ -30,7 +30,7 @@
       </script>
       <meta property="og:type" content="article">
       <meta property="og:title" content="Introduction to GPU Programming with CUDA: A Step-by-Step Guide to Key Concepts and Functions">
-      <meta property="og:description" content="Dive into the world of GPU programming with CUDA in this technical blog post. Discover key concepts and functions such as using the Nvidia C Compiler, allocating GPU memory, launching kernels, and transferring data between the CPU and GPU. Learn how to set the grid and block size, use cudaMalloc, cudaMemcpy, and the kernel launch operator with example code. Get tips on how to check for errors and access the source code on GitHub for further learning.">
+      <meta property="og:description" content="Explore the fundamentals of GPU programming with CUDA in this comprehensive blog post. Gain insights into key concepts and functions, including using the Nvidia C Compiler, allocating GPU memory, launching kernels, and transferring data between the CPU and GPU. Learn how to set the grid and block size, utilize cudaMalloc and cudaMemcpy, and leverage the kernel launch operator with a practical code example. Discover the importance of error checking and access the source code on GitHub for further learning and experimentation.">
       <meta property="og:url" content="https://blog.prabeeshk.com/blog/2013/03/07/a-simple-cuda-program/">
     
 
@@ -51,18 +51,18 @@
     
     
     <meta property="og:title" content="Introduction to GPU Programming with CUDA: A Step-by-Step Guide to Key Concepts and Functions" />
-<meta property="og:description" content="Dive into the world of GPU programming with CUDA in this technical blog post. Discover key concepts and functions such as using the Nvidia C Compiler, allocating GPU memory, launching kernels, and transferring data between the CPU and GPU. Learn how to set the grid and block size, use cudaMalloc, cudaMemcpy, and the kernel launch operator with example code. Get tips on how to check for errors and access the source code on GitHub for further learning." />
+<meta property="og:description" content="Explore the fundamentals of GPU programming with CUDA in this comprehensive blog post. Gain insights into key concepts and functions, including using the Nvidia C Compiler, allocating GPU memory, launching kernels, and transferring data between the CPU and GPU. Learn how to set the grid and block size, utilize cudaMalloc and cudaMemcpy, and leverage the kernel launch operator with a practical code example. Discover the importance of error checking and access the source code on GitHub for further learning and experimentation." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.prabeeshk.com/blog/2013/03/07/a-simple-cuda-program/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2013-03-07T11:00:00+05:30" />
 <meta property="article:modified_time" content="2013-03-07T11:00:00+05:30" />
 <meta itemprop="name" content="Introduction to GPU Programming with CUDA: A Step-by-Step Guide to Key Concepts and Functions">
-<meta itemprop="description" content="Dive into the world of GPU programming with CUDA in this technical blog post. Discover key concepts and functions such as using the Nvidia C Compiler, allocating GPU memory, launching kernels, and transferring data between the CPU and GPU. Learn how to set the grid and block size, use cudaMalloc, cudaMemcpy, and the kernel launch operator with example code. Get tips on how to check for errors and access the source code on GitHub for further learning."><meta itemprop="datePublished" content="2013-03-07T11:00:00+05:30" />
+<meta itemprop="description" content="Explore the fundamentals of GPU programming with CUDA in this comprehensive blog post. Gain insights into key concepts and functions, including using the Nvidia C Compiler, allocating GPU memory, launching kernels, and transferring data between the CPU and GPU. Learn how to set the grid and block size, utilize cudaMalloc and cudaMemcpy, and leverage the kernel launch operator with a practical code example. Discover the importance of error checking and access the source code on GitHub for further learning and experimentation."><meta itemprop="datePublished" content="2013-03-07T11:00:00+05:30" />
 <meta itemprop="dateModified" content="2013-03-07T11:00:00+05:30" />
 <meta itemprop="wordCount" content="1317">
 <meta itemprop="keywords" content="CUDA,Parallel programming,GPU programming," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Introduction to GPU Programming with CUDA: A Step-by-Step Guide to Key Concepts and Functions"/>
-<meta name="twitter:description" content="Dive into the world of GPU programming with CUDA in this technical blog post. Discover key concepts and functions such as using the Nvidia C Compiler, allocating GPU memory, launching kernels, and transferring data between the CPU and GPU. Learn how to set the grid and block size, use cudaMalloc, cudaMemcpy, and the kernel launch operator with example code. Get tips on how to check for errors and access the source code on GitHub for further learning."/>
+<meta name="twitter:description" content="Explore the fundamentals of GPU programming with CUDA in this comprehensive blog post. Gain insights into key concepts and functions, including using the Nvidia C Compiler, allocating GPU memory, launching kernels, and transferring data between the CPU and GPU. Learn how to set the grid and block size, utilize cudaMalloc and cudaMemcpy, and leverage the kernel launch operator with a practical code example. Discover the importance of error checking and access the source code on GitHub for further learning and experimentation."/>
 
       
     

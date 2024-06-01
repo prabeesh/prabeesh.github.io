@@ -6,7 +6,7 @@
     
     <title>MQTT Publisher and Subscriber in Scala: A Step-by-Step Guide Using Eclipse Paho</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Learn how to set up an MQTT publisher and subscriber in Scala using the Eclipse Paho library. MQTT (Message Queuing Telemetry Transport) is a popular protocol for machine-to-machine communication and Internet of Things (IoT) applications. Eclipse Paho is an open source project that provides MQTT client libraries in multiple programming languages. In this tutorial, we will go through the steps to install the Eclipse Paho library and use it to create an MQTT publisher and subscriber in Scala.">
+    <meta name="description" content="Learn how to set up an MQTT publisher and subscriber in Scala using the Eclipse Paho library. This tutorial will guide you through the process of installing the Eclipse Paho library and demonstrate how to create an MQTT publisher and subscriber in Scala. MQTT (Message Queuing Telemetry Transport) is a lightweight messaging protocol commonly used in machine-to-machine communication and Internet of Things (IoT) applications. Eclipse Paho provides open source MQTT client libraries for various programming languages, including Scala. By following this tutorial, you will gain a better understanding of how to utilize MQTT with Scala for your own projects.">
     <meta name="generator" content="Hugo 0.109.0">
     
     
@@ -20,7 +20,7 @@
           "@context": "https://schema.org",
           "@type": "BlogPosting",
           "headline": "MQTT Publisher and Subscriber in Scala: A Step-by-Step Guide Using Eclipse Paho",
-          "description": "Learn how to set up an MQTT publisher and subscriber in Scala using the Eclipse Paho library. MQTT (Message Queuing Telemetry Transport) is a popular protocol for machine-to-machine communication and Internet of Things (IoT) applications. Eclipse Paho is an open source project that provides MQTT client libraries in multiple programming languages. In this tutorial, we will go through the steps to install the Eclipse Paho library and use it to create an MQTT publisher and subscriber in Scala.",
+          "description": "Learn how to set up an MQTT publisher and subscriber in Scala using the Eclipse Paho library. This tutorial will guide you through the process of installing the Eclipse Paho library and demonstrate how to create an MQTT publisher and subscriber in Scala. MQTT (Message Queuing Telemetry Transport) is a lightweight messaging protocol commonly used in machine-to-machine communication and Internet of Things (IoT) applications. Eclipse Paho provides open source MQTT client libraries for various programming languages, including Scala. By following this tutorial, you will gain a better understanding of how to utilize MQTT with Scala for your own projects.",
           "datePublished": "2013-08-26T09:41:00\u002b05:30",
           "author": {
             "@type": "Person",
@@ -30,7 +30,7 @@
       </script>
       <meta property="og:type" content="article">
       <meta property="og:title" content="MQTT Publisher and Subscriber in Scala: A Step-by-Step Guide Using Eclipse Paho">
-      <meta property="og:description" content="Learn how to set up an MQTT publisher and subscriber in Scala using the Eclipse Paho library. MQTT (Message Queuing Telemetry Transport) is a popular protocol for machine-to-machine communication and Internet of Things (IoT) applications. Eclipse Paho is an open source project that provides MQTT client libraries in multiple programming languages. In this tutorial, we will go through the steps to install the Eclipse Paho library and use it to create an MQTT publisher and subscriber in Scala.">
+      <meta property="og:description" content="Learn how to set up an MQTT publisher and subscriber in Scala using the Eclipse Paho library. This tutorial will guide you through the process of installing the Eclipse Paho library and demonstrate how to create an MQTT publisher and subscriber in Scala. MQTT (Message Queuing Telemetry Transport) is a lightweight messaging protocol commonly used in machine-to-machine communication and Internet of Things (IoT) applications. Eclipse Paho provides open source MQTT client libraries for various programming languages, including Scala. By following this tutorial, you will gain a better understanding of how to utilize MQTT with Scala for your own projects.">
       <meta property="og:url" content="https://blog.prabeeshk.com/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/">
     
 
@@ -51,18 +51,18 @@
     
     
     <meta property="og:title" content="MQTT Publisher and Subscriber in Scala: A Step-by-Step Guide Using Eclipse Paho" />
-<meta property="og:description" content="Learn how to set up an MQTT publisher and subscriber in Scala using the Eclipse Paho library. MQTT (Message Queuing Telemetry Transport) is a popular protocol for machine-to-machine communication and Internet of Things (IoT) applications. Eclipse Paho is an open source project that provides MQTT client libraries in multiple programming languages. In this tutorial, we will go through the steps to install the Eclipse Paho library and use it to create an MQTT publisher and subscriber in Scala." />
+<meta property="og:description" content="Learn how to set up an MQTT publisher and subscriber in Scala using the Eclipse Paho library. This tutorial will guide you through the process of installing the Eclipse Paho library and demonstrate how to create an MQTT publisher and subscriber in Scala. MQTT (Message Queuing Telemetry Transport) is a lightweight messaging protocol commonly used in machine-to-machine communication and Internet of Things (IoT) applications. Eclipse Paho provides open source MQTT client libraries for various programming languages, including Scala. By following this tutorial, you will gain a better understanding of how to utilize MQTT with Scala for your own projects." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.prabeeshk.com/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2013-08-26T09:41:00+05:30" />
 <meta property="article:modified_time" content="2013-08-26T09:41:00+05:30" />
 <meta itemprop="name" content="MQTT Publisher and Subscriber in Scala: A Step-by-Step Guide Using Eclipse Paho">
-<meta itemprop="description" content="Learn how to set up an MQTT publisher and subscriber in Scala using the Eclipse Paho library. MQTT (Message Queuing Telemetry Transport) is a popular protocol for machine-to-machine communication and Internet of Things (IoT) applications. Eclipse Paho is an open source project that provides MQTT client libraries in multiple programming languages. In this tutorial, we will go through the steps to install the Eclipse Paho library and use it to create an MQTT publisher and subscriber in Scala."><meta itemprop="datePublished" content="2013-08-26T09:41:00+05:30" />
+<meta itemprop="description" content="Learn how to set up an MQTT publisher and subscriber in Scala using the Eclipse Paho library. This tutorial will guide you through the process of installing the Eclipse Paho library and demonstrate how to create an MQTT publisher and subscriber in Scala. MQTT (Message Queuing Telemetry Transport) is a lightweight messaging protocol commonly used in machine-to-machine communication and Internet of Things (IoT) applications. Eclipse Paho provides open source MQTT client libraries for various programming languages, including Scala. By following this tutorial, you will gain a better understanding of how to utilize MQTT with Scala for your own projects."><meta itemprop="datePublished" content="2013-08-26T09:41:00+05:30" />
 <meta itemprop="dateModified" content="2013-08-26T09:41:00+05:30" />
 <meta itemprop="wordCount" content="1525">
 <meta itemprop="keywords" content="Big Data,MQTT,Scala,Message Queue,IoT," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MQTT Publisher and Subscriber in Scala: A Step-by-Step Guide Using Eclipse Paho"/>
-<meta name="twitter:description" content="Learn how to set up an MQTT publisher and subscriber in Scala using the Eclipse Paho library. MQTT (Message Queuing Telemetry Transport) is a popular protocol for machine-to-machine communication and Internet of Things (IoT) applications. Eclipse Paho is an open source project that provides MQTT client libraries in multiple programming languages. In this tutorial, we will go through the steps to install the Eclipse Paho library and use it to create an MQTT publisher and subscriber in Scala."/>
+<meta name="twitter:description" content="Learn how to set up an MQTT publisher and subscriber in Scala using the Eclipse Paho library. This tutorial will guide you through the process of installing the Eclipse Paho library and demonstrate how to create an MQTT publisher and subscriber in Scala. MQTT (Message Queuing Telemetry Transport) is a lightweight messaging protocol commonly used in machine-to-machine communication and Internet of Things (IoT) applications. Eclipse Paho provides open source MQTT client libraries for various programming languages, including Scala. By following this tutorial, you will gain a better understanding of how to utilize MQTT with Scala for your own projects."/>
 
       
     
