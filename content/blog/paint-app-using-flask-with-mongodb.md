@@ -4,7 +4,7 @@ title: Paint App using Flask with MongoDB
 date: 2013-03-31T21:53:00+05:30
 tags: [No SQL Data Base, Python Flask]
 keywords: Flask with Mongo DB, flask mongo db example, mongo db flask, beginners guide to flask with mongo db, mongo db with flask, mongo intro to flask, beginner mongo python flask, data base access example flask, data base interaction Flask
-description: This post is talking about an app development in Python flask with mongo DB as a data storage option. 
+description: This post discusses the development of a Python Flask app using MongoDB as the data storage option. It explores the integration of Flask with MongoDB and highlights the benefits of using a NoSQL database system. The post provides an overview of MongoDB's features, such as flexibility, scalability, and ease of use. It also includes commands for performing common operations in MongoDB. The source code for the app is available on GitHub.
 ---
 Here the paint app is modified using with a new database system. The MongoDB is a famous NoSQL database system. The NoSQL database is a simple lightweight mechanism. It provides high scalability and availability. It provides horizontal scaling of data. This system redefined the database concept from the traditional relational database system. 
    MongoDB is an open-source, document-oriented database designed for ease of development and scaling. The main features of MongoDB are flexibility, power, speed, and ease of use. The MongoDB can installed in local machine by following the instructions from [official website](http://docs.mongodb.org/manual/installation/)

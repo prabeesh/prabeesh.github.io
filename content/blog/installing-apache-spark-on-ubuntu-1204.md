@@ -3,6 +3,7 @@ title: "Installing Apache Spark on Ubuntu-12.04"
 date: 2013-11-26T12:24:00+05:30
 tags: [Apache Spark, Big Data]
 keywords: install spark on ubuntu 12.04, spark installation on ubuntu 12.04, installing spark on ubuntu-1204, apache spark installation guide 12.04, installing apache spark 12.04, spark on ubuntu1204, apache spark installation 12.04, install spark in ubunt1204, how to install spark on ubuntu-12.04, apache spark cluster 12.04
+description: This blog post provides a step-by-step guide on how to install Apache Spark on Ubuntu 12.04. Apache Spark is an open-source in-memory cluster computing framework designed for low-latency iterative jobs and interactive use. It offers clean, language-integrated APIs in Scala, Java, and Python, with a rich array of parallel operators. The post includes instructions on downloading the Apache Spark distribution, untarring the downloaded file, and building Spark using SBT (Simple Build Tool). It also demonstrates how to run a sample program and use the Spark interactive shell. Additionally, it explains how to access Hadoop filesystems and run Spark with an existing Hadoop cluster. The post concludes with a link to the official Spark documentation for further reference.
 ---
 Update: To install Apache Spark-1.0 follow [this post](/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/)
 --- 

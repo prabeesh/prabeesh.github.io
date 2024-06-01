@@ -3,7 +3,7 @@ title: "LCD Interfacing using msp430"
 date: 2012-07-04T2:39:00+05:30
 tags: [MSP430, Embedded, LCD Interfacing]
 keywords: LCD interface using msp430, msp430 LCD interface, MSP LCD, LCD interface using microcontrollers, msp430  LCD interface examples
-description: This blog post is about LCD interface using MSP430 microcontroller
+description: This blog post explores the process of interfacing an LCD with an MSP430 microcontroller. It covers the basics of connecting a potentiometer to the ADC of the MSP430 and displaying the ADC values on the LCD. The post also discusses the voltage range of the ADC and provides examples of the 10-bit patterns generated for different input voltages. Additionally, it explains the power supply requirements for both the potentiometer and the LCD. Overall, this blog post provides a comprehensive guide to LCD interfacing using the MSP430 microcontroller.
 ---
 There is a pot connect to the ADC of msp430 Ao(pin p1.0). The values  of  ADC10MEM displayed using LCD.
 

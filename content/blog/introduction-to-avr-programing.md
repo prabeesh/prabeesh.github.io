@@ -3,7 +3,7 @@ title: "Introduction to AVR programming"
 date: 2012-02-21T2:39:00+05:30
 tags: [AVR, Embedded]
 keywords: beginners guide AVR programming, AVR programming basic examples, intro to AVR programming, avr introduction, beginner avr examples, how to avr programs, avr examples, basic avr code
-description: Beginner level AVR programming introduction 
+description: An introduction to AVR programming for beginners, covering basic examples and concepts. Learn how to write code for Atmel AVR microcontrollers, including a sample program to blink an LED. Gain an understanding of the key components and functions of AVR microcontrollers, and explore the process of compiling and converting code to object and hex formats. Discover how to program AVR microcontrollers using USBASP, and find additional resources for further learning.
 ---
 
 Atmel AVR 8-bit and 32-bit microcontrollers deliver a unique combination of performance, power efficiency, and design flexibility. Optimized to speed time to market, they are based on the industry’s most code-efficient architecture for C and assembly programming. No other microcontrollers deliver more computing performance with better power efficiency. Industry-leading development tools and design support let you get to market faster. Once there, the large AVR family lets you reuse your knowledge when improving your products and expanding to new markets—easily and cost-effectively.

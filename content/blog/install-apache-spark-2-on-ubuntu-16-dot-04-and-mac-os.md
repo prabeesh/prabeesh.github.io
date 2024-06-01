@@ -3,7 +3,7 @@ title: "Install Apache Spark 2 on Ubuntu 16.04 and Mac OS"
 date: 2016-12-07 11:45:18 +0400
 tags: [Apache Spark, Big Data, Ubuntu, Mac OS X]
 keywords: install spark ubuntu-16.04, spark installation on mac os, installing spark on linux, installing apache spark 2.0, spark-2.0.2 installation, apache spark 2 installation on unix, install spark in ubuntu Mac OS X, how to install apache spark 2, apache spark cluster on Mac OS X, install spark ubuntu 16.04, spark on OS X Yosemite, install spark on Ubuntu server, spark ubuntu LTS install, spark-2 setup tutorial, spark 2 single machine, spark 2 setup ubuntu machine
-description: set up Spark 2.0 in Ubuntu and OS X Sierra, Install Spark 2 on MAC OS, Apache Spark 2 set up in Linux
+description: This tutorial provides step-by-step instructions to install and set up Apache Spark 2.0 on Ubuntu 16.04 and Mac OS X Sierra. It covers the installation of Java and Git, as well as the process of downloading and untarring the Apache Spark distribution. The tutorial also includes instructions for building Spark using Maven and a sample program to test the installation.
 ---
 Two of the earlier posts are discussing installing [Apache Spark-0.8.0](/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/) and [Apache Spark-1.1.0](/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/) on Ubuntu-12.04 and Ubuntu-14.04 respectively. In this post you can discover necessary actions to set up **Apache Spark-2.0.2** on Ubuntu 16.04 and Mac OS X Sierra. For enhanced guidance refer above mentioned posts.
 <!--more--> 
