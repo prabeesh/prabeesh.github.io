@@ -7,7 +7,7 @@ description: This post is about developing a simple app using Javascript and HTM
 ---
 An application to draw simple drawings using lines, rectangles and circles in different colours. 
 
-<img src="/images/paint.png" alt="Paint Application" style="width:600px; height:400px;">
+<img src="/images/paint.png" alt="Paint Application" loading="lazy" style="width:600px; height:400px;">
 
 The application is developed using JavaScript and HTML5. The canvas feature in HTML5 is used for providing a drawable region. The JavaScript is used to handle drawing functions in this region. The select button to select the different tools to draw. <!--more--> The colour picker is made using the button option. The script basically listens three mouse events mouse down, mouse move and mouse up. This application implemented using two different frameworks Google App Engine and Flask.
 
