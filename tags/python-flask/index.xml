@@ -33,7 +33,7 @@ MongoDB is an open-source, document-oriented database designed for ease of devel
       
       <guid>https://blog.prabeeshk.com/blog/2013/03/30/paint-app-using-javascript-and-canvas/</guid>
       <description>&lt;p&gt;An application to draw simple drawings using lines, rectangles and circles in different colours.&lt;/p&gt;
-&lt;img src=&#34;https://blog.prabeeshk.com/images/paint.png&#34; alt=&#34;Paint Application&#34; style=&#34;width:600px; height:400px;&#34;&gt;
+&lt;img src=&#34;https://blog.prabeeshk.com/images/paint.png&#34; alt=&#34;Paint Application&#34; loading=&#34;lazy&#34; style=&#34;width:600px; height:400px;&#34;&gt;
 &lt;p&gt;The application is developed using JavaScript and HTML5. The canvas feature in HTML5 is used for providing a drawable region. The JavaScript is used to handle drawing functions in this region. The select button to select the different tools to draw.&lt;/p&gt;</description>
     </item>
     
