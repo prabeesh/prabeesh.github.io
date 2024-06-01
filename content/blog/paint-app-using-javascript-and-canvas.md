@@ -3,7 +3,7 @@ title: "Paint app using JavaScript and Canvas"
 date: 2013-03-30T12:44:00+05:30
 tags: [JavaScript, GoogleAppEngine, Python, Python Flask]
 keywords: Flask Application, Flask Example, Flask with Python, beginner Flask example, Python flask introduction, flask example, introduction to flask, beginner guide to Flask, flask with example
-description: This post is about developing a simple app using Javascript and HTML5 and Canvas for beginners 
+description: This post is a beginner's guide to developing a simple paint app using JavaScript, HTML5, and Canvas. Learn how to draw lines, rectangles, and circles in different colors, and explore the functionality of the select button and color picker. The app also includes a saving feature, allowing users to store and regenerate their drawings. Choose between two frameworks, Google App Engine and Flask, for data storage. Check out the source code and try the app on appspot.com.
 ---
 An application to draw simple drawings using lines, rectangles and circles in different colours. 
 

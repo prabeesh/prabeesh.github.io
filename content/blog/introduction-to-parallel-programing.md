@@ -1,7 +1,8 @@
 ---
 title: "Introduction to Parallel Programing"
 date: 2013-02-22 23:16:54 +0530
-tags: 
+tags:
+description: This blog post provides an introduction to parallel programming on the GPU. It explores the concept of parallel computing, where large problems are broken down into smaller pieces and executed simultaneously. The post discusses the technical trends driving parallel computing on the GPU, such as the increasing number of transistors on processors and the need for power efficiency. It also introduces CUDA (Computer Unified Device Architecture), a parallel programming platform developed by NVIDIA. The CUDA programming model allows developers to leverage the power of both the CPU and GPU in their programs. This blog post serves as a summary of the author's notes from the Udacity course 'Intro to Parallel Programming'.
 ---
 This post focuses on parallel computing on the GPU. Parallel computing is a way of solving large problems by breaking them into smaller pieces and run these smaller pieces at the same time.
 ### Main reasons of technical trends in the parallel computing on the GPU

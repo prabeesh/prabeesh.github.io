@@ -4,7 +4,7 @@ date: 2012-07-04T19:39:00+05:30
 author: Prabeesh Keezhathra
 tags: [AVR, USBtinyISP, attiny2313, microcontroller, embedded systems]
 keywords: simplest and low cost usb avr, next.gr usb avr, lowcost avr programmer, AVR programmer using USBtiny ISP, AVR programmer low cost, AVR attiny programmer, attiny2313 programmer, atmega8 programmer, USBtinyISP, AVR programming, AVR microcontrollers, programmer
-description: Learn how to build a low cost AVR programmer using the attiny2313 microcontroller. Use the USBtinyISP to burn programs onto attiny, atmega8, and other AVR chips.
+description: Learn how to build a low-cost AVR programmer using the attiny2313 microcontroller and the USBtinyISP. This tutorial will guide you through the process of setting up the circuit, configuring the fuse bits, and burning programs onto AVR chips such as attiny and atmega8. Gain practical knowledge and enhance your skills in AVR programming with this simple and efficient solution.
 ---
 
 AVR microcontrollers are a popular choice for use in a wide range of applications, including embedded systems, robotics, and more. They are known for their low cost, versatility, and efficient use of resources, which make them an attractive choice for many developers. If you are working with AVR chips, you will need a programmer to burn programs onto them.

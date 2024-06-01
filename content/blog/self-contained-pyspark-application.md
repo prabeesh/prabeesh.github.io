@@ -3,7 +3,7 @@ title: "Self Contained PySpark Application"
 date: 2015-04-07 21:05:30 +0530
 tags: [Apache Spark, PySpark, Python, Big Data]
 keywords: stand alone pyspark application, python spark example, beginners guide to pyspark, pyspark spark example, applications in pyspark, run pyspark using python command, python command pyspark, spark run using python command
-description: This post talking how to run a pyspark code using python command  
+description: This post demonstrates how to run a PySpark code using the Python command. It provides a step-by-step guide on setting up a standalone PySpark application and explains the necessary configurations. The post also discusses the use of the `spark-submit` script for runtime configuration and provides additional resources for running PySpark with IPython notebook.
 ---
 In my [previous post](/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/), I wrote about installation of Spark and Scala interactive shell. Here in this post, we'll see how to do the same in Python. 
 
