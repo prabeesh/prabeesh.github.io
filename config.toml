@@ -1,6 +1,6 @@
 baseURL = "https://blog.prabeeshk.com/"
 languageCode = "en-us"
-title = "This is one of the solutions"
+title = "This is One of the Solutions"
 theme = "ananke"
 enableRobotsTXT = true
 disqusShortname = "prabeeshk"
