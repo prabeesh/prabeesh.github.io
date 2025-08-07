@@ -1,6 +1,7 @@
 baseURL = "https://blog.prabeeshk.com/"
 languageCode = "en-us"
 title = "This is One of the Solutions"
+description = "A technical blog covering programming, data engineering, Apache Spark, embedded systems, CUDA programming, and software development best practices. Practical tutorials and insights for developers."
 theme = "ananke"
 enableRobotsTXT = true
 disqusShortname = "prabeeshk"
