@@ -1,0 +1,179 @@
+{{ define "main" }}
+<div class="pa3 pa4-ns nested-copy-line-height">
+  <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
+    <h1 class="f1 athelas mt3 mb1">Search Results</h1>
+    <div id="search-results">
+      <div class="search-loading" style="display: none;">
+        <p>Searching...</p>
+      </div>
+      <div class="search-no-results" style="display: none;">
+        <p>No results found for "<span id="search-query"></span>"</p>
+        <p>Try different keywords or check your spelling.</p>
+      </div>
+      <div id="search-results-list"></div>
+    </div>
+  </section>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const query = urlParams.get('q');
+  
+  if (query) {
+    document.getElementById('search-query').textContent = query;
+    performSearch(query);
+  }
+});
+
+function performSearch(query) {
+  const loadingEl = document.querySelector('.search-loading');
+  const noResultsEl = document.querySelector('.search-no-results');
+  const resultsListEl = document.getElementById('search-results-list');
+  
+  loadingEl.style.display = 'block';
+  noResultsEl.style.display = 'none';
+  resultsListEl.innerHTML = '';
+  
+  // Try multiple possible paths for the search index
+  const searchIndexPaths = [
+    '/search-index.json',
+    '/static/search-index.json',
+    '/public/search-index.json'
+  ];
+  
+  let currentPathIndex = 0;
+  
+  function tryFetchSearchIndex() {
+    if (currentPathIndex >= searchIndexPaths.length) {
+      console.error('Could not load search index from any path');
+      noResultsEl.style.display = 'block';
+      loadingEl.style.display = 'none';
+      return;
+    }
+    
+    fetch(searchIndexPaths[currentPathIndex])
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        const results = searchPosts(data, query);
+        displayResults(results, query);
+      })
+      .catch(error => {
+        console.error(`Failed to load search index from ${searchIndexPaths[currentPathIndex]}:`, error);
+        currentPathIndex++;
+        tryFetchSearchIndex();
+      })
+      .finally(() => {
+        loadingEl.style.display = 'none';
+      });
+  }
+  
+  tryFetchSearchIndex();
+}
+
+function searchPosts(posts, query) {
+  const searchTerms = query.toLowerCase().split(' ').filter(term => term.length > 0);
+  
+  return posts
+    .map(post => {
+      const content = (post.title + ' ' + post.description + ' ' + (post.tags || []).join(' ')).toLowerCase();
+      const matches = searchTerms.filter(term => content.includes(term));
+      const score = matches.length / searchTerms.length;
+      
+      return {
+        ...post,
+        score,
+        matches: matches.length
+      };
+    })
+    .filter(post => post.score > 0)
+    .sort((a, b) => b.score - a.score);
+}
+
+function displayResults(results, query) {
+  const resultsListEl = document.getElementById('search-results-list');
+  const noResultsEl = document.querySelector('.search-no-results');
+  
+  if (results.length === 0) {
+    noResultsEl.style.display = 'block';
+    return;
+  }
+  
+  const resultsHtml = results.map(post => `
+    <article class="mb4 bg-white pa3 br2 shadow-1">
+      <h2 class="f3 near-black mb2">
+        <a href="${post.url}" class="link black dim">
+          ${highlightQuery(post.title, query)}
+        </a>
+      </h2>
+      <div class="f6 mb2">
+        <time datetime="${post.date}">${formatDate(post.date)}</time>
+        ${post.tags ? `<span class="ml2">Tags: ${post.tags.join(', ')}</span>` : ''}
+      </div>
+      <p class="f5 lh-copy nested-copy-line-height">
+        ${highlightQuery(post.description, query)}
+      </p>
+      <a href="${post.url}" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">
+        Read more
+      </a>
+    </article>
+  `).join('');
+  
+  resultsListEl.innerHTML = resultsHtml;
+}
+
+function highlightQuery(text, query) {
+  const terms = query.toLowerCase().split(' ').filter(term => term.length > 0);
+  let highlighted = text;
+  
+  terms.forEach(term => {
+    const regex = new RegExp(`(${term})`, 'gi');
+    highlighted = highlighted.replace(regex, '<mark>$1</mark>');
+  });
+  
+  return highlighted;
+}
+
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
+</script>
+
+<style>
+.search-loading {
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+}
+
+.search-no-results {
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+}
+
+#search-results-list article {
+  transition: transform 0.2s;
+}
+
+#search-results-list article:hover {
+  transform: translateY(-2px);
+}
+
+mark {
+  background-color: #fef3c7;
+  padding: 0.1rem 0.2rem;
+  border-radius: 0.25rem;
+}
+</style>
+{{ end }}
