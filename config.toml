@@ -6,13 +6,16 @@ theme = "ananke"
 enableRobotsTXT = true
 disqusShortname = "prabeeshk"
 MetaDataFormat = "yaml"
-Paginate = 9
 DefaultContentLanguage = "en"
 SectionPagesMenu = "main"
 
+# Updated pagination configuration
+[pagination]
+pagerSize = 9
+
 # Fix deprecated permalink token
-    [permalinks]
-    blog = "/blog/:year/:month/:day/:filename/"
+[permalinks]
+blog = "/blog/:year/:month/:day/:contentbasename/"
 
 [params]
     favicon = "/images/favicon.png"
