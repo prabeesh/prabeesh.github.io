@@ -25,7 +25,7 @@ pagerSize = 9
 # Disqus configuration - new format
 [services]
 [services.disqus]
-    shortname = "prabeeshk"
+    Shortname = "prabeeshk"
 
 [markup.goldmark.renderer]
     unsafe= true
