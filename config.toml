@@ -4,7 +4,6 @@ title = "This is One of the Solutions"
 description = "A technical blog covering programming, data engineering, Apache Spark, embedded systems, CUDA programming, and software development best practices. Practical tutorials and insights for developers."
 theme = "ananke"
 enableRobotsTXT = true
-disqusShortname = "prabeeshk"
 MetaDataFormat = "yaml"
 DefaultContentLanguage = "en"
 SectionPagesMenu = "main"
@@ -15,13 +14,14 @@ pagerSize = 9
 
 # Fix deprecated permalink token
 [permalinks]
-blog = "/blog/:year/:month/:day/:contentbasename/"
+    blog = "/blog/:year/:month/:day/:contentbasename/"
 
 [params]
     favicon = "/images/favicon.png"
     recent_posts_number = 15
     twitter = "https://twitter.com/prabeesh_k"
     linkedin = "https://www.linkedin.com/in/prabeeshk/"
+    disqusShortname = "prabeeshk"
 
 [markup.goldmark.renderer]
     unsafe= true
