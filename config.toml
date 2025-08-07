@@ -19,7 +19,7 @@ SectionPagesMenu = "main"
 [params]
     favicon = "/images/favicon.png"
     recent_posts_number = 15
-    twitter = "https://twitter.com/prabeesh_k"
+    twitter = "prabeesh_k"
     linkedin = "https://www.linkedin.com/in/prabeeshk/"
     # Move disqusShortname to params
     disqusShortname = "prabeeshk"
