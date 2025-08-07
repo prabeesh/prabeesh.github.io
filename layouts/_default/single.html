@@ -50,6 +50,9 @@
       {{- partial "adsense-inarticle.html" . -}}
       {{- partial "tags.html" . -}}
       <div class="mt6 instapaper_ignoref">
+      {{ if .Site.Config.Services.Disqus.Shortname }}
+        {{ template "_internal/disqus.html" . }}
+      {{ end }}
       {{ if .Site.Params.commentoEnable }}
         {{- partial "commento.html" . -}}
       {{ end }}
