@@ -8,6 +8,11 @@ MetaDataFormat = "yaml"
 DefaultContentLanguage = "en"
 SectionPagesMenu = "main"
 
+# Performance optimizations
+enableGitInfo = false
+enableEmoji = false
+disableKinds = ["taxonomy", "term"]
+
 # Updated pagination configuration
 [pagination]
 pagerSize = 9
@@ -27,10 +32,6 @@ pagerSize = 9
     # SEO improvements
     google_analytics = "G-56250765"  # Your GA4 ID
     
-    # Remove these since you used domain verification:
-    # google_site_verification = "your-verification-code"
-    # bing_site_verification = "your-bing-verification-code"
-    
     # Social media
     twitter_creator = "@prabeesh_k"
     twitter_site = "@prabeesh_k"
@@ -38,6 +39,9 @@ pagerSize = 9
     # Performance
     enable_minify = true
     enable_gzip = true
+    enable_brotli = true
+    enable_resource_hints = true
+    enable_critical_css = true
 
 # Disqus configuration - new format
 [services]
@@ -53,13 +57,30 @@ pagerSize = 9
   priority = 0.5
   filename = "sitemap.xml"
 
-# Security headers
-[security]
-  [security.headers]
-    for = "/*"
-    [security.headers.values]
-      X-Frame-Options = "DENY"
-      X-Content-Type-Options = "nosniff"
-      X-XSS-Protection = "1; mode=block"
-      Referrer-Policy = "strict-origin-when-cross-origin"
-      Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com;"
+# Output formats for better performance
+[outputFormats]
+  [outputFormats.RSS]
+    mediaType = "application/rss+xml"
+    baseName = "feed"
+    isPlainText = true
+    notAlternative = true
+
+# Minify configuration
+[minify]
+  [minify.tdewolff]
+    [minify.tdewolff.html]
+      keepConditionalComments = true
+      keepDefaultAttrVals = true
+      keepDocumentTags = true
+      keepEndTags = true
+      keepQuotes = true
+      keepWhitespace = false
+    [minify.tdewolff.css]
+      keepCSS2 = true
+      precision = 0
+    [minify.tdewolff.js]
+      keepVarNames = false
+      precision = 0
+    [minify.tdewolff.svg]
+      keepComments = false
+      precision = 1

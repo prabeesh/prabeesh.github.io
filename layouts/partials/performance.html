@@ -35,6 +35,28 @@ body {
 }
 </style>
 
+<!-- Enhanced Resource Hints -->
+<link rel="preconnect" href="https://blog.prabeeshk.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+
+<!-- DNS Prefetch for additional domains -->
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+
+<!-- Preload critical resources -->
+<link rel="preload" href="/css/main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/css/main.min.css"></noscript>
+
+<link rel="preload" href="/js/main.min.js" as="script">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Avenir:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Avenir:wght@400;500;600;700&display=swap"></noscript>
+
 <script>
 // Service Worker for caching
 if ('serviceWorker' in navigator) {
@@ -49,27 +71,40 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-// Preload critical resources
-function preloadCriticalResources() {
-  const criticalResources = [
-    '/css/main.min.css',
-    '/js/main.min.js',
-    '/fonts/main-font.woff2'
-  ];
-  
-  criticalResources.forEach(resource => {
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.href = resource;
-    link.as = resource.endsWith('.css') ? 'style' : 'script';
-    document.head.appendChild(link);
-  });
+// Enhanced resource loading with priority hints
+function loadNonCriticalCSS() {
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = '/css/non-critical.css';
+  link.media = 'print';
+  link.onload = function() {
+    this.media = 'all';
+  };
+  document.head.appendChild(link);
 }
 
 // Execute when DOM is ready
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', preloadCriticalResources);
+  document.addEventListener('DOMContentLoaded', loadNonCriticalCSS);
 } else {
-  preloadCriticalResources();
+  loadNonCriticalCSS();
+}
+
+// Intersection Observer for lazy loading
+if ('IntersectionObserver' in window) {
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.classList.remove('lazy');
+        imageObserver.unobserve(img);
+      }
+    });
+  });
+
+  document.querySelectorAll('img[data-src]').forEach(img => {
+    imageObserver.observe(img);
+  });
 }
 </script>
