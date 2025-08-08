@@ -13,7 +13,7 @@ If you haven't read our foundational performance tuning guide yet, we recommend 
 
 ## Adaptive Query Execution (AQE) and Dynamic Optimization
 
-Modern PySpark versions include powerful adaptive query execution capabilities that automatically optimize query plans based on runtime statistics. Understanding and leveraging these features is crucial for production performance and builds upon the manual optimization techniques discussed in our [previous performance tuning guide](/blog/performance-tuning-on-apache-spark/).
+Modern PySpark versions include powerful adaptive query execution capabilities that automatically optimize query plans based on runtime statistics. Understanding and leveraging these features is crucial for production performance and builds upon the manual optimization techniques discussed in our [previous performance tuning guide](/blog/2023/01/06/performance-tuning-on-apache-spark/).
 
 ### Configuring and Leveraging AQE
 
