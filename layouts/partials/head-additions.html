@@ -8,3 +8,48 @@
 
   gtag('config', 'G-PECLCLL5R6');
 </script>
+
+{{/* Add enhanced code highlighting */}}
+{{ partial "code-highlighting.html" . }}
+
+{{/* Add smooth scrolling for better UX */}}
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced focus styles for accessibility */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Better link hover effects */
+a {
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Enhanced button styles */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+</style>

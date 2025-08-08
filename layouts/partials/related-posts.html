@@ -1,0 +1,118 @@
+{{ $related := .Site.RegularPages.Related . | first 3 }}
+{{ with $related }}
+<div class="related-posts">
+  <h3 class="related-title">Related Posts</h3>
+  <div class="related-grid">
+    {{ range . }}
+    <article class="related-post">
+      <div class="related-post-content">
+        <h4 class="related-post-title">
+          <a href="{{ .RelPermalink }}" class="link black dim">
+            {{ .Title }}
+          </a>
+        </h4>
+        <p class="related-post-excerpt">
+          {{ .Summary | truncate 120 }}
+        </p>
+        <div class="related-post-meta">
+          <time class="f6" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+            {{ .Date.Format "Jan 2, 2006" }}
+          </time>
+          {{ if .Params.tags }}
+          <span class="related-post-tags">
+            {{ range first 2 .Params.tags }}
+            <span class="tag">{{ . }}</span>
+            {{ end }}
+          </span>
+          {{ end }}
+        </div>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+</div>
+
+<style>
+.related-posts {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #007bff;
+}
+
+.related-title {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.related-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.related-post {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.related-post:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.related-post-title {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.related-post-title a {
+  color: #333;
+  text-decoration: none;
+}
+
+.related-post-title a:hover {
+  color: #007bff;
+}
+
+.related-post-excerpt {
+  margin: 0 0 1rem 0;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.related-post-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.related-post-tags {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: #e9ecef;
+  color: #495057;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .related-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+</style>
+{{ end }}

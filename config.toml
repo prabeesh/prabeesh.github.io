@@ -21,6 +21,7 @@ pagerSize = 9
     recent_posts_number = 15
     twitter = "https://twitter.com/prabeesh_k"
     linkedin = "https://www.linkedin.com/in/prabeeshk/"
+    show_reading_time = true
 
 # Disqus configuration - new format
 [services]

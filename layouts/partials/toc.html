@@ -1,0 +1,135 @@
+{{ if and (gt .TableOfContents 0) (.Params.toc | default true) }}
+<div class="toc-container">
+  <div class="toc-header">
+    <h3 class="toc-title">Table of Contents</h3>
+    <button class="toc-toggle" onclick="toggleTOC()">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+      </svg>
+    </button>
+  </div>
+  <div class="toc-content" id="toc-content">
+    {{ .TableOfContents }}
+  </div>
+</div>
+
+<style>
+.toc-container {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  margin: 2rem 0;
+  padding: 1rem;
+}
+
+.toc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.toc-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.toc-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.toc-toggle:hover {
+  color: #333;
+  background: rgba(0,0,0,0.05);
+}
+
+.toc-content {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.toc-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.toc-content li {
+  margin: 0.5rem 0;
+}
+
+.toc-content a {
+  color: #495057;
+  text-decoration: none;
+  display: block;
+  padding: 0.25rem 0;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.toc-content a:hover {
+  color: #007bff;
+  background: rgba(0,123,255,0.1);
+  padding-left: 0.5rem;
+}
+
+.toc-content ul ul {
+  padding-left: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .toc-container {
+    margin: 1rem 0;
+    padding: 0.75rem;
+  }
+  
+  .toc-content {
+    max-height: 300px;
+  }
+}
+</style>
+
+<script>
+function toggleTOC() {
+  const tocContent = document.getElementById('toc-content');
+  const toggleBtn = document.querySelector('.toc-toggle svg');
+  
+  if (tocContent.style.display === 'none') {
+    tocContent.style.display = 'block';
+    toggleBtn.innerHTML = '<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>';
+  } else {
+    tocContent.style.display = 'none';
+    toggleBtn.innerHTML = '<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>';
+  }
+}
+
+// Smooth scrolling for TOC links
+document.addEventListener('DOMContentLoaded', function() {
+  const tocLinks = document.querySelectorAll('.toc-content a[href^="#"]');
+  
+  tocLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+});
+</script>
+{{ end }}
