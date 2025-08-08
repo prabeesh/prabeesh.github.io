@@ -127,13 +127,16 @@
       {{ end }}
     {{ end }}
     
-    {{/* Preload critical resources */}}
-    <link rel="preload" href="{{ .Site.BaseURL }}css/main.min.css" as="style">
+    {{/* Preload critical resources with proper attributes */}}
+    <link rel="preload" href="{{ .Site.BaseURL }}css/main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.min.css"></noscript>
+    
     <link rel="preload" href="{{ .Site.BaseURL }}js/main.min.js" as="script">
     
     {{/* DNS prefetch for external domains */}}
     <link rel="dns-prefetch" href="//www.google-analytics.com">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
     
     {{ block "head" . }}{{ partial "head-additions.html" . }}{{ end }}
   </head>

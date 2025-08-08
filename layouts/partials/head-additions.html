@@ -86,3 +86,37 @@ img, video, iframe {
   }
 }
 </style>
+
+<!-- Preload critical fonts -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Avenir:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Avenir:wght@400;500;600;700&display=swap"></noscript>
+
+<!-- Font display strategy -->
+<style>
+  @font-face {
+    font-family: 'Avenir';
+    font-display: swap;
+  }
+</style>
+
+<!-- Reserve space for dynamic content -->
+<style>
+  .related-posts {
+    min-height: 200px;
+  }
+  
+  .toc-container {
+    min-height: 100px;
+  }
+  
+  .reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: #007bff;
+    z-index: 9999;
+    transition: width 0.1s ease;
+  }
+</style>

@@ -1,30 +1,12 @@
-{{ $image := .image }}
-{{ $alt := .alt | default "Image" }}
-{{ $class := .class | default "" }}
-{{ $sizes := .sizes | default "100vw" }}
+{{ $image := .Get "src" }}
+{{ $alt := .Get "alt" | default "" }}
+{{ $width := .Get "width" | default "auto" }}
+{{ $height := .Get "height" | default "auto" }}
 
-{{ if $image }}
-  {{ $img := resources.Get $image }}
-  {{ if $img }}
-    {{ $imgWebp := $img.Resize "800x" | resources.ToWebp }}
-    {{ $imgAvif := $img.Resize "800x" | resources.ToAvif }}
-    
-    <picture class="{{ $class }}">
-      <source srcset="{{ $imgAvif.RelPermalink }}" type="image/avif">
-      <source srcset="{{ $imgWebp.RelPermalink }}" type="image/webp">
-      <img 
-        src="{{ $img.RelPermalink }}" 
-        alt="{{ $alt }}"
-        loading="lazy"
-        decoding="async"
-        width="{{ $img.Width }}"
-        height="{{ $img.Height }}"
-        sizes="{{ $sizes }}"
-        onload="this.classList.add('loaded')"
-        class="lazy"
-      >
-    </picture>
-  {{ else }}
-    <img src="{{ $image }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy">
-  {{ end }}
-{{ end }}
+<div class="image-container" style="width: {{ $width }}; height: {{ $height }}; overflow: hidden;">
+  <img src="{{ $image }}" 
+       alt="{{ $alt }}" 
+       style="width: 100%; height: 100%; object-fit: cover;"
+       loading="lazy"
+       onload="this.parentElement.style.height='auto';">
+</div>
