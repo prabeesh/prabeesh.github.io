@@ -351,6 +351,30 @@
     "category": "bonus"
   },
   {
+    "title": "Advanced Performance Optimization Techniques for PySpark Data Pipelines: Production-Ready Strategies",
+    "description": "Master advanced PySpark performance optimization techniques for production environments. Learn about adaptive query execution, dynamic partition pruning, predicate pushdown, cost-based optimization, and sophisticated memory management strategies to build high-performance data pipelines.",
+    "url": "/bonus/advanced-performance-optimization-techniques-for-pyspark-data-pipelines/",
+    "date": "2024-01-20T09:00:00.000Z",
+    "tags": [
+      "PySpark",
+      "advanced optimization",
+      "production optimization",
+      "data engineering",
+      "performance tuning",
+      "adaptive query execution",
+      "dynamic partition pruning",
+      "predicate pushdown",
+      "cost-based optimization",
+      "memory management",
+      "caching strategies"
+    ],
+    "keywords": "advanced PySpark optimization, production PySpark performance, PySpark adaptive query execution, PySpark dynamic partition pruning, PySpark predicate pushdown, PySpark cost-based optimization, PySpark memory optimization, PySpark caching strategies, PySpark production optimization",
+    "author": "Prabeesh Keezhathra",
+    "readingTime": 41,
+    "wordCount": 8011,
+    "category": "bonus"
+  },
+  {
     "title": "Advanced PySpark Design Patterns: Real-World Implementation Examples",
     "description": "Explore advanced design patterns in PySpark with real-world implementation examples. Learn about Strategy, Decorator, Command, and Template Method patterns to build more sophisticated and maintainable data pipelines.",
     "url": "/bonus/advanced-pyspark-design-patterns-implementation/",
@@ -369,7 +393,7 @@
     "keywords": "advanced PySpark design patterns, real-world PySpark patterns, PySpark strategy pattern, PySpark decorator pattern, PySpark command pattern, PySpark template method pattern, data engineering design patterns",
     "author": "Prabeesh Keezhathra",
     "readingTime": 25,
-    "wordCount": 4942,
+    "wordCount": 4956,
     "category": "bonus"
   },
   {

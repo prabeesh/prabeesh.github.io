@@ -59,10 +59,20 @@ const searchIndex = JSON.stringify(posts, null, 2);
 
 // Write to public directory
 const publicOutputPath = path.join(__dirname, '../public/search-index.json');
+// Create public directory if it doesn't exist
+const publicDir = path.dirname(publicOutputPath);
+if (!fs.existsSync(publicDir)) {
+  fs.mkdirSync(publicDir, { recursive: true });
+}
 fs.writeFileSync(publicOutputPath, searchIndex);
 
 // Also write to static directory for Hugo to serve
 const staticOutputPath = path.join(__dirname, '../static/search-index.json');
+// Create static directory if it doesn't exist
+const staticDir = path.dirname(staticOutputPath);
+if (!fs.existsSync(staticDir)) {
+  fs.mkdirSync(staticDir, { recursive: true });
+}
 fs.writeFileSync(staticOutputPath, searchIndex);
 
 console.log(`Generated search index with ${posts.length} posts`);
