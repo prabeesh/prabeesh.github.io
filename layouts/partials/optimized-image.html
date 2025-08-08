@@ -1,0 +1,30 @@
+{{ $image := .image }}
+{{ $alt := .alt | default "Image" }}
+{{ $class := .class | default "" }}
+{{ $sizes := .sizes | default "100vw" }}
+
+{{ if $image }}
+  {{ $img := resources.Get $image }}
+  {{ if $img }}
+    {{ $imgWebp := $img.Resize "800x" | resources.ToWebp }}
+    {{ $imgAvif := $img.Resize "800x" | resources.ToAvif }}
+    
+    <picture class="{{ $class }}">
+      <source srcset="{{ $imgAvif.RelPermalink }}" type="image/avif">
+      <source srcset="{{ $imgWebp.RelPermalink }}" type="image/webp">
+      <img 
+        src="{{ $img.RelPermalink }}" 
+        alt="{{ $alt }}"
+        loading="lazy"
+        decoding="async"
+        width="{{ $img.Width }}"
+        height="{{ $img.Height }}"
+        sizes="{{ $sizes }}"
+        onload="this.classList.add('loaded')"
+        class="lazy"
+      >
+    </picture>
+  {{ else }}
+    <img src="{{ $image }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy">
+  {{ end }}
+{{ end }}

@@ -12,6 +12,19 @@
 {{/* Add enhanced code highlighting */}}
 {{ partial "code-highlighting.html" . }}
 
+{{/* Add performance optimizations */}}
+{{ partial "performance.html" . }}
+
+{{/* Web App Manifest */}}
+<link rel="manifest" href="/manifest.json">
+
+{{/* Theme color for mobile browsers */}}
+<meta name="theme-color" content="#007bff">
+
+{{/* Apple touch icons */}}
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180x180.png">
+
 {{/* Add smooth scrolling for better UX */}}
 <style>
 html {
@@ -51,5 +64,25 @@ a:hover {
   background: #0056b3;
   transform: translateY(-1px);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+/* Reduce layout shifts */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Optimize animations */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 </style>

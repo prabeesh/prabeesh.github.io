@@ -1,0 +1,66 @@
+<script>
+// Lazy loading for images
+document.addEventListener('DOMContentLoaded', function() {
+  const images = document.querySelectorAll('img[data-src]');
+  
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.classList.remove('lazy');
+        imageObserver.unobserve(img);
+      }
+    });
+  });
+  
+  images.forEach(img => imageObserver.observe(img));
+});
+
+// Preload critical images
+function preloadImage(src) {
+  const img = new Image();
+  img.src = src;
+}
+
+// Preload featured images for better performance
+document.addEventListener('DOMContentLoaded', function() {
+  const featuredImages = document.querySelectorAll('.featured-image');
+  featuredImages.forEach(img => {
+    if (img.dataset.src) {
+      preloadImage(img.dataset.src);
+    }
+  });
+});
+</script>
+
+<style>
+/* Lazy loading styles */
+.lazy {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.lazy.loaded {
+  opacity: 1;
+}
+
+/* Image optimization */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive images */
+.responsive-img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .responsive-img {
+    width: 100%;
+  }
+}
+</style>

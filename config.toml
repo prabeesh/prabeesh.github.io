@@ -22,6 +22,21 @@ pagerSize = 9
     twitter = "https://twitter.com/prabeesh_k"
     linkedin = "https://www.linkedin.com/in/prabeeshk/"
     show_reading_time = true
+    
+    # SEO improvements
+    google_analytics = "G-56250765"  # Your GA4 ID
+    
+    # Remove these since you used domain verification:
+    # google_site_verification = "your-verification-code"
+    # bing_site_verification = "your-bing-verification-code"
+    
+    # Social media
+    twitter_creator = "@prabeesh_k"
+    twitter_site = "@prabeesh_k"
+    
+    # Performance
+    enable_minify = true
+    enable_gzip = true
 
 # Disqus configuration - new format
 [services]
@@ -30,5 +45,22 @@ pagerSize = 9
 
 [markup.goldmark.renderer]
     unsafe= true
+
+# Enhanced sitemap configuration
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+# Security headers
+[security]
+  [security.headers]
+    for = "/*"
+    [security.headers.values]
+      X-Frame-Options = "DENY"
+      X-Content-Type-Options = "nosniff"
+      X-XSS-Protection = "1; mode=block"
+      Referrer-Policy = "strict-origin-when-cross-origin"
+      Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com;"
 
 
