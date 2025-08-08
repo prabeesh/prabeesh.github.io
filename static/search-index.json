@@ -92,28 +92,6 @@
     "wordCount": 607
   },
   {
-    "title": "Improve PySpark Data Pipelines with Design Patterns: Learn about Factory, Singleton, Builder, Observer, and Pipeline Patterns",
-    "description": "Learn how to improve the quality, readability, and maintainability of PySpark data pipelines by applying design patterns. Explore the factory pattern, singleton pattern, builder pattern, observer pattern, and pipeline pattern to enhance the reliability, efficiency, and scalability of your data processing systems.",
-    "url": "/blog/2023/01/14/implementing-design-patterns-in-pyspark-data-pipelines/",
-    "date": "2023-01-14T13:37:59.000Z",
-    "tags": [
-      "PySpark",
-      "design patterns",
-      "data pipelines",
-      "data processing",
-      "best practices",
-      "factory pattern",
-      "singleton pattern",
-      "builder pattern",
-      "observer pattern",
-      "pipeline pattern"
-    ],
-    "keywords": "PySpark design patterns, data pipeline design patterns, design patterns for data processing, PySpark data pipeline best practices, factory pattern in PySpark, singleton pattern in PySpark, builder pattern in PySpark, observer pattern in PySpark, pipeline pattern in PySpark, PySpark data pipeline design patterns",
-    "author": "Prabeesh Keezhathra",
-    "readingTime": 13,
-    "wordCount": 2411
-  },
-  {
     "title": "Install Apache Spark 2 on Ubuntu 16.04 and Mac OS",
     "description": "This tutorial provides step-by-step instructions to install and set up Apache Spark 2.0 on Ubuntu 16.04 and Mac OS X Sierra. It covers the installation of Java and Git, as well as the process of downloading and untarring the Apache Spark distribution. The tutorial also includes instructions for building Spark using Maven and a sample program to test the installation.",
     "url": "/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/",
