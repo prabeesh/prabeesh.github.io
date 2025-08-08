@@ -15,6 +15,7 @@ pagerSize = 9
 # Fix deprecated permalink token
 [permalinks]
     blog = "/blog/:year/:month/:day/:contentbasename/"
+    bonus = "/bonus/:contentbasename/"
 
 [params]
     favicon = "/images/favicon.png"
@@ -62,5 +63,3 @@ pagerSize = 9
       X-XSS-Protection = "1; mode=block"
       Referrer-Policy = "strict-origin-when-cross-origin"
       Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com;"
-
-

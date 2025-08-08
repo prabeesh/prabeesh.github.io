@@ -1,8 +1,7 @@
 ---
 title: "Improve PySpark Data Pipelines with Design Patterns: Learn about Factory, Singleton, Builder, Observer, and Pipeline Patterns"
 date: 2023-01-14T14:37:59+01:00
-draft: true
-author: Prabeesh Keezhathra
+draft: false
 tags: [PySpark, design patterns, data pipelines, data processing, best practices, factory pattern, singleton pattern, builder pattern, observer pattern, pipeline pattern]
 keywords: PySpark design patterns, data pipeline design patterns, design patterns for data processing, PySpark data pipeline best practices, factory pattern in PySpark, singleton pattern in PySpark, builder pattern in PySpark, observer pattern in PySpark, pipeline pattern in PySpark, PySpark data pipeline design patterns
 description: Learn how to improve the quality, readability, and maintainability of PySpark data pipelines by applying design patterns. Explore the factory pattern, singleton pattern, builder pattern, observer pattern, and pipeline pattern to enhance the reliability, efficiency, and scalability of your data processing systems.
@@ -302,14 +301,3 @@ The DataTransform class is an abstract base class for data transforms that inclu
 To use the pipeline pattern in a PySpark data pipeline, you would create a series of DataTransform objects and chain them together using the set_next() method. You would then call the transform() method on the first transform in the pipeline, passing in the data that you want to transform. This would trigger the transform() method on each of the transforms in the pipeline, applying the transformations in the specified order.
 
 In this article, we explored how to use design patterns in PySpark data pipelines to improve code quality, readability, and maintainability. We covered five common design patterns: the factory pattern, the singleton pattern, the builder pattern, the observer pattern, and the pipeline pattern. By following clean code principles and implementing these design patterns in your PySpark data pipelines, you can create more reliable, efficient, and scalable data processing systems.
-
-If you are new to my blog, you can explore my other posts on [PySpark](https://blog.prabeeshk.com/tags/apache-spark/) and [Apache Spark](https://blog.prabeeshk.com/tags/pyspark/) by following the links provided below.
-
-- [Performance Tuning on Apache Spark](/blog/2023/01/06/performance-tuning-on-apache-spark/)
-- [How to Run a PySpark Notebook with Docker](/blog/2015/06/19/pyspark-notebook-with-docker/)
-- [Self Contained PySpark Application](/blog/2015/04/07/self-contained-pyspark-application/)
-- [Install Apache Spark 2 on Ubuntu 16.04 and Mac OS](/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/)
-- [Install Apache Spark on Ubuntu-14.04](/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/)
-- [Creating assembled JAR for Standalone Spark Application](/blog/2014/04/08/creating-uber-jar-for-spark-project-using-sbt-assembly/)
-- [Creating a Standalone Spark Application in Scala: A Step-by-Step Guide with Twitter Streaming Example](/blog/2014/04/01/a-standalone-spark-application-in-scala/)
-- [Installing Apache Spark on Ubuntu-12.04](/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/)
