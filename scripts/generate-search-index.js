@@ -17,8 +17,8 @@ function getPostsFromDirectory(dirPath, baseUrl) {
       const filename = file.replace('.md', '');
       let url = `${baseUrl}${filename}/`;
       
-      // If we have a date, create the proper permalink structure
-      if (data.date) {
+      // Only apply date-based URL structure for blog posts, not bonus content
+      if (data.date && baseUrl === '/blog/') {
         const date = new Date(data.date);
         const year = date.getFullYear();
         const month = String(date.getMonth() + 1).padStart(2, '0');

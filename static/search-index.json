@@ -353,7 +353,7 @@
   {
     "title": "Advanced PySpark Design Patterns: Real-World Implementation Examples",
     "description": "Explore advanced design patterns in PySpark with real-world implementation examples. Learn about Strategy, Decorator, Command, and Template Method patterns to build more sophisticated and maintainable data pipelines.",
-    "url": "/bonus/2024/01/15/advanced-pyspark-design-patterns-implementation/",
+    "url": "/bonus/advanced-pyspark-design-patterns-implementation/",
     "date": "2024-01-15T09:00:00.000Z",
     "tags": [
       "PySpark",
@@ -375,7 +375,7 @@
   {
     "title": "Improve PySpark Data Pipelines with Design Patterns: Learn about Factory, Singleton, Builder, Observer, and Pipeline Patterns",
     "description": "Learn how to improve the quality, readability, and maintainability of PySpark data pipelines by applying design patterns. Explore the factory pattern, singleton pattern, builder pattern, observer pattern, and pipeline pattern to enhance the reliability, efficiency, and scalability of your data processing systems.",
-    "url": "/bonus/2023/01/14/implementing-design-patterns-in-pyspark-data-pipelines/",
+    "url": "/bonus/implementing-design-patterns-in-pyspark-data-pipelines/",
     "date": "2023-01-14T13:37:59.000Z",
     "tags": [
       "PySpark",
