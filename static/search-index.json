@@ -12,7 +12,8 @@
     "keywords": "CUDA parallel programming, GPU programming steps, Nvidia C Compiler (nvcc), CUDA conventions (e.g. data on CPU starting with \"h\" and data on GPU starting with \"d\"), cudaMalloc, cudaMemcpy, CUDA kernel launch operator, GPU memory pointers, Memcpy function, CUDA dim3 grid size, CUDA block size, CUDA kernel arguments, CUDA kernel function, cudaDeviceSynchronize, cudaFree, CUDA error checking, CUDA code example for computing squares of 64 numbers",
     "author": "Prabeesh Keezhathra",
     "readingTime": 7,
-    "wordCount": 1371
+    "wordCount": 1371,
+    "category": "blog"
   },
   {
     "title": "Creating a Standalone Spark Application in Scala: A Step-by-Step Guide with Twitter Streaming Example",
@@ -29,7 +30,8 @@
     "keywords": "Apache Spark tutorial, SBT for Spark applications, Scala and Spark integration, Big Data analytics with Spark, Spark streaming Twitter example, Eclipse plugin for Spark development, Spark Twitter streaming tutorial, Scala and Spark in Eclipse, Apache Spark Scala example, How to use Spark stream, Creating a standalone Spark application, Spark SBT stand alone examples for beginners, Spark stand alone examples for beginners, Developing Spark applications in Scala, Self contained Spark applications tutorial, Scala and Spark for big data processing, Building Spark applications with SBT, Spark-streaming standalone application tutorial",
     "author": "Prabeesh Keezhathra",
     "readingTime": 3,
-    "wordCount": 549
+    "wordCount": 549,
+    "category": "blog"
   },
   {
     "title": "AM Wave Generation and Plotting with Matplotlib Python: A Detailed Guide",
@@ -43,7 +45,8 @@
     "keywords": "Amplitude Modulation, AM generation, Matplotlib Python, Plot AM waves, Linux, Matlab equivalent, Data visualization, Signal processing, Python library, Analog communication, Carrier signal, Message signal, Radio communication, AM radio broadcasting, Military communication, Aviation communication, Matlab in Linux, Matplotlib examples, AM generation Matplotlib, How to Matplotlib AM generation, AM Matplotlib examples, Matlab Linux AM generation, Matlab equivalent in Linux, Amplitude Modulation in Linux, Data visualization with Matplotlib, Signal processing with Matplotlib, Python library for AM generation, Analog communication with Matplotlib, Carrier signal with Matplotlib, Message signal with Matplotlib, Radio communication with Matplotlib, AM radio broadcasting with Matplotlib",
     "author": "Prabeesh Keezhathra",
     "readingTime": 3,
-    "wordCount": 435
+    "wordCount": 435,
+    "category": "blog"
   },
   {
     "title": "Creating an Assembled JAR for a Standalone Spark Application",
@@ -60,7 +63,8 @@
     "keywords": "spark single jar, spark executable jar, running spark, stand alone spark jar, spark sbt assembled jar, spark sbt assembly jar, sbt-assembly, sbt spark fat jar, sbt assembly spark jar, spark sbt assembly tutorial, sbt spark uber jar, sbt-assembly tutorial, sbt spark, single jar spark application, introduction to Spark jar creation, spark jar creation, jar spark app",
     "author": "Prabeesh Keezhathra",
     "readingTime": 3,
-    "wordCount": 481
+    "wordCount": 481,
+    "category": "blog"
   },
   {
     "title": "Developing a simple game with HTML5/canvas",
@@ -75,7 +79,8 @@
     "keywords": "simple game in html5 javascript, canvas game example, simple game development example, html5 game example, introduction to html5 game development",
     "author": "Prabeesh Keezhathra",
     "readingTime": 5,
-    "wordCount": 834
+    "wordCount": 834,
+    "category": "blog"
   },
   {
     "title": "Finding RC constant using ATmega8",
@@ -89,7 +94,8 @@
     "keywords": "time constant using AVR, atmega8 examples, time constant using embedded systems, find RC constant, find RC constant using microcontroller, AVR find RC constant, AVR find RC",
     "author": "Prabeesh Keezhathra",
     "readingTime": 4,
-    "wordCount": 607
+    "wordCount": 607,
+    "category": "blog"
   },
   {
     "title": "Install Apache Spark 2 on Ubuntu 16.04 and Mac OS",
@@ -105,7 +111,8 @@
     "keywords": "install spark ubuntu-16.04, spark installation on mac os, installing spark on linux, installing apache spark 2.0, spark-2.0.2 installation, apache spark 2 installation on unix, install spark in ubuntu Mac OS X, how to install apache spark 2, apache spark cluster on Mac OS X, install spark ubuntu 16.04, spark on OS X Yosemite, install spark on Ubuntu server, spark ubuntu LTS install, spark-2 setup tutorial, spark 2 single machine, spark 2 setup ubuntu machine",
     "author": "Prabeesh Keezhathra",
     "readingTime": 2,
-    "wordCount": 289
+    "wordCount": 289,
+    "category": "blog"
   },
   {
     "title": "Install Apache Spark on Ubuntu-14.04",
@@ -119,7 +126,8 @@
     "keywords": "install spark on ubuntu, spark installation on ubuntu 14.04, installing spark on ubuntu, apache spark installation guide, installing apache spark, spark on ubuntu, apache spark installation, install spark in ubuntu, how to install spark ubuntu, apache spark cluster, install spark ubuntu 14.04, spark on ubuntu server, install spark on Ubuntu server, spark ubuntu LTS install, spark setup tutorial, spark single machine, running spark single machine, spark setup ubuntu machine",
     "author": "Prabeesh Keezhathra",
     "readingTime": 2,
-    "wordCount": 398
+    "wordCount": 398,
+    "category": "blog"
   },
   {
     "title": "Installing Apache Spark on Ubuntu-12.04",
@@ -133,7 +141,8 @@
     "keywords": "install spark on ubuntu 12.04, spark installation on ubuntu 12.04, installing spark on ubuntu-1204, apache spark installation guide 12.04, installing apache spark 12.04, spark on ubuntu1204, apache spark installation 12.04, install spark in ubunt1204, how to install spark on ubuntu-12.04, apache spark cluster 12.04",
     "author": "Prabeesh Keezhathra",
     "readingTime": 2,
-    "wordCount": 307
+    "wordCount": 307,
+    "category": "blog"
   },
   {
     "title": "Introduction to AVR programming",
@@ -147,7 +156,8 @@
     "keywords": "beginners guide AVR programming, AVR programming basic examples, intro to AVR programming, avr introduction, beginner avr examples, how to avr programs, avr examples, basic avr code",
     "author": "Prabeesh Keezhathra",
     "readingTime": 3,
-    "wordCount": 493
+    "wordCount": 493,
+    "category": "blog"
   },
   {
     "title": "Introduction to Parallel Programing",
@@ -158,7 +168,8 @@
     "keywords": "",
     "author": "Prabeesh Keezhathra",
     "readingTime": 3,
-    "wordCount": 565
+    "wordCount": 565,
+    "category": "blog"
   },
   {
     "title": "LCD Interfacing using msp430",
@@ -173,7 +184,8 @@
     "keywords": "LCD interface using msp430, msp430 LCD interface, MSP LCD, LCD interface using microcontrollers, msp430  LCD interface examples",
     "author": "Prabeesh Keezhathra",
     "readingTime": 2,
-    "wordCount": 331
+    "wordCount": 331,
+    "category": "blog"
   },
   {
     "title": "MQTT Publisher and Subscriber in Scala: A Step-by-Step Guide Using Eclipse Paho",
@@ -190,7 +202,8 @@
     "keywords": "MQTT Scala, Eclipse Paho, MQTT client, MQTT publisher, MQTT subscriber, IoT protocol, Scala MQTT example, Message queue protocol, MQTT implementation, MQTT tutorial, Big Data, MQTT Queue, MQTT Scala client, MQTT client example, Introduction to MQTT with Scala, Scala message queue example, Popular Scala message protocol, Message queue protocol example with Scala, Scala MQTT implementation, Message queue example Scala",
     "author": "Prabeesh Keezhathra",
     "readingTime": 9,
-    "wordCount": 1752
+    "wordCount": 1752,
+    "category": "blog"
   },
   {
     "title": "Paint App using Flask with MongoDB",
@@ -204,7 +217,8 @@
     "keywords": "Flask with Mongo DB, flask mongo db example, mongo db flask, beginners guide to flask with mongo db, mongo db with flask, mongo intro to flask, beginner mongo python flask, data base access example flask, data base interaction Flask",
     "author": "Prabeesh Keezhathra",
     "readingTime": 2,
-    "wordCount": 268
+    "wordCount": 268,
+    "category": "blog"
   },
   {
     "title": "Paint app using JavaScript and Canvas",
@@ -220,7 +234,8 @@
     "keywords": "Flask Application, Flask Example, Flask with Python, beginner Flask example, Python flask introduction, flask example, introduction to flask, beginner guide to Flask, flask with example",
     "author": "Prabeesh Keezhathra",
     "readingTime": 1,
-    "wordCount": 196
+    "wordCount": 196,
+    "category": "blog"
   },
   {
     "title": "Performance Tuning on Apache Spark",
@@ -236,7 +251,8 @@
     "keywords": "Performance tuning Apache Spark, Apache Spark optimization, data processing tasks, preventing spills, reducing skew, minimizing shuffle, optimizing storage, optimizing serialization, avoiding temp files, optimizing memory, using salted joins, implementing adaptive query execution, increasing JVM memory, using repartition() function, implementing bucketing, using sampling, avoiding wide transformations, using narrow transformations, using map() function, using filter() function, using reduce() function, implementing pre-shuffling, broadcasting smaller tables, preventing tiny file problem, implementing manual compaction, optimizing directory scanning, optimizing schema evolution, using Tungsten, avoiding Python UDFs, using higher-order functions, using Pandas, using vectorized UDFs, using SQL higher-order functions, avoiding Java serialization, reducing Python overhead, using Spark UI, specifying job descriptions, specifying schema, using PySpark, using 128MB partitions, optimizing shuffle, optimizing data distribution, using join() function, using distinct() function, using groupBy() function, using orderBy() function, avoiding wide transformation shuffle, using narrow transformations, broadcasting 10MB tables, using bucketed datasets, avoiding 1GB part-files, implementing automatic compaction, optimizing schema merging, optimizing PySpark usage.",
     "author": "Prabeesh Keezhathra",
     "readingTime": 7,
-    "wordCount": 1209
+    "wordCount": 1209,
+    "category": "blog"
   },
   {
     "title": "How to Run a PySpark Notebook with Docker",
@@ -254,7 +270,8 @@
     "keywords": "pyspark ipython notebook, spark ipython, spark python notebook, spark docker, docker ipython spark notebook, spark ipython notebook docker, docker pyspark, pyspark jupyter, pyspark jupyter notebook, jupyter notebook spark, spark notebook, apache spark notebook, run pyspark notebook docker, pyspark notebook docker tutorial",
     "author": "Prabeesh Keezhathra",
     "readingTime": 5,
-    "wordCount": 837
+    "wordCount": 837,
+    "category": "blog"
   },
   {
     "title": "Running Arduino codes in stand alone atmega8",
@@ -268,7 +285,8 @@
     "keywords": "arduino alternatives, simple arduino, arduino examples in atmega8, arduino codes in atmega8, arduino run in atmega8, running adruino code in atmega",
     "author": "Prabeesh Keezhathra",
     "readingTime": 1,
-    "wordCount": 164
+    "wordCount": 164,
+    "category": "blog"
   },
   {
     "title": "Running Mesos-0.13.0  on Ubuntu-12.04",
@@ -282,7 +300,8 @@
     "keywords": "mesos, apache spark mesos, spark mesos cluster setup, spark deploy installation, mesos installation, set up mesos on ubuntu, ubuntu mesos apt get, ubuntu spark with mesos, mesos cluster configuration",
     "author": "Prabeesh Keezhathra",
     "readingTime": 2,
-    "wordCount": 259
+    "wordCount": 259,
+    "category": "blog"
   },
   {
     "title": "Self Contained PySpark Application",
@@ -298,7 +317,8 @@
     "keywords": "stand alone pyspark application, python spark example, beginners guide to pyspark, pyspark spark example, applications in pyspark, run pyspark using python command, python command pyspark, spark run using python command",
     "author": "Prabeesh Keezhathra",
     "readingTime": 2,
-    "wordCount": 341
+    "wordCount": 341,
+    "category": "blog"
   },
   {
     "title": "AVR Programming Made Easy: How to Build a USBtinyISP with an attiny2313",
@@ -315,6 +335,64 @@
     "keywords": "simplest and low cost usb avr, next.gr usb avr, lowcost avr programmer, AVR programmer using USBtiny ISP, AVR programmer low cost, AVR attiny programmer, attiny2313 programmer, atmega8 programmer, USBtinyISP, AVR programming, AVR microcontrollers, programmer",
     "author": "Prabeesh Keezhathra",
     "readingTime": 3,
-    "wordCount": 403
+    "wordCount": 403,
+    "category": "blog"
+  },
+  {
+    "title": "Bonus",
+    "description": "Additional insights, tips, and extended content related to our main blog posts",
+    "url": "/bonus/_index/",
+    "date": "",
+    "tags": [],
+    "keywords": "",
+    "author": "Prabeesh Keezhathra",
+    "readingTime": 1,
+    "wordCount": 1,
+    "category": "bonus"
+  },
+  {
+    "title": "Advanced PySpark Design Patterns: Real-World Implementation Examples",
+    "description": "Explore advanced design patterns in PySpark with real-world implementation examples. Learn about Strategy, Decorator, Command, and Template Method patterns to build more sophisticated and maintainable data pipelines.",
+    "url": "/bonus/2024/01/15/advanced-pyspark-design-patterns-implementation/",
+    "date": "2024-01-15T09:00:00.000Z",
+    "tags": [
+      "PySpark",
+      "design patterns",
+      "advanced patterns",
+      "data engineering",
+      "best practices",
+      "strategy pattern",
+      "decorator pattern",
+      "command pattern",
+      "template method pattern"
+    ],
+    "keywords": "advanced PySpark design patterns, real-world PySpark patterns, PySpark strategy pattern, PySpark decorator pattern, PySpark command pattern, PySpark template method pattern, data engineering design patterns",
+    "author": "Prabeesh Keezhathra",
+    "readingTime": 25,
+    "wordCount": 4942,
+    "category": "bonus"
+  },
+  {
+    "title": "Improve PySpark Data Pipelines with Design Patterns: Learn about Factory, Singleton, Builder, Observer, and Pipeline Patterns",
+    "description": "Learn how to improve the quality, readability, and maintainability of PySpark data pipelines by applying design patterns. Explore the factory pattern, singleton pattern, builder pattern, observer pattern, and pipeline pattern to enhance the reliability, efficiency, and scalability of your data processing systems.",
+    "url": "/bonus/2023/01/14/implementing-design-patterns-in-pyspark-data-pipelines/",
+    "date": "2023-01-14T13:37:59.000Z",
+    "tags": [
+      "PySpark",
+      "design patterns",
+      "data pipelines",
+      "data processing",
+      "best practices",
+      "factory pattern",
+      "singleton pattern",
+      "builder pattern",
+      "observer pattern",
+      "pipeline pattern"
+    ],
+    "keywords": "PySpark design patterns, data pipeline design patterns, design patterns for data processing, PySpark data pipeline best practices, factory pattern in PySpark, singleton pattern in PySpark, builder pattern in PySpark, observer pattern in PySpark, pipeline pattern in PySpark, PySpark data pipeline design patterns",
+    "author": "Prabeesh Keezhathra",
+    "readingTime": 12,
+    "wordCount": 2330,
+    "category": "bonus"
   }
 ]
