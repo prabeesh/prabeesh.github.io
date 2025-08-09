@@ -28,10 +28,7 @@ pagerSize = 9
     twitter = "https://twitter.com/prabeesh_k"
     linkedin = "https://www.linkedin.com/in/prabeeshk/"
     show_reading_time = true
-    
-    # SEO improvements
-    google_analytics = "G-56250765"  # Your GA4 ID
-    
+     
     # Social media
     twitter_creator = "@prabeesh_k"
     twitter_site = "@prabeesh_k"
