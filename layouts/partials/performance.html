@@ -49,11 +49,14 @@ body {
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
 
-<!-- Preload critical resources -->
-<link rel="preload" href="/css/main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="/css/main.min.css"></noscript>
+<!-- Preload critical resources - Use Hugo's actual CSS path -->
+{{ $css := partialCached "func/style/GetMainCSS" "style/GetMainCSS" }}
+{{ if $css }}
+<link rel="preload" href="{{ $css.RelPermalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ $css.RelPermalink }}"></noscript>
+{{ end }}
 
-<link rel="preload" href="/js/main.min.js" as="script">
+<!-- Preload fonts -->
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Avenir:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Avenir:wght@400;500;600;700&display=swap"></noscript>
 
@@ -69,25 +72,6 @@ if ('serviceWorker' in navigator) {
         console.log('SW registration failed: ', registrationError);
       });
   });
-}
-
-// Enhanced resource loading with priority hints
-function loadNonCriticalCSS() {
-  const link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = '/css/non-critical.css';
-  link.media = 'print';
-  link.onload = function() {
-    this.media = 'all';
-  };
-  document.head.appendChild(link);
-}
-
-// Execute when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', loadNonCriticalCSS);
-} else {
-  loadNonCriticalCSS();
 }
 
 // Intersection Observer for lazy loading
