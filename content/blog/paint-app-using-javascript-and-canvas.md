@@ -19,4 +19,4 @@ In Google App Engine Google data storage is used for data storage. But in Flask 
 
 Source code: [App with GAE](https://github.com/prabeesh/Paintapp-Javascript-Canvas-GAE) and [App with Flask](https://github.com/prabeesh/Paintapp-Javascript-Canvas-Flask)
 
-The app is deployed in appspot.com, You can find the application [here](http://prabs-paint.appspot.com/)
+The app is deployed in appspot.com, You can find [the application here](http://prabs-paint.appspot.com/)

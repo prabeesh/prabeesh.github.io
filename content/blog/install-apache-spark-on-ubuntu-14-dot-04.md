@@ -27,7 +27,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 24.72-b04, mixed mode)
 `
 
 In next step is install Scala, follow the following 
-instructions to set up Scala. <!--more--> First download the Scala from [here](http://www.scala-lang.org/download/2.10.4.html)
+instructions to set up Scala. <!--more--> First download the Scala from [Scala Official Website](http://www.scala-lang.org/download/2.10.4.html)
 
 
 Copy downloaded file to some location for example _/urs/local/src_, 
@@ -67,7 +67,7 @@ In next step install git. Spark build depends on git.
 ```
 sudo apt-get install git
 ```
-Finally, download spark ditribution from [here](http://d3kbcqa49mib13.cloudfront.net/spark-1.1.0.tgz) 
+Finally, [download spark ditribution](http://d3kbcqa49mib13.cloudfront.net/spark-1.1.0.tgz) 
 ```
 	$ wget http://d3kbcqa49mib13.cloudfront.net/spark-1.1.0.tgz
 	$ tar xvf spark-1.1.0.tgz 
@@ -127,4 +127,4 @@ After successfully build. You can read  and write data into cdh4.3.0 clusters.
 	scala>  file.flatMap(line => line.split(",")).map(word => (word, 1)).reduceByKey(_+_)
 	scala> count.saveAsTextFile("hdfs://IP:8020/path/to/ouput")
 ```
-You may find more [here](http://spark.apache.org/docs/1.1.1/quick-start.html)
+You may find more [quick start](http://spark.apache.org/docs/1.1.1/quick-start.html)

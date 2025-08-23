@@ -11,7 +11,7 @@ $ sudo apt-get install python2.7-dev g++ libcppunit-dev libunwind7-dev git libcu
 ```
 You need to have Java installed, or the JAVA_HOME environment variable pointing to a Java installation.
 
-You can download the Mesos distribution from [here](http://www.apache.org/dyn/closer.cgi/mesos/0.13.0/). After that untar the downloaded file
+You can download the Mesos distribution from [official website](http://www.apache.org/dyn/closer.cgi/mesos/0.13.0/). After that untar the downloaded file
 ```
 $ tar xvf mesos-0.13.0.tar.gz
 ```

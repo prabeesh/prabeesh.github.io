@@ -7,9 +7,9 @@ description: This blog post provides a step-by-step guide on how to install Apac
 ---
 Update: To install Apache Spark-1.0 follow [this post](/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/)
 --- 
-Apache Spark is an open source in memory cluster computing framework. Initially developed in UC Berkely AMPLab and now an Apache Incubator Project. Apache Spark is a cluster computing framework designed for low-latency iterative jobs and interactive use from an interpreter. It provides clean, language-integrated APIs in Scala, Java, and Python, with a rich array of parallel operators. You may read more about it [here](http://spark.apache.org/)
+Apache Spark is an open source in memory cluster computing framework. Initially developed in UC Berkely AMPLab and now an Apache Incubator Project. Apache Spark is a cluster computing framework designed for low-latency iterative jobs and interactive use from an interpreter. It provides clean, language-integrated APIs in Scala, Java, and Python, with a rich array of parallel operators. You may read more about it [Spark Official Website](http://spark.apache.org/)
 
-You can download the Apache Spark distribution(0.8.0-incubating) from [here](http://d3kbcqa49mib13.cloudfront.net/spark-0.8.0-incubating.tgz). After that untar the downloaded file.
+You can download the Apache Spark distribution(0.8.0-incubating) from [official website](http://d3kbcqa49mib13.cloudfront.net/spark-0.8.0-incubating.tgz). After that untar the downloaded file.
 ```
 $ tar xvf spark-0.8.0-incubating.tgz
 ```
@@ -59,4 +59,4 @@ scala> var file = sc.textFile("hdfs://IP:8020/path/to/textfile.txt")
 scala>  file.flatMap(line => line.split(",")).map(word => (word, 1)).reduceByKey(_+_)
 scala> count.saveAsTextFile("hdfs://IP:8020/path/to/ouput")
 ```
-You may find more [here](http://spark.apache.org/docs/latest/quick-start.html)
+You may find more [quick start](http://spark.apache.org/docs/latest/quick-start.html)

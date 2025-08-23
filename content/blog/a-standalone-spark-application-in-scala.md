@@ -42,9 +42,9 @@ libraryDependencies ++= Seq("org.apache.spark" %%
 
 resolvers += "Akka Repository" at "http://repo.akka.io/releases/"
 ```
-You can find the project from [here](https://github.com/prabeesh/SparkTwitterAnalysis/tree/0.1.0)
+You can find [the project at Github](https://github.com/prabeesh/SparkTwitterAnalysis/tree/0.1.0)
 ##Spark programming in Eclipse
-Using sbt eclipse plugin, sbt project can run on Eclipse IDE.  For more details find [here](https://github.com/typesafehub/sbteclipse)
+Using sbt eclipse plugin, sbt project can run on Eclipse IDE.  For more details find [SBT Eclipse](https://github.com/typesafehub/sbteclipse)
 ```Scala
 addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.1.0")
 ```
@@ -54,7 +54,7 @@ sbt/sbt eclipse
 ```
 This command  creates a project compatible with Eclipse. Upon opening the eclipse IDE this project can now be imported and the executed with the spark.
 
-You can find the sbt eclipse project from [here](https://github.com/prabeesh/SparkTwitterAnalysis/tree/0.2.0)
+You can find [the sbt eclipse project here](https://github.com/prabeesh/SparkTwitterAnalysis/tree/0.2.0)
 
 To avoid generating eclipse source entries for the java directories and put all libs in the lib_managed directory, that way we can distribute eclipse project files, for this - add the contents to build.sbt
 ```Scala

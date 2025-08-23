@@ -27,7 +27,7 @@ The Eclipse Paho client libraries provide an easy-to-use API for developers to i
 
 Overall, the Eclipse Paho client libraries are a reliable and widely-used choice for implementing MQTT clients and applications. They provide a simple API and support for multiple programming languages, making them a good choice for developers working on MQTT-based projects. 
 
-Eclipse Paho is one mqtt client work well with mosquitto. You may read more about it [here](http://www.eclipse.org/paho/).
+Eclipse Paho is one mqtt client work well with mosquitto. You may read more about it (http://www.eclipse.org/paho/).
 
 ### MQTT Publisher and Subscriber in Scala
 MQTT Scala subscriber and publisher code based on eclipse paho library 0.4.0 is available in the [GitHub repository](https://github.com/prabeesh/MQTTScalaClient)
