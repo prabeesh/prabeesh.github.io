@@ -38,120 +38,123 @@
   </section>
 </div>
 
+<!-- Optimized JavaScript - Reduced footprint -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const query = urlParams.get('q');
+(function() {
+  'use strict';
   
-  if (query) {
-    document.getElementById('search-query').textContent = query;
-    document.getElementById('search-input').value = query;
-    performSearch(query);
+  // Cache DOM elements
+  const elements = {
+    searchQuery: null,
+    searchInput: null,
+    loading: null,
+    noResults: null,
+    resultsList: null
+  };
+  
+  // Initialize search functionality
+  function initSearch() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get('q');
+    
+    if (query) {
+      elements.searchQuery.textContent = query;
+      elements.searchInput.value = query;
+      performSearch(query);
+    }
   }
-});
-
-function performSearch(query) {
-  const loadingEl = document.querySelector('.search-loading');
-  const noResultsEl = document.querySelector('.search-no-results');
-  const resultsListEl = document.getElementById('search-results-list');
   
-  loadingEl.style.display = 'block';
-  noResultsEl.style.display = 'none';
-  resultsListEl.innerHTML = '';
-  
-  // Try to load the search index
-  fetch('/search-index.json')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
-      }
-      return response.json();
-    })
-    .then(data => {
+  // Perform search with optimized logic
+  async function performSearch(query) {
+    elements.loading.style.display = 'block';
+    elements.noResults.style.display = 'none';
+    elements.resultsList.innerHTML = '';
+    
+    try {
+      const response = await fetch('/search-index.json');
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      
+      const data = await response.json();
       const results = searchPosts(data, query);
       displayResults(results, query);
-    })
-    .catch(error => {
-      console.error('Failed to load search index:', error);
-      noResultsEl.style.display = 'block';
-      noResultsEl.innerHTML = '<p>Search is temporarily unavailable. Please try again later.</p>';
-    })
-    .finally(() => {
-      loadingEl.style.display = 'none';
-    });
-}
-
-function searchPosts(posts, query) {
-  const searchTerms = query.toLowerCase().split(' ').filter(term => term.length > 0);
-  
-  return posts
-    .map(post => {
-      const content = (post.title + ' ' + post.description + ' ' + (post.tags || []).join(' ')).toLowerCase();
-      const matches = searchTerms.filter(term => content.includes(term));
-      const score = matches.length / searchTerms.length;
-      
-      return {
-        ...post,
-        score,
-        matches: matches.length
-      };
-    })
-    .filter(post => post.score > 0)
-    .sort((a, b) => b.score - a.score);
-}
-
-function displayResults(results, query) {
-  const resultsListEl = document.getElementById('search-results-list');
-  const noResultsEl = document.querySelector('.search-no-results');
-  
-  if (results.length === 0) {
-    noResultsEl.style.display = 'block';
-    return;
+    } catch (error) {
+      console.error('Search failed:', error);
+      elements.noResults.style.display = 'block';
+      elements.noResults.innerHTML = '<p>Search temporarily unavailable. Please try again later.</p>';
+    } finally {
+      elements.loading.style.display = 'none';
+    }
   }
   
-  const resultsHtml = results.map(post => `
-    <article class="mb4 bg-white pa3 br2 shadow-1">
-      <h2 class="f3 near-black mb2">
-        <a href="${post.url}" class="link black dim">
-          ${highlightQuery(post.title, query)}
+  // Optimized search algorithm
+  function searchPosts(posts, query) {
+    const terms = query.toLowerCase().split(' ').filter(t => t.length > 0);
+    const termSet = new Set(terms);
+    
+    return posts
+      .map(post => {
+        const content = `${post.title} ${post.description} ${(post.tags || []).join(' ')}`.toLowerCase();
+        const matches = terms.filter(term => content.includes(term));
+        return { ...post, score: matches.length / terms.length, matches: matches.length };
+      })
+      .filter(post => post.score > 0)
+      .sort((a, b) => b.score - a.score);
+  }
+  
+  // Display results efficiently
+  function displayResults(results, query) {
+    if (results.length === 0) {
+      elements.noResults.style.display = 'block';
+      return;
+    }
+    
+    const terms = query.toLowerCase().split(' ').filter(t => t.length > 0);
+    const resultsHtml = results.map(post => `
+      <article class="mb4 bg-white pa3 br2 shadow-1">
+        <h2 class="f3 near-black mb2">
+          <a href="${post.url}" class="link black dim">
+            ${highlightTerms(post.title, terms)}
+          </a>
+        </h2>
+        <div class="f6 mb2">
+          <time datetime="${post.date}">${formatDate(post.date)}</time>
+          ${post.tags ? `<span class="ml2">Tags: ${post.tags.join(', ')}</span>` : ''}
+        </div>
+        <p class="f5 lh-copy nested-copy-line-height">
+          ${highlightTerms(post.description, terms)}
+        </p>
+        <a href="${post.url}" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">
+          Read more
         </a>
-      </h2>
-      <div class="f6 mb2">
-        <time datetime="${post.date}">${formatDate(post.date)}</time>
-        ${post.tags ? `<span class="ml2">Tags: ${post.tags.join(', ')}</span>` : ''}
-      </div>
-      <p class="f5 lh-copy nested-copy-line-height">
-        ${highlightQuery(post.description, query)}
-      </p>
-      <a href="${post.url}" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">
-        Read more
-      </a>
-    </article>
-  `).join('');
+      </article>
+    `).join('');
+    
+    elements.resultsList.innerHTML = resultsHtml;
+  }
   
-  resultsListEl.innerHTML = resultsHtml;
-}
-
-function highlightQuery(text, query) {
-  const terms = query.toLowerCase().split(' ').filter(term => term.length > 0);
-  let highlighted = text;
+  // Efficient highlighting
+  function highlightTerms(text, terms) {
+    let highlighted = text;
+    terms.forEach(term => {
+      const regex = new RegExp(`(${term})`, 'gi');
+      highlighted = highlighted.replace(regex, '<mark>$1</mark>');
+    });
+    return highlighted;
+  }
   
-  terms.forEach(term => {
-    const regex = new RegExp(`(${term})`, 'gi');
-    highlighted = highlighted.replace(regex, '<mark>$1</mark>');
-  });
+  // Simple date formatting
+  function formatDate(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  }
   
-  return highlighted;
-}
-
-function formatDate(dateString) {
-  const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  });
-}
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSearch);
+  } else {
+    initSearch();
+  }
+})();
 </script>
 
 <style>
