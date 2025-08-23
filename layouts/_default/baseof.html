@@ -17,7 +17,7 @@
     </title>
     
     {{/* Enhanced meta description */}}
-    <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+    <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ if .IsPage }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
     
     {{/* Additional SEO meta tags */}}
     <meta name="author" content="Prabeesh Keezhathra">
