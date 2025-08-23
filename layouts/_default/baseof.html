@@ -115,11 +115,6 @@
       {{ end }}
     {{ end }}
     
-    {{/* Hugo Internal Templates */}}
-    {{- template "_internal/opengraph.html" . -}}
-    {{- template "_internal/schema.html" . -}}
-    {{- template "_internal/twitter_cards.html" . -}}
-
     {{/* Google Analytics 4 */}}
     {{ if and $production $public }}
       {{ if .Site.Params.google_analytics }}
