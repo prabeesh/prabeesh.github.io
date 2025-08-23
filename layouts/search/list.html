@@ -2,6 +2,29 @@
 <div class="pa3 pa4-ns nested-copy-line-height">
   <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
     <h1 class="f1 athelas mt3 mb1">Search Results</h1>
+    
+    <!-- Search Input Form -->
+    <div class="search-form mb4">
+      <form action="/search/" method="GET" class="flex items-center justify-center">
+        <input 
+          type="text" 
+          name="q" 
+          id="search-input"
+          placeholder="Search blog posts..."
+          value="{{ .Params.query | default "" }}"
+          class="input-reset ba b--black-20 pa2 mb2 db w-100 w-auto-ns mr2-ns"
+          required
+        />
+        <button 
+          type="submit" 
+          class="f6 link dim br2 ph3 pv2 mb2 dib white bg-black"
+        >
+          Search
+        </button>
+      </form>
+    </div>
+
+    <!-- Search Results -->
     <div id="search-results">
       <div class="search-loading" style="display: none;">
         <p>Searching...</p>
@@ -22,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   if (query) {
     document.getElementById('search-query').textContent = query;
+    document.getElementById('search-input').value = query;
     performSearch(query);
   }
 });
@@ -35,45 +59,26 @@ function performSearch(query) {
   noResultsEl.style.display = 'none';
   resultsListEl.innerHTML = '';
   
-  // Try multiple possible paths for the search index
-  const searchIndexPaths = [
-    '/search-index.json',
-    '/static/search-index.json',
-    '/public/search-index.json'
-  ];
-  
-  let currentPathIndex = 0;
-  
-  function tryFetchSearchIndex() {
-    if (currentPathIndex >= searchIndexPaths.length) {
-      console.error('Could not load search index from any path');
+  // Try to load the search index
+  fetch('/search-index.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      const results = searchPosts(data, query);
+      displayResults(results, query);
+    })
+    .catch(error => {
+      console.error('Failed to load search index:', error);
       noResultsEl.style.display = 'block';
+      noResultsEl.innerHTML = '<p>Search is temporarily unavailable. Please try again later.</p>';
+    })
+    .finally(() => {
       loadingEl.style.display = 'none';
-      return;
-    }
-    
-    fetch(searchIndexPaths[currentPathIndex])
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
-        }
-        return response.json();
-      })
-      .then(data => {
-        const results = searchPosts(data, query);
-        displayResults(results, query);
-      })
-      .catch(error => {
-        console.error(`Failed to load search index from ${searchIndexPaths[currentPathIndex]}:`, error);
-        currentPathIndex++;
-        tryFetchSearchIndex();
-      })
-      .finally(() => {
-        loadingEl.style.display = 'none';
-      });
-  }
-  
-  tryFetchSearchIndex();
+    });
 }
 
 function searchPosts(posts, query) {
@@ -150,6 +155,14 @@ function formatDate(dateString) {
 </script>
 
 <style>
+.search-form {
+  margin-bottom: 2rem;
+}
+
+.search-form input {
+  min-width: 300px;
+}
+
 .search-loading {
   text-align: center;
   padding: 2rem;
