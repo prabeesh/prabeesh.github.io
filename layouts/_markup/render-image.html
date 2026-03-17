@@ -1,0 +1,16 @@
+{{- $dest := .Destination | safeURL -}}
+{{- $path := strings.TrimPrefix "/" (strings.TrimPrefix "./" $dest) -}}
+{{- $img := .Page.Resources.Get $path -}}
+{{- $width := "" -}}
+{{- $height := "" -}}
+{{- if $img -}}
+  {{- $width = $img.Width -}}
+  {{- $height = $img.Height -}}
+{{- end -}}
+<img src="{{ $dest }}"
+  {{- with .PlainText }} alt="{{ . }}"{{ end -}}
+  {{- with .Title }} title="{{ . }}"{{ end -}}
+  {{- if and $width $height }} width="{{ $width }}" height="{{ $height }}"{{ end -}}
+  {{- if not (and $width $height) }} style="aspect-ratio: 16/9; max-width: 100%; height: auto;"{{ end -}}
+>
+{{- /* chomp trailing newline */ -}}

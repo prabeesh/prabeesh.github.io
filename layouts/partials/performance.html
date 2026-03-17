@@ -60,35 +60,13 @@ body {
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Avenir:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Avenir:wght@400;500;600;700&display=swap"></noscript>
 
+{{/* INP: Service worker deferred to load event to keep main thread free for user interactions. Lazy-loading logic lives only in lazy-loading.html to avoid duplicate JS. */}}
 <script>
-// Service Worker for caching
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
     navigator.serviceWorker.register('/sw.js')
-      .then(function(registration) {
-        console.log('SW registered: ', registration);
-      })
-      .catch(function(registrationError) {
-        console.log('SW registration failed: ', registrationError);
-      });
-  });
-}
-
-// Intersection Observer for lazy loading
-if ('IntersectionObserver' in window) {
-  const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        img.src = img.dataset.src;
-        img.classList.remove('lazy');
-        imageObserver.unobserve(img);
-      }
-    });
-  });
-
-  document.querySelectorAll('img[data-src]').forEach(img => {
-    imageObserver.observe(img);
+      .then(function(registration) { /* SW registered */ })
+      .catch(function() { /* SW registration failed */ });
   });
 }
 </script>

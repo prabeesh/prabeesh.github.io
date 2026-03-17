@@ -8,7 +8,7 @@ MetaDataFormat = "yaml"
 DefaultContentLanguage = "en"
 SectionPagesMenu = "main"
 
-# Performance optimizations
+# Performance optimizations (Core Web Vitals). GitHub Pages serves as CDN for faster delivery.
 enableGitInfo = false
 enableEmoji = false
 disableKinds = ["taxonomy", "term"]

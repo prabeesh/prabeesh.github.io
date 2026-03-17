@@ -122,6 +122,12 @@
       {{ end }}
     {{ end }}
     
+    {{/* LCP: Preload hero/featured image so main content appears faster - do not lazy-load this element */}}
+    {{ $lcpImage := partial "func/GetFeaturedImage.html" . }}
+    {{ if $lcpImage }}
+    <link rel="preload" href="{{ $lcpImage }}" as="image">
+    {{ end }}
+
     {{ block "head" . }}{{ partial "head-additions.html" . }}{{ end }}
     {{ partial "performance.html" . }}
   </head>
@@ -138,7 +144,7 @@
     </main>
     {{ block "footer" . }}{{ partialCached "site-footer.html" . }}{{ end }}
     
-    {{/* Lazy loading script */}}
+    {{/* Lazy loading: at end of body so it does not block. Only img[data-src] are lazy-loaded; LCP/hero image is never lazy-loaded (INP). */}}
     {{ partial "lazy-loading.html" . }}
   </body>
 </html>
