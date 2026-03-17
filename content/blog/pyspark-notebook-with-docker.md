@@ -3,7 +3,7 @@ title: "How to Run a PySpark Notebook with Docker"
 date: 2015-06-19 23:08:08 +0400
 author: Prabeesh Keezhathra
 tags: [Apache Spark, IPython Notebook, Python, Big Data, PySpark, Docker]
-keywords: pyspark ipython notebook, spark ipython, spark python notebook, spark docker, docker ipython spark notebook, spark ipython notebook docker, docker pyspark, pyspark jupyter, pyspark jupyter notebook, jupyter notebook spark, spark notebook, apache spark notebook, run pyspark notebook docker, pyspark notebook docker tutorial
+keywords: PySpark Jupyter, Spark Docker, PySpark notebook, Docker Spark, Jupyter Spark
 description: Learn how to use Docker to run PySpark Notebooks in a distributed environment with this tutorial. This tutorial provides step-by-step instructions on installing and setting up Docker for PySpark, allowing you to interactively run and debug your Spark code. Discover how Docker can help you package and deploy your applications in a predictable and isolated environment, making it easier to analyze big data with PySpark.
 ---
 
