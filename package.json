@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {
+    "lighthouse": "^13.0.3"
   }
 }

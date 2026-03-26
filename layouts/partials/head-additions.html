@@ -1,12 +1,50 @@
-<script data-ad-client="ca-pub-1368619820510426" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PECLCLL5R6"></script>
+{{/* Optimized AdSense and Analytics loading - defer to improve Core Web Vitals */}}
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  // Defer Google AdSense loading until user interaction or after page load
+  function loadAdSense() {
+    if (!window.adsbygoogleLoaded) {
+      const script = document.createElement('script');
+      script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+      script.setAttribute('data-ad-client', 'ca-pub-1368619820510426');
+      script.async = true;
+      document.head.appendChild(script);
+      window.adsbygoogleLoaded = true;
+    }
+  }
 
-  gtag('config', 'G-PECLCLL5R6');
+  // Load AdSense after page interaction or 3 seconds delay
+  const loadEvents = ['click', 'keydown', 'mousemove', 'scroll', 'touchstart'];
+  loadEvents.forEach(event => {
+    document.addEventListener(event, loadAdSense, { once: true, passive: true });
+  });
+  
+  // Fallback: load after 3 seconds
+  setTimeout(loadAdSense, 3000);
+</script>
+
+{{/* Optimized Google Analytics - defer to after load */}}
+<script>
+  window.addEventListener('load', function() {
+    // Defer Google Analytics
+    const gtag = document.createElement('script');
+    gtag.src = 'https://www.googletagmanager.com/gtag/js?id=G-PECLCLL5R6';
+    gtag.async = true;
+    document.head.appendChild(gtag);
+    
+    gtag.onload = function() {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PECLCLL5R6', {
+        // Optimize GA settings
+        send_page_view: false,
+        transport_type: 'beacon'
+      });
+      
+      // Send initial page view after setup
+      gtag('event', 'page_view');
+    };
+  });
 </script>
 
 {{/* Add enhanced code highlighting */}}
@@ -20,47 +58,17 @@
 
 {{/* Apple touch icons */}}
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180x180.png">
 
-{{/* Add smooth scrolling for better UX */}}
+{{/* Optimized styles - only essential CSS inline */}}
 <style>
 html {
   scroll-behavior: smooth;
 }
 
-/* Enhanced focus styles for accessibility */
-a:focus,
-button:focus,
-input:focus,
-textarea:focus {
+/* Minimal focus styles for accessibility */
+a:focus, button:focus, input:focus, textarea:focus {
   outline: 2px solid #007bff;
   outline-offset: 2px;
-}
-
-/* Better link hover effects */
-a {
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-/* Enhanced button styles */
-.btn {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: all 0.2s ease;
-}
-
-.btn:hover {
-  background: #0056b3;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* Performance optimizations */
@@ -74,52 +82,28 @@ img, video, iframe {
   height: auto;
 }
 
-/* Optimize animations */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* Font display strategy for Google Fonts */
-@font-face {
-  font-family: 'Inter';
-  font-display: swap;
-}
-
-/* Reserve space for dynamic content */
-.related-posts {
-  min-height: 200px;
-}
-
-.toc-container {
-  min-height: 100px;
-}
-
-.reading-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 3px;
-  background: #007bff;
-  z-index: 9999;
-  transition: width 0.1s ease;
-}
-
-/* Lazy loading placeholder */
+/* Lazy loading optimization */
 .lazy {
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.2s;
 }
 
 .lazy.loaded {
   opacity: 1;
 }
-</style>
 
-<!-- Font loading with display swap -->
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+/* Reserve space for dynamic content to prevent CLS */
+.related-posts {
+  min-height: 150px;
+}
+
+/* Motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>

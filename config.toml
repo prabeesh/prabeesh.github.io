@@ -13,6 +13,15 @@ enableGitInfo = false
 enableEmoji = false
 disableKinds = ["taxonomy", "term"]
 
+# Enable fingerprinting for better caching
+[params.assets]
+  fingerprint = "sha256"
+  
+# Cache busting for resources
+[params.cache]
+  enable = true
+  version = "v2.0"
+
 # Updated pagination configuration
 [pagination]
 pagerSize = 9

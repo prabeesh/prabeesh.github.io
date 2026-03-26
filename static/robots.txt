@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Enhanced caching hints for search engines
+Crawl-delay: 1
+
+# Important pages
+Sitemap: https://blog.prabeeshk.com/sitemap.xml
+
+# Cache-friendly pages
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /fonts/
+
+# Performance optimized content
+# Static assets should be cached aggressively by crawlers

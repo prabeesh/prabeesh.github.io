@@ -1,0 +1,44 @@
+# Cache headers for optimal performance
+
+# Static assets - cache for 1 year with immutable directive
+/css/*
+  Cache-Control: public, max-age=31536000, immutable
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML pages - cache for 1 hour, must revalidate
+/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+  
+# Homepage - shorter cache for freshness
+/
+  Cache-Control: public, max-age=1800, must-revalidate
+
+# RSS and XML - cache for 1 hour
+/*.xml
+  Cache-Control: public, max-age=3600
+/*.rss
+  Cache-Control: public, max-age=3600
+
+# JSON files - cache for 6 hours
+/*.json
+  Cache-Control: public, max-age=21600
+
+# Service worker - no cache to ensure updates
+/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
+  
+# Manifest - cache for 1 week
+/manifest.json
+  Cache-Control: public, max-age=604800
+
+# Security headers
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin

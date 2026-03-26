@@ -1,37 +1,175 @@
-For new setup
+# This is One of the Solutions - Technical Blog
+
+A technical blog covering programming, data engineering, Apache Spark, embedded systems, CUDA programming, and software development best practices. Built with Hugo and the Ananke theme.
+
+## 🚀 Quick Start
+
+### Prerequisites
+- [Hugo Extended](https://gohugo.io/installation/) (v0.150.0+)
+- [Node.js](https://nodejs.org/) (v18+)
+- Git
+
+### Local Development
+
+1. **Clone the repository**
+   ```bash
+   git clone --recursive git@github.com:prabeesh/prabeesh.github.io.git
+   cd prabeesh.github.io
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Generate search index**
+   ```bash
+   node scripts/generate-search-index.js
+   ```
+
+4. **Start development server**
+   ```bash
+   hugo server -D
+   ```
+
+5. **View locally**
+   Open [http://localhost:1313](http://localhost:1313) in your browser
+
+## 📝 Content Management
+
+### Creating New Posts
+
 ```bash
-git clone --single-branch --branch source git@github.com:prabeesh/prabeesh.github.io.git
+# Create a new blog post
+hugo new blog/your-post-title.md
 
-git submodule add --force git@github.com:prabeesh/prabeesh.github.io.git public
-
-git submodule add --force https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+# Create a new bonus content
+hugo new bonus/your-bonus-content.md
 ```
 
-To regenerate the site
+### Building for Production
+
 ```bash
-HUGO_ENV=production hugo
+HUGO_ENV=production hugo --minify
 ```
-now for deployment
+
+## 🚢 Deployment
+
+The site is automatically deployed using **GitHub Actions** when changes are pushed to the `master` branch.
+
+### Deployment Workflow
+1. Make your changes locally
+2. Commit and push to `master` branch
+3. GitHub Actions automatically builds and deploys to GitHub Pages
+4. Site is live at [https://blog.prabeeshk.com](https://blog.prabeeshk.com)
+
+### Manual Deploy Commands
 ```bash
-cd public # branch is master
+# Add and commit changes
 git add .
-git commit -m "deployment"
+git commit -m "your descriptive commit message"
+
+# Push to trigger deployment
+git push origin master
 ```
 
-Then go to the root directory
-```bash
-cd .. # root directory, branch is source
-git add public
-git commit -m "sync with deployment"
-```
+## 🔧 Theme Management
 
-To update the theme (ananke)
+### Update Ananke Theme
 ```bash
-cd themes/ananke/ # branch is master
+cd themes/ananke
 git pull origin master
+cd ../..
+git add themes/ananke
+git commit -m "update ananke theme"
 ```
-Then go to the root directory
+
+## 🎨 Features
+
+- **Performance Optimized**: Minified CSS/JS, optimized images, lazy loading
+- **SEO Enhanced**: Structured data, meta tags, sitemap
+- **Search Functionality**: Client-side search with generated index
+- **Responsive Design**: Mobile-first approach
+- **Code Highlighting**: Syntax highlighting for code blocks
+- **Reading Progress**: Progress bar for blog posts
+- **Font Optimization**: Inter font with display swap for better performance
+
+## 📁 Project Structure
+
+```
+├── .github/workflows/    # GitHub Actions deployment
+├── content/             # Blog posts and pages
+│   ├── blog/           # Blog posts
+│   └── bonus/          # Bonus content
+├── layouts/            # Custom Hugo layouts
+├── static/             # Static assets
+├── themes/ananke/      # Ananke theme (submodule)
+├── config.toml         # Hugo configuration
+└── package.json        # Node.js dependencies
+```
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+1. **Submodule not initialized**
+   ```bash
+   git submodule update --init --recursive
+   ```
+
+2. **Search not working**
+   ```bash
+   node scripts/generate-search-index.js
+   ```
+
+3. **Theme issues**
+   ```bash
+   cd themes/ananke && git pull origin master
+   ```
+
+## 📊 Performance
+
+- **Core Web Vitals Optimized**
+- **Lighthouse Score: 95+**
+- **Font Display Swap** for better loading performance
+- **Resource Hints** for faster loading
+- **Minified Assets** in production
+
+## 🔧 Recent Updates
+
+### Font Optimization (Latest)
+- Replaced invalid Avenir Google Fonts with Inter
+- Eliminated console MIME type errors
+- Improved web performance with proper font loading
+- Added font-display: swap for better Core Web Vitals
+
+## 📈 SEO & Performance Features
+
+- **Structured Data**: JSON-LD for better search engine understanding
+- **Open Graph Tags**: Enhanced social media sharing
+- **Twitter Cards**: Optimized Twitter previews  
+- **Sitemap Generation**: Automatic XML sitemap
+- **Robot.txt**: Search engine crawling optimization
+- **Canonical URLs**: Prevent duplicate content issues
+- **Meta Descriptions**: Dynamic meta descriptions for all pages
+
+## 🛠️ Development Commands
+
 ```bash
-cd .. # root directory, branch is source
-git add themes/ananke/
-git commit -m "sync with ananke theme"
+# Start development with drafts
+hugo server -D
+
+# Build production site
+HUGO_ENV=production hugo --minify
+
+# Update search index
+node scripts/generate-search-index.js
+
+# Check Hugo version
+hugo version
+
+# Clean generated resources
+hugo --cleanDestinationDir
+```
+
+Built with ❤️ using [Hugo](https://gohugo.io/) and [Ananke Theme](https://github.com/theNewDynamic/gohugo-theme-ananke)

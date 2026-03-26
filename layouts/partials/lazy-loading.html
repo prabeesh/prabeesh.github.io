@@ -1,37 +1,56 @@
 <script>
-// Lazy loading for images
+// Optimized lazy loading with reduced DOM queries
 document.addEventListener('DOMContentLoaded', function() {
+  // Use passive listeners for better performance
   const images = document.querySelectorAll('img[data-src]');
   
-  const imageObserver = new IntersectionObserver((entries, observer) => {
+  if (!images.length) return;
+  
+  const imageObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const img = entry.target;
-        img.src = img.dataset.src;
-        img.classList.remove('lazy');
+        // Batch DOM updates to minimize reflow
+        requestAnimationFrame(() => {
+          img.src = img.dataset.src;
+          img.classList.add('loaded');
+          img.classList.remove('lazy');
+        });
         imageObserver.unobserve(img);
       }
     });
+  }, {
+    // Load images 50px before they come into view
+    rootMargin: '50px 0px',
+    threshold: 0.01
   });
   
-  images.forEach(img => imageObserver.observe(img));
-});
-
-// Preload critical images
-function preloadImage(src) {
-  const img = new Image();
-  img.src = src;
-}
-
-// Preload featured images for better performance
-document.addEventListener('DOMContentLoaded', function() {
-  const featuredImages = document.querySelectorAll('.featured-image');
-  featuredImages.forEach(img => {
-    if (img.dataset.src) {
-      preloadImage(img.dataset.src);
-    }
+  images.forEach(img => {
+    imageObserver.observe(img);
   });
 });
+
+// Optimized preloading without excessive DOM queries
+function preloadCriticalImages() {
+  const criticalImages = document.querySelectorAll('.hero-image, .featured-image');
+  
+  criticalImages.forEach(img => {
+    if (img.dataset.src) {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.href = img.dataset.src;
+      link.as = 'image';
+      document.head.appendChild(link);
+    }
+  });
+}
+
+// Run preloading only once, after DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', preloadCriticalImages);
+} else {
+  preloadCriticalImages();
+}
 </script>
 
 <style>

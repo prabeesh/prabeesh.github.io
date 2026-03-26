@@ -146,5 +146,8 @@
     
     {{/* Lazy loading: at end of body so it does not block. Only img[data-src] are lazy-loaded; LCP/hero image is never lazy-loaded (INP). */}}
     {{ partial "lazy-loading.html" . }}
+    
+    {{/* Defer non-critical resources to improve initial load performance */}}
+    {{ partial "defer-resources.html" . }}
   </body>
 </html>

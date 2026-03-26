@@ -1,0 +1,87 @@
+{{/* Defer non-critical resources to improve initial page load */}}
+<script>
+// Cache-aware resource loading
+function loadDeferredCSS() {
+  // Check if resource is already cached before loading
+  const loadCSS = (href, media = 'all') => {
+    // Check if already loaded
+    if (document.querySelector(`link[href="${href}"]`)) {
+      return Promise.resolve();
+    }
+    
+    return new Promise((resolve) => {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = href;
+      link.media = media;
+      link.onload = () => {
+        if (media !== 'all') {
+          link.media = 'all';
+        }
+        resolve();
+      };
+      link.onerror = resolve; // Don't block on failed loads
+      document.head.appendChild(link);
+    });
+  };
+
+  // Load theme CSS after initial render with cache headers
+  loadCSS('/css/theme.css?v={{ $.Site.Params.cache.version | default "v1" }}');
+  
+  // Load icon fonts if needed (with proper caching)
+  if (document.querySelector('[class*="fa-"], [class*="icon-"]')) {
+    loadCSS('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css', 'print');
+  }
+}
+
+// Defer loading until after initial render
+if (window.requestIdleCallback) {
+  requestIdleCallback(loadDeferredCSS, { timeout: 2000 });
+} else {
+  setTimeout(loadDeferredCSS, 1000);
+}
+
+// Enhanced prefetch with cache awareness
+let prefetchCache = new Set();
+
+document.addEventListener('mouseover', function(e) {
+  if (e.target.tagName === 'A' && 
+      e.target.hostname === window.location.hostname && 
+      !prefetchCache.has(e.target.href)) {
+    
+    // Check if resource might be cached
+    const url = new URL(e.target.href);
+    const shouldPrefetch = !url.pathname.includes('#') && url.pathname !== window.location.pathname;
+    
+    if (shouldPrefetch) {
+      prefetchCache.add(e.target.href);
+      
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.href = e.target.href;
+      link.crossOrigin = 'anonymous';
+      document.head.appendChild(link);
+      
+      // Clean up after 30 seconds
+      setTimeout(() => {
+        document.head.removeChild(link);
+      }, 30000);
+    }
+  }
+}, { passive: true });
+
+// Preload critical next-page resources based on current page
+window.addEventListener('load', () => {
+  if (window.location.pathname === '/') {
+    // Preload first blog post
+    const firstBlogLink = document.querySelector('article a[href*="/blog/"]');
+    if (firstBlogLink && !prefetchCache.has(firstBlogLink.href)) {
+      prefetchCache.add(firstBlogLink.href);
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.href = firstBlogLink.href;
+      document.head.appendChild(link);
+    }
+  }
+});
+</script>
