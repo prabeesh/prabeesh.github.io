@@ -25,8 +25,8 @@ function loadDeferredCSS() {
     });
   };
 
-  // Load theme CSS after initial render with cache headers
-  loadCSS('/css/theme.css?v={{ $.Site.Params.cache.version | default "v1" }}');
+  // Theme CSS is handled by Hugo's CSS processing pipeline
+  // No additional theme.css file needed
   
   // Load icon fonts if needed (with proper caching)
   if (document.querySelector('[class*="fa-"], [class*="icon-"]')) {
