@@ -9,7 +9,7 @@ description: Learn how to use Docker to run PySpark Notebooks in a distributed e
 
 Apache Spark is a powerful big data processing engine that is well-suited for use in a distributed environment. One way to interact with Spark is through the use of an IPython Notebook, which allows you to run and debug your Spark code in an interactive manner. This tutorial will guide you through the process of setting up and running a PySpark Notebook using Docker.
 
-### Installing Docker
+## Installing Docker
 Docker is a containerization platform that allows you to package and deploy your applications in a predictable and isolated environment.
 
 To install Docker, use the following command. This command was run on an Ubuntu-14-04 instance, but you can find more options on the [Docker official site](https://docs.docker.com/).

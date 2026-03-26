@@ -9,7 +9,7 @@ description: Learn effective techniques to optimize Apache Spark for better perf
 
 Performance tuning is an important aspect of working with Apache Spark, as it can help ensure that your data processing tasks are efficient and run smoothly. In this blog post, we will delve into the common issues that can be considered when tuning the performance of Apache Spark. These issues include spill, skew, shuffle, storage, and serialization.
 
-### Spill
+## Spill
 One problem that can occur is spill, which is the writing of temp files to disk due to a lack of memory. This can happen when the data being processed is too large to fit into memory, and it can significantly impact the performance of your tasks. 
 
 To avoid spill, you can try using techniques like salted joins or adaptive query execution. For example, you can use a salted join in PySpark as follows:
@@ -26,7 +26,7 @@ Also it is important to ensure that you have enough memory available to avoid sp
 spark.conf.set("spark.executor.memory", "16g")
 ```
 
-### Skew
+## Skew
 Another issue that can arise is skew, which refers to an imbalance in the size of the partitions. When the size of the partitions is not evenly distributed, it can lead to a skewed workload, which can negatively impact performance, which can lead to some tasks taking longer than others. This can be mitigated by ensuring that the data is evenly distributed across the partitions. One way to do this is by using the repartition() function to redistribute the data evenly.
 
 You can also try manually redistributing the data or using techniques like bucketing or sampling. For example, you can use bucketing in PySpark as follows:
@@ -37,7 +37,7 @@ df = df.bucketBy(10, "key")
 ```
 If you do encounter skew, it's important to check each stage and ensure that the shuffle is almost equal. A small amount of skew, less than 20%, is usually ignorable.
 
-### Shuffle
+## Shuffle
 Shuffle is another problem that can arise during performance tuning. Shuffle refers to the act of moving data between executors, and it can be resource-intensive and lead to slower processing times. To minimize the impact of shuffle, you can try to avoid wide transformations, such as joins, distinct, groupBy, and orderBy, whenever possible. One way to do this is by using narrow transformations, which are independent of other partitions and do not involve shuffling. Examples of narrow transformations include map(), filter(), and reduce(). These operations can be much faster than wide transformations, which involve shuffling.
 
 
@@ -51,7 +51,7 @@ df1 = df1.repartition(10, "key")
 df2 = df2.repartition(10, "key")
 ```
 
-### Storage
+## Storage
 Storage is another area that can impact performance, and it refers to a set of problems related to how the data is stored on disk. Issues like the tiny file problem, directory scanning, and schema evolution can all impact performance and should be addressed during tuning. 
 
 One issue to be aware of is the tiny file problem, where small files can cause performance issues when reading and processing data. It's important to ensure that you have large enough part-files to avoid this issue. A general rule of thumb is to aim for part-files that are between 128MB and 1GB in size. One way to address the tiny file problem is by compact small files into larger ones.
@@ -78,7 +78,7 @@ df = spark.read.format("csv") \
     .load("data.csv")
 ```
 
-### Serialization
+## Serialization
 Serialization is the distribution of code segments across the cluster. It's important to use efficient serialization techniques, such as Tungsten. Tungsten is a serialization project developed specifically for Apache Spark, and it can significantly improve the performance of your data processing tasks. To enable Tungsten serialization in your Spark code, you can use the following code:
 
 ```Python
