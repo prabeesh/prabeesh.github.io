@@ -15,6 +15,7 @@ You can download the Mesos distribution from [official website](http://www.apach
 ```
 $ tar xvf mesos-0.13.0.tar.gz
 ```
+
 ## Building and Installing
 ``` 
 $ cd mesos-0.13.0
