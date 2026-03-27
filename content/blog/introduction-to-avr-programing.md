@@ -1,9 +1,10 @@
 ---
-title: "Introduction to AVR programming"
+title: "Complete Introduction to AVR Microcontroller Programming: From Setup to First Program"
 date: 2012-02-21T2:39:00+05:30
-tags: [AVR, Embedded]
-keywords: beginners guide AVR programming, AVR programming basic examples, intro to AVR programming, avr introduction, beginner avr examples, how to avr programs, avr examples, basic avr code
-description: An introduction to AVR programming for beginners, covering basic examples and concepts. Learn how to write code for Atmel AVR microcontrollers, including a sample program to blink an LED. Gain an understanding of the key components and functions of AVR microcontrollers, and explore the process of compiling and converting code to object and hex formats. Discover how to program AVR microcontrollers using USBASP, and find additional resources for further learning.
+author: Prabeesh Keezhathra
+tags: [AVR, Embedded Systems, Microcontroller Programming, Atmel, C Programming]
+keywords: AVR programming tutorial, Atmel microcontroller programming, AVR development setup, AVR-GCC compiler, embedded C programming, AVR LED blink program, USBASP programmer, microcontroller development tools
+description: Master AVR microcontroller programming from scratch. Learn development environment setup, AVR-GCC compilation, programming with USBASP, and create your first LED blinking program with detailed code explanations and hardware concepts.
 ---
 
 Atmel AVR 8-bit and 32-bit microcontrollers deliver a unique combination of performance, power efficiency, and design flexibility. Optimized to speed time to market, they are based on the industry’s most code-efficient architecture for C and assembly programming. No other microcontrollers deliver more computing performance with better power efficiency. Industry-leading development tools and design support let you get to market faster. Once there, the large AVR family lets you reuse your knowledge when improving your products and expanding to new markets—easily and cost-effectively.

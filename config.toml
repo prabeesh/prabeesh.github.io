@@ -13,6 +13,10 @@ enableGitInfo = false
 enableEmoji = false
 disableKinds = ["taxonomy", "term"]
 
+# SEO optimizations
+canonifyURLs = true
+rssLimit = 20
+
 # Enable fingerprinting for better caching
 [params.assets]
   fingerprint = "sha256"
@@ -20,7 +24,7 @@ disableKinds = ["taxonomy", "term"]
 # Cache busting for resources
 [params.cache]
   enable = true
-  version = "v2.0"
+  version = "v2.1"
 
 # Updated pagination configuration
 [pagination]
@@ -38,9 +42,13 @@ pagerSize = 9
     linkedin = "https://www.linkedin.com/in/prabeeshk/"
     show_reading_time = true
      
-    # Social media
+    # Social media and SEO
     twitter_creator = "@prabeesh_k"
     twitter_site = "@prabeesh_k"
+    
+    # OpenGraph and Schema.org settings
+    images = ["/images/og-image.png"]
+    author = "Prabeesh Keezhathra"
     
     # Performance
     enable_minify = true
@@ -54,8 +62,15 @@ pagerSize = 9
 [services.disqus]
     Shortname = "prabeeshk"
 
-[markup.goldmark.renderer]
-    unsafe= true
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "github"
+    lineNos = true
+    lineNumbersInTable = false
+    codeFences = true
 
 # Enhanced sitemap configuration
 [sitemap]
@@ -63,13 +78,23 @@ pagerSize = 9
   priority = 0.5
   filename = "sitemap.xml"
 
-# Output formats for better performance
+# Output formats for better performance and SEO
 [outputFormats]
   [outputFormats.RSS]
     mediaType = "application/rss+xml"
     baseName = "feed"
     isPlainText = true
     notAlternative = true
+  [outputFormats.SearchIndex]
+    mediaType = "application/json"
+    baseName = "search"
+    isPlainText = true
+    notAlternative = true
+
+[outputs]
+  home = ["HTML", "RSS", "SearchIndex"]
+  section = ["HTML", "RSS"]
+  page = ["HTML"]
 
 # Minify configuration
 [minify]
@@ -90,3 +115,30 @@ pagerSize = 9
     [minify.tdewolff.svg]
       keepComments = false
       precision = 1
+
+# Privacy configuration
+[privacy]
+  [privacy.disqus]
+    disable = false
+  [privacy.googleAnalytics]
+    disable = false
+    respectDoNotTrack = true
+    anonymizeIP = true
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = true
+
+# Related content settings
+[related]
+  threshold = 80
+  includeNewer = true
+  toLower = false
+  [[related.indices]]
+    name = "keywords"
+    weight = 150
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+  [[related.indices]]
+    name = "date"
+    weight = 10

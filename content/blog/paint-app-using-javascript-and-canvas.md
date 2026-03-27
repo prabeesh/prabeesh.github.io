@@ -1,9 +1,10 @@
 ---
-title: "Paint app using JavaScript and Canvas"
+title: "HTML5 Canvas Paint Application: Building Interactive Drawing Tools with JavaScript"
 date: 2013-03-30T12:44:00+05:30
-tags: [JavaScript, GoogleAppEngine, Python, Python Flask]
-keywords: HTML5 canvas game, JavaScript canvas, paint app, canvas drawing, beginner canvas example
-description: This post is a beginner's guide to developing a simple paint app using JavaScript, HTML5, and Canvas. Learn how to draw lines, rectangles, and circles in different colors, and explore the functionality of the select button and color picker. The app also includes a saving feature, allowing users to store and regenerate their drawings. Choose between two frameworks, Google App Engine and Flask, for data storage. Check out the source code and try the app on appspot.com.
+author: Prabeesh Keezhathra
+tags: [JavaScript, HTML5 Canvas, Web Development, Interactive Applications, Google App Engine, Python Flask]
+keywords: HTML5 canvas paint application, JavaScript drawing app, canvas paint tool, interactive web drawing, HTML5 canvas tutorial, JavaScript paint program, web-based drawing application, canvas mouse events
+description: Build an interactive HTML5 canvas paint application with JavaScript. Learn drawing tools implementation, color selection, shape creation, data persistence with Google App Engine and Flask backends for web-based drawing applications.
 ---
 An application to draw simple drawings using lines, rectangles and circles in different colours. 
 

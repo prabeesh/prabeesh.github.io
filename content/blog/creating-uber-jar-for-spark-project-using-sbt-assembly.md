@@ -1,10 +1,10 @@
 ---
-title: "Creating an Assembled JAR for a Standalone Spark Application"
+title: "Creating Uber JARs for Apache Spark Projects: Complete SBT Assembly Guide"
 date: 2014-04-08T09:47:00+05:30
 author: Prabeesh Keezhathra
-tags: [Apache Spark, SBT, Scala, Big Data, JAR creation]
-keywords: Spark uber jar, sbt-assembly, Spark fat jar, SBT Spark, standalone Spark jar, spark-submit jar
-description: This guide will teach you how to create a single executable JAR for your Spark project using the sbt-assembly plugin. You will learn the steps to add the plugin, configure assembly settings, and create the fat JAR. Additionally, an example project is provided for you to follow along. By following this guide, you will be able to easily create a standalone Spark application with a consolidated JAR file.
+tags: [Apache Spark, SBT, Scala, Big Data, JAR creation, sbt-assembly, Build Tools]
+keywords: Spark uber jar creation, sbt-assembly plugin tutorial, Apache Spark fat jar, SBT build configuration, Spark project deployment, sbt-assembly merge strategy, standalone Spark jar packaging, Scala Spark build process
+description: Master creating executable uber JARs for Apache Spark projects using sbt-assembly. Learn plugin configuration, merge strategies, dependency management, and deployment best practices for production Spark applications.
 ---
 
 In this post, we will discuss how to create an assembled JAR for a standalone Spark application using the `sbt-assembly` plugin. One of my previous posts, we discussed [how to build a stand alone Spark Application using SBT eclipse plugin](/blog/2014/04/01/a-standalone-spark-application-in-scala/). Now, we will take it one step further and show you how to create a fat JAR for your Spark project using the sbt-assembly plugin.

@@ -1,9 +1,10 @@
 ---
-title: "Developing a simple game with HTML5/canvas"
+title: "HTML5 Canvas Game Development: Building Interactive Games with JavaScript"
 date: 2013-02-09 10:12:43 +0530
-keywords: simple game in html5 javascript, canvas game example, simple game development example, html5 game example, introduction to html5 game development
-tags: [HTML5, Python, Google App Engine]
-description: This post provides a beginner-friendly guide on developing a simple game using HTML5 canvas and JavaScript. Learn how to create a canvas, draw text and images, rotate the canvas, handle keyboard events, and more. Follow along with the code examples and step-by-step instructions to create your own game. No prior experience with game development is required. Get started today and unleash your creativity with HTML5 game development.
+author: Prabeesh Keezhathra
+tags: [HTML5, JavaScript, Canvas API, Game Development, Web Games, Interactive Graphics]
+keywords: HTML5 canvas game development, JavaScript game programming, HTML5 game tutorial, canvas game creation, web game development, HTML5 canvas animation, JavaScript game mechanics, interactive web games
+description: Learn HTML5 canvas game development with JavaScript. Master canvas drawing, animation, collision detection, keyboard events, and game mechanics to create engaging interactive web games from scratch.
 ---
 HTML5 is the new HTML standard. One of the most interesting new features in HTML5 is the canvas element **canvas** for 2D drawing. A canvas is a rectangular area on an HTML page. All drawing on the canvas must be done using JavaScript. This post goes through the basics of implementing a 2D canvas context, and using the basic canvas functions for developing a simple game.
 Creating a canvad context, adding the **canvas** element to your HTML document like so
