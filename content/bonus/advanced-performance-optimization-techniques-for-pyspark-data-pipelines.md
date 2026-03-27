@@ -829,4 +829,4 @@ Building upon the foundational concepts from our [Performance Tuning on Apache S
    - Implement proper cleanup strategies
    - Use appropriate serialization formats
 
-By implementing these advanced optimization techniques, you can achieve significant performance improvements in production PySpark environments. Remember to profile your specific use cases and continuously monitor performance to ensure optimal results. For more foundational performance tuning concepts, refer to our comprehensive guide on [Performance Tuning on Apache Spark](/blog/performance-tuning-on-apache-spark//).
+By implementing these advanced optimization techniques, you can achieve significant performance improvements in production PySpark environments. Remember to profile your specific use cases and continuously monitor performance to ensure optimal results. For more foundational performance tuning concepts, refer to our comprehensive guide on [Performance Tuning on Apache Spark](/blog/2023/01/06/performance-tuning-on-apache-spark/).
