@@ -7,7 +7,7 @@ keywords: Docker data engineering, container orchestration, Kubernetes data pipe
 description: Master Docker container orchestration for data engineering workloads. Learn production deployment strategies, Kubernetes integration, microservices patterns, and containerized PySpark applications for scalable data pipelines.
 ---
 
-Building upon our foundation in [PySpark with Docker](/blog/pyspark-notebook-with-docker/), this guide explores advanced container orchestration techniques essential for production data engineering environments. We'll cover Kubernetes deployments, service mesh architectures, and automated scaling strategies for data-intensive applications.
+Building upon our foundation in [PySpark with Docker](/blog/2015/06/19/pyspark-notebook-with-docker/), this guide explores advanced container orchestration techniques essential for production data engineering environments. We'll cover Kubernetes deployments, service mesh architectures, and automated scaling strategies for data-intensive applications.
 
 ## Multi-Stage Docker Builds for Data Applications
 
@@ -534,4 +534,4 @@ spec:
 
 This Docker orchestration guide provides production-ready patterns for deploying data engineering applications at scale. The Kubernetes and Helm configurations shown enable robust, auto-scaling data pipelines with proper service mesh integration.
 
-For foundational Docker concepts with PySpark, see our [PySpark Docker tutorial](/blog/pyspark-notebook-with-docker/). For advanced deployment strategies, explore our related guides on [Apache Spark performance optimization](/blog/performance-tuning-on-apache-spark/).
+For foundational Docker concepts with PySpark, see our [PySpark Docker tutorial](/blog/2015/06/19/pyspark-notebook-with-docker/). For advanced deployment strategies, explore our related guides on [Apache Spark performance optimization](/blog/2023/01/06/performance-tuning-on-apache-spark/).

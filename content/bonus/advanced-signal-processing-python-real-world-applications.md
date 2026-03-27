@@ -7,7 +7,7 @@ keywords: Python signal processing, digital signal processing Python, FFT analys
 description: Master advanced signal processing techniques in Python for real-world applications. Learn digital filtering, FFT analysis, spectral processing, and visualization techniques for audio, biomedical, and sensor data analysis.
 ---
 
-Building upon our foundation in [AM wave generation and plotting](/blog/am-plot-matplotlib/), this advanced guide explores sophisticated signal processing techniques using Python for professional applications in audio processing, biomedical signal analysis, and sensor data processing.
+Building upon our foundation in [AM wave generation and plotting](/blog/2011/09/25/am-plot-matplotlib/), this advanced guide explores sophisticated signal processing techniques using Python for professional applications in audio processing, biomedical signal analysis, and sensor data processing.
 
 ## Advanced Signal Processing Framework
 
@@ -597,4 +597,4 @@ if __name__ == "__main__":
 
 This advanced signal processing framework provides professional-grade tools for analyzing complex signals across multiple domains. The modular architecture supports biomedical, audio, and general signal processing applications with comprehensive analysis and visualization capabilities.
 
-For foundational signal processing concepts, see our [AM wave generation tutorial](/blog/am-plot-matplotlib/). For related data analysis techniques, explore our [data visualization guides](#).
+For foundational signal processing concepts, see our [AM wave generation tutorial](/blog/2011/09/25/am-plot-matplotlib/). For related data analysis techniques, explore our [data visualization guides](#).

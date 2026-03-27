@@ -7,7 +7,7 @@ keywords: IoT data pipeline, MQTT Spark integration, sensor data processing, IoT
 description: Build complete IoT data pipeline architectures from sensor collection to real-time analytics. Learn MQTT integration with Apache Spark, edge computing patterns, data preprocessing, and scalable IoT analytics solutions.
 ---
 
-Combining our expertise in [MQTT messaging](/blog/mqtt-scala-publisher-and-subscriber/) and [Apache Spark processing](/blog/performance-tuning-on-apache-spark/), this comprehensive guide demonstrates building production-ready IoT data pipeline architectures that handle millions of sensor readings with real-time analytics capabilities.
+Combining our expertise in [MQTT messaging](/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/) and [Apache Spark processing](/blog/2023/01/06/performance-tuning-on-apache-spark/), this comprehensive guide demonstrates building production-ready IoT data pipeline architectures that handle millions of sensor readings with real-time analytics capabilities.
 
 ## IoT Data Pipeline Architecture Overview
 
@@ -637,4 +637,4 @@ if __name__ == "__main__":
 
 This IoT data pipeline architecture provides a complete solution for handling sensor data from collection through real-time analytics. The design supports edge processing, anomaly detection, and scalable stream processing suitable for production IoT deployments.
 
-For foundational concepts, explore our [MQTT messaging tutorial](/blog/mqtt-scala-publisher-and-subscriber/) and [Spark performance optimization guide](/blog/performance-tuning-on-apache-spark/).
+For foundational concepts, explore our [MQTT messaging tutorial](/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/) and [Spark performance optimization guide](/blog/2023/01/06/performance-tuning-on-apache-spark/).

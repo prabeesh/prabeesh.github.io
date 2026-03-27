@@ -7,7 +7,7 @@ keywords: Arduino advanced programming, Arduino firmware development, Arduino me
 description: Master advanced Arduino programming techniques for professional firmware development. Learn memory optimization, interrupt handling, real-time systems, hardware abstraction, and production-ready code patterns for robust embedded applications.
 ---
 
-Building upon the foundational concepts from our [ATmega8 RC constant measurement](/blog/finding-rc-constant-using-atmega8/) and [LCD interfacing tutorials](/blog/lcd-interfacing-using-msp430/), this comprehensive guide explores advanced Arduino programming techniques that transform hobbyist sketches into professional-grade firmware.
+Building upon the foundational concepts from our [ATmega8 RC constant measurement](/blog/2012/07/14/finding-rc-constant-using-atmega8/) and [LCD interfacing tutorials](/blog/2012/07/04/lcd-interfacing-using-msp430/), this comprehensive guide explores advanced Arduino programming techniques that transform hobbyist sketches into professional-grade firmware.
 
 ## Memory Management and Optimization
 
@@ -370,4 +370,4 @@ void loop() {
 
 This advanced Arduino programming guide provides professional techniques for building robust, maintainable embedded systems. The patterns shown here enable scalable firmware development suitable for production applications.
 
-For related embedded programming concepts, explore our [MSP430 LCD interfacing](/blog/lcd-interfacing-using-msp430/) and [AVR programming tutorials](/blog/finding-rc-constant-using-atmega8/).
+For related embedded programming concepts, explore our [MSP430 LCD interfacing](/blog/2012/07/04/lcd-interfacing-using-msp430/) and [AVR programming tutorials](/blog/2012/07/14/finding-rc-constant-using-atmega8/).

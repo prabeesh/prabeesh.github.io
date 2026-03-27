@@ -9,7 +9,7 @@ description: Build production-ready real-time analytics systems with Apache Spar
 
 Real-time data processing has become essential for modern applications, from fraud detection to live dashboards. Apache Spark Streaming provides a powerful framework for building scalable, fault-tolerant streaming applications that process continuous data streams with the same APIs you use for batch processing.
 
-This comprehensive guide builds upon our foundational [Apache Spark performance tuning](/blog/performance-tuning-on-apache-spark/) concepts to cover production-ready streaming implementations that can handle millions of events per second with guaranteed delivery and exactly-once processing semantics.
+This comprehensive guide builds upon our foundational [Apache Spark performance tuning](/blog/2023/01/06/performance-tuning-on-apache-spark/) concepts to cover production-ready streaming implementations that can handle millions of events per second with guaranteed delivery and exactly-once processing semantics.
 
 ## Understanding Spark Streaming Architecture
 
@@ -773,4 +773,4 @@ object IoTSensorStreaming {
 
 This comprehensive guide provides production-ready patterns and implementations for Apache Spark Streaming applications. The examples demonstrate real-world scenarios including fraud detection, IoT analytics, and robust monitoring frameworks essential for mission-critical streaming applications.
 
-For more advanced Spark techniques, explore our related guides on [PySpark performance optimization](/blog/advanced-performance-optimization-techniques-for-pyspark-data-pipelines/) and [Apache Spark application development](/blog/a-standalone-spark-application-in-scala/).
+For more advanced Spark techniques, explore our related guides on [PySpark performance optimization](/bonus/advanced-performance-optimization-techniques-for-pyspark-data-pipelines/) and [Apache Spark application development](/blog/2014/04/01/a-standalone-spark-application-in-scala/).

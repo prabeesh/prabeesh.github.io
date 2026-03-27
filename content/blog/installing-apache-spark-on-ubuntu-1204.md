@@ -388,7 +388,7 @@ Now that you have Spark installed and configured, explore these advanced topics:
 
 1. **Performance Tuning**: Learn advanced [Spark performance optimization](/blog/2023/01/06/performance-tuning-on-apache-spark/) techniques
 2. **Application Development**: Create [standalone Spark applications in Scala](/blog/2014/04/01/a-standalone-spark-application-in-scala/)
-3. **Container Deployment**: Set up [PySpark with Docker](/blog/pyspark-notebook-with-docker/) for reproducible environments
+3. **Container Deployment**: Set up [PySpark with Docker](/blog/2015/06/19/pyspark-notebook-with-docker/) for reproducible environments
 4. **Streaming Applications**: Build real-time data processing pipelines
 5. **Machine Learning**: Implement MLlib algorithms for production ML workflows
 

@@ -7,7 +7,7 @@ keywords: embedded systems security, IoT device security, microcontroller securi
 description: Implement robust security measures for embedded systems and IoT devices. Learn cryptographic implementations, secure boot processes, hardware security modules, and security protocols for protecting microcontroller-based applications.
 ---
 
-Building upon our embedded programming expertise from [AVR programming](/blog/finding-rc-constant-using-atmega8/) and [Arduino development](/bonus/advanced-arduino-programming-professional-firmware-development/), this guide explores critical security implementations for protecting embedded systems and IoT devices against modern threats.
+Building upon our embedded programming expertise from [AVR programming](/blog/2012/07/14/finding-rc-constant-using-atmega8/) and [Arduino development](/bonus/advanced-arduino-programming-professional-firmware-development/), this guide explores critical security implementations for protecting embedded systems and IoT devices against modern threats.
 
 ## Cryptographic Implementations for Microcontrollers
 
@@ -705,4 +705,4 @@ void trigger_security_lockdown(void) {
 
 This comprehensive embedded systems security framework provides multiple layers of protection essential for modern IoT devices. The implementations cover cryptographic primitives, secure boot processes, encrypted communications, and intrusion detection suitable for resource-constrained environments.
 
-For foundational embedded programming concepts, explore our [AVR programming tutorials](/blog/finding-rc-constant-using-atmega8/) and [advanced Arduino development guide](/bonus/advanced-arduino-programming-professional-firmware-development/).
+For foundational embedded programming concepts, explore our [AVR programming tutorials](/blog/2012/07/14/finding-rc-constant-using-atmega8/) and [advanced Arduino development guide](/bonus/advanced-arduino-programming-professional-firmware-development/).

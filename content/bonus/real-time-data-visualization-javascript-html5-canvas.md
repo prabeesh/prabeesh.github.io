@@ -7,7 +7,7 @@ keywords: HTML5 Canvas data visualization, JavaScript real-time charts, interact
 description: Build high-performance real-time data visualizations using HTML5 Canvas and JavaScript. Learn interactive dashboard development, animation techniques, performance optimization, and integration patterns for dynamic data streaming applications.
 ---
 
-Extending our [JavaScript Canvas applications](/blog/developing-a-simple-game-with-html5-slash-canvas/) and [paint app development](/blog/paint-app-using-flask-with-mongodb/), this guide explores advanced techniques for creating high-performance, real-time data visualization dashboards using HTML5 Canvas and modern JavaScript.
+Extending our [JavaScript Canvas applications](/blog/2013/02/09/developing-a-simple-game-with-html5-slash-canvas/) and [paint app development](/blog/2013/03/31/paint-app-using-flask-with-mongodb/), this guide explores advanced techniques for creating high-performance, real-time data visualization dashboards using HTML5 Canvas and modern JavaScript.
 
 ## High-Performance Canvas Rendering Engine
 
@@ -594,4 +594,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 This advanced Canvas-based visualization framework provides the foundation for building high-performance, interactive dashboards. The modular architecture supports real-time data streaming, smooth animations, and responsive user interactions.
 
-For foundational Canvas concepts, see our [HTML5 Canvas game tutorial](/blog/developing-a-simple-game-with-html5-slash-canvas/) and [JavaScript paint application](/blog/paint-app-using-flask-with-mongodb/).
+For foundational Canvas concepts, see our [HTML5 Canvas game tutorial](/blog/2013/02/09/developing-a-simple-game-with-html5-slash-canvas/) and [JavaScript paint application](/blog/2013/03/31/paint-app-using-flask-with-mongodb/).
