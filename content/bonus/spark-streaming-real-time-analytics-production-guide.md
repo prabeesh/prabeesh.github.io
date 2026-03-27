@@ -9,7 +9,7 @@ description: Build production-ready real-time analytics systems with Apache Spar
 
 Real-time data processing has become essential for modern applications, from fraud detection to live dashboards. Apache Spark Streaming provides a powerful framework for building scalable, fault-tolerant streaming applications that process continuous data streams with the same APIs you use for batch processing.
 
-This comprehensive guide builds upon our foundational [Apache Spark performance tuning](/blog/2023/01/06/performance-tuning-on-apache-spark/) concepts to cover production-ready streaming implementations that can handle millions of events per second with guaranteed delivery and exactly-once processing semantics.
+This comprehensive guide builds upon our foundational [Apache Spark performance tuning](/blog/performance-tuning-on-apache-spark/) concepts to cover production-ready streaming implementations that can handle millions of events per second with guaranteed delivery and exactly-once processing semantics.
 
 ## Understanding Spark Streaming Architecture
 

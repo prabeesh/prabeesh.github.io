@@ -8,7 +8,7 @@ description: Complete step-by-step guide to install Apache Spark 3.5 on Linux sy
 
 Apache Spark has evolved dramatically since its early releases, becoming the de facto standard for large-scale data processing and analytics. This comprehensive guide covers installing the latest Apache Spark 3.5+ on modern Linux distributions with best practices for both development and production environments.
 
-**Update Notice**: This guide covers modern Apache Spark 3.5+ installation. For historical reference, our previous guides covered [Apache Spark 1.0 installation](/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/) and [Apache Spark 2.x setup](/blog/2016/03/04/install-apache-spark-2-on-ubuntu-16-04-and-mac-os/).
+**Update Notice**: This guide covers modern Apache Spark 3.5+ installation. For historical reference, our previous guides covered [Apache Spark 1.0 installation](/blog/install-apache-spark-on-ubuntu-14-dot-04/) and [Apache Spark 2.x setup](/blog/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/).
 
 Apache Spark is an open-source, distributed computing framework designed for fast processing of large datasets across clusters. Originally developed at UC Berkeley's AMPLab, Spark provides unified analytics capabilities including batch processing, real-time streaming, machine learning, and graph processing with clean APIs in Scala, Java, Python, and R.
 
@@ -388,7 +388,7 @@ Now that you have Spark installed and configured, explore these advanced topics:
 
 1. **Performance Tuning**: Learn advanced [Spark performance optimization](/blog/2023/01/06/performance-tuning-on-apache-spark/) techniques
 2. **Application Development**: Create [standalone Spark applications in Scala](/blog/2014/04/01/a-standalone-spark-application-in-scala/)
-3. **Container Deployment**: Set up [PySpark with Docker](/blog/2015/06/19/how-to-run-a-pyspark-notebook-with-docker/) for reproducible environments
+3. **Container Deployment**: Set up [PySpark with Docker](/blog/pyspark-notebook-with-docker/) for reproducible environments
 4. **Streaming Applications**: Build real-time data processing pipelines
 5. **Machine Learning**: Implement MLlib algorithms for production ML workflows
 
