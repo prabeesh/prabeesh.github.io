@@ -20,7 +20,7 @@ Before diving into performance optimization, ensure you understand these **Apach
 - **Apache Spark** cluster architecture (driver, executors, partitions)
 - How to read the **Spark UI** for performance monitoring
 
-If you're new to **Apache Spark**, consider starting with our [Apache Spark Installation Tutorial](../install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/) before proceeding.
+If you're new to **Apache Spark**, consider starting with our [Apache Spark Installation Tutorial](/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/) before proceeding.
 
 ## What You'll Learn in This Apache Spark Tutorial
 
@@ -197,7 +197,7 @@ This **Apache Spark performance tuning tutorial** covered essential optimization
 ### Next Steps in Your Apache Spark Learning Journey
 
 Continue your **Apache Spark tutorial** journey with these related guides:
-- **Apache Spark Installation Tutorial** for beginners
+- **[Apache Spark Installation Tutorial](/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/)** for beginners
 - **PySpark Data Engineering** best practices  
 - **Advanced Apache Spark Examples** for production systems
 - **Spark Streaming Tutorial** for real-time processing
