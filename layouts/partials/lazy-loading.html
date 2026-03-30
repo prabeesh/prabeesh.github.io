@@ -1,85 +1,36 @@
+{{/* Optimized lazy loading script - minimal and efficient */}}
 <script>
-// Optimized lazy loading with reduced DOM queries
-document.addEventListener('DOMContentLoaded', function() {
-  // Use passive listeners for better performance
-  const images = document.querySelectorAll('img[data-src]');
-  
-  if (!images.length) return;
-  
-  const imageObserver = new IntersectionObserver((entries) => {
+// Ultra-efficient lazy loading for images
+if ('IntersectionObserver' in window) {
+  const lazyImageObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const img = entry.target;
-        // Batch DOM updates to minimize reflow
-        requestAnimationFrame(() => {
+        if (img.dataset.src) {
           img.src = img.dataset.src;
-          img.classList.add('loaded');
           img.classList.remove('lazy');
-        });
-        imageObserver.unobserve(img);
+          img.classList.add('loaded');
+          lazyImageObserver.unobserve(img);
+        }
       }
     });
   }, {
-    // Load images 50px before they come into view
-    rootMargin: '50px 0px',
-    threshold: 0.01
+    rootMargin: '50px 0px' // Start loading 50px before entering viewport
   });
-  
-  images.forEach(img => {
-    imageObserver.observe(img);
-  });
-});
 
-// Optimized preloading without excessive DOM queries
-function preloadCriticalImages() {
-  const criticalImages = document.querySelectorAll('.hero-image, .featured-image');
-  
-  criticalImages.forEach(img => {
-    if (img.dataset.src) {
-      const link = document.createElement('link');
-      link.rel = 'preload';
-      link.href = img.dataset.src;
-      link.as = 'image';
-      document.head.appendChild(link);
-    }
+  // Observe all lazy images when DOM is ready
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('img[data-src]').forEach(img => {
+      img.classList.add('lazy');
+      lazyImageObserver.observe(img);
+    });
   });
-}
-
-// Run preloading only once, after DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', preloadCriticalImages);
 } else {
-  preloadCriticalImages();
+  // Fallback for browsers without IntersectionObserver
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('img[data-src]').forEach(img => {
+      img.src = img.dataset.src;
+    });
+  });
 }
 </script>
-
-<style>
-/* Lazy loading styles */
-.lazy {
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.lazy.loaded {
-  opacity: 1;
-}
-
-/* Image optimization */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Responsive images */
-.responsive-img {
-  width: 100%;
-  height: auto;
-}
-
-@media (max-width: 768px) {
-  .responsive-img {
-    width: 100%;
-  }
-}
-</style>

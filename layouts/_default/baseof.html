@@ -100,6 +100,19 @@
     <meta name="twitter:description" content="{{ .Params.description }}">
     <meta name="twitter:image" content="{{ with .Params.featured_image }}{{ . }}{{ else }}{{ .Site.BaseURL }}images/default-featured.jpg{{ end }}">
 
+    {{/* Critical CSS optimization - inline critical, preload rest */}}
+    {{ $criticalCSS := resources.Get "ananke/css/_tachyons.css" | minify }}
+    {{ if $criticalCSS }}
+    <style>{{ $criticalCSS.Content | safeCSS }}</style>
+    {{ end }}
+    
+    {{/* Preload main CSS bundle for non-critical styles */}}
+    {{ with partialCached "func/style/GetMainCSS" "style/GetMainCSS" }}
+    <link rel="preload" href="{{ .RelPermalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'" media="all">
+    <noscript><link rel="stylesheet" href="{{ .RelPermalink }}"></noscript>
+    {{ end }}
+    
+    {{/* Fallback: load main styles normally for older browsers */}}
     {{ partial "site-style.html" . }}
     {{ partial "site-scripts.html" . }}
     
@@ -115,12 +128,7 @@
       {{ end }}
     {{ end }}
     
-    {{/* Google Analytics 4 */}}
-    {{ if and $production $public }}
-      {{ if .Site.Params.google_analytics }}
-        {{ template "_internal/google_analytics.html" . }}
-      {{ end }}
-    {{ end }}
+    {{/* Google Analytics 4 - Disabled here, loaded via head-additions.html */}}
     
     {{/* LCP: Preload hero/featured image so main content appears faster - do not lazy-load this element */}}
     {{ $lcpImage := partial "func/GetFeaturedImage.html" . }}

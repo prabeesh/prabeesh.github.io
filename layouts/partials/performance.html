@@ -1,48 +1,96 @@
-{{/* Enhanced Resource Hints - optimized for caching */}}
+{{/* Critical resource hints - only for truly critical resources */}}
 <link rel="preconnect" href="https://blog.prabeeshk.com" crossorigin>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-{{/* DNS Prefetch - only for critical domains */}}
-<link rel="dns-prefetch" href="//fonts.googleapis.com">
+{{/* DNS Prefetch only when ads are about to load */}}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const prefetchAds = () => {
+    const link = document.createElement('link');
+    link.rel = 'dns-prefetch';
+    link.href = '//pagead2.googlesyndication.com';
+    document.head.appendChild(link);
+  };
+  
+  // Prefetch when user shows intent to interact
+  ['scroll', 'mousemove'].forEach(event => {
+    document.addEventListener(event, prefetchAds, { once: true, passive: true });
+  });
+});
+</script>
 
-{{/* Cache-related meta tags */}}
-<meta http-equiv="Cache-Control" content="public, max-age=3600">
-<meta http-equiv="Expires" content="{{ now.AddDate 0 0 1 | time.Format "Mon, 02 Jan 2006 15:04:05 MST" }}">
-
-{{/* Optimized font loading with minimal weights and better caching */}}
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" crossorigin></noscript>
-
-{{/* Critical CSS optimized */}}
+{{/* Enhanced Critical CSS for above-the-fold content */}}
 <style>
-/* Minimal critical above-the-fold styles */
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+/* System font stack - no web fonts to prevent CLS */
+body, .avenir {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
   line-height: 1.6;
   color: #333;
   margin: 0;
   padding: 0;
-  font-display: swap;
 }
 
+/* Critical layout styles */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-/* Minimal loading skeleton */
-.skeleton {
-  background: #f0f0f0;
-  animation: pulse 1.5s ease-in-out infinite alternate;
+/* Performance-first image handling */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-@keyframes pulse {
-  from { opacity: 1; }
-  to { opacity: 0.5; }
+/* CLS prevention - reserve space for all dynamic content */
+.site-header {
+  min-height: 120px;
 }
 
-/* Performance-optimized reading progress */
+.site-header h1 {
+  min-height: 3rem;
+}
+
+.site-header h2 {
+  min-height: 2rem;
+}
+
+.site-navigation {
+  min-height: 60px;
+}
+
+/* Ad space reservation */
+.adsbygoogle {
+  min-height: 250px;
+  display: block !important;
+}
+
+.ad-banner-top {
+  min-height: 250px;
+}
+
+.ad-in-content {
+  min-height: 280px;
+}
+
+.ad-sidebar {
+  min-height: 300px;
+}
+
+/* Loading states to prevent CLS */
+.loading-skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Reading progress - optimized for performance */
 .reading-progress {
   position: fixed;
   top: 0;
@@ -52,37 +100,45 @@ body {
   background: #007bff;
   z-index: 1000;
   will-change: width;
+  transform: translateZ(0); /* GPU acceleration */
+}
+
+/* Reduce motion for accessibility and performance */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .loading-skeleton {
+    animation: none;
+  }
+}
+
+/* Focus management for accessibility */
+a:focus, button:focus, input:focus, textarea:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
 }
 </style>
 
-{{/* Optimized service worker registration - non-blocking */}}
+{{/* Optimized service worker - load after everything else */}}
 <script>
 if ('serviceWorker' in navigator) {
-  // Register service worker after page load to avoid blocking main thread
   window.addEventListener('load', function() {
-    // Use requestIdleCallback if available for better performance
-    const registerSW = () => {
-      navigator.serviceWorker.register('/sw.js', { 
-        scope: '/',
-        updateViaCache: 'imports' // Better caching for SW updates
-      })
-        .then(registration => {
-          console.log('SW registered:', registration.scope);
-          
-          // Check for updates periodically
-          setInterval(() => {
-            registration.update();
-          }, 60000); // Check every minute
-        })
-        .catch(() => {
-          console.log('SW registration failed');
-        });
-    };
-    
     if ('requestIdleCallback' in window) {
-      requestIdleCallback(registerSW);
+      requestIdleCallback(() => {
+        navigator.serviceWorker.register('/sw.js', { 
+          scope: '/',
+          updateViaCache: 'imports'
+        }).catch(() => {});
+      });
     } else {
-      setTimeout(registerSW, 1000);
+      setTimeout(() => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      }, 2000);
     }
   });
 }

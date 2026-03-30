@@ -1,50 +1,85 @@
-{{/* Optimized AdSense and Analytics loading - defer to improve Core Web Vitals */}}
+{{/* Performance-optimized AdSense and Analytics - maintains full functionality */}}
 <script>
-  // Defer Google AdSense loading until user interaction or after page load
+  let adSenseLoaded = false;
+  let analyticsLoaded = false;
+  
   function loadAdSense() {
-    if (!window.adsbygoogleLoaded) {
-      const script = document.createElement('script');
-      script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-      script.setAttribute('data-ad-client', 'ca-pub-1368619820510426');
-      script.async = true;
-      document.head.appendChild(script);
-      window.adsbygoogleLoaded = true;
-    }
+    if (adSenseLoaded) return;
+    adSenseLoaded = true;
+    
+    // Load AdSense script with your actual client ID
+    const adsScript = document.createElement('script');
+    adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+    adsScript.setAttribute('data-ad-client', 'ca-pub-1368619820510426');
+    adsScript.async = true;
+    adsScript.defer = true;
+    document.head.appendChild(adsScript);
+    
+    // Initialize ads once script loads
+    adsScript.onload = function() {
+      // Initialize all ad units on page
+      document.querySelectorAll('.adsbygoogle').forEach(function(ad) {
+        if (!ad.hasAttribute('data-adsbygoogle-status')) {
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        }
+      });
+    };
   }
-
-  // Load AdSense after page interaction or 3 seconds delay
-  const loadEvents = ['click', 'keydown', 'mousemove', 'scroll', 'touchstart'];
-  loadEvents.forEach(event => {
-    document.addEventListener(event, loadAdSense, { once: true, passive: true });
+  
+  function loadAnalytics() {
+    if (analyticsLoaded) return;
+    analyticsLoaded = true;
+    
+    {{ if .Site.Params.google_analytics }}
+    // Use your configured GA ID from config.toml
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    // Load GA script
+    const gtagScript = document.createElement('script');
+    gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.google_analytics }}';
+    gtagScript.async = true;
+    gtagScript.defer = true;
+    document.head.appendChild(gtagScript);
+    
+    gtagScript.onload = function() {
+      gtag('config', '{{ .Site.Params.google_analytics }}', {
+        transport_type: 'beacon',
+        send_page_view: true
+      });
+    };
+    {{ end }}
+  }
+  
+  // Load AdSense when ads become visible
+  if ('IntersectionObserver' in window) {
+    const adObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          loadAdSense();
+          adObserver.disconnect();
+        }
+      });
+    }, { rootMargin: '100px' });
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.adsbygoogle').forEach(ad => {
+        adObserver.observe(ad);
+      });
+    });
+  } else {
+    setTimeout(loadAdSense, 2000);
+  }
+  
+  // Load Analytics on interaction
+  const analyticsEvents = ['scroll', 'click', 'keydown'];
+  analyticsEvents.forEach(event => {
+    document.addEventListener(event, loadAnalytics, { once: true, passive: true });
   });
   
-  // Fallback: load after 3 seconds
-  setTimeout(loadAdSense, 3000);
-</script>
-
-{{/* Optimized Google Analytics - defer to after load */}}
-<script>
-  window.addEventListener('load', function() {
-    // Defer Google Analytics
-    const gtag = document.createElement('script');
-    gtag.src = 'https://www.googletagmanager.com/gtag/js?id=G-PECLCLL5R6';
-    gtag.async = true;
-    document.head.appendChild(gtag);
-    
-    gtag.onload = function() {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-PECLCLL5R6', {
-        // Optimize GA settings
-        send_page_view: false,
-        transport_type: 'beacon'
-      });
-      
-      // Send initial page view after setup
-      gtag('event', 'page_view');
-    };
-  });
+  // Fallback: load analytics after 5 seconds
+  setTimeout(loadAnalytics, 5000);
 </script>
 
 {{/* Add enhanced code highlighting */}}

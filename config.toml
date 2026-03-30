@@ -41,6 +41,9 @@ pagerSize = 9
     twitter = "https://twitter.com/prabeesh_k"
     linkedin = "https://www.linkedin.com/in/prabeeshk/"
     show_reading_time = true
+    
+    # Google Analytics - add your actual GA4 ID here
+    google_analytics = "G-PECLCLL5R6"  # Your actual GA4 measurement ID
      
     # Social media and SEO
     twitter_creator = "@prabeesh_k"

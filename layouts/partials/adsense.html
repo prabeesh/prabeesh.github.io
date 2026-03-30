@@ -1,0 +1,77 @@
+<!-- Performance-optimized AdSense with your actual slot IDs -->
+<div class="adsense-container" style="min-height: 600px;">
+  <!-- Above-the-fold banner -->
+  <div class="ad-banner-top loading-skeleton" style="min-height: 250px; margin: 20px 0;">
+    <ins class="adsbygoogle"
+         style="display:block; min-height: 250px;"
+         data-ad-client="ca-pub-1368619820510426"
+         data-ad-slot="3784614376"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+  </div>
+
+  <!-- In-content ads -->
+  <div class="ad-in-content loading-skeleton" style="min-height: 280px; margin: 30px 0;">
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center; min-height: 280px;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-1368619820510426"
+         data-ad-slot="8785891120"></ins>
+  </div>
+
+  <!-- Sidebar ads (desktop only) -->
+  <div class="ad-sidebar loading-skeleton" style="min-height: 300px;">
+    <ins class="adsbygoogle"
+         style="display:block; min-height: 300px;"
+         data-ad-client="ca-pub-1368619820510426"
+         data-ad-slot="3784614376"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+  </div>
+</div>
+
+<style>
+.adsense-container {
+  margin: 20px 0;
+}
+
+.ad-banner-top {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.ad-in-content {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.ad-sidebar {
+  position: sticky;
+  top: 20px;
+}
+
+@media (max-width: 768px) {
+  .ad-sidebar {
+    display: none;
+  }
+}
+
+/* Loading skeleton animation */
+.loading-skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Remove skeleton once ads load */
+.ads-loaded .loading-skeleton {
+  animation: none;
+  background: transparent;
+}
+</style>
