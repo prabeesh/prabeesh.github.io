@@ -88,14 +88,9 @@ pagerSize = 9
     baseName = "feed"
     isPlainText = true
     notAlternative = true
-  [outputFormats.SearchIndex]
-    mediaType = "application/json"
-    baseName = "search"
-    isPlainText = true
-    notAlternative = true
 
 [outputs]
-  home = ["HTML", "RSS", "SearchIndex"]
+  home = ["HTML", "RSS"]
   section = ["HTML", "RSS"]
   page = ["HTML"]
 

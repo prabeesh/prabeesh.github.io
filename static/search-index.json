@@ -1,15 +1,18 @@
 [
   {
-    "title": "Introduction to GPU Programming with CUDA: A Step-by-Step Guide to Key Concepts and Functions",
-    "description": "Explore the fundamentals of GPU programming with CUDA in this comprehensive blog post. Gain insights into key concepts and functions, including using the Nvidia C Compiler, allocating GPU memory, launching kernels, and transferring data between the CPU and GPU. Learn how to set the grid and block size, utilize cudaMalloc and cudaMemcpy, and leverage the kernel launch operator with a practical code example. Discover the importance of error checking and access the source code on GitHub for further learning and experimentation.",
+    "title": "Simple CUDA Program Example: GPU Programming Fundamentals with Parallel Computing",
+    "description": "Learn CUDA programming fundamentals with a complete example. Master GPU memory allocation, data transfer, kernel launching, and parallel computing concepts for high-performance applications using NVIDIA CUDA.",
     "url": "/blog/2013/03/07/a-simple-cuda-program/",
     "date": "2013-03-07T05:30:00.000Z",
     "tags": [
       "CUDA",
-      "Parallel programming",
-      "GPU programming"
+      "GPU Programming",
+      "Parallel Computing",
+      "NVIDIA",
+      "High-Performance Computing",
+      "C Programming"
     ],
-    "keywords": "CUDA parallel programming, GPU programming steps, Nvidia C Compiler (nvcc), CUDA conventions (e.g. data on CPU starting with \"h\" and data on GPU starting with \"d\"), cudaMalloc, cudaMemcpy, CUDA kernel launch operator, GPU memory pointers, Memcpy function, CUDA dim3 grid size, CUDA block size, CUDA kernel arguments, CUDA kernel function, cudaDeviceSynchronize, cudaFree, CUDA error checking, CUDA code example for computing squares of 64 numbers",
+    "keywords": "CUDA programming tutorial, GPU programming examples, CUDA kernel development, nvcc compiler usage, cudaMalloc cudaMemcpy examples, parallel computing CUDA, NVIDIA GPU programming, CUDA memory management, GPU kernel launch",
     "author": "Prabeesh Keezhathra",
     "readingTime": 7,
     "wordCount": 1371,
@@ -27,7 +30,7 @@
       "Big Data",
       "Data Engineering"
     ],
-    "keywords": "Apache Spark tutorial, SBT for Spark applications, Scala and Spark integration, Big Data analytics with Spark, Spark streaming Twitter example, Eclipse plugin for Spark development, Spark Twitter streaming tutorial, Scala and Spark in Eclipse, Apache Spark Scala example, How to use Spark stream, Creating a standalone Spark application, Spark SBT stand alone examples for beginners, Spark stand alone examples for beginners, Developing Spark applications in Scala, Self contained Spark applications tutorial, Scala and Spark for big data processing, Building Spark applications with SBT, Spark-streaming standalone application tutorial",
+    "keywords": "Apache Spark Scala, standalone Spark application, SBT Spark, Spark streaming, Spark tutorial, Scala Spark example",
     "author": "Prabeesh Keezhathra",
     "readingTime": 3,
     "wordCount": 549,
@@ -42,15 +45,15 @@
       "Python",
       "Matplotlib"
     ],
-    "keywords": "Amplitude Modulation, AM generation, Matplotlib Python, Plot AM waves, Linux, Matlab equivalent, Data visualization, Signal processing, Python library, Analog communication, Carrier signal, Message signal, Radio communication, AM radio broadcasting, Military communication, Aviation communication, Matlab in Linux, Matplotlib examples, AM generation Matplotlib, How to Matplotlib AM generation, AM Matplotlib examples, Matlab Linux AM generation, Matlab equivalent in Linux, Amplitude Modulation in Linux, Data visualization with Matplotlib, Signal processing with Matplotlib, Python library for AM generation, Analog communication with Matplotlib, Carrier signal with Matplotlib, Message signal with Matplotlib, Radio communication with Matplotlib, AM radio broadcasting with Matplotlib",
+    "keywords": "amplitude modulation, AM generation, Matplotlib Python, signal processing, data visualization, analog communication, carrier signal, Matlab equivalent Linux",
     "author": "Prabeesh Keezhathra",
     "readingTime": 3,
     "wordCount": 435,
     "category": "blog"
   },
   {
-    "title": "Creating an Assembled JAR for a Standalone Spark Application",
-    "description": "This guide will teach you how to create a single executable JAR for your Spark project using the sbt-assembly plugin. You will learn the steps to add the plugin, configure assembly settings, and create the fat JAR. Additionally, an example project is provided for you to follow along. By following this guide, you will be able to easily create a standalone Spark application with a consolidated JAR file.",
+    "title": "Creating Uber JARs for Apache Spark Projects: Complete SBT Assembly Guide",
+    "description": "Master creating executable uber JARs for Apache Spark projects using sbt-assembly. Learn plugin configuration, merge strategies, dependency management, and deployment best practices for production Spark applications.",
     "url": "/blog/2014/04/08/creating-uber-jar-for-spark-project-using-sbt-assembly/",
     "date": "2014-04-08T04:17:00.000Z",
     "tags": [
@@ -58,25 +61,30 @@
       "SBT",
       "Scala",
       "Big Data",
-      "JAR creation"
+      "JAR creation",
+      "sbt-assembly",
+      "Build Tools"
     ],
-    "keywords": "spark single jar, spark executable jar, running spark, stand alone spark jar, spark sbt assembled jar, spark sbt assembly jar, sbt-assembly, sbt spark fat jar, sbt assembly spark jar, spark sbt assembly tutorial, sbt spark uber jar, sbt-assembly tutorial, sbt spark, single jar spark application, introduction to Spark jar creation, spark jar creation, jar spark app",
+    "keywords": "Spark uber jar creation, sbt-assembly plugin tutorial, Apache Spark fat jar, SBT build configuration, Spark project deployment, sbt-assembly merge strategy, standalone Spark jar packaging, Scala Spark build process",
     "author": "Prabeesh Keezhathra",
     "readingTime": 3,
     "wordCount": 481,
     "category": "blog"
   },
   {
-    "title": "Developing a simple game with HTML5/canvas",
-    "description": "This post provides a beginner-friendly guide on developing a simple game using HTML5 canvas and JavaScript. Learn how to create a canvas, draw text and images, rotate the canvas, handle keyboard events, and more. Follow along with the code examples and step-by-step instructions to create your own game. No prior experience with game development is required. Get started today and unleash your creativity with HTML5 game development.",
+    "title": "HTML5 Canvas Game Development: Building Interactive Games with JavaScript",
+    "description": "Learn HTML5 canvas game development with JavaScript. Master canvas drawing, animation, collision detection, keyboard events, and game mechanics to create engaging interactive web games from scratch.",
     "url": "/blog/2013/02/09/developing-a-simple-game-with-html5-slash-canvas/",
     "date": "2013-02-09T04:42:43.000Z",
     "tags": [
       "HTML5",
-      "Python",
-      "Google App Engine"
+      "JavaScript",
+      "Canvas API",
+      "Game Development",
+      "Web Games",
+      "Interactive Graphics"
     ],
-    "keywords": "simple game in html5 javascript, canvas game example, simple game development example, html5 game example, introduction to html5 game development",
+    "keywords": "HTML5 canvas game development, JavaScript game programming, HTML5 game tutorial, canvas game creation, web game development, HTML5 canvas animation, JavaScript game mechanics, interactive web games",
     "author": "Prabeesh Keezhathra",
     "readingTime": 5,
     "wordCount": 834,
@@ -98,17 +106,20 @@
     "category": "blog"
   },
   {
-    "title": "Install Apache Spark 2 on Ubuntu 16.04 and Mac OS",
-    "description": "This tutorial provides step-by-step instructions to install and set up Apache Spark 2.0 on Ubuntu 16.04 and Mac OS X Sierra. It covers the installation of Java and Git, as well as the process of downloading and untarring the Apache Spark distribution. The tutorial also includes instructions for building Spark using Maven and a sample program to test the installation.",
+    "title": "Install Apache Spark 2 on Ubuntu 16.04 and macOS: Complete Setup Guide",
+    "description": "Complete guide to install Apache Spark 2.0 on Ubuntu 16.04 and macOS. Step-by-step instructions covering Java setup, Maven build process, Hadoop integration, and environment configuration for Spark development.",
     "url": "/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/",
     "date": "2016-12-07T07:45:18.000Z",
     "tags": [
       "Apache Spark",
       "Big Data",
       "Ubuntu",
-      "Mac OS X"
+      "macOS",
+      "Installation Guide",
+      "Maven",
+      "Java"
     ],
-    "keywords": "install spark ubuntu-16.04, spark installation on mac os, installing spark on linux, installing apache spark 2.0, spark-2.0.2 installation, apache spark 2 installation on unix, install spark in ubuntu Mac OS X, how to install apache spark 2, apache spark cluster on Mac OS X, install spark ubuntu 16.04, spark on OS X Yosemite, install spark on Ubuntu server, spark ubuntu LTS install, spark-2 setup tutorial, spark 2 single machine, spark 2 setup ubuntu machine",
+    "keywords": "Apache Spark 2 installation, Spark Ubuntu 16.04 setup, Spark macOS installation, Spark 2.0 configuration, Maven Spark build, Java Spark requirements, Spark development environment, Hadoop Spark integration",
     "author": "Prabeesh Keezhathra",
     "readingTime": 2,
     "wordCount": 289,
@@ -123,37 +134,43 @@
       "Apache Spark",
       "Big Data"
     ],
-    "keywords": "install spark on ubuntu, spark installation on ubuntu 14.04, installing spark on ubuntu, apache spark installation guide, installing apache spark, spark on ubuntu, apache spark installation, install spark in ubuntu, how to install spark ubuntu, apache spark cluster, install spark ubuntu 14.04, spark on ubuntu server, install spark on Ubuntu server, spark ubuntu LTS install, spark setup tutorial, spark single machine, running spark single machine, spark setup ubuntu machine",
+    "keywords": "install Apache Spark Ubuntu 14.04, Spark installation guide, Spark on Ubuntu, spark-submit",
     "author": "Prabeesh Keezhathra",
     "readingTime": 2,
-    "wordCount": 398,
+    "wordCount": 399,
     "category": "blog"
   },
   {
-    "title": "Installing Apache Spark on Ubuntu-12.04",
-    "description": "This blog post provides a step-by-step guide on how to install Apache Spark on Ubuntu 12.04. Apache Spark is an open-source in-memory cluster computing framework designed for low-latency iterative jobs and interactive use. It offers clean, language-integrated APIs in Scala, Java, and Python, with a rich array of parallel operators. The post includes instructions on downloading the Apache Spark distribution, untarring the downloaded file, and building Spark using SBT (Simple Build Tool). It also demonstrates how to run a sample program and use the Spark interactive shell. Additionally, it explains how to access Hadoop filesystems and run Spark with an existing Hadoop cluster. The post concludes with a link to the official Spark documentation for further reference.",
+    "title": "Complete Guide: Install Apache Spark on Linux (Ubuntu, CentOS) - 2024 Updated",
+    "description": "Complete step-by-step guide to install Apache Spark 3.5 on Linux systems including Ubuntu 22.04, CentOS, and other distributions. Learn standalone installation, cluster configuration, Python/Scala setup, and essential optimization for production environments.",
     "url": "/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/",
     "date": "2013-11-26T06:54:00.000Z",
     "tags": [
       "Apache Spark",
-      "Big Data"
+      "Big Data",
+      "Installation Guide",
+      "Linux",
+      "Ubuntu"
     ],
-    "keywords": "install spark on ubuntu 12.04, spark installation on ubuntu 12.04, installing spark on ubuntu-1204, apache spark installation guide 12.04, installing apache spark 12.04, spark on ubuntu1204, apache spark installation 12.04, install spark in ubunt1204, how to install spark on ubuntu-12.04, apache spark cluster 12.04",
+    "keywords": "install Apache Spark 3.5, Spark installation Linux, Apache Spark Ubuntu 22.04, Spark setup guide 2024, Spark cluster installation, Scala Spark installation, PySpark installation",
     "author": "Prabeesh Keezhathra",
-    "readingTime": 2,
-    "wordCount": 307,
+    "readingTime": 6,
+    "wordCount": 1173,
     "category": "blog"
   },
   {
-    "title": "Introduction to AVR programming",
-    "description": "An introduction to AVR programming for beginners, covering basic examples and concepts. Learn how to write code for Atmel AVR microcontrollers, including a sample program to blink an LED. Gain an understanding of the key components and functions of AVR microcontrollers, and explore the process of compiling and converting code to object and hex formats. Discover how to program AVR microcontrollers using USBASP, and find additional resources for further learning.",
+    "title": "Complete Introduction to AVR Microcontroller Programming: From Setup to First Program",
+    "description": "Master AVR microcontroller programming from scratch. Learn development environment setup, AVR-GCC compilation, programming with USBASP, and create your first LED blinking program with detailed code explanations and hardware concepts.",
     "url": "/blog/2012/02/20/introduction-to-avr-programing/",
     "date": "2012-02-20T21:09:00.000Z",
     "tags": [
       "AVR",
-      "Embedded"
+      "Embedded Systems",
+      "Microcontroller Programming",
+      "Atmel",
+      "C Programming"
     ],
-    "keywords": "beginners guide AVR programming, AVR programming basic examples, intro to AVR programming, avr introduction, beginner avr examples, how to avr programs, avr examples, basic avr code",
+    "keywords": "AVR programming tutorial, Atmel microcontroller programming, AVR development setup, AVR-GCC compiler, embedded C programming, AVR LED blink program, USBASP programmer, microcontroller development tools",
     "author": "Prabeesh Keezhathra",
     "readingTime": 3,
     "wordCount": 493,
@@ -172,24 +189,26 @@
     "category": "blog"
   },
   {
-    "title": "LCD Interfacing using msp430",
-    "description": "This blog post explores the process of interfacing an LCD with an MSP430 microcontroller. It covers the basics of connecting a potentiometer to the ADC of the MSP430 and displaying the ADC values on the LCD. The post also discusses the voltage range of the ADC and provides examples of the 10-bit patterns generated for different input voltages. Additionally, it explains the power supply requirements for both the potentiometer and the LCD. Overall, this blog post provides a comprehensive guide to LCD interfacing using the MSP430 microcontroller.",
+    "title": "Complete Guide to LCD Interfacing with MSP430 Microcontroller: ADC Display Project",
+    "description": "Learn how to interface an LCD display with the MSP430 microcontroller to create an ADC voltage monitor. This comprehensive tutorial covers circuit connections, code implementation, ADC configuration, and LCD programming techniques for embedded systems development.",
     "url": "/blog/2012/07/03/lcd-interfacing-using-msp430/",
     "date": "2012-07-03T21:09:00.000Z",
     "tags": [
       "MSP430",
-      "Embedded",
-      "LCD Interfacing"
+      "Embedded Systems",
+      "LCD Interfacing",
+      "ADC",
+      "Microcontroller Programming"
     ],
-    "keywords": "LCD interface using msp430, msp430 LCD interface, MSP LCD, LCD interface using microcontrollers, msp430  LCD interface examples",
+    "keywords": "MSP430 LCD interface tutorial, MSP430 ADC programming, LCD display microcontroller, embedded systems LCD, MSP430 LaunchPad LCD, potentiometer ADC display, LCD 4-bit interface MSP430",
     "author": "Prabeesh Keezhathra",
-    "readingTime": 2,
-    "wordCount": 331,
+    "readingTime": 9,
+    "wordCount": 1650,
     "category": "blog"
   },
   {
-    "title": "MQTT Publisher and Subscriber in Scala: A Step-by-Step Guide Using Eclipse Paho",
-    "description": "Learn how to set up an MQTT publisher and subscriber in Scala using the Eclipse Paho library. This tutorial will guide you through the process of installing the Eclipse Paho library and demonstrate how to create an MQTT publisher and subscriber in Scala. MQTT (Message Queuing Telemetry Transport) is a lightweight messaging protocol commonly used in machine-to-machine communication and Internet of Things (IoT) applications. Eclipse Paho provides open source MQTT client libraries for various programming languages, including Scala. By following this tutorial, you will gain a better understanding of how to utilize MQTT with Scala for your own projects.",
+    "title": "MQTT Publisher and Subscriber in Scala: Complete IoT Messaging Tutorial Using Eclipse Paho",
+    "description": "Master MQTT messaging in Scala with Eclipse Paho library. Learn to build robust publisher-subscriber systems for IoT applications, including broker setup, connection handling, error management, and real-world messaging patterns for distributed systems.",
     "url": "/blog/2013/08/26/mqtt-scala-publisher-and-subscriber/",
     "date": "2013-08-26T04:11:00.000Z",
     "tags": [
@@ -197,61 +216,70 @@
       "MQTT",
       "Scala",
       "Message Queue",
-      "IoT"
+      "IoT",
+      "Eclipse Paho",
+      "Mosquitto"
     ],
-    "keywords": "MQTT Scala, Eclipse Paho, MQTT client, MQTT publisher, MQTT subscriber, IoT protocol, Scala MQTT example, Message queue protocol, MQTT implementation, MQTT tutorial, Big Data, MQTT Queue, MQTT Scala client, MQTT client example, Introduction to MQTT with Scala, Scala message queue example, Popular Scala message protocol, Message queue protocol example with Scala, Scala MQTT implementation, Message queue example Scala",
+    "keywords": "MQTT Scala tutorial, Eclipse Paho Scala, MQTT publisher subscriber, IoT messaging protocol, Scala MQTT example, message queue tutorial, MQTT broker setup, IoT data streaming",
     "author": "Prabeesh Keezhathra",
-    "readingTime": 9,
-    "wordCount": 1752,
+    "readingTime": 13,
+    "wordCount": 2543,
     "category": "blog"
   },
   {
-    "title": "Paint App using Flask with MongoDB",
-    "description": "This post discusses the development of a Python Flask app using MongoDB as the data storage option. It explores the integration of Flask with MongoDB and highlights the benefits of using a NoSQL database system. The post provides an overview of MongoDB's features, such as flexibility, scalability, and ease of use. It also includes commands for performing common operations in MongoDB. The source code for the app is available on GitHub.",
+    "title": "Building a Web Paint App with Flask and MongoDB: A Complete Tutorial",
+    "description": "Learn how to build a complete web-based paint application using Python Flask and MongoDB. This comprehensive tutorial covers MongoDB integration, NoSQL database design, Canvas API backend storage, and practical Flask development patterns for modern web applications.",
     "url": "/blog/2013/03/31/paint-app-using-flask-with-mongodb/",
     "date": "2013-03-31T16:23:00.000Z",
     "tags": [
-      "No SQL Data Base",
-      "Python Flask"
+      "NoSQL Database",
+      "Python Flask",
+      "MongoDB",
+      "Web Development",
+      "Canvas API"
     ],
-    "keywords": "Flask with Mongo DB, flask mongo db example, mongo db flask, beginners guide to flask with mongo db, mongo db with flask, mongo intro to flask, beginner mongo python flask, data base access example flask, data base interaction Flask",
+    "keywords": "Flask MongoDB integration, Python Flask tutorial, NoSQL database app, web paint application, MongoDB CRUD operations, Flask web development, HTML5 Canvas backend, JavaScript Flask integration",
     "author": "Prabeesh Keezhathra",
-    "readingTime": 2,
-    "wordCount": 268,
+    "readingTime": 4,
+    "wordCount": 686,
     "category": "blog"
   },
   {
-    "title": "Paint app using JavaScript and Canvas",
-    "description": "This post is a beginner's guide to developing a simple paint app using JavaScript, HTML5, and Canvas. Learn how to draw lines, rectangles, and circles in different colors, and explore the functionality of the select button and color picker. The app also includes a saving feature, allowing users to store and regenerate their drawings. Choose between two frameworks, Google App Engine and Flask, for data storage. Check out the source code and try the app on appspot.com.",
+    "title": "HTML5 Canvas Paint Application: Building Interactive Drawing Tools with JavaScript",
+    "description": "Build an interactive HTML5 canvas paint application with JavaScript. Learn drawing tools implementation, color selection, shape creation, data persistence with Google App Engine and Flask backends for web-based drawing applications.",
     "url": "/blog/2013/03/30/paint-app-using-javascript-and-canvas/",
     "date": "2013-03-30T07:14:00.000Z",
     "tags": [
       "JavaScript",
-      "GoogleAppEngine",
-      "Python",
+      "HTML5 Canvas",
+      "Web Development",
+      "Interactive Applications",
+      "Google App Engine",
       "Python Flask"
     ],
-    "keywords": "Flask Application, Flask Example, Flask with Python, beginner Flask example, Python flask introduction, flask example, introduction to flask, beginner guide to Flask, flask with example",
+    "keywords": "HTML5 canvas paint application, JavaScript drawing app, canvas paint tool, interactive web drawing, HTML5 canvas tutorial, JavaScript paint program, web-based drawing application, canvas mouse events",
     "author": "Prabeesh Keezhathra",
     "readingTime": 1,
     "wordCount": 196,
     "category": "blog"
   },
   {
-    "title": "Performance Tuning on Apache Spark",
-    "description": "Learn effective techniques to optimize Apache Spark for better performance. Discover strategies for preventing spills, reducing skew, optimizing storage and serialization, and improving data processing efficiency. Gain insights into salted joins, adaptive query execution, memory optimization, narrow transformations, pre-shuffling, and more. Enhance your Spark applications without resorting to keyword stuffing.",
+    "title": "Apache Spark Performance Tuning Tutorial: Complete Guide with PySpark Examples",
+    "description": "Complete Apache Spark performance tuning tutorial with PySpark examples. Learn Spark optimization techniques including spill prevention, skew handling, shuffle optimization, and serialization. Master Apache Spark with practical code examples and best practices for data engineering.",
     "url": "/blog/2023/01/06/performance-tuning-on-apache-spark/",
     "date": "2023-01-06T10:51:39.000Z",
     "tags": [
       "Apache Spark",
       "Performance Tuning",
       "PySpark",
-      "Big Data"
+      "Big Data",
+      "Apache Spark Tutorial",
+      "PySpark Tutorial"
     ],
-    "keywords": "Performance tuning Apache Spark, Apache Spark optimization, data processing tasks, preventing spills, reducing skew, minimizing shuffle, optimizing storage, optimizing serialization, avoiding temp files, optimizing memory, using salted joins, implementing adaptive query execution, increasing JVM memory, using repartition() function, implementing bucketing, using sampling, avoiding wide transformations, using narrow transformations, using map() function, using filter() function, using reduce() function, implementing pre-shuffling, broadcasting smaller tables, preventing tiny file problem, implementing manual compaction, optimizing directory scanning, optimizing schema evolution, using Tungsten, avoiding Python UDFs, using higher-order functions, using Pandas, using vectorized UDFs, using SQL higher-order functions, avoiding Java serialization, reducing Python overhead, using Spark UI, specifying job descriptions, specifying schema, using PySpark, using 128MB partitions, optimizing shuffle, optimizing data distribution, using join() function, using distinct() function, using groupBy() function, using orderBy() function, avoiding wide transformation shuffle, using narrow transformations, broadcasting 10MB tables, using bucketed datasets, avoiding 1GB part-files, implementing automatic compaction, optimizing schema merging, optimizing PySpark usage.",
+    "keywords": "apache spark tutorial, pyspark tutorial, apache spark performance tuning, spark optimization tutorial, apache spark examples, pyspark performance, spark tutorial python, apache spark code examples, learn apache spark, spark basics, pyspark data engineering",
     "author": "Prabeesh Keezhathra",
-    "readingTime": 7,
-    "wordCount": 1209,
+    "readingTime": 8,
+    "wordCount": 1591,
     "category": "blog"
   },
   {
@@ -267,7 +295,7 @@
       "PySpark",
       "Docker"
     ],
-    "keywords": "pyspark ipython notebook, spark ipython, spark python notebook, spark docker, docker ipython spark notebook, spark ipython notebook docker, docker pyspark, pyspark jupyter, pyspark jupyter notebook, jupyter notebook spark, spark notebook, apache spark notebook, run pyspark notebook docker, pyspark notebook docker tutorial",
+    "keywords": "PySpark Jupyter, Spark Docker, PySpark notebook, Docker Spark, Jupyter Spark",
     "author": "Prabeesh Keezhathra",
     "readingTime": 5,
     "wordCount": 837,
@@ -300,29 +328,31 @@
     "keywords": "mesos, apache spark mesos, spark mesos cluster setup, spark deploy installation, mesos installation, set up mesos on ubuntu, ubuntu mesos apt get, ubuntu spark with mesos, mesos cluster configuration",
     "author": "Prabeesh Keezhathra",
     "readingTime": 2,
-    "wordCount": 259,
+    "wordCount": 260,
     "category": "blog"
   },
   {
-    "title": "Self Contained PySpark Application",
-    "description": "This post demonstrates how to run a PySpark code using the Python command. It provides a step-by-step guide on setting up a standalone PySpark application and explains the necessary configurations. The post also discusses the use of the `spark-submit` script for runtime configuration and provides additional resources for running PySpark with IPython notebook.",
+    "title": "Building Self-Contained PySpark Applications: Complete Development Guide",
+    "description": "Learn to build production-ready standalone PySpark applications from development to deployment. Master environment setup, spark-submit configuration, and Python integration with Apache Spark for scalable data processing solutions.",
     "url": "/blog/2015/04/07/self-contained-pyspark-application/",
     "date": "2015-04-07T15:35:30.000Z",
     "tags": [
       "Apache Spark",
       "PySpark",
       "Python",
-      "Big Data"
+      "Big Data",
+      "Application Development",
+      "spark-submit"
     ],
-    "keywords": "stand alone pyspark application, python spark example, beginners guide to pyspark, pyspark spark example, applications in pyspark, run pyspark using python command, python command pyspark, spark run using python command",
+    "keywords": "standalone PySpark application development, PySpark production deployment, Python Apache Spark tutorial, spark-submit configuration, PySpark environment setup, self-contained Spark applications, PySpark project structure, Python Spark best practices",
     "author": "Prabeesh Keezhathra",
     "readingTime": 2,
     "wordCount": 341,
     "category": "blog"
   },
   {
-    "title": "AVR Programming Made Easy: How to Build a USBtinyISP with an attiny2313",
-    "description": "Learn how to build a low-cost AVR programmer using the attiny2313 microcontroller and the USBtinyISP. This tutorial will guide you through the process of setting up the circuit, configuring the fuse bits, and burning programs onto AVR chips such as attiny and atmega8. Gain practical knowledge and enhance your skills in AVR programming with this simple and efficient solution.",
+    "title": "AVR Programming Made Easy: How to Build a USBtinyISP",
+    "description": "Complete guide to building a DIY AVR programmer using USBtinyISP. Learn how to program Atmel AVR microcontrollers including ATtiny and ATmega8 with this low-cost USB AVR programmer. Perfect for programming AVR microcontrollers and embedded systems development.",
     "url": "/blog/2012/07/04/simplest-and-low-cost-usb-avr/",
     "date": "2012-07-04T14:09:00.000Z",
     "tags": [
@@ -330,12 +360,15 @@
       "USBtinyISP",
       "attiny2313",
       "microcontroller",
-      "embedded systems"
+      "embedded systems",
+      "usbasp programmer",
+      "atmel avr",
+      "avr programmer usb"
     ],
-    "keywords": "simplest and low cost usb avr, next.gr usb avr, lowcost avr programmer, AVR programmer using USBtiny ISP, AVR programmer low cost, AVR attiny programmer, attiny2313 programmer, atmega8 programmer, USBtinyISP, AVR programming, AVR microcontrollers, programmer",
+    "keywords": "avr programmer, avr microcontroller, atmel microcontroller, atmel avr, attiny programmer, usbasp programmer, atmel attiny, usb asp, atmel 32 bit microcontroller, usb avr, usbtinyisp, atmel avr microcontroller, atmel programmer, atmel avr programmer, atmega 8, programming avr microcontrollers, atmel attiny85, diy avr programmer, avr programmer usb, make avr, avr chips, avr in microcontroller, usb tiny isp programmer, atmega8 programmer, avr serial programmer, c avr",
     "author": "Prabeesh Keezhathra",
-    "readingTime": 3,
-    "wordCount": 403,
+    "readingTime": 4,
+    "wordCount": 654,
     "category": "blog"
   },
   {
@@ -348,6 +381,39 @@
     "author": "Prabeesh Keezhathra",
     "readingTime": 1,
     "wordCount": 1,
+    "category": "bonus"
+  },
+  {
+    "title": "Advanced AM Modulation Analysis with Matplotlib: Real-World Applications and Advanced Techniques",
+    "description": "Master advanced AM modulation analysis techniques using Matplotlib. Learn about modulation index calculation, sideband analysis, frequency domain visualization, real-world applications, and signal quality measurements. Build upon basic AM generation with sophisticated analysis and visualization techniques for professional signal processing applications.",
+    "url": "/bonus/advanced-am-modulation-analysis-with-matplotlib/",
+    "date": "2024-01-25T09:00:00.000Z",
+    "tags": [
+      "Python",
+      "Matplotlib",
+      "AM modulation",
+      "signal processing",
+      "advanced visualization",
+      "frequency analysis",
+      "modulation index",
+      "sideband analysis",
+      "real-world applications",
+      "radio communication",
+      "signal quality",
+      "modulation depth",
+      "carrier power",
+      "sideband power",
+      "spectrum analysis",
+      "FFT analysis",
+      "modulation efficiency",
+      "signal-to-noise ratio",
+      "bandwidth analysis",
+      "modulation distortion"
+    ],
+    "keywords": "AM modulation analysis, matplotlib signal processing, frequency domain, sideband analysis, FFT AM, modulation index",
+    "author": "Prabeesh Keezhathra",
+    "readingTime": 31,
+    "wordCount": 6028,
     "category": "bonus"
   },
   {
@@ -397,6 +463,30 @@
     "category": "bonus"
   },
   {
+    "title": "ATtiny2313 USB Programming Guide: Advanced Techniques and Best Practices",
+    "description": "Master advanced ATtiny2313 USB programming techniques with this comprehensive guide. Learn fuse configuration, circuit optimization, debugging strategies, and best practices for building reliable USBtinyISP programmers. Build upon basic AVR programming knowledge with professional-grade development techniques.",
+    "url": "/bonus/attiny2313-usb-programming-guide/",
+    "date": "2025-08-22T09:00:00.000Z",
+    "tags": [
+      "AVR",
+      "ATtiny2313",
+      "USB programming",
+      "microcontroller",
+      "embedded systems",
+      "USBtinyISP",
+      "advanced AVR",
+      "programming techniques",
+      "fuse configuration",
+      "circuit design",
+      "debugging"
+    ],
+    "keywords": "ATtiny2313, USB programming, USBtinyISP, AVR fuse configuration, microcontroller USB",
+    "author": "Prabeesh Keezhathra",
+    "readingTime": 9,
+    "wordCount": 1631,
+    "category": "bonus"
+  },
+  {
     "title": "Improve PySpark Data Pipelines with Design Patterns: Learn about Factory, Singleton, Builder, Observer, and Pipeline Patterns",
     "description": "Learn how to improve the quality, readability, and maintainability of PySpark data pipelines by applying design patterns. Explore the factory pattern, singleton pattern, builder pattern, observer pattern, and pipeline pattern to enhance the reliability, efficiency, and scalability of your data processing systems.",
     "url": "/bonus/implementing-design-patterns-in-pyspark-data-pipelines/",
@@ -413,10 +503,33 @@
       "observer pattern",
       "pipeline pattern"
     ],
-    "keywords": "PySpark design patterns, data pipeline design patterns, design patterns for data processing, PySpark data pipeline best practices, factory pattern in PySpark, singleton pattern in PySpark, builder pattern in PySpark, observer pattern in PySpark, pipeline pattern in PySpark, PySpark data pipeline design patterns",
+    "keywords": "PySpark design patterns, data pipeline patterns, factory singleton builder observer, PySpark best practices",
     "author": "Prabeesh Keezhathra",
     "readingTime": 12,
     "wordCount": 2330,
+    "category": "bonus"
+  },
+  {
+    "title": "PySpark Design Patterns Quick Reference: Code Snippets for Common Patterns",
+    "description": "A quick reference guide with concise code snippets for implementing common design patterns in PySpark data pipelines. Perfect companion to detailed pattern explanations.",
+    "url": "/bonus/pyspark-design-patterns-quick-reference/",
+    "date": "2024-01-20T09:00:00.000Z",
+    "tags": [
+      "PySpark",
+      "design patterns",
+      "quick reference",
+      "code snippets",
+      "data pipelines",
+      "factory pattern",
+      "singleton pattern",
+      "builder pattern",
+      "observer pattern",
+      "pipeline pattern"
+    ],
+    "keywords": "PySpark design patterns quick reference, PySpark pattern code snippets, design patterns cheat sheet, PySpark patterns reference guide, data pipeline patterns quick guide",
+    "author": "Prabeesh Keezhathra",
+    "readingTime": 3,
+    "wordCount": 583,
     "category": "bonus"
   }
 ]

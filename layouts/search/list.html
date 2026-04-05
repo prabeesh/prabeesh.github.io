@@ -45,11 +45,11 @@
   
   // Cache DOM elements
   const elements = {
-    searchQuery: null,
-    searchInput: null,
-    loading: null,
-    noResults: null,
-    resultsList: null
+    searchQuery: document.getElementById('search-query'),
+    searchInput: document.getElementById('search-input'),
+    loading: document.querySelector('.search-loading'),
+    noResults: document.querySelector('.search-no-results'),
+    resultsList: document.getElementById('search-results-list')
   };
   
   // Initialize search functionality
@@ -58,8 +58,8 @@
     const query = urlParams.get('q');
     
     if (query) {
-      elements.searchQuery.textContent = query;
-      elements.searchInput.value = query;
+      if (elements.searchQuery) elements.searchQuery.textContent = query;
+      if (elements.searchInput) elements.searchInput.value = query;
       performSearch(query);
     }
   }
