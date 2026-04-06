@@ -4,33 +4,19 @@ title = "This is One of the Solutions"
 description = "Welcome to This is One of the Solutions, a technical blog where I share practical insights and tutorials on programming, data engineering, Apache Spark, embedded systems, and modern software development practices. Explore in-depth articles, code examples, and real-world solutions to help you tackle complex technical challenges."
 theme = "ananke"
 enableRobotsTXT = true
-MetaDataFormat = "yaml"
 DefaultContentLanguage = "en"
 SectionPagesMenu = "main"
 
-# Performance optimizations (Core Web Vitals). GitHub Pages serves as CDN for faster delivery.
 enableGitInfo = false
 enableEmoji = false
 disableKinds = ["taxonomy", "term"]
 
-# SEO optimizations
 canonifyURLs = true
 rssLimit = 20
 
-# Enable fingerprinting for better caching
-[params.assets]
-  fingerprint = "sha256"
-  
-# Cache busting for resources
-[params.cache]
-  enable = true
-  version = "v2.1"
-
-# Updated pagination configuration
 [pagination]
 pagerSize = 9
 
-# Fix deprecated permalink token
 [permalinks]
     blog = "/blog/:year/:month/:day/:contentbasename/"
     bonus = "/bonus/:contentbasename/"
@@ -41,26 +27,12 @@ pagerSize = 9
     twitter = "https://twitter.com/prabeesh_k"
     linkedin = "https://www.linkedin.com/in/prabeeshk/"
     show_reading_time = true
-    
-    # Google Analytics - add your actual GA4 ID here
-    google_analytics = "G-PECLCLL5R6"  # Your actual GA4 measurement ID
-     
-    # Social media and SEO
+    google_analytics = "G-PECLCLL5R6"
     twitter_creator = "@prabeesh_k"
     twitter_site = "@prabeesh_k"
-    
-    # OpenGraph and Schema.org settings
     images = ["/images/og-image.png"]
     author = "Prabeesh Keezhathra"
-    
-    # Performance
-    enable_minify = true
-    enable_gzip = true
-    enable_brotli = true
-    enable_resource_hints = true
-    enable_critical_css = true
 
-# Disqus configuration - new format
 [services]
 [services.disqus]
     Shortname = "prabeeshk"
@@ -75,13 +47,11 @@ pagerSize = 9
     lineNumbersInTable = false
     codeFences = true
 
-# Enhanced sitemap configuration
 [sitemap]
   changefreq = "weekly"
   priority = 0.5
   filename = "sitemap.xml"
 
-# Output formats for better performance and SEO
 [outputFormats]
   [outputFormats.RSS]
     mediaType = "application/rss+xml"
@@ -94,7 +64,6 @@ pagerSize = 9
   section = ["HTML", "RSS"]
   page = ["HTML"]
 
-# Minify configuration
 [minify]
   [minify.tdewolff]
     [minify.tdewolff.html]
@@ -114,7 +83,6 @@ pagerSize = 9
       keepComments = false
       precision = 1
 
-# Privacy configuration
 [privacy]
   [privacy.disqus]
     disable = false
@@ -126,7 +94,6 @@ pagerSize = 9
     disable = false
     privacyEnhanced = true
 
-# Related content settings
 [related]
   threshold = 80
   includeNewer = true

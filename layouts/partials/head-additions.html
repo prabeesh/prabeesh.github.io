@@ -94,30 +94,16 @@
 {{/* Apple touch icons */}}
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 
-{{/* Optimized styles - only essential CSS inline */}}
+{{/* Supplemental styles not covered by performance.html */}}
 <style>
 html {
   scroll-behavior: smooth;
 }
 
-/* Minimal focus styles for accessibility */
-a:focus, button:focus, input:focus, textarea:focus {
-  outline: 2px solid #007bff;
-  outline-offset: 2px;
-}
-
-/* Performance optimizations */
 * {
   box-sizing: border-box;
 }
 
-/* Reduce layout shifts */
-img, video, iframe {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Lazy loading optimization */
 .lazy {
   opacity: 0;
   transition: opacity 0.2s;
@@ -127,18 +113,7 @@ img, video, iframe {
   opacity: 1;
 }
 
-/* Reserve space for dynamic content to prevent CLS */
 .related-posts {
   min-height: 150px;
-}
-
-/* Motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  *, ::before, ::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
 }
 </style>
