@@ -18,19 +18,19 @@
   </header>
 {{ else }}
   <header>
-    <div class="pb3-m pb6-l {{ .Site.Params.background_color_class | default "bg-black" }}">
+    <div class="pb3-m pb3-l {{ .Site.Params.background_color_class | default "bg-black" }}">
       {{ partial "site-navigation.html" . }}
-      <div class="tc-l pv3 ph3 ph4-ns" style="min-height: 120px;">
-        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title" style="min-height: 3rem;">
+      <div class="tc-l pv2 ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
           {{ .Title | default .Site.Title }}
         </h1>
         {{ with .Params.tagline }}
-          <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4" style="min-height: 2rem;">
+          <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt2 mb3">
             {{ . }}
           </h2>
         {{ else }}
           {{ with .Params.description }}
-            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4" style="min-height: 2rem;">
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt2 mb3">
               {{ . }}
             </h2>
           {{ end }}
