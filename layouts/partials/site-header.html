@@ -24,10 +24,16 @@
         <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title" style="min-height: 3rem;">
           {{ .Title | default .Site.Title }}
         </h1>
-        {{ with .Params.description }}
+        {{ with .Params.tagline }}
           <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4" style="min-height: 2rem;">
             {{ . }}
           </h2>
+        {{ else }}
+          {{ with .Params.description }}
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4" style="min-height: 2rem;">
+              {{ . }}
+            </h2>
+          {{ end }}
         {{ end }}
       </div>
     </div>
