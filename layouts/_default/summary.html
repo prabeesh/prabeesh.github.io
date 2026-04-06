@@ -7,11 +7,7 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      {{ with .Params.description }}
-        {{ . }}
-      {{ else }}
-        {{ .Summary }}
-      {{ end }}
+      {{ .Summary | plainify | truncate 500 }}
     </div>
     {{ partial "read-more-link.html" . }}
   </div>
