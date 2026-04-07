@@ -7,7 +7,7 @@ function getPostsFromDirectory(dirPath, baseUrl) {
   const files = fs.readdirSync(dirPath);
   
   return files
-    .filter(file => file.endsWith('.md'))
+    .filter(file => file.endsWith('.md') && file !== '_index.md')
     .map(file => {
       const filePath = path.join(dirPath, file);
       const content = fs.readFileSync(filePath, 'utf8');

@@ -372,18 +372,6 @@
     "category": "blog"
   },
   {
-    "title": "Bonus",
-    "description": "Additional insights, tips, and extended content related to our main blog posts",
-    "url": "/bonus/_index/",
-    "date": "",
-    "tags": [],
-    "keywords": "",
-    "author": "Prabeesh Keezhathra",
-    "readingTime": 1,
-    "wordCount": 1,
-    "category": "bonus"
-  },
-  {
     "title": "Advanced AM Modulation Analysis with Matplotlib: Real-World Applications and Advanced Techniques",
     "description": "Master advanced AM modulation analysis techniques using Matplotlib. Learn about modulation index calculation, sideband analysis, frequency domain visualization, real-world applications, and signal quality measurements. Build upon basic AM generation with sophisticated analysis and visualization techniques for professional signal processing applications.",
     "url": "/bonus/advanced-am-modulation-analysis-with-matplotlib/",

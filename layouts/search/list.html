@@ -4,12 +4,12 @@
     <h1 class="f1 athelas mt3 mb1">Search Results</h1>
     
     <!-- Search Input Form -->
-    <div class="search-form mb4">
+    <div class="page-search-form mb4">
       <form action="/search/" method="GET" class="flex items-center justify-center">
         <input 
           type="text" 
           name="q" 
-          id="search-input"
+          id="page-search-input"
           placeholder="Search blog posts..."
           value="{{ .Params.query | default "" }}"
           class="input-reset ba b--black-20 pa2 mb2 db w-100 w-auto-ns mr2-ns"
@@ -46,7 +46,7 @@
   // Cache DOM elements
   const elements = {
     searchQuery: document.getElementById('search-query'),
-    searchInput: document.getElementById('search-input'),
+    searchInput: document.getElementById('page-search-input'),
     loading: document.querySelector('.search-loading'),
     noResults: document.querySelector('.search-no-results'),
     resultsList: document.getElementById('search-results-list')
@@ -89,7 +89,6 @@
   // Optimized search algorithm
   function searchPosts(posts, query) {
     const terms = query.toLowerCase().split(' ').filter(t => t.length > 0);
-    const termSet = new Set(terms);
     
     return posts
       .map(post => {
@@ -110,23 +109,20 @@
     
     const terms = query.toLowerCase().split(' ').filter(t => t.length > 0);
     const resultsHtml = results.map(post => `
-      <article class="mb4 bg-white pa3 br2 shadow-1">
-        <h2 class="f3 near-black mb2">
-          <a href="${post.url}" class="link black dim">
-            ${highlightTerms(post.title, terms)}
-          </a>
-        </h2>
-        <div class="f6 mb2">
-          <time datetime="${post.date}">${formatDate(post.date)}</time>
-          ${post.tags ? `<span class="ml2">Tags: ${post.tags.join(', ')}</span>` : ''}
+      <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+        <div class="bg-white mb3 pa4 gray overflow-hidden">
+          <span class="f6 db">${post.category === 'bonus' ? 'Bonus' : 'Blog'}</span>
+          <h1 class="f3 near-black">
+            <a href="${post.url}" class="link black dim">
+              ${highlightTerms(post.title, terms)}
+            </a>
+          </h1>
+          <div class="nested-links f5 lh-copy nested-copy-line-height">
+            ${highlightTerms(post.description, terms)}
+          </div>
+          <a href="${post.url}" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more &raquo;</a>
         </div>
-        <p class="f5 lh-copy nested-copy-line-height">
-          ${highlightTerms(post.description, terms)}
-        </p>
-        <a href="${post.url}" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">
-          Continue reading: ${post.title}
-        </a>
-      </article>
+      </div>
     `).join('');
     
     elements.resultsList.innerHTML = resultsHtml;
@@ -142,12 +138,6 @@
     return highlighted;
   }
   
-  // Simple date formatting
-  function formatDate(dateString) {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-  }
-  
   // Initialize when DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initSearch);
@@ -158,11 +148,11 @@
 </script>
 
 <style>
-.search-form {
+.page-search-form {
   margin-bottom: 2rem;
 }
 
-.search-form input {
+.page-search-form input {
   min-width: 300px;
 }
 
@@ -178,11 +168,11 @@
   color: #6b7280;
 }
 
-#search-results-list article {
+#search-results-list .relative {
   transition: transform 0.2s;
 }
 
-#search-results-list article:hover {
+#search-results-list .relative:hover {
   transform: translateY(-2px);
 }
 
