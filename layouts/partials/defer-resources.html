@@ -1,20 +1,8 @@
 {{/* Optimized defer script loading - only essential non-blocking resources */}}
 <script>
-// Mark ads as loaded and remove loading skeletons
-document.addEventListener('DOMContentLoaded', () => {
-  // Remove loading skeletons after a delay to prevent flash
-  setTimeout(() => {
-    document.querySelectorAll('.loading-skeleton').forEach(el => {
-      el.classList.add('ads-loaded');
-    });
-  }, 2000);
-});
-
-// Performance observer for debugging (production only)
 if ('PerformanceObserver' in window && window.location.hostname !== 'localhost') {
   const perfObserver = new PerformanceObserver((list) => {
     list.getEntries().forEach(entry => {
-      // Log CLS and LCP for monitoring
       if (entry.entryType === 'layout-shift' && !entry.hadRecentInput) {
         if (entry.value > 0.1) {
           console.log('CLS detected:', entry.value, entry);
@@ -29,7 +17,6 @@ if ('PerformanceObserver' in window && window.location.hostname !== 'localhost')
   try {
     perfObserver.observe({ entryTypes: ['layout-shift', 'largest-contentful-paint'] });
   } catch (e) {
-    // Ignore if not supported
   }
 }
 </script>
