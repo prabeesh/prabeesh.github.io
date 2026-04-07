@@ -136,11 +136,15 @@
       {{ partial "reading-progress.html" . }}
     {{ end }}
 
+    <div data-nosnippet data-no-auto-ads>
     {{ block "header" . }}{{ partial "site-header.html" .}}{{ end }}
+    </div>
     <main class="pb7" role="main">
       {{ block "main" . }}{{ end }}
     </main>
+    <div data-nosnippet data-no-auto-ads>
     {{ block "footer" . }}{{ partialCached "site-footer.html" . }}{{ end }}
+    </div>
     
     {{ partial "defer-resources.html" . }}
   </body>
