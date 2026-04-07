@@ -81,7 +81,7 @@ pagerSize = 9
       precision = 0
     [minify.tdewolff.svg]
       keepComments = false
-      precision = 1
+      precision = 0
 
 [privacy]
   [privacy.disqus]
