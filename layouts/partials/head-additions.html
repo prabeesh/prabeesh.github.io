@@ -59,13 +59,18 @@
 {{/* Apple touch icons */}}
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 
-{{/* Supplemental styles not covered by performance.html */}}
 <style>
-html {
-  scroll-behavior: smooth;
+html { scroll-behavior: smooth; }
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #007bff;
+  z-index: 1000;
 }
-
-* {
-  box-sizing: border-box;
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
 </style>

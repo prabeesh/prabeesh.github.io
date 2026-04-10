@@ -1,22 +1,21 @@
-{{/* Optimized defer script loading - only essential non-blocking resources */}}
+{{/* Performance monitoring - development only */}}
+{{ $production := or (eq (getenv "HUGO_ENV") "production") (eq site.Params.env "production") }}
+{{ if not $production }}
 <script>
-if ('PerformanceObserver' in window && window.location.hostname !== 'localhost') {
+if ('PerformanceObserver' in window && window.location.hostname === 'localhost') {
   const perfObserver = new PerformanceObserver((list) => {
     list.getEntries().forEach(entry => {
-      if (entry.entryType === 'layout-shift' && !entry.hadRecentInput) {
-        if (entry.value > 0.1) {
-          console.log('CLS detected:', entry.value, entry);
-        }
+      if (entry.entryType === 'layout-shift' && !entry.hadRecentInput && entry.value > 0.1) {
+        console.log('CLS detected:', entry.value, entry);
       }
       if (entry.entryType === 'largest-contentful-paint') {
         console.log('LCP:', entry.startTime);
       }
     });
   });
-  
   try {
     perfObserver.observe({ entryTypes: ['layout-shift', 'largest-contentful-paint'] });
-  } catch (e) {
-  }
+  } catch (e) {}
 }
 </script>
+{{ end }}

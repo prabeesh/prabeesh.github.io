@@ -96,13 +96,7 @@
     <meta name="twitter:description" content="{{ .Params.description }}">
     <meta name="twitter:image" content="{{ with .Params.featured_image }}{{ . }}{{ else }}{{ .Site.BaseURL }}images/default-featured.jpg{{ end }}">
 
-    {{/* Critical CSS optimization - inline tachyons for fast first paint */}}
-    {{ $criticalCSS := resources.Get "ananke/css/_tachyons.css" | minify }}
-    {{ if $criticalCSS }}
-    <style>{{ $criticalCSS.Content | safeCSS }}</style>
-    {{ end }}
-    
-    {{/* Main CSS bundle + custom CSS via theme partial */}}
+    {{/* Main CSS bundle loaded synchronously to prevent CLS */}}
     {{ partial "site-style.html" . }}
     {{ partial "site-scripts.html" . }}
     
