@@ -96,8 +96,8 @@
     <meta name="twitter:description" content="{{ .Params.description }}">
     <meta name="twitter:image" content="{{ with .Params.featured_image }}{{ . }}{{ else }}{{ .Site.BaseURL }}images/default-featured.jpg{{ end }}">
 
-    {{/* Main CSS bundle loaded synchronously to prevent CLS */}}
-    {{ partial "site-style.html" . }}
+    {{/* Critical CSS inlined for instant first paint; full sheet loaded async */}}
+    {{ partial "critical-css.html" . }}
     {{ partial "site-scripts.html" . }}
     
     {{ block "favicon" . }}

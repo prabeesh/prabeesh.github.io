@@ -1,15 +1,14 @@
 {{ $featured_image := partial "func/GetFeaturedImage.html" . }}
 {{ if $featured_image }}
-  {{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
-  <header class="cover bg-top" style="background-image: url('{{ $featured_image }}');">
+  <header class="cover bg-top" style="background-image: url('{{ $featured_image }}');contain-intrinsic-size:auto 320px;content-visibility:visible;">
     <div class="{{ .Site.Params.cover_dimming_class | default "bg-black-60" }}">
       {{ partial "site-navigation.html" .}}
-      <div class="tc-l pv4 pv6-l ph3 ph4-ns" style="min-height: 120px;">
-        <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title" style="min-height: 3rem;">
+      <div class="tc-l pv4 pv6-l ph3 ph4-ns" style="min-height:120px;">
+        <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
           {{ .Title | default .Site.Title }}
         </h1>
         {{ with .Params.description }}
-          <h2 class="fw1 f5 f3-l white-80 measure-wide-l center mt3" style="min-height: 2rem;">
+          <h2 class="fw1 f5 f3-l white-80 measure-wide-l center mt3">
             {{ . }}
           </h2>
         {{ end }}
@@ -17,10 +16,10 @@
     </div>
   </header>
 {{ else }}
-  <header>
+  <header style="contain-intrinsic-size:auto 160px;content-visibility:visible;">
     <div class="pb3-m pb3-l {{ .Site.Params.background_color_class | default "bg-black" }}">
       {{ partial "site-navigation.html" . }}
-      <div class="tc-l pv2 ph3 ph4-ns">
+      <div class="tc-l pv2 ph3 ph4-ns" style="min-height:80px;">
         <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
           {{ .Title | default .Site.Title }}
         </h1>

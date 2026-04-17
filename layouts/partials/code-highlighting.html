@@ -72,30 +72,31 @@ code {
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Add copy buttons to code blocks
-  const codeBlocks = document.querySelectorAll('pre');
-  
-  codeBlocks.forEach((block, index) => {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'code-block-wrapper';
-    
-    const copyButton = document.createElement('button');
-    copyButton.className = 'copy-button';
-    copyButton.textContent = 'Copy';
-    copyButton.onclick = function() {
-      const code = block.querySelector('code') || block;
-      navigator.clipboard.writeText(code.textContent).then(() => {
-        copyButton.textContent = 'Copied!';
-        setTimeout(() => {
-          copyButton.textContent = 'Copy';
-        }, 2000);
-      });
-    };
-    
-    wrapper.appendChild(block.cloneNode(true));
-    wrapper.appendChild(copyButton);
-    block.parentNode.replaceChild(wrapper, block);
-  });
-});
+(function(){
+  function enhance(){
+    var codeBlocks = document.querySelectorAll('pre');
+    codeBlocks.forEach(function(block) {
+      var wrapper = document.createElement('div');
+      wrapper.className = 'code-block-wrapper';
+      var copyButton = document.createElement('button');
+      copyButton.className = 'copy-button';
+      copyButton.textContent = 'Copy';
+      copyButton.onclick = function() {
+        var code = block.querySelector('code') || block;
+        navigator.clipboard.writeText(code.textContent).then(function() {
+          copyButton.textContent = 'Copied!';
+          setTimeout(function() { copyButton.textContent = 'Copy'; }, 2000);
+        });
+      };
+      wrapper.appendChild(block.cloneNode(true));
+      wrapper.appendChild(copyButton);
+      block.parentNode.replaceChild(wrapper, block);
+    });
+  }
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(enhance);
+  } else {
+    setTimeout(enhance, 1);
+  }
+})();
 </script>
