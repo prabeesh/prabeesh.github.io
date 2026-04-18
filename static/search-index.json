@@ -52,7 +52,7 @@
   },
   {
     "title": "AM Wave Generation and Plotting with Matplotlib Python: A Detailed Guide",
-    "description": "Learn how to generate and plot Amplitude Modulation (AM) waves using the Matplotlib Python library. This tutorial demonstrates how to use Matplotlib to create AM waves with a specified carrier frequency and message frequency, and customize the appearance of the plot. Whether you're a beginner or an experienced developer, this guide will help you get started with AM generation using Matplotlib in Linux. Explore a range of examples and discover the potential of Matplotlib for data visualization and signal processing in Linux.",
+    "description": "Generate and plot an AM wave in Python with NumPy and Matplotlib, with carrier and message frequency parameters you can adjust.",
     "url": "/blog/2011/09/25/am-plot-matplotlib/",
     "date": "2011-09-24T20:09:00.000Z",
     "tags": [
