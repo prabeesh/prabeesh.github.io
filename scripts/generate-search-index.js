@@ -19,11 +19,13 @@ function getPostsFromDirectory(dirPath, baseUrl) {
       
       // Only apply date-based URL structure for blog posts, not bonus content
       if (data.date && baseUrl === '/blog/') {
-        const date = new Date(data.date);
-        const year = date.getFullYear();
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        const day = String(date.getDate()).padStart(2, '0');
-        url = `${baseUrl}${year}/${month}/${day}/${filename}/`;
+        // gray-matter converts dates to JS Date objects (UTC), but Hugo
+        // uses the authored local-timezone date for permalinks.  Extract the
+        // YYYY-MM-DD directly from the raw frontmatter so the day matches.
+        const rawDateMatch = content.match(/^date:\s*["']?(\d{4})-(\d{2})-(\d{2})/m);
+        if (rawDateMatch) {
+          url = `${baseUrl}${rawDateMatch[1]}/${rawDateMatch[2]}/${rawDateMatch[3]}/${filename}/`;
+        }
       }
       
       return {

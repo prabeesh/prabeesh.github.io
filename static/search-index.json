@@ -53,7 +53,7 @@
   {
     "title": "AM Wave Generation and Plotting with Matplotlib Python: A Detailed Guide",
     "description": "Learn how to generate and plot Amplitude Modulation (AM) waves using the Matplotlib Python library. This tutorial demonstrates how to use Matplotlib to create AM waves with a specified carrier frequency and message frequency, and customize the appearance of the plot. Whether you're a beginner or an experienced developer, this guide will help you get started with AM generation using Matplotlib in Linux. Explore a range of examples and discover the potential of Matplotlib for data visualization and signal processing in Linux.",
-    "url": "/blog/2011/09/24/am-plot-matplotlib/",
+    "url": "/blog/2011/09/25/am-plot-matplotlib/",
     "date": "2011-09-24T20:09:00.000Z",
     "tags": [
       "Python",
@@ -210,7 +210,7 @@
   {
     "title": "Introduction to AVR Microcontroller Programming",
     "description": "Master AVR microcontroller programming from scratch. Learn development environment setup, AVR-GCC compilation, programming with USBASP, and create your first LED blinking program with detailed code explanations and hardware concepts.",
-    "url": "/blog/2012/02/20/introduction-to-avr-programing/",
+    "url": "/blog/2012/02/21/introduction-to-avr-programing/",
     "date": "2012-02-20T21:09:00.000Z",
     "tags": [
       "AVR",
@@ -249,7 +249,7 @@
   {
     "title": "LCD Interfacing with an MSP430 Microcontroller: Displaying ADC Readings",
     "description": "Wire a 16x2 LCD to an MSP430 LaunchPad and display live voltage readings from the onboard ADC. Covers the 4-bit interface, ADC configuration, and the C code.",
-    "url": "/blog/2012/07/03/lcd-interfacing-using-msp430/",
+    "url": "/blog/2012/07/04/lcd-interfacing-using-msp430/",
     "date": "2012-07-03T21:09:00.000Z",
     "tags": [
       "MSP430",
@@ -265,7 +265,7 @@
     ],
     "author": "Prabeesh Keezhathra",
     "readingTime": 9,
-    "wordCount": 1624,
+    "wordCount": 1621,
     "category": "blog"
   },
   {
@@ -385,7 +385,7 @@
   {
     "title": "Running Arduino Code on a Standalone ATmega8",
     "description": "Run Arduino sketches on a bare ATmega8 using the Arduino IDE, a USB ISP, and the right fuse-byte settings for an 8 MHz clock.",
-    "url": "/blog/2012/07/13/running-arduino-codes-in-stand-alone/",
+    "url": "/blog/2012/07/14/running-arduino-codes-in-stand-alone/",
     "date": "2012-07-13T20:53:00.000Z",
     "tags": [
       "Arduino",

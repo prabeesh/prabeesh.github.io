@@ -343,12 +343,10 @@ This foundation project can be extended for numerous practical applications:
 
 ## Video Demonstration
 
-{% youtube hsM_o5hNUmg %}
+{{< youtube hsM_o5hNUmg >}}
 
 Watch the complete project in action, demonstrating real-time ADC value updates as the potentiometer is adjusted.
 
 This LCD interfacing tutorial provides a solid foundation for embedded systems with human-machine interfaces. The combination of ADC sensing and LCD display creates the building blocks for countless embedded applications requiring real-time data visualization.
 
 For more advanced MSP430 programming techniques, explore our related tutorials on [embedded systems development](#) and [sensor interfacing projects](#).
-```
-{% youtube hsM_o5hNUmg %}
