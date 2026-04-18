@@ -16,19 +16,19 @@ Add a canvas element to the HTML document:
 ```html
 <canvas id="Canvas" width="800" height="450"></canvas>
 ``` 
-To draw inside the canvas need to use Javascript. First find the canvas element using  getElementById, then initialize the context.
+To draw inside the canvas, use JavaScript. First find the canvas element using getElementById, then initialize the context.
 ```javascript
 	<script>
-	var canvas = documnet.getElementById("Canvas");
+	var canvas = document.getElementById("Canvas");
 	var context = canvas.getContext("2d")
 
 
 	</script>
 ```
-To draw text on a canvas, the most import property and methods are: <!--more-->
-	font - deifine the font properties for text
-	fillTex(text, x, y) - Draw filled text on the canvas
-To set the font, size, and style of HTML5 canvas text, setg the font property of the canvas context to a string containing the font style, size and family separeted by spaces.
+To draw text on a canvas, the most important property and methods are: <!--more-->
+	font - defines the font properties for text
+	fillText(text, x, y) - draws filled text on the canvas
+To set the font, size, and style of HTML5 canvas text, set the font property of the canvas context to a string containing the font style, size and family separated by spaces.
 ```javascript
 <script>
 context.font = " 20px sans-serif";
@@ -60,7 +60,7 @@ To get the event occurring in the document, use  EventListener.
 document.addEventListener('keydown', function);
 ```
 The functions used for  game development are
-The WhichKey() is used for the read the keyboard input. The UP/DOWN arrow keys are used for controlling gun movements. The Enter key is used for start the game. The space key is used for firing.
+The `WhichKey()` function reads the keyboard input. The UP/DOWN arrow keys control gun movements. The Enter key starts the game. The space key fires.
 ```javascript
 function WhichKey(event)  { 
    if (event.keyCode==38) //UP arrow
@@ -72,7 +72,7 @@ function WhichKey(event)  {
    if (event.keyCode==13) //Enter Key
 }
 ```
-The counter() is used for setup down counter. Using setInterval(fuction, timeinms) the counter() called by after 1000(1 second).
+The `counter()` function sets up a countdown timer. Using `setInterval(function, timeInMs)`, the counter is called every 1000 ms (1 second).
 ```javascript
 var count = 60;
 clear=setInterval(counter, 1000);

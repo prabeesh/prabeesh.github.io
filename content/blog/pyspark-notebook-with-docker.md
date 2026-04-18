@@ -23,7 +23,7 @@ To install Docker, use the following command. This command was run on an Ubuntu-
 wget -qO- https://get.docker.com/ | sh
 ```
 
-#### Running the PySpark Notebook
+### Running the PySpark Notebook
 To run the PySpark Notebook, use the following command on any machine with Docker installed.
 
 ```bash
@@ -35,7 +35,7 @@ After the pyspark-notebook Docker container is up and running, you can access th
 
 For more information on the Docker image, check out the [Dockerhub repository](https://registry.hub.docker.com/u/prabeeshk).
 
-The source code can be found in the [GitHub repository](https://github.com/prabeesh/pyspark-notebook). Below, you will find the the custom PySpark startup script and the `Dockerfile`.
+The source code can be found in the [GitHub repository](https://github.com/prabeesh/pyspark-notebook). Below you will find the custom PySpark startup script and the `Dockerfile`.
 
 ```Python
 ## PySpark Startup Script
@@ -58,7 +58,7 @@ sys.path.insert(0, os.path.join(spark_home, 'python/lib/py4j-0.8.2.1-src.zip'))
 # Execute the pyspark shell script to launch PySpark
 execfile(os.path.join(spark_home, 'python/pyspark/shell.py'))
 ```
-This script is used to start PySpark in an IPython Notebook. It does this by importing the necessary `os` and `sys` modules and getting the value of the `SPARK_HOME` environment variable. If `SPARK_HOME` is not set, the script raises a `ValueError`. The script then adds the paths to the Python libraries for Spark and `py4j` to the system path and executes the pyspark shell script to launch PySpark in the IPython Notebook. The purpose of this script is to ensure that the required Python libraries for working with PySpark are present and that PySpark is properly initialized when the IPython Notebook is launched.
+This script sets `SPARK_HOME`, adds the Spark Python libraries and py4j to `sys.path`, and then runs the PySpark shell initialiser so that `sc` (SparkContext) is available when the notebook starts.
 
 ```Dockerfile
 ## Dockerfile
@@ -124,6 +124,6 @@ EXPOSE 8888
 # Run IPython with the PySpark profile and bind to all interfaces
 CMD ipython notebook --no-browser --profile=pyspark --ip=*
 ```
-This Dockerfile creates a Docker image for running a PySpark Notebook. It does this by using the `ubuntu:trusty` base image and installing Java and several required packages, such as build essentials and Python. It then downloads and installs Apache Spark, sets the Python path to include the Spark installation, and installs Python libraries for interacting with Spark. The Dockerfile also creates an IPython profile for PySpark and copies a custom PySpark startup script to the profile directory. Finally, it creates a volume for the notebook directory, sets the working directory to the notebook directory, exposes port `8888` for the IPython Notebook server, and runs IPython with the PySpark profile, binding to all interfaces.
+The image is based on Ubuntu 14.04 (Trusty), installs Java 7, downloads and builds Spark 1.4.0, then layers on IPython Notebook 3.2 with a custom PySpark startup profile. Port 8888 is exposed for the notebook server.
 
-This tutorial has shown you how to run a PySpark Notebook using Docker. The steps outlined in this tutorial guided you through installing Docker and running a PySpark Notebook, allowing you to take advantage of the interactive and debugging capabilities of the IPython Notebook while working with Spark, making it easier to analyze your data.
+> **Note:** this Dockerfile targets Spark 1.4 on Ubuntu 14.04. For a current setup, see the [Spark 3 install post](/blog/2023/01/06/install-apache-spark-3-on-linux/) or use the maintained `jupyter/pyspark-notebook` Docker image.

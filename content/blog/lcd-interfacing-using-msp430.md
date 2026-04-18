@@ -21,10 +21,10 @@ Interfacing a 16x2 LCD with an MSP430 gives you cheap, on-board output for embed
 Our system reads analog voltage from a potentiometer connected to the MSP430's ADC channel and displays the digital value on an LCD screen in real-time. This fundamental pattern applies to countless sensor monitoring applications in embedded systems.
 
 ### System Components
-- **MSP430 LaunchPad**: Main microcontroller board
-- **16x2 LCD Display**: Character display for data visualization  
-- **Potentiometer**: Variable voltage source for ADC input
-- **External 5V Power Supply**: Required for LCD operation
+- MSP430 LaunchPad (main microcontroller board)
+- 16x2 LCD display for showing readings
+- Potentiometer as a variable voltage source for ADC input
+- External 5V power supply for the LCD
 
 ## Understanding MSP430 ADC Fundamentals
 
@@ -56,11 +56,11 @@ Voltage = (ADC_Value × 3.6V) ÷ 1023
 ## Circuit Design and Connections
 
 ### Power Supply Considerations
-**Critical Design Decision**: The MSP430 operates at 3.6V while standard LCD displays require 5V for reliable operation. This mixed-voltage design requires careful consideration:
+The MSP430 operates at 3.6V while standard LCD displays require 5V for reliable operation. This mixed-voltage design requires careful consideration:
 
-- **Potentiometer Supply**: Powered from MSP430's 3.6V rail
-- **LCD Supply**: Powered from external 5V source
-- **Data Lines**: MSP430's 3.6V logic levels are compatible with 5V LCD inputs
+- Potentiometer supply: powered from the MSP430's 3.6V rail
+- LCD supply: powered from an external 5V source
+- Data lines: the MSP430's 3.6V logic levels are compatible with 5V LCD inputs
 
 ### Pin Configuration
 The LCD uses a 4-bit interface to minimize pin usage while maintaining functionality:
@@ -75,7 +75,7 @@ The LCD uses a 4-bit interface to minimize pin usage while maintaining functiona
 #define LCM_PIN_D4 BIT4  // P1.4 - Data Bit 4
 ```
 
-**Potentiometer Connection**: Connect to P1.0 (ADC Channel A0)
+**Potentiometer connection**: P1.0 (ADC Channel A0)
 
 ## Code Implementation Breakdown
 
@@ -120,7 +120,7 @@ void PulseLcm()
 }
 ```
 
-**Timing Critical**: LCD requires precise enable pulse timing for reliable data transfer.
+The LCD requires precise enable pulse timing for reliable data transfer.
 
 ### Main Application Loop
 ```c
@@ -314,32 +314,6 @@ void main(void)
     }
 }
 ```
-
-## Project Extensions and Applications
-
-This foundation project can be extended for numerous practical applications:
-
-### Sensor Monitoring Systems
-- **Temperature Sensing**: Replace potentiometer with temperature sensor
-- **Light Level Monitor**: Use photoresistor for ambient light measurement  
-- **Pressure Sensing**: Interface pressure transducers for industrial monitoring
-
-### Data Logging Enhancements
-- **Min/Max Value Tracking**: Display voltage ranges over time
-- **Averaging**: Implement moving averages for stable readings
-- **Threshold Alerts**: Add visual indicators for out-of-range values
-
-### User Interface Improvements
-- **Multi-Channel Display**: Monitor multiple ADC channels
-- **Units Display**: Show actual voltage values instead of raw ADC counts
-- **Menu Systems**: Add configuration options via push buttons
-
-## Troubleshooting Common Issues
-
-**LCD Not Displaying**: Check 5V power supply and enable pulse timing
-**Inconsistent Readings**: Verify ADC reference voltage and input connections
-**Display Flickering**: Adjust refresh delay in main loop
-**Garbled Characters**: Confirm 4-bit data line connections
 
 ## Video Demonstration
 

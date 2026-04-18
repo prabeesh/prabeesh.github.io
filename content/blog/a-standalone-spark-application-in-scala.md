@@ -49,7 +49,8 @@ libraryDependencies ++= Seq("org.apache.spark" %%
 resolvers += "Akka Repository" at "http://repo.akka.io/releases/"
 ```
 You can find [the project at Github](https://github.com/prabeesh/SparkTwitterAnalysis/tree/0.1.0)
-##Spark programming in Eclipse
+
+## Spark programming in Eclipse
 Using sbt eclipse plugin, sbt project can run on Eclipse IDE.  For more details find [SBT Eclipse](https://github.com/typesafehub/sbteclipse)
 ```Scala
 addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.1.0")
@@ -60,23 +61,17 @@ sbt/sbt eclipse
 ```
 This command  creates a project compatible with Eclipse. Upon opening the eclipse IDE this project can now be imported and the executed with the spark.
 
-You can find [the sbt eclipse project here](https://github.com/prabeesh/SparkTwitterAnalysis/tree/0.2.0)
-
-To avoid generating eclipse source entries for the java directories and put all libs in the lib_managed directory, that way we can distribute eclipse project files, for this - add the contents to build.sbt
+To avoid generating Eclipse source entries for the java directories and put all libs in `lib_managed` (so you can distribute Eclipse project files), add this to `build.sbt`:
 ```Scala
-/*put all libs in the lib_managed directory, 
-that way we can distribute eclipse project files
-*/
-
 retrieveManaged := true
 
 EclipseKeys.relativizeLibs := true
-
-// Avoid generating eclipse source entries for the java directories
 
 (unmanagedSourceDirectories in Compile) <<= (scalaSource in Compile)(Seq(_))
 
 (unmanagedSourceDirectories in Test) <<= (scalaSource in Test)(Seq(_))  
 ```
 
-I hope that this tutorial has provided you with the knowledge and resources needed to create your own standalone Spark application in Scala. By following the steps outlined in this blog post, you should now be able to build a Spark application that calculates popular hashtags from a Twitter stream and authenticate with Twitter credentials. You should also have the skills to use the sbt eclipse plugin to run the application in the Eclipse IDE. As you continue to learn and grow in the field of big data processing, it is important to remember to keep practicing and experimenting with different techniques and tools. With time and dedication, you can become a proficient data engineer and be able to tackle even the most complex data challenges.
+You can find [the sbt eclipse project here](https://github.com/prabeesh/SparkTwitterAnalysis/tree/0.2.0)
+
+Once you have the application running, see the [Uber JAR post](/blog/2014/04/01/creating-uber-jar-for-spark-project-using-sbt-assembly/) for packaging it into a single deployable JAR with sbt-assembly.

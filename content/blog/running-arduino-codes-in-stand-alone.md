@@ -47,7 +47,7 @@ Once the fuses are set, use **Sketch > Upload Using Programmer** in the IDE. The
 
 The ATmega8 pins map to Arduino "digital pin" numbers. Refer to the diagram below when wiring peripherals:
 
-{% img center /images/arduino.png 600 350 'image' 'images' %}
+![ATmega8 pin mapping](/images/arduino.png)
 
 ## Related
 
