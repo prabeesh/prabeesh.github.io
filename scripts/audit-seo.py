@@ -29,7 +29,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PUBLIC = os.path.join(ROOT, "public")
 CONTENT = os.path.join(ROOT, "content")
 
-DENSITY_CEILING = 2.5  # percent — slightly more lenient than rule's 2% to reduce false positives on brand-name nouns
+DENSITY_CEILING = 2.5  # percent; slightly more lenient than rule's 2% to reduce false positives on brand-name nouns
 BOLD_CEILING = 15
 MIN_WORDS = 300  # pages thinner than this are probably stubs
 MAX_WORDS = 3500  # above this is usually padded
@@ -117,7 +117,7 @@ def find_word_order_variants(keywords: list[str]) -> list[tuple[str, str]]:
 
 def html_path_for(md_path: str) -> str | None:
     """Map content/blog/foo.md → public/blog/<year>/<month>/<day>/foo/index.html."""
-    # Try several layouts — we need the built page.
+    # Try several layouts; we need the built page.
     rel = os.path.relpath(md_path, CONTENT)
     base, _ = os.path.splitext(rel)
     # Hugo writes `<section>/<year>/<month>/<day>/<slug>/index.html` for the blog (per permalinks config)
@@ -141,14 +141,14 @@ def html_path_for(md_path: str) -> str | None:
 def audit_html(post: PostAudit, html: str) -> None:
     """Run density / bold-count / word-count checks against built HTML.
 
-    Checks the article *prose only* — strips out <pre>/<code> blocks, the
+    Checks the article *prose only*; strips out <pre>/<code> blocks, the
     related-posts sidebar, and the FAQ schema block so we don't flag code
     identifiers (`self`, `kd`) or sidebar-widget repetition as stuffing.
     """
     m = re.search(r"<main[^>]*>(.*?)</main>", html, re.DOTALL)
     if not m:
         post.findings.append(
-            Finding("INFO", "build", "no <main> element found — page may not build correctly")
+            Finding("INFO", "build", "no <main> element found; page may not build correctly")
         )
         return
     main = m.group(1)
@@ -179,7 +179,7 @@ def audit_html(post: PostAudit, html: str) -> None:
         )
 
     # Bold analysis: flag repeated phrases (cosmetic SEO emphasis) more aggressively
-    # than sheer count — bullet-list lead-ins (each a unique term) are legitimate.
+    # than sheer count; bullet-list lead-ins (each a unique term) are legitimate.
     bold_phrases = re.findall(r"<strong>([^<]+)</strong>", prose_html)
     bold_count = len(bold_phrases)
     phrase_counts = Counter(p.strip().lower() for p in bold_phrases)
@@ -199,7 +199,7 @@ def audit_html(post: PostAudit, html: str) -> None:
             Finding(
                 "INFO",
                 "bold-count",
-                f"{bold_count} <strong> tags — worth reviewing if these are bullet-list lead-ins (fine) or keyword emphasis (not fine)",
+                f"{bold_count} <strong> tags; worth reviewing if these are bullet-list lead-ins (fine) or keyword emphasis (not fine)",
             )
         )
 
@@ -237,7 +237,7 @@ def audit_html(post: PostAudit, html: str) -> None:
                 Finding(
                     "WARN" if density < 4.0 else "ERROR",
                     "density",
-                    f"'{phrase}' appears {count}x ({density:.2f}% — ceiling {DENSITY_CEILING}%)",
+                    f"'{phrase}' appears {count}x ({density:.2f}%; ceiling {DENSITY_CEILING}%)",
                 )
             )
     for counts, label in ((bigrams, "bigram"), (trigrams, "trigram")):
@@ -251,9 +251,56 @@ def audit_html(post: PostAudit, html: str) -> None:
                     Finding(
                         "WARN" if density < 4.0 else "ERROR",
                         f"density-{label}",
-                        f"'{phrase}' appears {count}x ({density:.2f}% — ceiling {DENSITY_CEILING}%)",
+                        f"'{phrase}' appears {count}x ({density:.2f}%; ceiling {DENSITY_CEILING}%)",
                     )
                 )
+
+
+def audit_dashes(post: PostAudit, md_text: str) -> None:
+    """Flag em dashes (U+2014) and en dashes (U+2013) in Markdown source.
+
+    The author does not want these in prose. They're also a well-known
+    AI-writing tell that Google's spam classifiers weigh against.
+    Inline code, code blocks, and URLs are exempt (they may contain legitimate
+    hyphen-like characters in identifiers or quoted output).
+    """
+    # Strip fenced code blocks and inline code so we only flag dashes in prose.
+    scrubbed = re.sub(r"```[\s\S]*?```", " ", md_text)
+    scrubbed = re.sub(r"`[^`\n]*`", " ", scrubbed)
+    # Strip Markdown link targets too (e.g. https://en.wikipedia.org/wiki/AT&T_Bell_Labs)
+    scrubbed = re.sub(r"\]\([^)]*\)", "](url)", scrubbed)
+
+    em_count = scrubbed.count("\u2014")
+    en_count = scrubbed.count("\u2013")
+    total = em_count + en_count
+    if total == 0:
+        return
+
+    # Show first 2 occurrences with a bit of context so the user can find them.
+    sample_ctx: list[str] = []
+    for ch in ("\u2014", "\u2013"):
+        for m in re.finditer(re.escape(ch), scrubbed):
+            start = max(0, m.start() - 30)
+            end = min(len(scrubbed), m.end() + 30)
+            snippet = scrubbed[start:end].replace("\n", " ").strip()
+            sample_ctx.append(f"...{snippet}...")
+            if len(sample_ctx) >= 2:
+                break
+        if len(sample_ctx) >= 2:
+            break
+
+    label = []
+    if em_count:
+        label.append(f"{em_count} em dash")
+    if en_count:
+        label.append(f"{en_count} en dash")
+    post.findings.append(
+        Finding(
+            "WARN",
+            "dashes",
+            f"{' + '.join(label)} in prose; replace with hyphen, comma, colon, or parens. e.g. {sample_ctx[0]}",
+        )
+    )
 
 
 def audit_frontmatter(post: PostAudit, frontmatter: str) -> None:
@@ -263,7 +310,7 @@ def audit_frontmatter(post: PostAudit, frontmatter: str) -> None:
             Finding(
                 "ERROR",
                 "keywords-shape",
-                "keywords is a comma-separated string — Hugo's delimit will split it per-character. Use a YAML list.",
+                "keywords is a comma-separated string; Hugo's delimit will split it per-character. Use a YAML list.",
             )
         )
     if shape == "missing":
@@ -311,9 +358,10 @@ def main() -> int:
             md_path = os.path.join(root, f)
             if args.only and args.only not in md_path:
                 continue
-            fm, _body = split_frontmatter(md_path)
+            fm, body = split_frontmatter(md_path)
             post = PostAudit(path=os.path.relpath(md_path, ROOT), title=title_for(fm))
             audit_frontmatter(post, fm)
+            audit_dashes(post, fm + "\n" + body)
             html_path = html_path_for(md_path)
             if html_path:
                 with open(html_path, encoding="utf-8") as fh:
@@ -339,7 +387,7 @@ def main() -> int:
 
     clean = sum(1 for p in results if p.ok)
     print(f"\n{'=' * 60}")
-    print(f"Audited {len(results)} posts — {clean} clean, {flagged} flagged (severity >= {args.severity})")
+    print(f"Audited {len(results)} posts; {clean} clean, {flagged} flagged (severity >= {args.severity})")
     return 1 if flagged > 0 else 0
 
 

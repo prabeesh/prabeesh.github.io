@@ -21,18 +21,18 @@ keywords:
   - builder pattern PySpark
   - observer pattern PySpark
   - pipeline pattern PySpark
-description: A hands-on PySpark tutorial showing how to apply five classic software design patterns — factory, singleton, builder, observer, and pipeline — to build cleaner, more maintainable data pipelines. Full code examples you can run.
+description: A hands-on PySpark tutorial showing how to apply five classic software design patterns, factory, singleton, builder, observer, and pipeline, to build cleaner, more maintainable data pipelines. Full code examples you can run.
 ---
 
 If you want to write PySpark data pipelines that stay clean as they grow, design patterns are the most reliable tool to reach for. Pipelines get complex quickly: new data sources appear, transformations multiply, one-off scripts turn into production systems. Classic software design patterns give you proven structures to keep that complexity under control.
 
 This tutorial walks through the five most useful patterns for a PySpark pipeline, each with a complete, runnable example:
 
-- [Factory Pattern](#factory-pattern) — swap data sources (CSV, Parquet, JSON) without changing pipeline code
-- [Singleton Pattern](#singleton-pattern) — share one SparkSession or sink across the whole pipeline
-- [Builder Pattern](#builder-pattern) — construct complex transforms with optional parameters
-- [Observer Pattern](#observer-pattern) — react to data changes across loosely coupled components
-- [Pipeline Pattern](#pipeline-pattern) — chain transforms into a clear, ordered flow
+- [Factory Pattern](#factory-pattern), swap data sources (CSV, Parquet, JSON) without changing pipeline code
+- [Singleton Pattern](#singleton-pattern), share one SparkSession or sink across the whole pipeline
+- [Builder Pattern](#builder-pattern), construct complex transforms with optional parameters
+- [Observer Pattern](#observer-pattern), react to data changes across loosely coupled components
+- [Pipeline Pattern](#pipeline-pattern), chain transforms into a clear, ordered flow
 
 Each example uses Python's `abc` module to define abstract base classes and concrete subclasses. If you haven't used `abc.ABC` before: it lets you declare a class contract via `@abstractmethod`, and any subclass must implement those methods or Python will refuse to instantiate it.
 
@@ -48,7 +48,7 @@ Each example uses Python's `abc` module to define abstract base classes and conc
 
 ## Factory Pattern {#factory-pattern}
 
-The factory pattern is a creational pattern: a parent class defines an interface for creating objects, and subclasses decide which concrete class to instantiate. In a data pipeline, this lets you plug in different input formats — CSV, Parquet, JSON — without the pipeline code caring about the underlying format.
+The factory pattern is a creational pattern: a parent class defines an interface for creating objects, and subclasses decide which concrete class to instantiate. In a data pipeline, this lets you plug in different input formats, CSV, Parquet, JSON, without the pipeline code caring about the underlying format.
 
 ```Python
 from abc import ABC, abstractmethod
@@ -197,7 +197,7 @@ Each setter returns `self`, so the calls chain naturally and the caller sets onl
 
 ## Observer Pattern {#observer-pattern}
 
-The observer pattern sets up a one-to-many dependency: when a subject changes state, it notifies every registered observer. In a data pipeline, this is useful when one successful batch should trigger several follow-up actions — write to the warehouse, update a dashboard, emit a metric — without hard-wiring them into the pipeline.
+The observer pattern sets up a one-to-many dependency: when a subject changes state, it notifies every registered observer. In a data pipeline, this is useful when one successful batch should trigger several follow-up actions, write to the warehouse, update a dashboard, emit a metric, without hard-wiring them into the pipeline.
 
 ```Python
 from abc import ABC, abstractmethod
@@ -265,7 +265,7 @@ The `DataSubject` keeps the list of `DataObserver` instances and calls each one'
 
 ## Pipeline Pattern {#pipeline-pattern}
 
-The pipeline pattern (sometimes called chain-of-responsibility for data) chains a series of processing steps so the output of each stage feeds the next. It maps naturally onto ETL — extract, transform, load.
+The pipeline pattern (sometimes called chain-of-responsibility for data) chains a series of processing steps so the output of each stage feeds the next. It maps naturally onto ETL, extract, transform, load.
 
 ```Python
 from abc import ABC, abstractmethod
@@ -335,7 +335,7 @@ These five patterns combine well. A production pipeline typically looks like:
 
 ### What are design patterns in PySpark?
 
-They are reusable solutions to recurring problems in PySpark code — for example, how to create data sources flexibly (factory), how to share one `SparkSession` (singleton), or how to compose transforms (pipeline). The same shapes show up across almost every non-trivial pipeline.
+They are reusable solutions to recurring problems in PySpark code, for example, how to create data sources flexibly (factory), how to share one `SparkSession` (singleton), or how to compose transforms (pipeline). The same shapes show up across almost every non-trivial pipeline.
 
 ### Which pattern should I start with?
 
@@ -343,7 +343,7 @@ Start with factory and pipeline. Factory removes hard-coded data formats; pipeli
 
 ### What is the difference between the factory and singleton patterns?
 
-Factory produces many instances of different concrete classes that share an interface. Singleton restricts a class to exactly one instance. They solve opposite problems and are often used together — a factory object itself may be implemented as a singleton.
+Factory produces many instances of different concrete classes that share an interface. Singleton restricts a class to exactly one instance. They solve opposite problems and are often used together, a factory object itself may be implemented as a singleton.
 
 ### Is an abstract class the same as an `abc` class in Python?
 
@@ -355,4 +355,4 @@ Keep going: [Advanced PySpark Design Patterns: Real-World Implementation Example
 
 ## Conclusion
 
-We covered five essential design patterns — factory, singleton, builder, observer, and pipeline — and showed how each one improves a real PySpark data pipeline. Used together they cover most production needs: flexible data sources, shared resources, configurable transforms, event fan-out, and readable ETL chains. The next step is to try each one on a small PySpark job of your own — nothing locks the lessons in faster than running the code.
+We covered five essential design patterns, factory, singleton, builder, observer, and pipeline, and showed how each one improves a real PySpark data pipeline. Used together they cover most production needs: flexible data sources, shared resources, configurable transforms, event fan-out, and readable ETL chains. The next step is to try each one on a small PySpark job of your own, nothing locks the lessons in faster than running the code.

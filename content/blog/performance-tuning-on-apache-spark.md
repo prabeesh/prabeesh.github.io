@@ -15,7 +15,7 @@ keywords:
   - Spark data skew
   - Spark shuffle optimization
   - Spark memory tuning
-description: A practical guide to tuning Apache Spark jobs. Covers the five areas that matter most in production — spill, skew, shuffle, storage, and serialization — with runnable PySpark examples.
+description: "A practical guide to tuning Apache Spark jobs. Covers the five areas that matter most in production: spill, skew, shuffle, storage, and serialization. Includes runnable PySpark examples."
 ---
 
 Performance tuning decides whether a Spark job runs in 10 minutes or 10 hours. Most slowdowns you'll hit in production come from the same five areas: **spill, skew, shuffle, storage, and serialization**. This guide walks through each one with the cause, how to spot it in the Spark UI, and the PySpark code to fix it.
@@ -81,7 +81,7 @@ spark.conf.set("spark.sql.adaptive.skewJoin.enabled", "true")
 
 ## 2. Skew
 
-Skew is an uneven distribution of data across partitions. The job is only as fast as its slowest task, so a single skewed partition can dominate total runtime. Spot it by sorting the task list in the Spark UI by duration — a healthy stage has a narrow spread; a skewed one has a long tail.
+Skew is an uneven distribution of data across partitions. The job is only as fast as its slowest task, so a single skewed partition can dominate total runtime. Spot it by sorting the task list in the Spark UI by duration, a healthy stage has a narrow spread; a skewed one has a long tail.
 
 A small amount of skew (under ~20%) is normal and not worth chasing. Beyond that, fix it.
 
@@ -188,7 +188,7 @@ Serialization is how Spark moves data and code across the cluster. The biggest l
 | SQL / DataFrame functions | None | Fastest | First choice whenever the logic is expressible in Spark functions |
 | SQL higher-order functions (`transform`, `filter`, `aggregate`) | None | Fast | Array / map column transformations |
 | Pandas UDF (vectorized) | Batched via Arrow | Fast | Custom logic that must run in Python, on large batches |
-| Python UDF (row-at-a-time) | Per row, JVM ↔ Python | Slow | Avoid — last resort for custom Python logic |
+| Python UDF (row-at-a-time) | Per row, JVM ↔ Python | Slow | Avoid, last resort for custom Python logic |
 
 ### Avoid Python UDFs
 
@@ -244,10 +244,10 @@ df = df.filter(df.age > 30).collect()
 The five problems compound. A job that suffers from skew is also spilling; a shuffle-heavy job usually has a storage problem feeding it. In practice, tune in this order:
 
 1. **Check the Spark UI first.** Every issue above has a distinct signal.
-2. **Fix storage** — specify schema, compact tiny files, use Parquet.
-3. **Enable AQE** — handles spill and skew for you automatically in most cases.
-4. **Reduce shuffles** — broadcast small tables, pre-partition on join keys.
-5. **Remove Python UDFs** — SQL functions or Pandas UDFs are almost always faster.
+2. **Fix storage:** specify schema, compact tiny files, use Parquet.
+3. **Enable AQE:** handles spill and skew for you automatically in most cases.
+4. **Reduce shuffles:** broadcast small tables, pre-partition on join keys.
+5. **Remove Python UDFs:** SQL functions or Pandas UDFs are almost always faster.
 
 ## Frequently asked questions
 
@@ -257,11 +257,11 @@ Look at the task table for a stage in the Spark UI. If the *Spill (memory)* or *
 
 ### What's the difference between `coalesce` and `repartition`?
 
-`coalesce(n)` reduces the number of partitions without a shuffle — fast but can leave you with uneven partitions. `repartition(n)` does a full shuffle to evenly rebalance. Use `coalesce` for shrinking, `repartition` when you need even partition sizes.
+`coalesce(n)` reduces the number of partitions without a shuffle, fast but can leave you with uneven partitions. `repartition(n)` does a full shuffle to evenly rebalance. Use `coalesce` for shrinking, `repartition` when you need even partition sizes.
 
 ### When should I use `broadcast()`?
 
-When one side of a join is small enough to fit in memory on every executor — roughly under 10 MB by default, controlled by `spark.sql.autoBroadcastJoinThreshold`. Broadcasting skips the shuffle on the large side entirely.
+When one side of a join is small enough to fit in memory on every executor, roughly under 10 MB by default, controlled by `spark.sql.autoBroadcastJoinThreshold`. Broadcasting skips the shuffle on the large side entirely.
 
 ### Is AQE on by default?
 

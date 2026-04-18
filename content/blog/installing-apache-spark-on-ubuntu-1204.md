@@ -11,7 +11,7 @@ keywords:
   - Spark installation Linux
   - Apache Spark Ubuntu
   - PySpark installation
-description: Install Apache Spark 3.5 on Linux (Ubuntu, CentOS) — binary distribution and from source. Covers Java/Python prerequisites, environment variables, standalone cluster, YARN and Kubernetes deploy modes, and HDFS integration.
+description: Install Apache Spark 3.5 on Linux (Ubuntu, CentOS), binary distribution and from source. Covers Java/Python prerequisites, environment variables, standalone cluster, YARN and Kubernetes deploy modes, and HDFS integration.
 ---
 
 A walkthrough of installing Apache Spark 3.5 on modern Linux, from prerequisites through a working standalone cluster. Earlier versions are covered in [Install Apache Spark 1.0 on Ubuntu 14.04](/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/) and [Install Apache Spark 2 on Ubuntu 16.04 and macOS](/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/).

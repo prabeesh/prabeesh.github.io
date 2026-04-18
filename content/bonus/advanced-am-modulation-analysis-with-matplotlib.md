@@ -174,7 +174,7 @@ analyze_modulation_depth_examples()
 
 ## Sideband power distribution
 
-In AM, the total transmitted power splits between the carrier and the two sidebands. The carrier carries no information, so the share of power in the sidebands is a direct measure of transmission efficiency — and it scales with `m²/2`. This function sweeps the modulation index and plots how the power redistributes.
+In AM, the total transmitted power splits between the carrier and the two sidebands. The carrier carries no information, so the share of power in the sidebands is a direct measure of transmission efficiency, and it scales with `m²/2`. This function sweeps the modulation index and plots how the power redistributes.
 
 ```python
 def sideband_power_analysis():
@@ -415,7 +415,7 @@ am_broadcasting_analysis()
 
 ## Noise and filtering
 
-AM is vulnerable to additive noise because the message lives in the envelope — any amplitude perturbation distorts it. Below compares Gaussian, impulse, and sinusoidal interference, and recovers each with a Butterworth low-pass filter.
+AM is vulnerable to additive noise because the message lives in the envelope, any amplitude perturbation distorts it. Below compares Gaussian, impulse, and sinusoidal interference, and recovers each with a Butterworth low-pass filter.
 
 ```python
 def noise_analysis_and_filtering():
@@ -500,7 +500,7 @@ noise_analysis_and_filtering()
 
 ## Putting it all together: a signal-quality monitor
 
-The final example wraps everything above into a small monitor class that produces a dashboard with the envelope, a radar chart of quality metrics, power distribution, and an overall 0–100 score.
+The final example wraps everything above into a small monitor class that produces a dashboard with the envelope, a radar chart of quality metrics, power distribution, and an overall 0 to 100 score.
 
 ```python
 class AMSignalQualityMonitor:
@@ -661,5 +661,5 @@ demonstrate_quality_monitor()
 
 With a few hundred lines of NumPy and Matplotlib you can measure every interesting property of an AM signal: the modulation index from the envelope, the power split across carrier and sidebands via FFT, the impact of noise, and the effectiveness of a low-pass filter. The monitor class ties it together into a single function call.
 
-For a gentler starting point, see the original [AM Wave Generation and Plotting](/blog/2011/09/25/am-plot-matplotlib/) post. The same FFT + envelope-detection approach also works for demodulating real recordings — e.g. from an SDR capture — if you resample down to a manageable rate first.
+For a gentler starting point, see the original [AM Wave Generation and Plotting](/blog/2011/09/25/am-plot-matplotlib/) post. The same FFT + envelope-detection approach also works for demodulating real recordings, e.g. from an SDR capture, if you resample down to a manageable rate first.
 
