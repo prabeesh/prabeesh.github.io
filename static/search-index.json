@@ -162,7 +162,29 @@
     ],
     "author": "Prabeesh Keezhathra",
     "readingTime": 2,
-    "wordCount": 230,
+    "wordCount": 235,
+    "category": "blog"
+  },
+  {
+    "title": "Install Apache Spark 3.5 on Linux (Ubuntu, CentOS)",
+    "description": "Install Apache Spark 3.5 on Linux (Ubuntu, CentOS), binary distribution and from source. Covers Java/Python prerequisites, environment variables, standalone cluster, YARN and Kubernetes deploy modes, and HDFS integration.",
+    "url": "/blog/2024/11/26/install-apache-spark-3-on-linux/",
+    "date": "2024-11-26T06:54:00.000Z",
+    "tags": [
+      "Apache Spark",
+      "installation",
+      "Linux",
+      "Ubuntu"
+    ],
+    "keywords": [
+      "install Apache Spark",
+      "Spark installation Linux",
+      "Apache Spark Ubuntu",
+      "PySpark installation"
+    ],
+    "author": "Prabeesh Keezhathra",
+    "readingTime": 5,
+    "wordCount": 989,
     "category": "blog"
   },
   {
@@ -182,29 +204,7 @@
     ],
     "author": "Prabeesh Keezhathra",
     "readingTime": 2,
-    "wordCount": 375,
-    "category": "blog"
-  },
-  {
-    "title": "Install Apache Spark 3.5 on Linux (Ubuntu, CentOS)",
-    "description": "Install Apache Spark 3.5 on Linux (Ubuntu, CentOS), binary distribution and from source. Covers Java/Python prerequisites, environment variables, standalone cluster, YARN and Kubernetes deploy modes, and HDFS integration.",
-    "url": "/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/",
-    "date": "2013-11-26T06:54:00.000Z",
-    "tags": [
-      "Apache Spark",
-      "installation",
-      "Linux",
-      "Ubuntu"
-    ],
-    "keywords": [
-      "install Apache Spark",
-      "Spark installation Linux",
-      "Apache Spark Ubuntu",
-      "PySpark installation"
-    ],
-    "author": "Prabeesh Keezhathra",
-    "readingTime": 5,
-    "wordCount": 989,
+    "wordCount": 377,
     "category": "blog"
   },
   {

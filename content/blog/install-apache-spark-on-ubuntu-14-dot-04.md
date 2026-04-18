@@ -11,7 +11,7 @@ description: Install Apache Spark 1.1.0 on Ubuntu 14.04. Covers Java, Scala, and
 ---
 Update: For Spark 2 see the [Ubuntu 16.04 and macOS post](/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/).
 
-The [earlier post](/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/) covered Spark 0.8.0 on Ubuntu 12.04. This one walks through Spark 1.1.0 on Ubuntu 14.04. Start with Java:
+This post walks through Spark 1.1.0 on Ubuntu 14.04. For the latest version, see [Install Apache Spark 3.5 on Linux](/blog/2024/11/26/install-apache-spark-3-on-linux/). Start with Java:
 ```
 	$ sudo apt-add-repository ppa:webupd8team/java
 	$ sudo apt-get update

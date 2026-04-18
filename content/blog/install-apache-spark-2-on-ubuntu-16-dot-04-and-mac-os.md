@@ -11,7 +11,7 @@ keywords:
   - Hadoop Spark integration
 description: Install Apache Spark 2.0 on Ubuntu 16.04 and macOS. Covers Java setup, the Maven build, Hadoop integration, and environment configuration.
 ---
-Earlier posts covered [Spark 0.8.0 on Ubuntu 12.04](/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/) and [Spark 1.1.0 on Ubuntu 14.04](/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/). This one walks through Spark 2.0.2 on Ubuntu 16.04 and Mac OS X Sierra.
+Earlier posts covered [Spark 1.1.0 on Ubuntu 14.04](/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/). This one walks through Spark 2.0.2 on Ubuntu 16.04 and Mac OS X Sierra. For the latest version, see [Install Apache Spark 3.5 on Linux](/blog/2024/11/26/install-apache-spark-3-on-linux/).
 <!--more-->
 
 Java must be installed first. On Ubuntu:
@@ -82,4 +82,4 @@ Then reload with `source ~/.bashrc` and confirm with `spark-shell --version`.
 ## Next steps
 
 - [Performance tuning](/blog/2023/01/06/performance-tuning-on-apache-spark/) once you have jobs running
-- The [Spark 3.5 install guide](/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/) if you want the latest version
+- The [Spark 3.5 install guide](/blog/2024/11/26/install-apache-spark-3-on-linux/) if you want the latest version

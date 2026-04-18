@@ -1,6 +1,8 @@
 ---
 title: "Install Apache Spark 3.5 on Linux (Ubuntu, CentOS)"
-date: 2013-11-26T12:24:00+05:30
+date: 2024-11-26T12:24:00+05:30
+aliases:
+  - /blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/
 tags:
   - Apache Spark
   - installation
