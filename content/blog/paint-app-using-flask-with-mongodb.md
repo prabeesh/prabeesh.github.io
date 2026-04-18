@@ -17,103 +17,183 @@ description: Build a small web paint app backed by Flask and MongoDB. Covers the
 
 Schema-less, document-shaped data like freehand drawings is a good fit for MongoDB: there's no rigid table to design around stroke coordinates that vary per drawing. This post ties the canvas front-end to a Flask backend that persists drawings in MongoDB.
 
-## Why MongoDB for a paint application?
+## How the app works
 
-Traditional relational databases work well for structured data, but a paint application generates dynamic, varied data structures. Each drawing might have different numbers of strokes, colors, and coordinate arrays. MongoDB's document-oriented approach handles this variability naturally.
+The user draws lines, rectangles, or circles on an HTML5 canvas. Each shape is stored in a JavaScript object with its coordinates and colour. When the user clicks "save", the frontend POSTs the entire drawing as a JSON string to Flask, which inserts it into MongoDB keyed by image name. Loading a drawing is a GET request: Flask queries MongoDB, passes the JSON back to the template, and the canvas redraws it.
 
-### Key benefits of MongoDB for this use case
+## The Flask backend
 
-- No rigid schema requirements, perfect for storing varying drawing data structures
-- Horizontal scaling for handling multiple concurrent users
-- Fast read/write operations for real-time drawing data persistence
-- Seamless integration with Flask's JSON handling and JavaScript frontend
+The entire server is one file. It connects to a local MongoDB instance, serves the canvas page, and handles save/load:
 
-## Setting up MongoDB
+```python
+from flask import Flask, request, render_template, Response
+from pymongo import Connection
 
-MongoDB is an open-source, document-oriented database designed for ease of development and scaling. You can install MongoDB locally by following the instructions from the [official MongoDB installation guide](https://docs.mongodb.com/manual/installation/).
+app = Flask(__name__)
 
-Once installed, start the MongoDB service and connect using the mongo shell to familiarize yourself with basic operations.
+connection = Connection()
+collection = connection.paint.images
 
-## Essential MongoDB commands for development
+@app.route("/")
+@app.route('/<imagename>', methods=['POST', 'GET'])
+def mainpage(imagename=None):
+    if request.method == 'GET':
+        if imagename:
+            rows = collection.find({'imgname': imagename})
+            if rows:
+                for row in rows:
+                    imgdata = row["imgdata"]
+                    return render_template('paint.html', saved=imgdata)
+            else:
+                resp = Response(
+                    '<html><script>'
+                    'alert("Image not found");'
+                    'document.location.href="/"'
+                    '</script></html>'
+                )
+                return resp
+        else:
+            return render_template('paint.html')
 
-Here are the core MongoDB operations you'll use while developing the paint application:
+    if request.method == 'POST':
+        imgname = request.form['imagename']
+        imgdata = request.form['string']
+        collection.insert({"imgname": imgname, "imgdata": imgdata})
+        return Response("saved")
 
-### Database operations
-```bash
-# Show current database
-db
-
-# List all databases
-show dbs
-
-# Switch to or create a new database
-use paintapp
-
-# Get help for mongo shell operations
-help
+if __name__ == '__main__':
+    app.debug = True
+    app.run()
 ```
 
-### Collection operations
-```bash
-# Insert a new drawing document
-db.drawings.insert({
-    "strokes": [{"x": 100, "y": 200, "color": "#ff0000"}],
-    "timestamp": new Date(),
-    "user": "artist1"
-})
+A few things to note:
 
-# Show all collections in current database
-show collections
+- `Connection()` (from the older pymongo API) connects to `localhost:27017` by default. In current pymongo you would use `MongoClient()`.
+- The route handles both `/` (new drawing) and `/<imagename>` (load or save). The `methods` list lets the same URL respond to GET and POST.
+- On save, the drawing data arrives as a JSON string in `request.form['string']` and gets stored verbatim in MongoDB. No schema needed.
+- On load, Flask passes the stored JSON string into the Jinja template as `saved`, and the JavaScript parses it back into drawing objects.
 
-# Find all drawings
-db.drawings.find()
+## The MongoDB document
 
-# Find specific drawings with query
-db.drawings.find({"user": "artist1"})
+Each saved drawing produces one document in the `paint.images` collection:
 
-# Update a drawing
-db.drawings.update(
-    {"_id": ObjectId("...")},
-    {"$push": {"strokes": {"x": 150, "y": 250, "color": "#00ff00"}}}
-)
-
-# Remove a drawing
-db.drawings.remove({"_id": ObjectId("...")})
+```json
+{
+    "_id": ObjectId("..."),
+    "imgname": "my-drawing",
+    "imgdata": "{\"line\":[{\"beginx\":120,\"beginy\":80,\"endx\":400,\"endy\":300,\"color\":\"red\"}],\"rect\":[],\"circle\":[]}"
+}
 ```
 
-MongoDB's cursor displays only the first 20 documents by default. Use the `it` command to iterate through additional results when working with larger datasets.
+The `imgdata` field is a JSON string containing three arrays (one per shape type). Each shape stores its start/end coordinates and colour. This is the simplest possible approach: store the drawing as an opaque blob keyed by name.
 
-## Flask application architecture
+## The canvas frontend
 
-The paint application follows a clean separation between the frontend Canvas API for drawing interactions and the Flask backend for data persistence. Here's how the components work together:
+The template (`templates/paint.html`) sets up two stacked canvases: one for the active stroke being drawn, one for the committed shapes underneath. The drawing tools (line, rectangle, circle) are selected from a dropdown, and colour buttons set the stroke colour.
 
-### Frontend (HTML5 Canvas + JavaScript)
-- Captures mouse/touch drawing events
-- Renders drawing strokes in real-time
-- Sends drawing data to Flask API endpoints
-- Loads saved drawings from the backend
+The core interaction captures `mousedown`, `mousemove`, and `mouseup` events:
 
-### Backend (Flask + MongoDB)
-- Provides REST API endpoints for CRUD operations
-- Handles drawing data serialization/deserialization  
-- Manages user sessions and drawing metadata
-- Interfaces with MongoDB for data persistence
+```javascript
+var data = {"line":[], "rect":[], "circle":[]};
 
-## Source code and further learning
+canvas.addEventListener('mousedown', function(evt) {
+    var mousePos = getMousePos(canvas, evt);
+    select = 1;
+    beginX = mousePos.x;
+    beginY = mousePos.y;
+}, false);
 
-The complete source code for this Flask-MongoDB paint application is available on [GitHub](https://github.com/prabeesh/Paintapp-Javascript-Canvas-Flask-MongoDB). The repository includes:
+canvas.addEventListener('mousemove', function(evt) {
+    var mousePos = getMousePos(canvas, evt);
+    if (select && toolselect.value == 'line') {
+        endX = mousePos.x;
+        endY = mousePos.y;
+        drawLine(beginX, beginY, endX, endY);
+    }
+    if (select && toolselect.value == 'rect') {
+        sideX = mousePos.x - beginX;
+        sideY = mousePos.y - beginY;
+        drawRect(beginX, beginY, sideX, sideY);
+    }
+    if (select && toolselect.value == 'circle') {
+        radius = mousePos.x - beginX;
+        drawCircle(beginX, beginY, radius);
+    }
+}, false);
 
-- Flask application setup and configuration
-- MongoDB connection and query examples  
-- HTML5 Canvas drawing implementation
-- CSS styling and responsive design
-- Sample drawing data and test cases
+canvas.addEventListener('mouseup', function(evt) {
+    select = 0;
+    context1.drawImage(canvas, 0, 0);
 
-## Next steps
+    if (toolselect.value == 'line') {
+        data.line.push({
+            beginx: beginX, beginy: beginY,
+            endx: endX, endy: endY, color: currentColor
+        });
+    }
+    if (toolselect.value == 'rect') {
+        data.rect.push({
+            beginx: beginX, beginy: beginY,
+            sidex: sideX, sidey: sideY, color: currentColor
+        });
+    }
+    if (toolselect.value == 'circle') {
+        data.circle.push({
+            beginx: beginX, beginy: beginY,
+            radius: radius, color: currentColor
+        });
+    }
+}, false);
+```
 
-Once you have the basic paint app running, consider adding:
+On `mouseup`, the shape is committed to `canvas1` (the background layer) with `drawImage`, and its coordinates are pushed into the `data` object. That object is what gets serialised to JSON and sent to Flask on save.
 
-1. Login system for personalized drawings
-2. WebSocket connections for multi-user drawing
-3. Export options to save drawings as image files
-4. Layers, brushes, and advanced editing features
+Save and load use jQuery to POST/redirect:
+
+```javascript
+function saveImage() {
+    if (imagename.value == "")
+        alert("Image name cannot be empty");
+    else {
+        $.post("/" + imagename.value,
+               {imagename: imagename.value, string: JSON.stringify(data)});
+        alert("saved");
+    }
+}
+
+function loadImage() {
+    if (imagename.value == "")
+        alert("Image name cannot be empty");
+    else
+        document.location.href = "/" + imagename.value;
+}
+```
+
+When loading, Flask passes the stored JSON to the template, and the `init()` function rehydrates it:
+
+```javascript
+function init() {
+    var dataString = "{{ saved }}";
+    if (dataString) {
+        data = JSON.parse(dataString.replace(/&#34;/g, '"'));
+        drawAll();
+    }
+}
+```
+
+`&#34;` is the HTML entity for `"`, which Jinja escapes by default. The `replace` call converts it back before parsing.
+
+## Running it
+
+```bash
+# Start MongoDB
+mongod
+
+# In another terminal
+pip install flask pymongo
+python test.py
+```
+
+Open `http://localhost:5000`, draw something, type a name, and click save. Navigate to `http://localhost:5000/your-name` to load it back.
+
+The complete source is on [GitHub](https://github.com/prabeesh/Paintapp-Javascript-Canvas-Flask-MongoDB).
