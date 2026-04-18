@@ -34,13 +34,13 @@ The MSP430's 10-bit ADC provides precise analog-to-digital conversion essential 
 ### ADC Resolution and Range
 The MSP430 LaunchPad operates at **3.6V**, giving us a working voltage range of **0V to 3.6V**. The 10-bit ADC resolution means:
 
-**Minimum Input (0V)**:
+Minimum Input (0V):
 ```
 Binary: 0000000000
 Decimal: 0
 ```
 
-**Maximum Input (3.6V)**:
+Maximum Input (3.6V):
 ```
 Binary: 1111111111  
 Decimal: 1023
@@ -98,7 +98,7 @@ void adc_init()
 }
 ```
 
-**Key Configuration Details**:
+Key Configuration Details:
 - `ADC10SHT_2`: Sets sample-and-hold time for accurate conversions
 - `SREF_0`: Uses VCC and VSS as voltage references
 - `INCH_0`: Selects input channel A0 (P1.0)

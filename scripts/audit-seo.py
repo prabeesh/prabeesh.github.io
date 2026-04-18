@@ -164,6 +164,8 @@ def audit_html(post: PostAudit, html: str) -> None:
         flags=re.IGNORECASE,
     )
     text = re.sub(r"<script.*?</script>|<style.*?</style>|<[^>]+>", " ", prose_html, flags=re.DOTALL)
+    # Strip HTML entities so we don't tokenize them as words (e.g. &rsquo; → ')
+    text = re.sub(r"&[a-z]+;", "'", text)
     words = [w for w in re.split(r"\s+", text) if w.strip()]
     post.word_count = len(words)
 
@@ -176,13 +178,28 @@ def audit_html(post: PostAudit, html: str) -> None:
             Finding("WARN", "word-count", f"padded content: {post.word_count} words (max {MAX_WORDS})")
         )
 
-    bold_count = len(re.findall(r"<strong>", prose_html))
-    if bold_count > BOLD_CEILING:
+    # Bold analysis: flag repeated phrases (cosmetic SEO emphasis) more aggressively
+    # than sheer count — bullet-list lead-ins (each a unique term) are legitimate.
+    bold_phrases = re.findall(r"<strong>([^<]+)</strong>", prose_html)
+    bold_count = len(bold_phrases)
+    phrase_counts = Counter(p.strip().lower() for p in bold_phrases)
+    repeated_bolds = {p: n for p, n in phrase_counts.items() if n >= 3}
+    if repeated_bolds:
+        top = sorted(repeated_bolds.items(), key=lambda kv: -kv[1])[:3]
+        summary = ", ".join(f"'{p}' {n}x" for p, n in top)
         post.findings.append(
             Finding(
                 "WARN",
+                "bold-repeated",
+                f"cosmetic bold repetition: {summary}",
+            )
+        )
+    if bold_count > 40:
+        post.findings.append(
+            Finding(
+                "INFO",
                 "bold-count",
-                f"{bold_count} <strong> tags (ceiling {BOLD_CEILING}) — likely cosmetic keyword emphasis",
+                f"{bold_count} <strong> tags — worth reviewing if these are bullet-list lead-ins (fine) or keyword emphasis (not fine)",
             )
         )
 

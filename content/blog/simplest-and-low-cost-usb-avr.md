@@ -1,119 +1,85 @@
 ---
-title: "AVR Programming Made Easy: How to Build a USBtinyISP"
+title: "How to Build a USBtinyISP: Low-Cost DIY AVR Programmer"
 date: 2012-07-04T19:39:00+05:30
 author: Prabeesh Keezhathra
-tags: [AVR, USBtinyISP, attiny2313, microcontroller, embedded systems, usbasp programmer, atmel avr, avr programmer usb]
+tags:
+  - AVR
+  - USBtinyISP
+  - ATtiny2313
+  - microcontroller
+  - embedded systems
 keywords:
-  - avr programmer
-  - avr microcontroller
-  - atmel microcontroller
-  - atmel avr
-  - attiny programmer
-  - usbasp programmer
-  - atmel attiny
-  - usb asp
-  - atmel 32 bit microcontroller
-  - usb avr
-  - usbtinyisp
-  - atmel avr microcontroller
-  - atmel programmer
-  - atmel avr programmer
-  - atmega 8
-  - programming avr microcontrollers
-  - atmel attiny85
-  - diy avr programmer
-  - avr programmer usb
-  - make avr
-  - avr chips
-  - avr in microcontroller
-  - usb tiny isp programmer
-  - atmega8 programmer
-  - avr serial programmer
-  - c avr
-description: Complete guide to building a DIY AVR programmer using USBtinyISP. Learn how to program Atmel AVR microcontrollers including ATtiny and ATmega8 with this low-cost USB AVR programmer. Perfect for programming AVR microcontrollers and embedded systems development.
+  - USBtinyISP
+  - DIY AVR programmer
+  - AVR microcontroller
+  - ATtiny2313
+  - ATmega8
+  - USB programmer
+description: Build a low-cost DIY USB programmer for AVR microcontrollers. Walks through the circuit, fuse-bit configuration with avrdude, and how to program ATtiny and ATmega chips.
 ---
 
-**Atmel AVR microcontrollers** are the backbone of countless embedded systems projects, from simple robotics to complex IoT devices. These **avr chips** offer an unbeatable combination of low cost, versatility, and efficient resource utilization that makes them the go-to choice for developers worldwide. Whether you're working with an **ATtiny85**, **ATmega8**, or any other **Atmel microcontroller**, you'll need a reliable **AVR programmer** to upload your code.
+Atmel AVR chips power a lot of hobby and embedded projects — small, cheap, well-documented. To get code onto them you need a programmer, and commercial ISPs run $20–$40 for something that's basically an ATtiny running open-source firmware. The USBtinyISP flips that: it's a DIY programmer built around an ATtiny2313, costs a few dollars in parts, and works with almost any AVR target (ATtiny, ATmega, etc.).
 
-## Why Choose USBtinyISP as Your AVR Programmer?
+This post walks through building one.
 
-The **USBtinyISP** stands out as the perfect **DIY AVR programmer** solution for both beginners and experienced developers. This **USB AVR programmer** is built around the **ATtiny2313** microcontroller, making it an excellent example of **Atmel AVR** versatility - using one **AVR microcontroller** to program others!
+## What you need
 
-### Key Benefits of This USB Tiny ISP Programmer:
-- **Low-cost AVR programmer** solution
-- Compatible with most **Atmel AVR microcontrollers**
-- Functions as both **USBasp programmer** and **Atmel AVR programmer**
-- Perfect for **programming AVR microcontrollers** including **ATtiny** series and **ATmega8**
-- Supports **C AVR** development workflows
+- An ATtiny2313 (the microcontroller running the programmer firmware)
+- Passive components: resistors, capacitors, a 12 MHz crystal, a USB-B connector
+- A 6-pin ISP header to connect to target chips
+- A PCB or breadboard
 
-This **Atmel ATtiny** based programmer can handle everything from simple **ATtiny programmer** tasks to more complex **ATmega8 programmer** operations, making it your one-stop solution for **AVR in microcontroller** programming.
+The reference design is well documented — [Adafruit's USBtinyISP guide](https://learn.adafruit.com/usbtinyisp) has the schematic, PCB layout, and firmware image. Follow that for the build.
 
-## Building Your USBtinyISP: Step-by-Step Guide
+![USBtinyISP circuit](/images/usbtiny_circuit.png)
 
-To **make AVR** programming accessible and affordable, follow this comprehensive guide for building your own **USB AVR programmer**. This **Atmel programmer** will serve all your **AVR microcontroller** programming needs.
+## Bootstrapping: programming the ATtiny2313
 
-### Components You'll Need:
-- **ATtiny2313** microcontroller (the heart of your **USB ASP** programmer)
-- Standard electronic components (resistors, capacitors, USB connector)
-- PCB or breadboard for prototyping
+There's a chicken-and-egg problem: to flash the USBtinyISP firmware onto the ATtiny2313, you need another programmer. Any working ISP (a friend's, a commercial unit, an Arduino-as-ISP) will do — you only need it once.
 
-The schematic diagram below shows the complete circuit for your **USBtinyISP programmer**. Pay careful attention to the connections, as proper wiring is crucial for reliable **AVR serial programmer** functionality.
+Once the firmware is on the 2313, the board becomes self-sufficient.
 
-Refer to [this comprehensive Adafruit guide](https://learn.adafruit.com/usbtinyisp) for detailed instructions on programming the **ATtiny2313** with the USBtinyISP firmware.
+## Setting fuse bits
 
-![USB tiny circuit](/images/usbtiny_circuit.png)
-
-## Configuring Fuse Bits for Your Atmel AVR Programmer
-
-Proper fuse bit configuration is essential for any **Atmel AVR programmer** to function correctly. These special configuration bits control the behavior of your **AVR microcontroller** and must be set precisely for optimal **USBtinyISP** operation.
-
-### Setting Fuse Bits with AVRdude
-
-Use the following command to configure your **ATtiny programmer**:
+Fuse bits control clock source, brown-out detection, and reset behavior. For the USBtinyISP running at 12 MHz from an external crystal, set:
 
 ```bash
-avrdude -c usbasp -p t2313 -U hfuse:w:0xdf:m -U lfuse:w:0xef:m
+avrdude -c usbasp -p t2313 \
+  -U hfuse:w:0xdf:m \
+  -U lfuse:w:0xef:m
 ```
 
-**Important Note:** If you're using a **serial programmer** connection instead of **USB ASP**, replace `usbasp` with `stk200` in the command above.
+If you're bootstrapping with a serial-port ISP instead of USB, swap `-c usbasp` for `-c stk200`.
 
-This fuse bit configuration ensures your **USB tiny ISP programmer** will work reliably with all supported **Atmel microcontrollers**.
+## Using the programmer
 
-## Programming AVR Microcontrollers with Your USBtinyISP
+Once built and flashed, the USBtinyISP shows up as a USB device. avrdude talks to it out of the box:
 
-Once your **AVR programmer USB** device is configured, you're ready to start **programming AVR microcontrollers**! This versatile **Atmel AVR programmer** supports a wide range of targets:
+```bash
+# Read the target chip's signature to confirm the wiring
+avrdude -c usbtiny -p m8 -n
 
-### Supported Microcontrollers:
-- **ATtiny** series (ATtiny85, ATtiny13, ATtiny2313, etc.)
-- **ATmega** series (**ATmega8**, ATmega328P, ATmega32, etc.)
-- Most 8-bit **Atmel AVR microcontrollers**
-- Selected **Atmel 32-bit microcontrollers** (check compatibility)
+# Flash an ATmega8 with a compiled hex file
+avrdude -c usbtiny -p m8 -U flash:w:firmware.hex
+```
 
-### Programming Process:
-1. Connect your target **AVR microcontroller** to the **USBasp programmer**
-2. Use AVRdude or your preferred **C AVR** development environment
-3. Upload your compiled code to the **avr chips**
+Most AVR toolchains — Arduino IDE, PlatformIO, plain avr-gcc + avrdude — accept `usbtiny` as a programmer type, so you can use the same board across workflows.
 
-This **USB AVR** solution integrates seamlessly with popular development environments, making it perfect for **AVR in microcontroller** projects of any complexity.
+| Target family | Example chips | Notes |
+| --- | --- | --- |
+| ATtiny | ATtiny13, ATtiny85, ATtiny2313 | Fully supported |
+| ATmega (8-bit) | ATmega8, ATmega328P, ATmega32 | Fully supported |
+| AVR32 (32-bit) | AT32UC3 series | Check target datasheet first |
 
-## Real-World Results: My USBtinyISP Build
+## My build
 
-Here are photos of the actual **DIY AVR programmer** I constructed using this guide:
+Here's the board I ended up with:
 
-![](/images/040720129881.jpeg)
-![](/images/04072012989.jpeg)
+![USBtinyISP board, top view](/images/040720129881.jpeg)
+![USBtinyISP board, angled view](/images/04072012989.jpeg)
 
-## Why USBtinyISP is the Ultimate AVR Programmer Solution
+## Related
 
-This **USBasp programmer** design represents the perfect balance of simplicity, cost-effectiveness, and functionality for **Atmel AVR** development. Whether you're a student learning **AVR microcontroller** basics or a professional working on complex embedded systems, this **USB ASP** programmer delivers consistent results.
-
-### Key Advantages:
-- **Low-cost** alternative to commercial **AVR programmer** solutions
-- **DIY-friendly** design perfect for learning **AVR programming**
-- Compatible with standard **Atmel microcontroller** development tools
-- Supports both **ATtiny** and **ATmega** series microcontrollers
-- Reliable **USB AVR** connectivity
-
-The compact design and efficient **Atmel ATtiny** based architecture make this **USB tiny ISP programmer** an essential tool for anyone serious about **AVR microcontroller** development. From simple **ATtiny85** projects to complex **ATmega8 programmer** applications, this versatile **Atmel programmer** handles them all.
-
-Ready to start your **AVR programming** journey? This **USB AVR programmer** is your gateway to the exciting world of **Atmel AVR microcontrollers** and embedded systems development!
+- [Programming a standalone ATmega8 with Arduino code](/blog/2012/07/14/running-arduino-codes-in-stand-alone/)
+- [Finding the RC constant using an ATmega8](/blog/2012/07/14/finding-rc-constant-using-atmega8/)
+- [Introduction to AVR programming](/blog/2012/02/21/introduction-to-avr-programing/)

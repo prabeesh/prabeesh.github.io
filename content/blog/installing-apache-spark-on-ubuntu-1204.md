@@ -1,36 +1,32 @@
 ---
-title: "Complete Guide: Install Apache Spark on Linux (Ubuntu, CentOS) - 2024 Updated"
+title: "Install Apache Spark 3.5 on Linux (Ubuntu, CentOS)"
 date: 2013-11-26T12:24:00+05:30
-tags: [Apache Spark, Big Data, Installation Guide, Linux, Ubuntu]
+tags:
+  - Apache Spark
+  - installation
+  - Linux
+  - Ubuntu
 keywords:
-  - install Apache Spark 3.5
+  - install Apache Spark
   - Spark installation Linux
-  - Apache Spark Ubuntu 22.04
-  - Spark setup guide 2024
-  - Spark cluster installation
-  - Scala Spark installation
+  - Apache Spark Ubuntu
   - PySpark installation
-description: Complete step-by-step guide to install Apache Spark 3.5 on Linux systems including Ubuntu 22.04, CentOS, and other distributions. Learn standalone installation, cluster configuration, Python/Scala setup, and essential optimization for production environments.
+description: Install Apache Spark 3.5 on Linux (Ubuntu, CentOS) — binary distribution and from source. Covers Java/Python prerequisites, environment variables, standalone cluster, YARN and Kubernetes deploy modes, and HDFS integration.
 ---
 
-Apache Spark has evolved dramatically since its early releases, becoming the de facto standard for large-scale data processing and analytics. This comprehensive guide covers installing the latest Apache Spark 3.5+ on modern Linux distributions with best practices for both development and production environments.
+A walkthrough of installing Apache Spark 3.5 on modern Linux, from prerequisites through a working standalone cluster. Earlier versions are covered in [Install Apache Spark 1.0 on Ubuntu 14.04](/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/) and [Install Apache Spark 2 on Ubuntu 16.04 and macOS](/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/).
 
-**Update Notice**: This guide covers modern Apache Spark 3.5+ installation. For historical reference, our previous guides covered [Apache Spark 1.0 installation](/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/) and [Apache Spark 2.x setup](/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/).
+## Prerequisites
 
-Apache Spark is an open-source, distributed computing framework designed for fast processing of large datasets across clusters. Originally developed at UC Berkeley's AMPLab, Spark provides unified analytics capabilities including batch processing, real-time streaming, machine learning, and graph processing with clean APIs in Scala, Java, Python, and R.
+| Requirement | Version / Recommendation |
+| --- | --- |
+| Java | OpenJDK 17 (Spark 3.5 supports 8, 11, 17) |
+| Python | 3.8+ for PySpark |
+| Memory | 4 GB minimum, 8 GB+ for comfortable work |
+| Storage | 10 GB free for install + logs |
+| OS | Ubuntu 20.04+, CentOS 7+, or equivalent |
 
-## Prerequisites and System Requirements
-
-### Minimum System Requirements
-- **Java**: OpenJDK 8, 11, or 17 (Java 17 recommended for Spark 3.5+)
-- **Python**: 3.8+ (for PySpark usage)
-- **Memory**: 4GB RAM minimum, 8GB+ recommended
-- **Storage**: 10GB free space for installation and logs
-- **OS**: Ubuntu 20.04+, CentOS 7+, or equivalent Linux distribution
-
-### Pre-Installation Setup
-
-**Install Java (OpenJDK 17 recommended)**:
+### Install Java
 ```bash
 # Ubuntu/Debian
 sudo apt update
@@ -44,7 +40,7 @@ java -version
 javac -version
 ```
 
-**Set JAVA_HOME environment variable**:
+Set JAVA_HOME environment variable:
 ```bash
 # Add to ~/.bashrc or ~/.profile
 echo 'export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64' >> ~/.bashrc
@@ -71,7 +67,7 @@ pip3 install py4j pandas numpy matplotlib
 
 ### Method 1: Binary Distribution (Recommended for Most Users)
 
-**Download the latest Spark distribution**:
+Download the latest Spark distribution:
 ```bash
 # Navigate to your preferred installation directory
 cd /opt
@@ -83,7 +79,7 @@ sudo wget https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hado
 # sudo wget https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3-scala2.13.tgz
 ```
 
-**Extract and setup Spark**:
+Extract and setup Spark:
 ```bash
 # Extract the archive
 sudo tar -xzf spark-3.5.0-bin-hadoop3.tgz
@@ -95,7 +91,7 @@ sudo ln -sf spark-3.5.0-bin-hadoop3 spark
 sudo chown -R $USER:$USER /opt/spark-3.5.0-bin-hadoop3
 ```
 
-**Configure environment variables**:
+Configure environment variables:
 ```bash
 # Add to ~/.bashrc
 echo 'export SPARK_HOME=/opt/spark' >> ~/.bashrc
@@ -109,7 +105,7 @@ source ~/.bashrc
 
 ### Method 2: Building from Source (Advanced Users)
 
-**For users needing specific configurations or latest development features**:
+For users needing specific configurations or latest development features:
 ```bash
 # Install build dependencies
 sudo apt install git maven scala
@@ -128,14 +124,14 @@ cd spark
 
 ### Basic Configuration
 
-**Create Spark configuration directory**:
+Create Spark configuration directory:
 ```bash
 cd $SPARK_HOME/conf
 cp spark-defaults.conf.template spark-defaults.conf
 cp spark-env.sh.template spark-env.sh
 ```
 
-**Essential spark-defaults.conf settings**:
+Essential spark-defaults.conf settings:
 ```bash
 # Edit spark-defaults.conf
 nano spark-defaults.conf
@@ -163,7 +159,7 @@ spark.dynamicAllocation.maxExecutors    4
 spark.serializer                 org.apache.spark.serializer.KryoSerializer
 ```
 
-**Configure spark-env.sh**:
+Configure spark-env.sh:
 ```bash
 # Edit spark-env.sh
 nano spark-env.sh
@@ -218,7 +214,7 @@ Expected output: `Pi is roughly 3.141592653589793`
 
 ### Performance Validation Tests
 
-**Test Spark with different configurations**:
+Test Spark with different configurations:
 ```bash
 # Test with local cluster
 spark-submit \
@@ -234,7 +230,7 @@ spark-submit \
 
 ### Standalone Cluster Configuration
 
-**Start Spark Master**:
+Start Spark Master:
 ```bash
 # Start master node
 start-master.sh
@@ -243,7 +239,7 @@ start-master.sh
 # Open browser to http://localhost:8080
 ```
 
-**Start Spark Worker(s)**:
+Start Spark Worker(s):
 ```bash
 # Start worker node
 start-worker.sh spark://localhost:7077
@@ -253,7 +249,7 @@ start-worker.sh -c 1 -m 1g spark://localhost:7077
 start-worker.sh -c 1 -m 1g spark://localhost:7077
 ```
 
-**Test cluster deployment**:
+Test cluster deployment:
 ```bash
 # Submit job to cluster
 spark-submit \
@@ -269,7 +265,7 @@ spark-submit \
 
 ### Working with HDFS
 
-**For existing Hadoop clusters**:
+For existing Hadoop clusters:
 ```bash
 # Ensure Spark is built with correct Hadoop version
 # Check your Hadoop version
@@ -280,7 +276,7 @@ hadoop version
 wget https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz
 ```
 
-**Test HDFS integration**:
+Test HDFS integration:
 ```bash
 # Start spark-shell with HDFS access
 spark-shell
@@ -295,7 +291,7 @@ scala> wordCounts.saveAsTextFile("hdfs://namenode:9000/path/to/output")
 
 ### IDE Integration
 
-**IntelliJ IDEA Setup**:
+IntelliJ IDEA Setup:
 1. Install Scala plugin
 2. Create new SBT project
 3. Add Spark dependencies to build.sbt:
@@ -312,7 +308,7 @@ libraryDependencies ++= Seq(
 )
 ```
 
-**VS Code Setup for PySpark**:
+VS Code Setup for PySpark:
 ```bash
 # Install Python extension
 # Install Pylint for Python linting
@@ -401,7 +397,7 @@ Now that you have Spark installed and configured, explore these advanced topics:
 
 ## Maintenance and Updates
 
-**Regular maintenance tasks**:
+Regular maintenance tasks:
 ```bash
 # Update Spark (backup configurations first)
 # Download new version and update SPARK_HOME

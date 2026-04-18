@@ -40,7 +40,7 @@ Mosquitto is a robust, open-source MQTT broker written in C, designed for effici
 - **Bridge Functionality**: Connects multiple brokers for distributed deployments
 - **WebSocket Support**: Enables browser-based MQTT clients
 
-**Installation on Ubuntu/Debian**:
+Installation on Ubuntu/Debian:
 ```bash
 # Install Mosquitto broker and clients
 sudo apt-get update
@@ -92,7 +92,7 @@ Our complete MQTT implementation is available in the [GitHub repository](https:/
 
 #### Project Setup and Dependencies
 
-**Enhanced `build.sbt` configuration**:
+Enhanced `build.sbt` configuration:
 ```scala
 // build.sbt
 name := "MQTTScalaClient"
@@ -515,7 +515,7 @@ metrics/network -> Dashboard
 
 ### Testing Your MQTT Implementation
 
-**Terminal Testing**:
+Terminal Testing:
 ```bash
 # Test publisher (in one terminal)
 mosquitto_pub -t sensors/test -m "Hello from command line"
@@ -524,7 +524,7 @@ mosquitto_pub -t sensors/test -m "Hello from command line"
 mosquitto_sub -t "sensors/+" -v
 ```
 
-**Load Testing**:
+Load Testing:
 ```bash
 # Publish multiple messages rapidly
 for i in {1..1000}; do 

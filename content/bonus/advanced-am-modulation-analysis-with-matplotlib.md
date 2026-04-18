@@ -1,48 +1,27 @@
 ---
-title: "Advanced AM Modulation Analysis with Matplotlib: Real-World Applications and Advanced Techniques"
+title: "Advanced AM Modulation Analysis with Matplotlib"
 date: 2024-01-25T10:00:00+01:00
 draft: false
-tags: [Python, Matplotlib, AM modulation, signal processing, advanced visualization, frequency analysis, modulation index, sideband analysis, real-world applications, radio communication, signal quality, modulation depth, carrier power, sideband power, spectrum analysis, FFT analysis, modulation efficiency, signal-to-noise ratio, bandwidth analysis, modulation distortion]
+tags:
+  - Python
+  - Matplotlib
+  - AM modulation
+  - signal processing
+  - FFT
 keywords:
   - AM modulation analysis
   - matplotlib signal processing
-  - frequency domain
+  - FFT in Python
   - sideband analysis
-  - FFT AM
   - modulation index
-description: Master advanced AM modulation analysis techniques using Matplotlib. Learn about modulation index calculation, sideband analysis, frequency domain visualization, real-world applications, and signal quality measurements. Build upon basic AM generation with sophisticated analysis and visualization techniques for professional signal processing applications.
+description: Go beyond basic AM waveforms. Build a reusable Matplotlib + NumPy analyzer that calculates modulation index, inspects sidebands via FFT, measures signal quality, and handles noise.
 ---
 
-Building upon our foundational guide on [AM Wave Generation and Plotting with Matplotlib](/blog/2011/09/25/am-plot-matplotlib/), this bonus article explores advanced AM modulation analysis techniques that are essential for real-world signal processing applications. While the original post covered basic AM generation and plotting, this advanced guide delves into modulation index analysis, sideband examination, frequency domain visualization, and practical applications that professionals encounter in radio communication, broadcasting, and signal analysis.
+This post builds on [AM Wave Generation and Plotting with Matplotlib](/blog/2011/09/25/am-plot-matplotlib/). Once you can generate an AM waveform, the interesting question is: is it any good? That means measuring modulation index, inspecting the spectrum, and understanding how noise degrades the signal. Below is a reusable `AdvancedAMAnalyzer` class that handles all of it, plus worked examples.
 
-If you haven't read our basic AM generation guide yet, we recommend starting there to understand the fundamentals of amplitude modulation, carrier signals, and basic plotting techniques before diving into these advanced concepts.
+## A reusable analyzer class
 
-## Table of Contents
-
-### [1. Advanced AM Modulation Analysis Framework](#advanced-am-modulation-analysis-framework)
-- [1.1 Comprehensive AM Signal Analysis Class](#comprehensive-am-signal-analysis-class)
-
-### [2. Real-World AM Signal Analysis](#real-world-am-signal-analysis)
-- [2.1 Modulation Index Analysis and Visualization](#modulation-index-analysis-and-visualization)
-
-### [3. Advanced Frequency Domain Analysis](#advanced-frequency-domain-analysis)
-- [3.1 Sideband Power Distribution Analysis](#sideband-power-distribution-analysis)
-
-### [4. Real-World Applications and Case Studies](#real-world-applications-and-case-studies)
-- [4.1 AM Broadcasting Signal Analysis](#am-broadcasting-signal-analysis)
-
-### [5. Advanced Signal Processing Techniques](#advanced-signal-processing-techniques)
-- [5.1 Noise Analysis and Filtering](#noise-analysis-and-filtering)
-
-### [6. Practical Implementation: AM Signal Quality Monitor](#practical-implementation-am-signal-quality-monitor)
-
-### [7. Conclusion](#conclusion)
-
----
-
-## Advanced AM Modulation Analysis Framework
-
-### Comprehensive AM Signal Analysis Class
+The class holds the sample rate and duration, and exposes three operations: generate a signal, calculate the modulation index from the envelope, and analyze the sideband spectrum via FFT.
 
 ```python
 import matplotlib.pyplot as plt
@@ -137,9 +116,9 @@ class AdvancedAMAnalyzer:
 analyzer = AdvancedAMAnalyzer(sampling_rate=10000, duration=1.0)
 ```
 
-## Real-World AM Signal Analysis
+## Modulation index examples
 
-### Modulation Index Analysis and Visualization
+The modulation index `m` controls how deeply the message modulates the carrier. Below `m = 1.0` the envelope stays positive; at `m = 1.0` it just touches zero; above `m = 1.0` the envelope flips sign and you get phase reversals that most receivers won't demodulate cleanly. The function below plots five different indices side by side, showing both the time-domain envelope and the frequency spectrum.
 
 ```python
 def analyze_modulation_depth_examples():
@@ -193,9 +172,9 @@ def analyze_modulation_depth_examples():
 analyze_modulation_depth_examples()
 ```
 
-## Advanced Frequency Domain Analysis
+## Sideband power distribution
 
-### Sideband Power Distribution Analysis
+In AM, the total transmitted power splits between the carrier and the two sidebands. The carrier carries no information, so the share of power in the sidebands is a direct measure of transmission efficiency — and it scales with `m²/2`. This function sweeps the modulation index and plots how the power redistributes.
 
 ```python
 def sideband_power_analysis():
@@ -290,9 +269,9 @@ def sideband_power_analysis():
 sideband_power_analysis()
 ```
 
-## Real-World Applications and Case Studies
+## Case study: an AM broadcast signal
 
-### AM Broadcasting Signal Analysis
+A realistic AM broadcast uses a ~1 MHz carrier modulated by audio up to ~5 kHz. This example simulates one second of that, then shows the time domain (zoomed and full), the spectrum around the carrier, and the calculated quality metrics.
 
 ```python
 def am_broadcasting_analysis():
@@ -434,9 +413,9 @@ def am_broadcasting_analysis():
 am_broadcasting_analysis()
 ```
 
-## Advanced Signal Processing Techniques
+## Noise and filtering
 
-### Noise Analysis and Filtering
+AM is vulnerable to additive noise because the message lives in the envelope — any amplitude perturbation distorts it. Below compares Gaussian, impulse, and sinusoidal interference, and recovers each with a Butterworth low-pass filter.
 
 ```python
 def noise_analysis_and_filtering():
@@ -519,7 +498,9 @@ def noise_analysis_and_filtering():
 noise_analysis_and_filtering()
 ```
 
-## Practical Implementation: AM Signal Quality Monitor
+## Putting it all together: a signal-quality monitor
+
+The final example wraps everything above into a small monitor class that produces a dashboard with the envelope, a radar chart of quality metrics, power distribution, and an overall 0–100 score.
 
 ```python
 class AMSignalQualityMonitor:
@@ -676,20 +657,9 @@ def demonstrate_quality_monitor():
 demonstrate_quality_monitor()
 ```
 
-## Conclusion
+## Summary
 
-This advanced AM modulation analysis guide builds upon the foundational concepts from our original post, providing you with sophisticated tools and techniques for real-world signal processing applications. The comprehensive analysis framework, real-world case studies, and practical implementation examples demonstrate how to move beyond basic AM generation to professional-grade signal analysis.
+With a few hundred lines of NumPy and Matplotlib you can measure every interesting property of an AM signal: the modulation index from the envelope, the power split across carrier and sidebands via FFT, the impact of noise, and the effectiveness of a low-pass filter. The monitor class ties it together into a single function call.
 
-Key takeaways from this advanced guide include:
+For a gentler starting point, see the original [AM Wave Generation and Plotting](/blog/2011/09/25/am-plot-matplotlib/) post. The same FFT + envelope-detection approach also works for demodulating real recordings — e.g. from an SDR capture — if you resample down to a manageable rate first.
 
-1. **Modulation Index Analysis**: Understanding and calculating modulation depth for optimal signal quality
-2. **Sideband Analysis**: Examining power distribution and efficiency in carrier and sideband components
-3. **Frequency Domain Visualization**: Advanced spectral analysis using FFT techniques
-4. **Signal Quality Metrics**: Comprehensive quality assessment including SNR, distortion, and efficiency
-5. **Real-World Applications**: Practical implementation for broadcasting and communication systems
-6. **Noise Analysis**: Understanding signal behavior under different noise conditions
-7. **Quality Monitoring**: Building automated systems for signal quality assessment
-
-These advanced techniques are essential for professionals working in radio communication, broadcasting, signal processing, and related fields where precise AM signal analysis is critical for system performance and compliance.
-
-For further exploration, consider applying these techniques to other modulation schemes (FM, PM) or extending the analysis to include digital modulation techniques. The mathematical foundations and visualization approaches developed here provide a solid foundation for more complex signal processing applications.
