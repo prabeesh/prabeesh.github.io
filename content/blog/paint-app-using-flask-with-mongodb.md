@@ -17,28 +17,28 @@ description: Build a small web paint app backed by Flask and MongoDB. Covers the
 
 Schema-less, document-shaped data like freehand drawings is a good fit for MongoDB: there's no rigid table to design around stroke coordinates that vary per drawing. This post ties the canvas front-end to a Flask backend that persists drawings in MongoDB.
 
-## Why MongoDB for a Paint Application?
+## Why MongoDB for a paint application?
 
 Traditional relational databases work well for structured data, but a paint application generates dynamic, varied data structures. Each drawing might have different numbers of strokes, colors, and coordinate arrays. MongoDB's document-oriented approach handles this variability naturally.
 
-### Key Benefits of MongoDB for This Use Case
+### Key benefits of MongoDB for this use case
 
 - No rigid schema requirements, perfect for storing varying drawing data structures
 - Horizontal scaling for handling multiple concurrent users
 - Fast read/write operations for real-time drawing data persistence
 - Seamless integration with Flask's JSON handling and JavaScript frontend
 
-## Setting Up MongoDB
+## Setting up MongoDB
 
 MongoDB is an open-source, document-oriented database designed for ease of development and scaling. You can install MongoDB locally by following the instructions from the [official MongoDB installation guide](https://docs.mongodb.com/manual/installation/).
 
 Once installed, start the MongoDB service and connect using the mongo shell to familiarize yourself with basic operations.
 
-## Essential MongoDB Commands for Development
+## Essential MongoDB commands for development
 
 Here are the core MongoDB operations you'll use while developing the paint application:
 
-### Database Operations
+### Database operations
 ```bash
 # Show current database
 db
@@ -53,7 +53,7 @@ use paintapp
 help
 ```
 
-### Collection Operations
+### Collection operations
 ```bash
 # Insert a new drawing document
 db.drawings.insert({
@@ -83,7 +83,7 @@ db.drawings.remove({"_id": ObjectId("...")})
 
 MongoDB's cursor displays only the first 20 documents by default. Use the `it` command to iterate through additional results when working with larger datasets.
 
-## Flask Application Architecture
+## Flask application architecture
 
 The paint application follows a clean separation between the frontend Canvas API for drawing interactions and the Flask backend for data persistence. Here's how the components work together:
 
@@ -99,7 +99,7 @@ The paint application follows a clean separation between the frontend Canvas API
 - Manages user sessions and drawing metadata
 - Interfaces with MongoDB for data persistence
 
-## Source Code and Further Learning
+## Source code and further learning
 
 The complete source code for this Flask-MongoDB paint application is available on [GitHub](https://github.com/prabeesh/Paintapp-Javascript-Canvas-Flask-MongoDB). The repository includes:
 
@@ -109,7 +109,7 @@ The complete source code for this Flask-MongoDB paint application is available o
 - CSS styling and responsive design
 - Sample drawing data and test cases
 
-## Next Steps
+## Next steps
 
 Once you have the basic paint app running, consider adding:
 

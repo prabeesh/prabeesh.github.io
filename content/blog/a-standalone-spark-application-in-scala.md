@@ -16,7 +16,7 @@ description: Build a standalone Spark Streaming app in Scala that surfaces popul
 ---
 This post walks through building a Spark Streaming application in Scala that extracts popular hashtags from the Twitter firehose, packaged with sbt, and runnable from the Eclipse IDE via the sbteclipse plugin.
 
-## Building Spark Application using SBT
+## Building a Spark application using SBT
 A standalone Scala application built against the Apache Spark API and packaged with sbt (Simple Build Tool).
 
 For  creating a stand alone app take the twitter popular tag [example](https://github.com/apache/spark/blob/branch-0.9/examples/src/main/scala/org/apache/spark/streaming/examples/TwitterPopularTags.scala)
