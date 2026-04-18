@@ -534,4 +534,4 @@ done
 
 This comprehensive MQTT tutorial provides a solid foundation for building scalable, reliable IoT messaging systems in Scala. The combination of Eclipse Paho's robust client library with Scala's functional programming capabilities creates an excellent platform for modern distributed applications.
 
-For more advanced Scala tutorials and IoT development patterns, explore our related guides on [Apache Spark for IoT data processing](/blog/2023/01/06/performance-tuning-on-apache-spark/) and [building real-time data pipelines](#).
+For more advanced Scala tutorials and IoT development patterns, explore our guide on [Apache Spark performance tuning](/blog/2023/01/06/performance-tuning-on-apache-spark/).
