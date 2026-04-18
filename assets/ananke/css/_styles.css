@@ -20,3 +20,52 @@
 .nested-links a{
   overflow-wrap: break-word;
 }
+
+/* Readable tables for content (quick-reference, FAQ, etc.)
+   Scoped to .lh-copy so theme-level tables (admin, etc.) aren't touched. */
+.lh-copy table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.lh-copy table thead {
+  background: #f6f8fa;
+  border-bottom: 2px solid #d0d7de;
+}
+.lh-copy table th,
+.lh-copy table td {
+  padding: 0.625rem 0.875rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #eaecef;
+}
+.lh-copy table th {
+  font-weight: 600;
+  color: #24292f;
+  white-space: nowrap;
+}
+.lh-copy table tbody tr:hover {
+  background: #f6f8fa;
+}
+.lh-copy table code {
+  font-size: 0.85em;
+  background: #eef1f4;
+  color: #24292f;
+  padding: 0.125rem 0.375rem;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+/* On wide screens, drop the scroll container so tables align with the text column */
+@media (min-width: 60em) {
+  .lh-copy table {
+    display: table;
+    overflow-x: visible;
+  }
+}
+
