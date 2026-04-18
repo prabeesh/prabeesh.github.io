@@ -6,21 +6,14 @@ tags:
   - PySpark
   - design patterns
   - data pipelines
-  - factory pattern
-  - singleton pattern
-  - builder pattern
-  - observer pattern
-  - pipeline pattern
   - data engineering
 keywords:
   - PySpark design patterns
   - PySpark tutorial
   - data pipeline design patterns
-  - factory pattern PySpark
-  - singleton pattern PySpark
-  - builder pattern PySpark
-  - observer pattern PySpark
-  - pipeline pattern PySpark
+  - creational design patterns PySpark
+  - PySpark pipeline architecture
+  - PySpark factory singleton builder
 description: A hands-on PySpark tutorial applying five classic design patterns, factory, singleton, builder, observer, and pipeline, to data pipelines.
 ---
 
@@ -351,8 +344,8 @@ Yes. In Python, abstract base classes live in the `abc` module; any class that i
 
 ### Where can I learn more PySpark design patterns?
 
-Keep going: [Advanced PySpark Design Patterns: Real-World Implementation Examples](/bonus/advanced-pyspark-design-patterns-implementation/) covers strategy, decorator, command, and template method patterns. For a one-page cheat sheet, see the [PySpark Design Patterns Quick Reference](/bonus/pyspark-design-patterns-quick-reference/). And if you're tuning an existing pipeline, [Apache Spark Performance Tuning](/blog/2023/01/06/performance-tuning-on-apache-spark/) pairs well with these patterns.
+Keep going: [Advanced PySpark Design Patterns: Real-World Implementation Examples](/bonus/advanced-pyspark-design-patterns-implementation/) covers strategy, decorator, and template method patterns. For a one-page cheat sheet, see the [PySpark Design Patterns Quick Reference](/bonus/pyspark-design-patterns-quick-reference/). And if you're tuning an existing pipeline, [Apache Spark Performance Tuning](/blog/2023/01/06/performance-tuning-on-apache-spark/) pairs well with these patterns.
 
 ## Conclusion
 
-We covered five essential design patterns, factory, singleton, builder, observer, and pipeline, and showed how each one improves a real PySpark data pipeline. Used together they cover most production needs: flexible data sources, shared resources, configurable transforms, event fan-out, and readable ETL chains. The next step is to try each one on a small PySpark job of your own, nothing locks the lessons in faster than running the code.
+The five patterns above cover most production needs: flexible data sources (factory), shared resources (singleton), configurable transforms (builder), event fan-out (observer), and readable ETL chains (pipeline). The next step is to try each one on a small PySpark job of your own, nothing locks the lessons in faster than running the code.

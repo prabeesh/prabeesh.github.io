@@ -1,5 +1,5 @@
 ---
-title: "Apache Spark Performance Tuning: Spill, Skew, Shuffle, Storage, and Serialization"
+title: "Apache Spark Performance Tuning: Spill, Skew, Shuffle, Storage"
 date: 2023-01-06T11:51:39+01:00
 author: Prabeesh Keezhathra
 tags:

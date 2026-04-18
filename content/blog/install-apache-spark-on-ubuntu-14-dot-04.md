@@ -21,7 +21,7 @@ Start with Java:
 	$ sudo apt-get update
 	$ sudo apt-get install oracle-java7-installer
 ```
- To check the Java installation is successful 
+ To check that the Java installation is successful:
 ```
 	$ java -version
 ```
@@ -33,7 +33,7 @@ Java(TM) SE Runtime Environment (build 1.7.0_72-b14)_
 Java HotSpot(TM) 64-Bit Server VM (build 24.72-b04, mixed mode)
 `
 
-In next step is install Scala, follow the following 
+The next step is to install Scala. Follow the following 
 instructions to set up Scala. <!--more--> First download the Scala from [Scala Official Website](http://www.scala-lang.org/download/2.10.4.html)
 
 
@@ -52,7 +52,7 @@ And add following in the end of the file
 	export SCALA_HOME=/usr/local/src/scala/scala-2.10.4
 	export PATH=$SCALA_HOME/bin:$PATH
 ```
-restart bashrc
+Restart bashrc:
 ```
 	$ . .bashrc
 ```
@@ -70,7 +70,7 @@ Or just type scala. It goes to scala interactive shell
 	$ scala
 	scala>
 ```
-In next step install git. Spark build depends on git.
+In the next step, install git. Spark build depends on git.
 ```
 sudo apt-get install git
 ```

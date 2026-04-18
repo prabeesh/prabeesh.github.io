@@ -1,5 +1,5 @@
 ---
-title: "LCD Interfacing with an MSP430 Microcontroller: Displaying ADC Readings"
+title: "MSP430 LCD Interfacing: Displaying ADC Readings"
 date: 2012-07-04T2:39:00+05:30
 tags:
   - MSP430

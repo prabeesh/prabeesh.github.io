@@ -75,4 +75,4 @@ This will create the JAR file in the `target/scala_2.10/ directory`. The name of
 
 You can find an example project on how to create an assembled JAR for a Spark application on [GitHub](https://github.com/prabeesh/SparkTwitterAnalysis).
 
-Creating an assembled JAR for a standalone Spark application is a straightforward process when using the `sbt-assembly` plugin. By following the steps outlined in this guide, you can easily create a fat JAR for your Spark application.
+Once you have the fat JAR, see [Apache Spark Performance Tuning](/blog/2023/01/06/performance-tuning-on-apache-spark/) for tuning the job it runs.

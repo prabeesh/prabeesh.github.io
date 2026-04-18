@@ -36,7 +36,7 @@ $ sudo make
 $ sudo make check
 $ sudo make install
 ```
-You can pass the --prefix option while configuring to tell where to install. For example <!--more-->, pass`__--prefix=/home/user/mesos__`. By default the prefix is `__/usr/local__`.
+You can pass the --prefix option while configuring to tell where to install. For example <!--more-->, pass `--prefix=/home/user/mesos`. By default the prefix is `/usr/local`.
 Once you are done with the installation, it is now time to start your mesos cluster:
 
 Go into the directory where you built Mesos.
@@ -47,8 +47,8 @@ Run the command to launch the master.
 ```
 $ sh mesos-master.sh 
 ```  
-Take note of the IP and port that the master is running on, which will look something like **__[IP of the machine]:5050__**. 
-URL of master: __mesos://[IP of the machine]:5050__. View the master's web UI at __`http://[IP of the machine]:5050`__.
+Take note of the IP and port that the master is running on, which will look something like `[IP of the machine]:5050`. 
+URL of master: `mesos://[IP of the machine]:5050`. View the master's web UI at `http://[IP of the machine]:5050`.
 
 Copy mesos-0.13.0 and mesos to the same paths on all the nodes in the cluster. To launch a slave, go to below directory 
 ```

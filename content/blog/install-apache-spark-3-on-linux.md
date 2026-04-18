@@ -214,7 +214,7 @@ spark-submit \
 
 Expected output: `Pi is roughly 3.141592653589793`
 
-### Performance Validation Tests
+### Performance validation tests
 
 Test with different configurations:
 ```bash
@@ -228,9 +228,9 @@ spark-submit \
     100
 ```
 
-## Cluster Setup (Optional but Recommended)
+## Cluster setup (optional but recommended)
 
-### Standalone Cluster Configuration
+### Standalone cluster configuration
 
 Start Spark Master:
 ```bash
@@ -263,7 +263,7 @@ spark-submit \
     100
 ```
 
-## Hadoop Integration
+## Hadoop integration
 
 ### Working with HDFS
 
@@ -289,11 +289,11 @@ scala> val wordCounts = textFile.flatMap(line => line.split(" ")).map(word => (w
 scala> wordCounts.saveAsTextFile("hdfs://namenode:9000/path/to/output")
 ```
 
-## Development Environment Setup
+## Development environment setup
 
-### IDE Integration
+### IDE integration
 
-IntelliJ IDEA Setup:
+IntelliJ IDEA setup:
 1. Install Scala plugin
 2. Create new SBT project
 3. Add Spark dependencies to build.sbt:
@@ -310,7 +310,7 @@ libraryDependencies ++= Seq(
 )
 ```
 
-VS Code Setup for PySpark:
+VS Code setup for PySpark:
 ```bash
 # Install Python extension
 # Install Pylint for Python linting
@@ -322,9 +322,9 @@ source spark-env/bin/activate
 pip install pyspark pandas numpy jupyter
 ```
 
-## Production Deployment Considerations
+## Production deployment considerations
 
-### Security Configuration
+### Security configuration
 ```bash
 # Enable authentication
 spark.authenticate true
@@ -336,7 +336,7 @@ spark.ssl.keyStore /path/to/keystore.jks
 spark.ssl.keyStorePassword yourKeystorePassword
 ```
 
-### Monitoring and Logging
+### Monitoring and logging
 ```bash
 # Enable history server
 start-history-server.sh
@@ -348,7 +348,7 @@ cp log4j.properties.template log4j.properties
 # Edit log4j.properties for appropriate log levels
 ```
 
-### Resource Management
+### Resource management
 ```bash
 # For YARN integration
 export HADOOP_CONF_DIR=/path/to/hadoop/conf
@@ -362,9 +362,9 @@ spark-submit \
     your-application.py
 ```
 
-## Troubleshooting Common Issues
+## Troubleshooting common issues
 
-### Memory Issues
+### Memory issues
 ```bash
 # Increase driver memory
 spark-submit --driver-memory 4g your-app.jar
@@ -373,14 +373,14 @@ spark-submit --driver-memory 4g your-app.jar
 spark-submit --executor-memory 2g your-app.jar
 ```
 
-### Java Version Conflicts
+### Java version conflicts
 ```bash
 # Ensure consistent Java version
 update-alternatives --config java
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 ```
 
-### Network Binding Issues
+### Network binding issues
 ```bash
 # Configure specific network interface
 export SPARK_MASTER_HOST=192.168.1.100
