@@ -1,22 +1,22 @@
 ---
-title: "Advanced PySpark Design Patterns: Real-World Implementation Examples"
+title: "Advanced PySpark Design Patterns: Implementation Examples"
 date: 2024-01-15T10:00:00+01:00
 draft: false
-tags: [PySpark, design patterns, advanced patterns, data engineering, best practices, strategy pattern, decorator pattern, command pattern, template method pattern]
+tags:
+  - PySpark
+  - design patterns
+  - data engineering
 keywords:
-  - advanced PySpark design patterns
-  - real-world PySpark patterns
   - PySpark strategy pattern
   - PySpark decorator pattern
   - PySpark command pattern
   - PySpark template method pattern
-  - data engineering design patterns
-description: Explore advanced design patterns in PySpark with real-world implementation examples. Learn about Strategy, Decorator, Command, and Template Method patterns to build more sophisticated and maintainable data pipelines.
+description: "Four advanced design patterns applied to PySpark pipelines, with runnable examples: strategy, decorator, command, and template method."
 ---
 
-Building upon our previous discussion of basic design patterns in PySpark data pipelines,[Improve PySpark Data Pipelines with Design Patterns: Learn about Factory, Singleton, Builder, Observer, and Pipeline Patterns](/bonus/implementing-design-patterns-in-pyspark-data-pipelines/),this bonus article explores more advanced patterns that can significantly enhance the flexibility, maintainability, and extensibility of your data processing systems. We'll dive into four advanced patterns with practical, production-ready examples.
+This builds on [basic design patterns in PySpark pipelines](/bonus/implementing-design-patterns-in-pyspark-data-pipelines/) (factory, singleton, builder, observer, pipeline). Once those are familiar, four more patterns cover the more complex cases that come up in production: switching algorithms at runtime, cross-cutting concerns, undoable operations, and shared skeleton logic.
 
-## Strategy Pattern: Dynamic Data Processing Algorithms
+## Strategy: swap algorithms at runtime
 
 The Strategy pattern allows you to define a family of algorithms, encapsulate each one, and make them interchangeable. This is particularly useful in data pipelines where you need to apply different processing strategies based on data characteristics or business requirements.
 
@@ -646,12 +646,8 @@ When implementing these advanced patterns in PySpark, consider the following bes
 - Maintain API documentation
 - Include performance characteristics
 
-## Conclusion
+## Summary
 
-Advanced design patterns in PySpark provide powerful tools for building sophisticated, maintainable, and extensible data pipelines. The Strategy, Decorator, Command, and Template Method patterns offer different approaches to solving complex data processing challenges.
-
-By implementing these patterns thoughtfully and following best practices, you can create data pipelines that are not only functional but also robust, maintainable, and scalable. Remember to always consider the specific requirements of your use case and choose the patterns that best fit your needs.
-
-In the next bonus article, we'll explore more advanced patterns and real-world case studies showing how these patterns can be combined to solve complex data engineering challenges.
+Strategy, decorator, command, and template method each solve a different problem: runtime algorithm swap, orthogonal concerns, undoable operations, and shared skeletons. Combined with the five [basic patterns](/bonus/implementing-design-patterns-in-pyspark-data-pipelines/), they cover most of the structural shapes you'll reach for in a production pipeline. Start simple; only reach for an advanced pattern when the basic one stops fitting.
 ```
 

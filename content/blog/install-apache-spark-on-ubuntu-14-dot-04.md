@@ -1,18 +1,17 @@
 ---
-title: "Install Apache Spark on Ubuntu-14.04"
+title: "Install Apache Spark on Ubuntu 14.04"
 date: 2014-10-31 13:58:31 +0530
-tags: [Apache Spark, Big Data]
+tags: [Apache Spark, Ubuntu]
 keywords:
-  - install Apache Spark Ubuntu 14.04
-  - Spark installation guide
-  - Spark on Ubuntu
-  - spark-submit
-description: This tutorial provides step-by-step instructions to install and set up Apache Spark on Ubuntu. It covers the installation of Java, Scala, and Git, as well as the download and building of Spark. The tutorial also includes examples of running Spark programs and accessing Hadoop filesystems. Whether you're new to Spark or looking to set it up on your Ubuntu machine, this guide will help you get started.
+  - install Spark Ubuntu 14.04
+  - Spark 1.1.0 setup
+  - sbt build Spark
+  - spark-shell
+description: Install Apache Spark 1.1.0 on Ubuntu 14.04. Covers Java, Scala, and git prerequisites, the sbt assembly build, the Spark shell, streaming MQTT, and rebuilding against a specific Hadoop version.
 ---
-Update: For Apache Spark 2 refer latest [post](/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/)
---- 
+Update: For Spark 2 see the [Ubuntu 16.04 and macOS post](/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/).
 
-One of the [previous post](/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/) mentioning about install **Apache Spark-0.8.0** on Ubuntu-12.04. In this post  explain about detailed steps to set up **Apache Spark-1.1.0** on Ubuntu. For running Spark in Ubuntu machine should install Java.  Using following commands  easily install Java in Ubuntu machine.
+The [earlier post](/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/) covered Spark 0.8.0 on Ubuntu 12.04. This one walks through Spark 1.1.0 on Ubuntu 14.04. Start with Java:
 ```
 	$ sudo apt-add-repository ppa:webupd8team/java
 	$ sudo apt-get update

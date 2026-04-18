@@ -1,22 +1,20 @@
 ---
-title: "Building Self-Contained PySpark Applications: Complete Development Guide"
+title: "Building Self-Contained PySpark Applications"
 date: 2015-04-07 21:05:30 +0530
 author: Prabeesh Keezhathra
-tags: [Apache Spark, PySpark, Python, Big Data, Application Development, spark-submit]
+tags:
+  - Apache Spark
+  - PySpark
+  - Python
+  - spark-submit
 keywords:
-  - standalone PySpark application development
-  - PySpark production deployment
-  - Python Apache Spark tutorial
-  - spark-submit configuration
-  - PySpark environment setup
-  - self-contained Spark applications
-  - PySpark project structure
-  - Python Spark best practices
-description: Learn to build production-ready standalone PySpark applications from development to deployment. Master environment setup, spark-submit configuration, and Python integration with Apache Spark for scalable data processing solutions.
+  - standalone PySpark
+  - spark-submit Python
+  - self-contained PySpark
+  - PySpark deployment
+description: Go from the `pyspark` REPL to a self-contained Python application you can ship with `spark-submit`. Covers project layout, dependencies, and submission.
 ---
-In my [previous post](/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/), I wrote about installation of Spark and Scala interactive shell. Here in this post, we'll see how to do the same in Python. 
-
-Similar to Scala interactive shell, there is an interactive shell available for Python. You can run it with the below command from spark root folder:
+The [earlier install post](/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/) covered the Scala interactive shell. This one shows how to do the same in Python, then how to turn an experiment into a standalone application you can run with `spark-submit`.
 ```
 ./bin/pyspark
 ```  

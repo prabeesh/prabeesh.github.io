@@ -1,21 +1,20 @@
 ---
-title: "Complete Guide to LCD Interfacing with MSP430 Microcontroller: ADC Display Project"
+title: "LCD Interfacing with an MSP430 Microcontroller: Displaying ADC Readings"
 date: 2012-07-04T2:39:00+05:30
-tags: [MSP430, Embedded Systems, LCD Interfacing, ADC, Microcontroller Programming]
+tags:
+  - MSP430
+  - embedded systems
+  - LCD
+  - ADC
 keywords:
-  - MSP430 LCD interface tutorial
-  - MSP430 ADC programming
-  - LCD display microcontroller
-  - embedded systems LCD
-  - MSP430 LaunchPad LCD
-  - potentiometer ADC display
-  - LCD 4-bit interface MSP430
-description: Learn how to interface an LCD display with the MSP430 microcontroller to create an ADC voltage monitor. This comprehensive tutorial covers circuit connections, code implementation, ADC configuration, and LCD programming techniques for embedded systems development.
+  - MSP430 LCD
+  - MSP430 ADC
+  - LCD 4-bit interface
+  - MSP430 LaunchPad
+description: Wire a 16x2 LCD to an MSP430 LaunchPad and display live voltage readings from the onboard ADC. Covers the 4-bit interface, ADC configuration, and the C code.
 ---
 
-Interfacing an LCD display with a microcontroller opens up possibilities for creating user-friendly embedded systems with real-time data visualization. In this tutorial, we'll build a practical ADC voltage monitor using the MSP430 LaunchPad and a standard 16x2 LCD display.
-
-This project demonstrates core embedded programming concepts including ADC configuration, LCD communication protocols, and real-time data display - essential skills for any embedded systems developer.
+Interfacing a 16x2 LCD with an MSP430 gives you cheap, on-board output for embedded projects. This post wires one up to a LaunchPad, samples a potentiometer with the ADC, and writes the measured voltage to the display.
 
 ## Project Overview
 

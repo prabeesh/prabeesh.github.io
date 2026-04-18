@@ -63,9 +63,9 @@ sudo yum install python3 python3-pip python3-devel
 pip3 install py4j pandas numpy matplotlib
 ```
 
-## Apache Spark Installation Methods
+## Install Spark
 
-### Method 1: Binary Distribution (Recommended for Most Users)
+### Option 1: binary distribution (recommended)
 
 Download the latest Spark distribution:
 ```bash
@@ -103,7 +103,7 @@ echo 'export PYSPARK_DRIVER_PYTHON=python3' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-### Method 2: Building from Source (Advanced Users)
+### Option 2: build from source
 
 For users needing specific configurations or latest development features:
 ```bash
@@ -120,9 +120,9 @@ cd spark
 # This process takes 30-60 minutes depending on your system
 ```
 
-## Spark Configuration and Optimization
+## Configuration
 
-### Basic Configuration
+### Basic configuration
 
 Create Spark configuration directory:
 ```bash
@@ -172,9 +172,9 @@ export SPARK_WORKER_CORES=2
 export SPARK_WORKER_INSTANCES=1
 ```
 
-## Testing Your Spark Installation
+## Smoke tests
 
-### Basic Functionality Tests
+### Basic functionality
 
 **Test 1: Spark Shell (Scala)**
 ```bash
@@ -385,31 +385,18 @@ export SPARK_MASTER_HOST=192.168.1.100
 export SPARK_LOCAL_IP=192.168.1.100
 ```
 
-## Next Steps and Advanced Topics
+## Next steps
 
-Now that you have Spark installed and configured, explore these advanced topics:
+- [Performance tuning](/blog/2023/01/06/performance-tuning-on-apache-spark/) for a working cluster
+- [Standalone Scala applications](/blog/2014/04/01/a-standalone-spark-application-in-scala/) as a starter template
+- [PySpark with Docker](/blog/2015/06/19/pyspark-notebook-with-docker/) for a reproducible notebook environment
 
-1. **Performance Tuning**: Learn advanced [Spark performance optimization](/blog/2023/01/06/performance-tuning-on-apache-spark/) techniques
-2. **Application Development**: Create [standalone Spark applications in Scala](/blog/2014/04/01/a-standalone-spark-application-in-scala/)
-3. **Container Deployment**: Set up [PySpark with Docker](/blog/2015/06/19/pyspark-notebook-with-docker/) for reproducible environments
-4. **Streaming Applications**: Build real-time data processing pipelines
-5. **Machine Learning**: Implement MLlib algorithms for production ML workflows
+## Maintenance
 
-## Maintenance and Updates
-
-Regular maintenance tasks:
 ```bash
-# Update Spark (backup configurations first)
-# Download new version and update SPARK_HOME
-
-# Clean up logs periodically
+# Clean up event logs periodically
 find /tmp/spark-events -type f -mtime +30 -delete
 
-# Monitor cluster health
-# Check master UI: http://localhost:8080
-# Check history server: http://localhost:18080
+# Master UI:         http://localhost:8080
+# History server UI: http://localhost:18080
 ```
-
-This comprehensive installation guide provides a solid foundation for Apache Spark development and deployment. Whether you're building data analytics pipelines, machine learning models, or real-time streaming applications, this setup will serve as your reliable starting point.
-
-For more advanced Spark tutorials and best practices, explore our complete [Apache Spark tutorial series](#) covering performance optimization, application development, and production deployment strategies.

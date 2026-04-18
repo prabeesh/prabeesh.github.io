@@ -1,23 +1,23 @@
 ---
-title: "MQTT Publisher and Subscriber in Scala: Complete IoT Messaging Tutorial Using Eclipse Paho"
+title: "MQTT Publisher and Subscriber in Scala with Eclipse Paho"
 date: 2013-08-26T09:41:00+05:30
 author: Prabeesh Keezhathra
-tags: [Big Data, MQTT, Scala, Message Queue, IoT, Eclipse Paho, Mosquitto]
+tags:
+  - MQTT
+  - Scala
+  - Eclipse Paho
+  - IoT
 keywords:
-  - MQTT Scala tutorial
+  - MQTT Scala
   - Eclipse Paho Scala
   - MQTT publisher subscriber
-  - IoT messaging protocol
-  - Scala MQTT example
-  - message queue tutorial
-  - MQTT broker setup
-  - IoT data streaming
-description: Master MQTT messaging in Scala with Eclipse Paho library. Learn to build robust publisher-subscriber systems for IoT applications, including broker setup, connection handling, error management, and real-world messaging patterns for distributed systems.
+  - Mosquitto broker
+description: A minimal MQTT publisher and subscriber in Scala using Eclipse Paho, plus how to run a local Mosquitto broker to test them against.
 ---
 
-MQTT (Message Queuing Telemetry Transport) has become the backbone of IoT communication, enabling lightweight, reliable messaging between devices and applications. In this comprehensive tutorial, we'll build a complete MQTT publisher-subscriber system in Scala using the Eclipse Paho library, perfect for IoT data streaming and distributed messaging architectures.
+MQTT is a lightweight publish-subscribe protocol used in IoT and telemetry because it runs fine over slow, lossy networks. This post builds a minimal publisher and subscriber in Scala using the Eclipse Paho library, talking to a local Mosquitto broker.
 
-### Understanding MQTT: The IoT Messaging Standard
+### How MQTT works
 
 MQTT is a publish-subscribe based lightweight messaging protocol designed specifically for resource-constrained environments and unreliable networks. Originally developed by IBM for oil pipeline monitoring, MQTT has evolved into the de facto standard for IoT communication due to its minimal overhead and robust delivery guarantees.
 

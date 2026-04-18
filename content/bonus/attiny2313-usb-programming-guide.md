@@ -1,54 +1,24 @@
 ---
-title: "ATtiny2313 USB Programming Guide: Advanced Techniques and Best Practices"
+title: "ATtiny2313 USB Programming Guide"
 date: 2025-08-22T10:00:00+01:00
 draft: false
-tags: [AVR, ATtiny2313, USB programming, microcontroller, embedded systems, USBtinyISP, advanced AVR, programming techniques, fuse configuration, circuit design, debugging]
-keywords:
+tags:
+  - AVR
   - ATtiny2313
   - USB programming
   - USBtinyISP
+  - embedded systems
+keywords:
+  - ATtiny2313
+  - USBtinyISP
   - AVR fuse configuration
-  - microcontroller USB
-description: Master advanced ATtiny2313 USB programming techniques with this comprehensive guide. Learn fuse configuration, circuit optimization, debugging strategies, and best practices for building reliable USBtinyISP programmers. Build upon basic AVR programming knowledge with professional-grade development techniques.
+  - USB programmer circuit
+description: "Go deeper on the ATtiny2313 USB programmer: fuse strategies, component selection, PCB considerations, recovery from bricked chips, and debugging tools."
 ---
 
-Transform your ATtiny2313 USB programmer from a basic prototype into a professional-grade tool. This bonus article expands on our foundational guide on [AVR Programming Made Easy: How to Build a USBtinyISP with an attiny2313](/blog/2012/07/04/simplest-and-low-cost-usb-avr/) with advanced optimization strategies, debugging techniques, and production-ready development practices.
+This follows on from [How to Build a USBtinyISP: Low-Cost DIY AVR Programmer](/blog/2012/07/04/simplest-and-low-cost-usb-avr/), which gets a basic board working. Once you have that, the interesting questions are about reliability, debugging, and recovering from bricked chips.
 
-If you haven't read our basic USBtinyISP guide yet, we recommend starting there to understand the fundamentals of ATtiny2313 USB programming before diving into these advanced concepts.
-
-## Table of Contents
-
-### [1. Advanced ATtiny2313 USB Programming Framework](#advanced-attiny2313-usb-programming-framework)
-- [1.1 Enhanced Circuit Design and Optimization](#enhanced-circuit-design-and-optimization)
-- [1.2 Advanced Fuse Configuration Strategies](#advanced-fuse-configuration-strategies)
-
-### [2. Professional USBtinyISP Development](#professional-usbtinyisp-development)
-- [2.1 Circuit Optimization and Component Selection](#circuit-optimization-and-component-selection)
-- [2.2 PCB Design Considerations](#pcb-design-considerations)
-
-### [3. Advanced Programming and Debugging](#advanced-programming-and-debugging)
-- [3.1 Fuse Bit Analysis and Recovery](#fuse-bit-analysis-and-recovery)
-- [3.2 Programming Verification and Testing](#programming-verification-and-testing)
-
-### [4. Performance Optimization Techniques](#performance-optimation-techniques)
-- [4.1 USB Communication Optimization](#usb-communication-optimization)
-- [4.2 Programming Speed Enhancement](#programming-speed-enhancement)
-
-### [5. Troubleshooting and Maintenance](#troubleshooting-and-maintenance)
-- [5.1 Common Issues and Solutions](#common-issues-and-solutions)
-- [5.2 Preventive Maintenance](#preventive-maintenance)
-
-### [6. Advanced Applications and Extensions](#advanced-applications-and-extensions)
-- [6.1 Custom USBtinyISP Variants](#custom-usbtinyisp-variants)
-- [6.2 Integration with Development Environments](#integration-with-development-environments)
-
-### [7. Conclusion](#conclusion)
-
----
-
-## Advanced ATtiny2313 USB Programming Framework
-
-### Enhanced Circuit Design and Optimization
+## Circuit refinements
 
 The basic USBtinyISP circuit from our original guide provides a solid foundation, but professional-grade USB programmers require careful attention to circuit optimization and component selection. Here's an enhanced approach to building reliable USBtinyISP programmers:
 

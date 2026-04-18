@@ -203,8 +203,26 @@ def audit_html(post: PostAudit, html: str) -> None:
             )
         )
 
-    # Density: check every phrase of 1–3 words (lowercased, stripped of common filler)
+    # Density: check every phrase of 1-3 words (lowercased, stripped of common filler)
     # that appears >= 5 times. Flag any density > ceiling, excluding filler.
+    # Legitimate product/topic nouns (subject of the post) get a higher ceiling
+    # per rule: "The unavoidable product/topic noun ... is exempt".
+    # Heuristic: if every token of a phrase appears in the title, raise the ceiling
+    # from 2.5% to 4.5% for that phrase.
+    title_words = set(re.findall(r"[a-z][a-z0-9+.#/-]*", post.title.lower()))
+    # Also include singular forms of title words for plural-tolerant matching.
+    for tw in list(title_words):
+        if tw.endswith("s") and len(tw) > 3:
+            title_words.add(tw[:-1])
+        else:
+            title_words.add(tw + "s")
+
+    def ceiling_for(phrase: str) -> float:
+        toks = phrase.split()
+        if toks and all(t in title_words for t in toks):
+            return 4.5
+        return DENSITY_CEILING
+
     tl = text.lower()
     tokens = re.findall(r"[a-z][a-z0-9+.#/-]*", tl)
     stopwords = {
@@ -232,12 +250,13 @@ def audit_html(post: PostAudit, html: str) -> None:
     total = len(words) or 1
     for phrase, count in unigrams.most_common(10):
         density = count / total * 100
-        if density > DENSITY_CEILING:
+        ceiling = ceiling_for(phrase)
+        if density > ceiling:
             post.findings.append(
                 Finding(
-                    "WARN" if density < 4.0 else "ERROR",
+                    "WARN" if density < ceiling + 1.5 else "ERROR",
                     "density",
-                    f"'{phrase}' appears {count}x ({density:.2f}%; ceiling {DENSITY_CEILING}%)",
+                    f"'{phrase}' appears {count}x ({density:.2f}%; ceiling {ceiling}%)",
                 )
             )
     for counts, label in ((bigrams, "bigram"), (trigrams, "trigram")):
@@ -246,12 +265,13 @@ def audit_html(post: PostAudit, html: str) -> None:
                 continue
             n = len(phrase.split())
             density = count * n / total * 100
-            if density > DENSITY_CEILING:
+            ceiling = ceiling_for(phrase)
+            if density > ceiling:
                 post.findings.append(
                     Finding(
-                        "WARN" if density < 4.0 else "ERROR",
+                        "WARN" if density < ceiling + 1.5 else "ERROR",
                         f"density-{label}",
-                        f"'{phrase}' appears {count}x ({density:.2f}%; ceiling {DENSITY_CEILING}%)",
+                        f"'{phrase}' appears {count}x ({density:.2f}%; ceiling {ceiling}%)",
                     )
                 )
 

@@ -1,5 +1,5 @@
 ---
-title: "Complete Introduction to AVR Microcontroller Programming: From Setup to First Program"
+title: "Introduction to AVR Microcontroller Programming"
 date: 2012-02-21T2:39:00+05:30
 author: Prabeesh Keezhathra
 tags: [AVR, Embedded Systems, Microcontroller Programming, Atmel, C Programming]

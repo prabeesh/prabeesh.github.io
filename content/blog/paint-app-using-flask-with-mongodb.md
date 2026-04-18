@@ -1,23 +1,21 @@
 ---
 displayTitle: Flask with MongoDB
-title: "Building a Web Paint App with Flask and MongoDB: A Complete Tutorial"
+title: "A Web Paint App with Flask and MongoDB"
 date: 2013-03-31T21:53:00+05:30
-tags: [NoSQL Database, Python Flask, MongoDB, Web Development, Canvas API]
+tags:
+  - Python Flask
+  - MongoDB
+  - NoSQL
+  - Canvas API
 keywords:
-  - Flask MongoDB integration
+  - Flask MongoDB
   - Python Flask tutorial
-  - NoSQL database app
-  - web paint application
-  - MongoDB CRUD operations
-  - Flask web development
-  - HTML5 Canvas backend
-  - JavaScript Flask integration
-description: Learn how to build a complete web-based paint application using Python Flask and MongoDB. This comprehensive tutorial covers MongoDB integration, NoSQL database design, Canvas API backend storage, and practical Flask development patterns for modern web applications.
+  - HTML5 canvas Flask
+  - MongoDB CRUD Python
+description: Build a small web paint app backed by Flask and MongoDB. Covers the HTML5 canvas front-end, the Flask routes that accept drawing data, and the MongoDB schema.
 ---
 
-Building web applications that handle dynamic, schema-less data often requires moving beyond traditional relational databases. In this tutorial, we'll explore how to create a web-based paint application using Python Flask as our backend framework and MongoDB as our data storage solution.
-
-This post demonstrates the practical integration of Flask with MongoDB, showcasing why NoSQL databases are particularly well-suited for applications that handle varied, document-based data like our paint app's drawing coordinates and metadata.
+Schema-less, document-shaped data like freehand drawings is a good fit for MongoDB: there's no rigid table to design around stroke coordinates that vary per drawing. This post ties the canvas front-end to a Flask backend that persists drawings in MongoDB.
 
 ## Why MongoDB for a Paint Application?
 

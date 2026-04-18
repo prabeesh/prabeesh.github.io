@@ -1,21 +1,21 @@
 ---
-title: "Creating Uber JARs for Apache Spark Projects: Complete SBT Assembly Guide"
+title: "Creating Uber JARs for Spark Projects with sbt-assembly"
 date: 2014-04-08T09:47:00+05:30
 author: Prabeesh Keezhathra
-tags: [Apache Spark, SBT, Scala, Big Data, JAR creation, sbt-assembly, Build Tools]
+tags:
+  - Apache Spark
+  - SBT
+  - Scala
+  - sbt-assembly
 keywords:
-  - Spark uber jar creation
-  - sbt-assembly plugin tutorial
-  - Apache Spark fat jar
-  - SBT build configuration
-  - Spark project deployment
-  - sbt-assembly merge strategy
-  - standalone Spark jar packaging
-  - Scala Spark build process
-description: Master creating executable uber JARs for Apache Spark projects using sbt-assembly. Learn plugin configuration, merge strategies, dependency management, and deployment best practices for production Spark applications.
+  - Spark uber jar
+  - sbt-assembly
+  - Spark fat jar
+  - Spark deployment
+description: Package a standalone Spark application into a single fat JAR using the sbt-assembly plugin. Covers plugin setup, merge strategies, and deploying the result.
 ---
 
-In this post, we will discuss how to create an assembled JAR for a standalone Spark application using the `sbt-assembly` plugin. One of my previous posts, we discussed [how to build a stand alone Spark Application using SBT eclipse plugin](/blog/2014/04/01/a-standalone-spark-application-in-scala/). Now, we will take it one step further and show you how to create a fat JAR for your Spark project using the sbt-assembly plugin.
+`sbt-assembly` packages a Spark project plus all its dependencies into one runnable "uber" JAR, which you can hand to `spark-submit` without worrying about classpath. This follows on from the [standalone Spark application in Scala](/blog/2014/04/01/a-standalone-spark-application-in-scala/) post.
 
 ## Adding the sbt-assembly Plugin
 The first step in creating an assembled JAR for your Spark application is to add the sbt-assembly plugin. To do this, you will need to add the following line to the `project/plugin.sbt` file:

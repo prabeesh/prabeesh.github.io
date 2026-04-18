@@ -1,16 +1,16 @@
 ---
-title: "Finding RC constant using ATmega8"
+title: "Measuring an RC Time Constant with an ATmega8"
 date: 2012-07-14T23:39:00+05:30
-tags: [AVR, Embedded]
+tags:
+  - AVR
+  - ATmega8
+  - embedded systems
+  - ADC
 keywords:
-  - time constant using AVR
-  - atmega8 examples
-  - time constant using embedded systems
-  - find RC constant
-  - find RC constant using microcontroller
-  - AVR find RC constant
-  - AVR find RC
-description: This blog post explores the process of finding RC constants using the ATmega8 microcontroller. It provides an overview of the concept of RC time constants and explains how to measure them using the ADC of the ATmega8. The code example demonstrates how to calculate the RC constant and display it on an LCD screen. The post includes test examples with different resistor and capacitor values to showcase the practical application of the method. Overall, it serves as a comprehensive guide for anyone interested in understanding and implementing RC constant calculations with the ATmega8 microcontroller.
+  - RC time constant AVR
+  - ATmega8 ADC
+  - measuring capacitance microcontroller
+description: Measure an RC time constant in hardware using the ATmega8's ADC and timer. Covers the circuit, the C code, and a couple of test runs with different R-C values.
 ---
 
 The time constant(sec) of an RC circuit is equal to the product of the resistance and the capacitance of the circuit.

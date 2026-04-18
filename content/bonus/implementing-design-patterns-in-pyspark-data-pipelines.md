@@ -101,7 +101,7 @@ data = data_source.load_data()
 
 `DataSourceFactory` is the abstract factory; `CSVDataSourceFactory` and `ParquetDataSourceFactory` are concrete factories that each produce a specific `DataSource`. Pick the factory that matches the input format and call `create_data_source()`. The rest of the pipeline works against the `DataSource` interface and stays decoupled from the format.
 
-**When to use it:** any time your pipeline needs to support more than one input format or runtime configuration.
+When to use it: any time your pipeline needs to support more than one input format or runtime configuration.
 
 ## Singleton Pattern {#singleton-pattern}
 
@@ -136,7 +136,7 @@ assert sink1 is sink2
 
 `__new__` checks whether an instance already exists and returns it if so. `_lock` makes it safe under concurrent access, which matters when multiple threads bootstrap the pipeline at once.
 
-**When to use it:** anything expensive to create and safe to share (SparkSession, Kafka producer, HTTP client, metrics emitter).
+When to use it: anything expensive to create and safe to share (SparkSession, Kafka producer, HTTP client, metrics emitter).
 
 ## Builder Pattern {#builder-pattern}
 
@@ -193,7 +193,7 @@ transform = (
 
 Each setter returns `self`, so the calls chain naturally and the caller sets only the parameters that matter for their use case.
 
-**When to use it:** data readers, writers, and transforms with 5+ optional knobs (partitioning, compression, schema overrides, retry policy, etc.).
+When to use it: data readers, writers, and transforms with 5+ optional knobs (partitioning, compression, schema overrides, retry policy, etc.).
 
 ## Observer Pattern {#observer-pattern}
 
@@ -261,7 +261,7 @@ subject.notify_observers(DataUpdatedEvent(data))
 
 The `DataSubject` keeps the list of `DataObserver` instances and calls each one's `update()` when `notify_observers()` fires. Adding a new reaction is a one-line change: implement a new observer and register it.
 
-**When to use it:** fan-out reactions to a pipeline event (audit logs, cache invalidation, alerting).
+When to use it: fan-out reactions to a pipeline event (audit logs, cache invalidation, alerting).
 
 ## Pipeline Pattern {#pipeline-pattern}
 
@@ -319,7 +319,7 @@ transformed_data = transform_a.transform(data)
 
 `set_next()` returns the next stage so you can wire the chain in one readable line. Each concrete transform only knows about its own logic and the handoff; adding, removing, or reordering steps has zero ripple effect.
 
-**When to use it:** any multi-stage ETL/ELT flow, especially when stages need to be composed differently per job.
+When to use it: any multi-stage ETL/ELT flow, especially when stages need to be composed differently per job.
 
 ## Putting it all together
 

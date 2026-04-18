@@ -1,18 +1,19 @@
 ---
-title: "PySpark Design Patterns Quick Reference: Code Snippets for Common Patterns"
+title: "PySpark Design Patterns Quick Reference"
 date: 2024-01-20T10:00:00+01:00
 draft: false
-tags: [PySpark, design patterns, quick reference, code snippets, data pipelines, factory pattern, singleton pattern, builder pattern, observer pattern, pipeline pattern]
+tags:
+  - PySpark
+  - design patterns
+  - cheat sheet
 keywords:
-  - PySpark design patterns quick reference
-  - PySpark pattern code snippets
-  - design patterns cheat sheet
-  - PySpark patterns reference guide
-  - data pipeline patterns quick guide
-description: A quick reference guide with concise code snippets for implementing common design patterns in PySpark data pipelines. Perfect companion to detailed pattern explanations.
+  - PySpark patterns cheat sheet
+  - factory builder singleton PySpark
+  - data pipeline patterns reference
+description: "One-page cheat sheet with runnable snippets for the five core PySpark design patterns: factory, singleton, builder, observer, and pipeline."
 ---
 
-This quick reference provides concise code snippets for the five essential design patterns in PySpark data pipelines. For detailed explanations, see [Implementing Design Patterns in PySpark Data Pipelines](/bonus/implementing-design-patterns-in-pyspark-data-pipelines/).
+Minimal runnable snippets for the five core patterns. For the why and when, see [Implementing Design Patterns in PySpark Data Pipelines](/bonus/implementing-design-patterns-in-pyspark-data-pipelines/) and [Advanced PySpark Design Patterns](/bonus/advanced-pyspark-design-patterns-implementation/).
 
 ## Factory Pattern
 
@@ -149,13 +150,11 @@ pipeline.set_next(ValidateTransform()).set_next(EnrichTransform())
 result = pipeline.process(df)
 ```
 
-## Quick Tips
+## Quick tips
 
-- **Factory**: Use when you need flexible object creation
-- **Singleton**: Use for shared resources like Spark sessions
-- **Builder**: Use for complex objects with many optional parameters
-- **Observer**: Use for event-driven data processing
-- **Pipeline**: Use for sequential data transformations
-
-These patterns help create maintainable, testable, and scalable PySpark pipelines. Choose the pattern that best fits your specific use case.
+- **Factory**: flexible object creation when you need to swap the concrete class
+- **Singleton**: shared resources like the Spark session
+- **Builder**: complex objects with many optional parameters
+- **Observer**: event-driven data processing with fan-out
+- **Pipeline**: ordered chain of transformations
 

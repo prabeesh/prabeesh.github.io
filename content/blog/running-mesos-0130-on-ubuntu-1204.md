@@ -1,18 +1,15 @@
 ---
-title: "Running Mesos-0.13.0  on Ubuntu-12.04"
+title: "Running Mesos 0.13 on Ubuntu 12.04"
 date: 2013-10-07T10:53:00+05:30
-tags: [Big Data, Apache Mesos]
+tags:
+  - Apache Mesos
+  - Ubuntu
+  - cluster management
 keywords:
-  - mesos
-  - apache spark mesos
-  - spark mesos cluster setup
-  - spark deploy installation
-  - mesos installation
-  - set up mesos on ubuntu
-  - ubuntu mesos apt get
-  - ubuntu spark with mesos
-  - mesos cluster configuration
-description: This guide provides step-by-step instructions for installing Mesos on Ubuntu 12.04 and setting up a cluster for Apache Spark. It covers the necessary packages, Java installation, downloading and untarring the Mesos distribution, building and installing Mesos, starting the Mesos cluster, and configuring the Mesos client. By following this guide, you will be able to run applications against the Mesos cluster from your client machine.
+  - Apache Mesos installation
+  - Mesos Ubuntu 12.04
+  - Mesos cluster setup
+description: Install Apache Mesos 0.13 on Ubuntu 12.04 and start a single-master cluster. Covers the apt packages, building from source, and running a worker against it.
 ---
 You will need the following packages to run Mesos.
 ```
