@@ -158,3 +158,5 @@ result = pipeline.process(df)
 - **Observer**: event-driven data processing with fan-out
 - **Pipeline**: ordered chain of transformations
 
+Each snippet above is self-contained. Copy it into a new module, wire it into your pipeline, and adjust the class names to match your domain. For a deeper walkthrough of when and why to use each one, see the [full tutorial](/bonus/implementing-design-patterns-in-pyspark-data-pipelines/). For strategy, decorator, command, and template method patterns, see the [advanced patterns post](/bonus/advanced-pyspark-design-patterns-implementation/).
+

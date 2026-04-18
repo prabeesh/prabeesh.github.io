@@ -67,7 +67,7 @@ pip3 install py4j pandas numpy matplotlib
 
 ### Option 1: binary distribution (recommended)
 
-Download the latest Spark distribution:
+Download the latest distribution:
 ```bash
 # Navigate to your preferred installation directory
 cd /opt
@@ -79,7 +79,7 @@ sudo wget https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hado
 # sudo wget https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3-scala2.13.tgz
 ```
 
-Extract and setup Spark:
+Extract and set up the files:
 ```bash
 # Extract the archive
 sudo tar -xzf spark-3.5.0-bin-hadoop3.tgz
@@ -214,7 +214,7 @@ Expected output: `Pi is roughly 3.141592653589793`
 
 ### Performance Validation Tests
 
-Test Spark with different configurations:
+Test with different configurations:
 ```bash
 # Test with local cluster
 spark-submit \
