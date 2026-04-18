@@ -105,8 +105,10 @@ Shuffles move data across the network between executors. They're the most expens
 
 ### Narrow vs. wide transformations
 
-- **Narrow** (`map`, `filter`, `select`, `withColumn`): work inside a single partition, no shuffle.
-- **Wide** (`join`, `groupBy`, `orderBy`, `distinct`): require a shuffle.
+| Type | Examples | Shuffle? | Partition scope |
+| --- | --- | --- | --- |
+| Narrow | `map`, `filter`, `select`, `withColumn`, `union` | No | Within a single partition |
+| Wide | `join`, `groupBy`, `orderBy`, `distinct`, `repartition` | Yes | Across partitions |
 
 Rewriting a wide operation into narrow operations, or pushing filters above joins, directly cuts shuffle volume.
 
@@ -144,6 +146,14 @@ df.coalesce(1).write.mode("overwrite").parquet("output_path")
 
 Use `coalesce` when reducing partition count (it avoids a shuffle); use `repartition` when you need to balance size evenly and are OK with a shuffle.
 
+| | `coalesce(n)` | `repartition(n)` |
+| --- | --- | --- |
+| Shuffles data? | No | Yes |
+| Can increase partitions? | No (only decrease) | Yes |
+| Partition size balance | Uneven | Even |
+| Typical cost | Cheap | Expensive |
+| Use when | You want fewer, larger output files | You need evenly-sized partitions for a downstream join/group |
+
 ### Fix: specify the schema explicitly
 
 Schema inference scans the data, which is slow and flaky for large inputs. Declare the schema up front:
@@ -172,6 +182,13 @@ Parquet is columnar, compressed, and stores the schema in the file. For anything
 ## 5. Serialization
 
 Serialization is how Spark moves data and code across the cluster. The biggest lever here is avoiding Python UDFs.
+
+| Option | Serialization cost | Relative speed | When to use |
+| --- | --- | --- | --- |
+| SQL / DataFrame functions | None | Fastest | First choice whenever the logic is expressible in Spark functions |
+| SQL higher-order functions (`transform`, `filter`, `aggregate`) | None | Fast | Array / map column transformations |
+| Pandas UDF (vectorized) | Batched via Arrow | Fast | Custom logic that must run in Python, on large batches |
+| Python UDF (row-at-a-time) | Per row, JVM ↔ Python | Slow | Avoid — last resort for custom Python logic |
 
 ### Avoid Python UDFs
 
