@@ -481,13 +481,13 @@
       "modulation index"
     ],
     "author": "Prabeesh Keezhathra",
-    "readingTime": 31,
-    "wordCount": 6043,
+    "readingTime": 9,
+    "wordCount": 1663,
     "category": "bonus"
   },
   {
     "title": "Advanced PySpark Performance Optimization Techniques",
-    "description": "Advanced PySpark tuning beyond the basics. Covers adaptive query execution, dynamic partition pruning, predicate pushdown, and memory management.",
+    "description": "Follow-up notes on PySpark tuning: the Spark 3.x config keys for AQE, dynamic partition pruning, and predicate pushdown, with when to use each.",
     "url": "/bonus/advanced-performance-optimization-techniques-for-pyspark-data-pipelines/",
     "date": "2024-01-20T09:00:00.000Z",
     "tags": [
@@ -504,13 +504,13 @@
       "PySpark memory tuning"
     ],
     "author": "Prabeesh Keezhathra",
-    "readingTime": 39,
-    "wordCount": 7686,
+    "readingTime": 4,
+    "wordCount": 665,
     "category": "bonus"
   },
   {
     "title": "Advanced PySpark Design Patterns: Implementation Examples",
-    "description": "Four advanced design patterns applied to PySpark pipelines, with runnable examples: strategy, decorator, command, and template method.",
+    "description": "Three more design patterns applied to PySpark pipelines, with runnable examples: strategy, decorator, and template method.",
     "url": "/bonus/advanced-pyspark-design-patterns-implementation/",
     "date": "2024-01-15T09:00:00.000Z",
     "tags": [
@@ -521,12 +521,11 @@
     "keywords": [
       "PySpark strategy pattern",
       "PySpark decorator pattern",
-      "PySpark command pattern",
       "PySpark template method pattern"
     ],
     "author": "Prabeesh Keezhathra",
-    "readingTime": 25,
-    "wordCount": 4892,
+    "readingTime": 10,
+    "wordCount": 1978,
     "category": "bonus"
   },
   {
