@@ -235,9 +235,9 @@
     "category": "blog"
   },
   {
-    "title": "Introduction to Parallel Programing",
-    "description": "This blog post provides an introduction to parallel programming on the GPU. It explores the concept of parallel computing, where large problems are broken down into smaller pieces and executed simultaneously. The post discusses the technical trends driving parallel computing on the GPU, such as the increasing number of transistors on processors and the need for power efficiency. It also introduces CUDA (Computer Unified Device Architecture), a parallel programming platform developed by NVIDIA. The CUDA programming model allows developers to leverage the power of both the CPU and GPU in their programs. This blog post serves as a summary of the author's notes from the Udacity course 'Intro to Parallel Programming'.",
-    "url": "/blog/2013/02/22/introduction-to-parallel-programing/",
+    "title": "Introduction to Parallel Programming",
+    "description": "GPU parallel programming basics and the CUDA platform, summarised from the Udacity Intro to Parallel Programming course.",
+    "url": "/blog/2013/02/22/introduction-to-parallel-programming/",
     "date": "2013-02-22T17:46:54.000Z",
     "tags": [],
     "keywords": "",
@@ -561,7 +561,7 @@
     "category": "bonus"
   },
   {
-    "title": "PySpark Design Patterns Tutorial: Factory, Singleton, Builder, Observer, and Pipeline Patterns with Examples",
+    "title": "PySpark Design Patterns for Data Pipelines",
     "description": "A hands-on PySpark tutorial showing how to apply five classic software design patterns, factory, singleton, builder, observer, and pipeline, to build cleaner, more maintainable data pipelines. Full code examples you can run.",
     "url": "/bonus/implementing-design-patterns-in-pyspark-data-pipelines/",
     "date": "2023-01-14T13:37:59.000Z",

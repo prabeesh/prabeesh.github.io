@@ -1,5 +1,5 @@
 ---
-title: "PySpark Design Patterns Tutorial: Factory, Singleton, Builder, Observer, and Pipeline Patterns with Examples"
+title: "PySpark Design Patterns for Data Pipelines"
 date: 2023-01-14T14:37:59+01:00
 draft: false
 tags:

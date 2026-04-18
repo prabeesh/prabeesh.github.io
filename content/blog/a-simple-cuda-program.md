@@ -25,7 +25,7 @@ This blog post is an introduction to the world of GPU programming with CUDA. We 
 
 To help illustrate these concepts, provided a simple example code that computes the squares of 64 numbers using CUDA. By the end of this post, you will have a basic foundation in GPU programming with CUDA and be ready to write your own programs and experience the performance benefits of using the GPU for parallel processing.
 
-In my [previous post](/blog/2013/02/22/introduction-to-parallel-programing/) I wrote about an introduction to parallel programming with CUDA. In this post explaining a simple example CUDA code to compute squares of 64 numbers. A typical GPU program consists of following steps.
+In my [previous post](/blog/2013/02/22/introduction-to-parallel-programming/) I wrote about an introduction to parallel programming with CUDA. In this post explaining a simple example CUDA code to compute squares of 64 numbers. A typical GPU program consists of following steps.
 
     1- CPU allocates storage on GPU
     2- CPU copies input data from CPU to GPU
