@@ -1,27 +1,54 @@
 ---
-title: "Improve PySpark Data Pipelines with Design Patterns: Learn about Factory, Singleton, Builder, Observer, and Pipeline Patterns"
+title: "PySpark Design Patterns Tutorial: Factory, Singleton, Builder, Observer, and Pipeline Patterns with Examples"
 date: 2023-01-14T14:37:59+01:00
 draft: false
-tags: [PySpark, design patterns, data pipelines, data processing, best practices, factory pattern, singleton pattern, builder pattern, observer pattern, pipeline pattern]
-keywords: PySpark design patterns, data pipeline patterns, factory singleton builder observer, PySpark best practices
-description: Learn how to improve the quality, readability, and maintainability of PySpark data pipelines by applying design patterns. Explore the factory pattern, singleton pattern, builder pattern, observer pattern, and pipeline pattern to enhance the reliability, efficiency, and scalability of your data processing systems.
+tags:
+  - PySpark
+  - design patterns
+  - data pipelines
+  - factory pattern
+  - singleton pattern
+  - builder pattern
+  - observer pattern
+  - pipeline pattern
+  - data engineering
+keywords:
+  - PySpark design patterns
+  - PySpark tutorial
+  - data pipeline design patterns
+  - factory pattern PySpark
+  - singleton pattern PySpark
+  - builder pattern PySpark
+  - observer pattern PySpark
+  - pipeline pattern PySpark
+description: A hands-on PySpark tutorial showing how to apply five classic software design patterns — factory, singleton, builder, observer, and pipeline — to build cleaner, more maintainable data pipelines. Full code examples you can run.
 ---
 
-The complexity and criticality of data pipelines require the implementation of best practices to ensure their quality, readability, and maintainability. Design patterns, which provide reusable solutions to common software design problems, can greatly improve the quality of data pipelines. In this article, we will explore how to apply design patterns in PySpark data pipelines to improve their reliability, efficiency, and scalability. We will focus on five common design patterns: 
+If you want to write PySpark data pipelines that stay clean as they grow, design patterns are the most reliable tool to reach for. Pipelines get complex quickly: new data sources appear, transformations multiply, one-off scripts turn into production systems. Classic software design patterns give you proven structures to keep that complexity under control.
 
-- [Factory Pattern](#factory-pattern)
-- [Singleton Pattern](#singleton-pattern)
-- [Builder Pattern](#builder-pattern)
-- [Observer Pattern](#observer-pattern)
-- [Pipeline Pattern](#pipeline-pattern)
+This tutorial walks through the five most useful patterns for a PySpark pipeline, each with a complete, runnable example:
 
-By following clean code principles and implementing these design patterns, data pipelines can become more robust and maintainable.
+- [Factory Pattern](#factory-pattern) — swap data sources (CSV, Parquet, JSON) without changing pipeline code
+- [Singleton Pattern](#singleton-pattern) — share one SparkSession or sink across the whole pipeline
+- [Builder Pattern](#builder-pattern) — construct complex transforms with optional parameters
+- [Observer Pattern](#observer-pattern) — react to data changes across loosely coupled components
+- [Pipeline Pattern](#pipeline-pattern) — chain transforms into a clear, ordered flow
 
-### Factory Pattern
+Each example uses Python's `abc` module to define abstract base classes and concrete subclasses. If you haven't used `abc.ABC` before: it lets you declare a class contract via `@abstractmethod`, and any subclass must implement those methods or Python will refuse to instantiate it.
 
-The factory pattern is a creational design pattern that involves creating an interface for generating objects in a parent class, while allowing subclasses to alter the type of objects that will be created. This can be useful in a PySpark data pipeline to enable different types of data sources or data transformations to be used interchangeably.
+## Quick reference: when to use each pattern
 
-An example of the factory pattern in PySpark is shown below:
+| Pattern | Use when you need to… | Example |
+| --- | --- | --- |
+| Factory | Create data sources or transforms without hard-coding the concrete type | `DataSourceFactory` → CSV, Parquet, JSON |
+| Singleton | Share one expensive object (SparkSession, connection, sink) | Single `DataSink`, single `SparkSession` |
+| Builder | Construct objects with many optional parameters | `DataTransformBuilder().set_param1(...).build()` |
+| Observer | Let several components react when data changes | Multiple sinks notified on a new batch |
+| Pipeline | Chain ordered stages in an ETL flow | `extract → clean → enrich → load` |
+
+## Factory Pattern {#factory-pattern}
+
+The factory pattern is a creational pattern: a parent class defines an interface for creating objects, and subclasses decide which concrete class to instantiate. In a data pipeline, this lets you plug in different input formats — CSV, Parquet, JSON — without the pipeline code caring about the underlying format.
 
 ```Python
 from abc import ABC, abstractmethod
@@ -37,7 +64,7 @@ class CSVDataSourceFactory(DataSourceFactory):
     """Concrete factory for generating CSV data sources."""
     
     def create_data_source(self):
-        return CSVParquetDataSource()
+        return CSVDataSource()
 
 class ParquetDataSourceFactory(DataSourceFactory):
     """Concrete factory for generating Parquet data sources."""
@@ -52,18 +79,18 @@ class DataSource(ABC):
     def load_data(self):
         pass
 
-class CSVParquetDataSource(DataSource):
-    """Concrete implementation of a data source for CSV and Parquet files."""
+class CSVDataSource(DataSource):
+    """Concrete implementation of a CSV data source."""
     
     def load_data(self):
-        # Load data from CSV and Parquet files
+        # Use spark.read.csv(...) to load data from a CSV file
         pass
 
 class ParquetDataSource(DataSource):
-    """Concrete implementation of a data source for Parquet files."""
+    """Concrete implementation of a Parquet data source."""
     
     def load_data(self):
-        # Load data from Parquet files
+        # Use spark.read.parquet(...) to load data from a Parquet file
         pass
 
 # Example usage
@@ -72,15 +99,13 @@ data_source = factory.create_data_source()
 data = data_source.load_data()
 ```
 
-The DataSourceFactory class in this example is responsible for the abstract factory, and the CSVDataSourceFactory and ParquetDataSourceFactory classes are concrete factories that create specific types of DataSource objects. The DataSource class is the abstract base class for data sources, and the CSVParquetDataSource and ParquetDataSource classes are concrete implementations of data sources.
+`DataSourceFactory` is the abstract factory; `CSVDataSourceFactory` and `ParquetDataSourceFactory` are concrete factories that each produce a specific `DataSource`. Pick the factory that matches the input format and call `create_data_source()`. The rest of the pipeline works against the `DataSource` interface and stays decoupled from the format.
 
-To utilize the factory pattern in a PySpark data pipeline, you would create a DataSourceFactory object and call the create_data_source() method on it to create a DataSource object. This allows you to use different types of data sources interchangeably, without needing to specify the exact type of data source at the time of creation.
+**When to use it:** any time your pipeline needs to support more than one input format or runtime configuration.
 
-### Singleton Pattern
+## Singleton Pattern {#singleton-pattern}
 
-The singleton pattern is a creational design pattern that involves restricting the instantiation of a class to one object. This can be useful in a PySpark data pipeline if you want to ensure that there is only one instance of a particular class that is used throughout the pipeline.
-
-The following is an example of the singleton pattern implemented in PySpark:
+The singleton pattern restricts a class to a single instance. In Spark, the canonical example is the `SparkSession`: you want exactly one, shared across the whole job. Output sinks and connection pools are similar cases.
 
 ```Python
 from threading import Lock
@@ -109,15 +134,13 @@ sink2 = DataSink()
 assert sink1 is sink2
 ```
 
-The DataSink class uses the __new__() method to ensure that only one instance of the class is created. The _instance class attribute is used to store the instance, and the _lock class attribute is used to ensure thread-safety. When the __new__() method is called, it acquires the lock, checks if an instance has already been created, and if not, creates a new instance using the super().__new__() method. The lock is then released and the instance is returned.
+`__new__` checks whether an instance already exists and returns it if so. `_lock` makes it safe under concurrent access, which matters when multiple threads bootstrap the pipeline at once.
 
-To use the singleton pattern in a PySpark data pipeline, you would create a DataSink object as needed, and the same instance will be returned each time. This ensures that there is only one instance of the DataSink class that is used throughout the pipeline.
+**When to use it:** anything expensive to create and safe to share (SparkSession, Kafka producer, HTTP client, metrics emitter).
 
-### Builder Pattern
+## Builder Pattern {#builder-pattern}
 
-The builder pattern is a creational design pattern that separates the construction of a complex object from its representation, allowing the same construction process to create various representations. This can be useful in a PySpark data pipeline if you need to build data transformations or data sinks that have many optional parameters and you want to allow users to specify only the options that are relevant to their use case.
-
-The following is an illustration of the builder pattern implemented in PySpark:
+The builder pattern separates construction of a complex object from its representation. It shines when a class has many optional parameters. Rather than a constructor with ten arguments, you get a fluent API the reader can scan top-to-bottom.
 
 ```Python
 class DataTransform:
@@ -153,22 +176,28 @@ class DataTransformBuilder:
         return self
     
     def build(self):
-        return DataTransform(param1=self.param1, param2=self.param2, param3=self.param3)
+        return DataTransform(
+            param1=self.param1,
+            param2=self.param2,
+            param3=self.param3,
+        )
 
 # Example usage
-transform_builder = DataTransformBuilder()
-transform = transform_builder.set_param1("value1").set_param3("value3").build()
+transform = (
+    DataTransformBuilder()
+    .set_param1("value1")
+    .set_param3("value3")
+    .build()
+)
 ```
 
-In this example, the DataTransform class has three optional parameters that can be specified when the object is created. The DataTransformBuilder class provides methods for setting each of these parameters, and a build() method for creating a DataTransform object using the specified parameters. The builder methods also return self to allow for method chaining.
+Each setter returns `self`, so the calls chain naturally and the caller sets only the parameters that matter for their use case.
 
-To apply the builder pattern in a PySpark data pipeline, you can create a DataTransformBuilder object and use its methods to set the necessary parameters. You would then call the build() method to create a DataTransform object using the specified parameters. This allows you to create complex data transformations with a flexible and readable interface.
+**When to use it:** data readers, writers, and transforms with 5+ optional knobs (partitioning, compression, schema overrides, retry policy, etc.).
 
-### Observer Pattern
+## Observer Pattern {#observer-pattern}
 
-The observer pattern is a behavioral design pattern that involves establishing a one-to-many dependency between objects, such that when one object changes state, all of its dependents are notified and updated automatically. This can be useful in a PySpark data pipeline if you want to enable multiple components to react to changes in data.
-
-Below is an example of the observer pattern implemented in PySpark:
+The observer pattern sets up a one-to-many dependency: when a subject changes state, it notifies every registered observer. In a data pipeline, this is useful when one successful batch should trigger several follow-up actions — write to the warehouse, update a dashboard, emit a metric — without hard-wiring them into the pipeline.
 
 ```Python
 from abc import ABC, abstractmethod
@@ -181,7 +210,7 @@ class DataEvent(ABC):
         pass
 
 class DataUpdatedEvent(DataEvent):
-    """Concrete implementation of a data event for when data is updated."""
+    """Concrete event fired when data is updated."""
     
     def __init__(self, data):
         self.data = data
@@ -197,7 +226,7 @@ class DataObserver(ABC):
         pass
 
 class DataTransformObserver(DataObserver):
-    """Concrete implementation of a data observer that applies a transform to data when it is updated."""
+    """Observer that applies a transform when data is updated."""
     
     def __init__(self, transform):
         self.transform = transform
@@ -208,7 +237,7 @@ class DataTransformObserver(DataObserver):
         # Do something with the transformed data
 
 class DataSubject:
-    """Class for managing data observers and firing data events."""
+    """Manages observers and fires data events."""
     
     def __init__(self):
         self.observers = []
@@ -230,21 +259,19 @@ subject.register_observer(transform_observer)
 subject.notify_observers(DataUpdatedEvent(data))
 ```
 
-The DataSubject class manages a list of DataObserver objects and provides methods for registering and removing observers, as well as firing data events. When a data event is fired, the notify_observers() method iterates over the list of observers and calls the update() method on each one, passing in the event object. The DataTransformObserver class is a concrete implementation of a data observer that applies a transform to the data when it is updated.
+The `DataSubject` keeps the list of `DataObserver` instances and calls each one's `update()` when `notify_observers()` fires. Adding a new reaction is a one-line change: implement a new observer and register it.
 
-To implement the observer pattern in a PySpark data pipeline, you would create a DataSubject object and register one or more DataObserver objects with it. When data is updated, you would call the notify_observers() method on the DataSubject object, passing in a DataUpdatedEvent object containing the updated data. This would trigger the update() method on the registered observers, allowing them to process the updated data as needed.
+**When to use it:** fan-out reactions to a pipeline event (audit logs, cache invalidation, alerting).
 
-### Pipeline Pattern
+## Pipeline Pattern {#pipeline-pattern}
 
-The pipeline pattern is a behavioral design pattern that involves creating a chain of processing elements, where the output of each element is the input of the next. This can be useful in a PySpark data pipeline if you want to create a series of data transformations that are applied in a specific order.
-
-Below is an illustration of the pipeline pattern implemented in PySpark:
+The pipeline pattern (sometimes called chain-of-responsibility for data) chains a series of processing steps so the output of each stage feeds the next. It maps naturally onto ETL — extract, transform, load.
 
 ```Python
 from abc import ABC, abstractmethod
 
 class DataTransform(ABC):
-    """Abstract base class for data transforms."""
+    """Abstract base class for data transforms in a pipeline."""
     
     def __init__(self, next=None):
         self.next = next
@@ -258,30 +285,24 @@ class DataTransform(ABC):
         pass
 
 class TransformA(DataTransform):
-    """Concrete implementation of a data transform."""
-    
     def transform(self, data):
-        # Apply transform A to data
+        # Apply transform A
         transformed_data = data
         if self.next:
             return self.next.transform(transformed_data)
         return transformed_data
 
 class TransformB(DataTransform):
-    """Concrete implementation of a data transform."""
-    
     def transform(self, data):
-        # Apply transform B to data
+        # Apply transform B
         transformed_data = data
         if self.next:
             return self.next.transform(transformed_data)
         return transformed_data
 
 class TransformC(DataTransform):
-    """Concrete implementation of a data transform."""
-    
     def transform(self, data):
-        # Apply transform C to data
+        # Apply transform C
         transformed_data = data
         if self.next:
             return self.next.transform(transformed_data)
@@ -296,8 +317,42 @@ transform_a.set_next(transform_b).set_next(transform_c)
 transformed_data = transform_a.transform(data)
 ```
 
-The DataTransform class is an abstract base class for data transforms that includes a next attribute and a set_next() method for specifying the next transform in the pipeline. The concrete implementations of the data transforms, TransformA, TransformB, and TransformC, override the transform() method to apply their respective transformations to the data and pass the transformed data to the next transform in the pipeline.
+`set_next()` returns the next stage so you can wire the chain in one readable line. Each concrete transform only knows about its own logic and the handoff; adding, removing, or reordering steps has zero ripple effect.
 
-To use the pipeline pattern in a PySpark data pipeline, you would create a series of DataTransform objects and chain them together using the set_next() method. You would then call the transform() method on the first transform in the pipeline, passing in the data that you want to transform. This would trigger the transform() method on each of the transforms in the pipeline, applying the transformations in the specified order.
+**When to use it:** any multi-stage ETL/ELT flow, especially when stages need to be composed differently per job.
 
-In this article, we explored how to use design patterns in PySpark data pipelines to improve code quality, readability, and maintainability. We covered five common design patterns: the factory pattern, the singleton pattern, the builder pattern, the observer pattern, and the pipeline pattern. By following clean code principles and implementing these design patterns in your PySpark data pipelines, you can create more reliable, efficient, and scalable data processing systems.
+## Putting it all together
+
+These five patterns combine well. A production pipeline typically looks like:
+
+1. A singleton `SparkSession` shared by every component.
+2. A factory that picks the right `DataSource` based on config.
+3. A builder that assembles the transform chain with per-job parameters.
+4. A pipeline that chains the transforms in order.
+5. An observer that fires side effects (metrics, alerts, downstream notifications) after each successful run.
+
+## Frequently asked questions
+
+### What are design patterns in PySpark?
+
+They are reusable solutions to recurring problems in PySpark code — for example, how to create data sources flexibly (factory), how to share one `SparkSession` (singleton), or how to compose transforms (pipeline). The same shapes show up across almost every non-trivial pipeline.
+
+### Which pattern should I start with?
+
+Start with factory and pipeline. Factory removes hard-coded data formats; pipeline gives you a clean ETL skeleton. The others slot in once those two are in place.
+
+### What is the difference between the factory and singleton patterns?
+
+Factory produces many instances of different concrete classes that share an interface. Singleton restricts a class to exactly one instance. They solve opposite problems and are often used together — a factory object itself may be implemented as a singleton.
+
+### Is an abstract class the same as an `abc` class in Python?
+
+Yes. In Python, abstract base classes live in the `abc` module; any class that inherits from `abc.ABC` and uses `@abstractmethod` is what people casually call an "abc class". It defines a contract that subclasses must implement.
+
+### Where can I learn more PySpark design patterns?
+
+Keep going: [Advanced PySpark Design Patterns: Real-World Implementation Examples](/bonus/advanced-pyspark-design-patterns-implementation/) covers strategy, decorator, command, and template method patterns. For a one-page cheat sheet, see the [PySpark Design Patterns Quick Reference](/bonus/pyspark-design-patterns-quick-reference/). And if you're tuning an existing pipeline, [Apache Spark Performance Tuning](/blog/2023/01/06/performance-tuning-on-apache-spark/) pairs well with these patterns.
+
+## Conclusion
+
+We covered five essential design patterns — factory, singleton, builder, observer, and pipeline — and showed how each one improves a real PySpark data pipeline. Used together they cover most production needs: flexible data sources, shared resources, configurable transforms, event fan-out, and readable ETL chains. The next step is to try each one on a small PySpark job of your own — nothing locks the lessons in faster than running the code.
