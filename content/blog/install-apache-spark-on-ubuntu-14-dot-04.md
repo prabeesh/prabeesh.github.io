@@ -11,7 +11,11 @@ description: Install Apache Spark 1.1.0 on Ubuntu 14.04. Covers Java, Scala, and
 ---
 Update: For Spark 2 see the [Ubuntu 16.04 and macOS post](/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/).
 
-This post walks through Spark 1.1.0 on Ubuntu 14.04. For the latest version, see [Install Apache Spark 3.5 on Linux](/blog/2024/11/26/install-apache-spark-3-on-linux/). Start with Java:
+This post walks through Spark 1.1.0 on Ubuntu 14.04. For the latest version, see [Install Apache Spark 3.5 on Linux](/blog/2024/11/26/install-apache-spark-3-on-linux/).
+
+## Prerequisites
+
+Start with Java:
 ```
 	$ sudo apt-add-repository ppa:webupd8team/java
 	$ sudo apt-get update
@@ -75,7 +79,7 @@ Finally, [download the Spark 1.1.0 distribution](https://archive.apache.org/dist
 	$ wget https://archive.apache.org/dist/spark/spark-1.1.0/spark-1.1.0.tgz
 	$ tar xvf spark-1.1.0.tgz 
 ```
-### Building
+## Building Spark
 
 SBT(Simple Build Tool) is used for building Spark, which is bundled with it. To compile the code
 ```
@@ -91,7 +95,7 @@ Then you get the output as Pi is roughly 3.14634. Spark is ready to fire
 
 For more detail [visit](http://spark.apache.org/docs/1.1.1/)
 
-### Spark Interactive Shell
+## Spark interactive shell
 You can run Spark interactively through the Scala shell
 ```
 	$ ./bin/spark-shell
@@ -112,7 +116,7 @@ external/mqtt/target/scala-2.10/spark-streaming-mqtt_2.10-1.1.0.jar
 	scala > import org.apache.spark.streaming.mqtt._
 ```
 Using this you can check your code line by line.
-### Accessing Hadoop Filesystems
+## Accessing Hadoop filesystems
 If you have already the build source package, rebuild it against the hadoop version as follows
 ```
 	$ sbt/sbt clean

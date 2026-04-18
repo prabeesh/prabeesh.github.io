@@ -1,44 +1,40 @@
 ---
-title: "Simple CUDA Program Example: GPU Programming Fundamentals with Parallel Computing"
+title: "A Simple CUDA Program: Squaring 64 Numbers on the GPU"
 date: 2013-03-07T11:00:00+05:30
 author: Prabeesh Keezhathra
-tags: [CUDA, GPU Programming, Parallel Computing, NVIDIA, High-Performance Computing, C Programming]
+tags: [CUDA, GPU Programming, Parallel Computing, NVIDIA, C Programming]
 keywords:
   - CUDA programming tutorial
-  - GPU programming examples
-  - CUDA kernel development
-  - nvcc compiler usage
-  - cudaMalloc cudaMemcpy examples
-  - parallel computing CUDA
+  - CUDA kernel example
+  - cudaMalloc cudaMemcpy
+  - nvcc compiler
   - NVIDIA GPU programming
-  - CUDA memory management
-  - GPU kernel launch
 description: A simple CUDA program that computes the squares of 64 numbers on the GPU. Covers memory allocation, host-device transfer, and kernel launch.
 ---
-This blog post is an introduction to the world of GPU programming with CUDA. We will cover the fundamental concepts and tools necessary to get started with CUDA, including:
 
-- The steps involved in a typical GPU program, such as allocating storage on the GPU, transferring data between the CPU and GPU, and launching kernels on the GPU to process the data.
-- How to use the Nvidia C Compiler (nvcc) to compile CUDA code and follow conventions like naming GPU data with a "d" prefix.
-- Key functions like cudaMalloc and cudaMemcpy that are used to allocate GPU memory and transfer data between the host and device.
-- The kernel launch operator and how to set the number of blocks and threads in the grid, as well as how to pass arguments to the kernel function.
-- The importance of error checking in CUDA code.
+Following on from my [introduction to parallel programming](/blog/2013/02/22/introduction-to-parallel-programming/), this post walks through a simple CUDA program that computes the squares of 64 numbers on the GPU. The source is on [GitHub](https://github.com/prabeesh/CUDA-code-square/blob/master/square.cu).
 
-To help illustrate these concepts, provided a simple example code that computes the squares of 64 numbers using CUDA. By the end of this post, you will have a basic foundation in GPU programming with CUDA and be ready to write your own programs and experience the performance benefits of using the GPU for parallel processing.
+## A typical GPU program
 
-In my [previous post](/blog/2013/02/22/introduction-to-parallel-programming/) I wrote about an introduction to parallel programming with CUDA. In this post explaining a simple example CUDA code to compute squares of 64 numbers. A typical GPU program consists of following steps.
+A typical CUDA program follows four steps:
 
-    1- CPU allocates storage on GPU
-    2- CPU copies input data from CPU to GPU
-    3- CPU launch kernels on GPU to process the data
-    4- CPU copies result back to CPU from GPU
+1. CPU allocates storage on the GPU
+2. CPU copies input data from CPU to GPU
+3. CPU launches kernels on the GPU to process the data
+4. CPU copies the result back from GPU to CPU
+
+## Compiling
 
 ```c
 nvcc -o square square.cu
 ```
-Here is instead of running the regular C compiler we are running *nvcc*, the Nvidia C Compiler. The output is going to go an executable called square and our input file is "square.cu". cu is the convention for how we name.Source code is available on [github](https://github.com/prabeesh/CUDA-code-square/blob/master/square.cu)
 
+Instead of the regular C compiler, we use `nvcc`, the NVIDIA C Compiler. The output is an executable called `square` and the input file is `square.cu`. `.cu` is the convention for CUDA source files.
 
-We are going to walk through the CPU code first. <!--more-->
+## The host code
+
+We'll walk through the CPU side first. <!--more-->
+
 ```c
 int main(int argc, char ** argv) { 
     const int ARRAY_SIZE = 64; 
@@ -54,33 +50,46 @@ float h_out[ARRAY_SIZE]
 }
 ```
 
-The first thing we are going to do is declare the size of the array and determine how many bytes it uses. We then fill it up in this loop with floating point numbers, where array element i is simply set to i. All of this is standard C, nothing GPU specific so far. One thing to note, though, is a common CUDA convention. Data on the CPU, the host, starts with h. Data on the GPU, the device, starts with d. This is just a convention.
+First we declare the array size and how many bytes it uses, then fill it with floating-point numbers where element `i` is set to `i`. All standard C so far, nothing GPU-specific. One CUDA convention to note: data on the CPU (the host) starts with `h`; data on the GPU (the device) starts with `d`.
+
 ```c
 // declare GPU memory pointers 
 float * d_in; 
 float * d_out;
 ```
-If you're accessing data through a point or on the CPU, your pointer better points to something in CPU memory, or you're going to have a bad time. Same thing for the GPU. And the first interesting thing that you see is how to declare a pointer on the GPU. It looks just like a pointer declared on the CPU. It's just a float star.
+
+Pointers on the GPU are declared the same way as on the CPU, just a `float *`. The difference is what they point to: if you access a CPU pointer as GPU memory (or vice versa), you'll have a bad time.
+
 ```c
 // allocate GPU memory 
 cudaMalloc((void**) &d_in, ARRAY_BYTES); 
 cudaMalloc((void**) &d_out, ARRAY_BYTES);
 ```
-Now, to tell Cuda that your data is actually on the GPU, not the CPU. We are using cudaMalloc with two arguments, the pointer and the number of bytes to allocate. cudaMalloc means to allocate the data on the GPU whereas, a plain Malloc would mean allocate the data on a CPU.
+
+`cudaMalloc` takes two arguments, the pointer and the number of bytes to allocate. It allocates data on the GPU, whereas a plain `malloc` would allocate on the CPU.
+
 ```c
 // transfer the array to the GPU 
 cudaMemcpy(d_in, h_in, ARRAY_BYTES, cudaMemcpyHostToDevice);
 ```
-The next thing we do is actually copy the data from the CPU the array h_in on to the GPU, the array din. This call is cudaMemcpy. It's just like a regular Memcpy, but it takes four arguments instead of three. The first three arguments are the same as regular C Memcpy, the destination, the source, and the number of bytes. The fourth argument says the direction of the transfer. The three choices are Cuda memory host to device, Cuda memory device to host, and Cuda memory device to device.
+
+`cudaMemcpy` copies the array `h_in` from the CPU to the array `d_in` on the GPU. It's like a regular `memcpy`, but with a fourth argument that specifies the transfer direction. The three options are `cudaMemcpyHostToDevice`, `cudaMemcpyDeviceToHost`, and `cudaMemcpyDeviceToDevice`.
+
+## Launching the kernel
+
 ```c
 // launch the kernel 
 square<<<dim3(1,1,1), dim3(64,1,1)>>>(d_out, d_in);
 ```
-Now consider how do we actually launch kernal on the GPU. So, here is a new piece of syntax in CUDA, the CUDA launch operator. So, the CUDA launch operator 
+
+This is the CUDA launch operator:
+
 ```
-<<<someparameters>>>; 
+<<<someparameters>>>;
 ```
-So, this line says, launch the kernel name square on one block of 64 elements. Then, the arguments to the kernel are two pointers, d_out and d_in. This code tells the CPU to launch on the GPU 64 copies of the kernel on 64 threads. Note that we can only call the kernel on GPU data, not CPU data. And this cudaMemcpy call will move memory from device to host, and place it in h_out.
+
+The line says: launch the kernel `square` on one block of 64 elements. The arguments to the kernel are two pointers, `d_out` and `d_in`. This tells the CPU to launch 64 copies of the kernel on 64 threads. The kernel can only be called on GPU data, not CPU data. After the kernel runs, a second `cudaMemcpy` moves memory from device to host into `h_out`.
+
 ```c
 // print out the resulting array 
 for (int i =0; i ; ARRAY_SIZE; i++) {  
@@ -91,7 +100,11 @@ for (int i =0; i ; ARRAY_SIZE; i++) {
     udaFree(d_out); 
     return 0;
 ```
-The next thing we do is print it out. We are just walking through the h_out array, we are printing four things per line, so we are;putting tabs in and then a new line after four, and then we free the memory that we allocated on the GPU and return 0. So, that's all the CPU code.; ;Most programs are going to have you create some data on the CPU, allocate;some data on the GPU, copy memory from CPU to GPU, launch some kernels that will run on the GPU, copy the result back to the CPU and then, continue;to process them, print them, and so on.
+
+We walk through `h_out`, print four values per line, then free the GPU memory. Most CUDA programs follow the same shape: create data on the CPU, allocate on the GPU, copy CPU -> GPU, launch kernels, copy GPU -> CPU, continue processing.
+
+## The kernel
+
 ```c
 __global__ void square(float * d_out, float * d_in){    
     int idx = threadIdx.x;    
@@ -99,14 +112,14 @@ __global__ void square(float * d_out, float * d_in){
     d_out[idx] = f * f;
 }
 ```
-Now let's look at the kernel itself. Recall that this will look like a serial program that will run on one thread. And the CPU is responsible for launching that;program on many parallel threads. This kernel indeed looks exactly like a serial program.
 
-Just know that this is the way;that CUDA knows this code is a kernel as opposed to CPU code. Next we have void. Void just means the kernel doesn't return a value. Instead it writes the;output into the pointer specified in its argument list. This kernel takes two arguments. These are pointers to the output and the input arrays.
+The kernel looks like a serial program that runs on one thread. The CPU is responsible for launching it on many parallel threads. The `__global__` qualifier is how CUDA knows this is a kernel rather than CPU code. `void` means the kernel doesn't return a value; it writes its output into the pointer passed in.
 
-Let's walk through the body of the kernel. So the first line of the body here. CUDA has a built in variable called thread index, threadIDX, and that's going to tell each thread its index within a block. threadIDX is actually a c struct with 3 members. .x, .y, and .z. the c struct is called a dim 3. Now, we will launch 64 threads. So for the first instance of those threads, threadIDX.x will return zero, for the second instance, 1. And so on, up to 63 for the last element. Everything else in this kernel just looks like straightforward C. It looks just like a serial program.
+The body:
 
-For each thread, we're going to first read the array element corresponding to this thread index from global memory. We are going to store it in this float;variable f. We are then going to square f, and we're going to write that value back to global memory, in the output array element that corresponds to our thread index.
+- `threadIdx.x` gives each thread its index within the block. `threadIdx` is a struct with `.x`, `.y`, `.z` members (a `dim3`). With 64 threads launched, the first instance returns 0, the next 1, up to 63 for the last.
+- Each thread reads its array element from global memory into `f`, squares it, and writes the result back to the output array at the same index.
 
-This blog is my short notes as part of the course now I am doing in the Udacity [Intro to Parallel Programming](https://www.udacity.com/course/cs344)
+That's it. Everything else looks like straightforward C.
 
-Thank you for reading this introduction to GPU programming with CUDA! I hope you now have a good understanding of the basic concepts and tools needed to get started with CUDA and write your own GPU programs. Good luck on your journey into the world of GPU programming with CUDA!
+This post is from my notes while taking the Udacity [Intro to Parallel Programming](https://www.udacity.com/course/cs344) course.

@@ -1,5 +1,5 @@
 ---
-title: "AM Wave Generation and Plotting with Matplotlib Python: A Detailed Guide"
+title: "Generating and Plotting an AM Wave with Matplotlib"
 date: 2011-09-25T1:39:00+05:30
 author: Prabeesh Keezhathra
 tags: [Python, Matplotlib]
@@ -8,17 +8,18 @@ keywords:
   - AM generation
   - Matplotlib Python
   - signal processing
-  - data visualization
   - analog communication
-  - carrier signal
-  - Matlab equivalent Linux
 description: Generate and plot an AM wave in Python with NumPy and Matplotlib, with carrier and message frequency parameters you can adjust.
 ---
-Amplitude Modulation (AM) is a type of analog communication in which the amplitude of a carrier signal is varied in proportion to the message signal. It is one of the oldest and most widely used forms of radio communication, and it is still used in many applications today, including AM radio broadcasting and certain types of military and aviation communications.
+Amplitude Modulation (AM) is a type of analog communication in which the amplitude of a carrier signal is varied in proportion to the message signal. It's one of the oldest and most widely used forms of radio communication, still used in AM broadcasting and some aviation and military systems.
 
-In this blog post, we will learn how to generate and plot AM waves using the Python library Matplotlib. Matplotlib is a powerful tool for creating visualizations of data and is widely used in scientific and engineering applications. We will use it to plot an AM wave with a specified carrier frequency and message frequency, and learn how to customize the appearance of the plot. This tutorial is designed for beginners, but some familiarity with Python and basic concepts in signal processing will be helpful.
+This post generates and plots an AM wave in Python, using NumPy for the math and Matplotlib for the plot. Familiarity with basic Python is useful; signal-processing knowledge isn't required.
 
-To plot AM waves using Matplotlib, we need to first import the `matplotlib.pylab` module and the `numpy` module, which provides support for numerical operations. We then define the carrier frequency `fc`, the message frequency `fm`, and the time array `t`. Next, we generate the carrier signal `c` and the message signal `m` using the sin function from the numpy module. Finally, we multiply the carrier signal by the message signal to obtain the AM signal, and plot it using the `plot` function from the `matplotlib.pylab` module.
+## The approach
+
+Import `matplotlib.pylab` and `numpy`, define the carrier frequency `fc`, the message frequency `fm`, and a time array `t`. Generate the carrier and message signals with NumPy's `sin`, multiply them together to form the AM signal, and plot the result.
+
+## The code
 
 ```Python
 # Import the matplotlib.pylab and numpy modules
@@ -45,10 +46,11 @@ am = c * (2 + m)
 plt.plot(am, 'r')
 plt.show()
 ```
-This code will generate an AM wave with a carrier frequency of 50 Hz and a message frequency of 5 Hz, and plot it using Matplotlib. The plot will be displayed using the show function from the matplotlib.pylab module. The resulting plot should look something like the one shown below.
+
+This produces an AM wave with a 50 Hz carrier and a 5 Hz message, plotted via Matplotlib:
 
 ![AM waveform plotted in Matplotlib with a 50 Hz carrier and 5 Hz message signal](/images/am.png)
 
-For more details about matplotlib, see the [Matplotlib Artist tutorial](https://matplotlib.org/stable/tutorials/artists.html).
+## Next steps
 
-From here, try adjusting `fc` and `fm` to see how the carrier and message frequencies interact, or add noise to the signal and see how the plot changes.
+For more on Matplotlib, see the [Matplotlib Artist tutorial](https://matplotlib.org/stable/tutorials/artists.html). From here, try adjusting `fc` and `fm` to see how the carrier and message frequencies interact, or add noise to the signal and see how the plot changes.

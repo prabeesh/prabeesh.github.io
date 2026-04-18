@@ -1,6 +1,6 @@
 [
   {
-    "title": "Simple CUDA Program Example: GPU Programming Fundamentals with Parallel Computing",
+    "title": "A Simple CUDA Program: Squaring 64 Numbers on the GPU",
     "description": "A simple CUDA program that computes the squares of 64 numbers on the GPU. Covers memory allocation, host-device transfer, and kernel launch.",
     "url": "/blog/2013/03/07/a-simple-cuda-program/",
     "date": "2013-03-07T05:30:00.000Z",
@@ -9,23 +9,18 @@
       "GPU Programming",
       "Parallel Computing",
       "NVIDIA",
-      "High-Performance Computing",
       "C Programming"
     ],
     "keywords": [
       "CUDA programming tutorial",
-      "GPU programming examples",
-      "CUDA kernel development",
-      "nvcc compiler usage",
-      "cudaMalloc cudaMemcpy examples",
-      "parallel computing CUDA",
-      "NVIDIA GPU programming",
-      "CUDA memory management",
-      "GPU kernel launch"
+      "CUDA kernel example",
+      "cudaMalloc cudaMemcpy",
+      "nvcc compiler",
+      "NVIDIA GPU programming"
     ],
     "author": "Prabeesh Keezhathra",
-    "readingTime": 7,
-    "wordCount": 1371,
+    "readingTime": 4,
+    "wordCount": 733,
     "category": "blog"
   },
   {
@@ -47,11 +42,11 @@
     ],
     "author": "Prabeesh Keezhathra",
     "readingTime": 3,
-    "wordCount": 464,
+    "wordCount": 470,
     "category": "blog"
   },
   {
-    "title": "AM Wave Generation and Plotting with Matplotlib Python: A Detailed Guide",
+    "title": "Generating and Plotting an AM Wave with Matplotlib",
     "description": "Generate and plot an AM wave in Python with NumPy and Matplotlib, with carrier and message frequency parameters you can adjust.",
     "url": "/blog/2011/09/25/am-plot-matplotlib/",
     "date": "2011-09-24T20:09:00.000Z",
@@ -64,14 +59,11 @@
       "AM generation",
       "Matplotlib Python",
       "signal processing",
-      "data visualization",
-      "analog communication",
-      "carrier signal",
-      "Matlab equivalent Linux"
+      "analog communication"
     ],
     "author": "Prabeesh Keezhathra",
     "readingTime": 2,
-    "wordCount": 398,
+    "wordCount": 259,
     "category": "blog"
   },
   {
@@ -204,7 +196,7 @@
     ],
     "author": "Prabeesh Keezhathra",
     "readingTime": 2,
-    "wordCount": 378,
+    "wordCount": 379,
     "category": "blog"
   },
   {
@@ -286,8 +278,8 @@
       "Mosquitto broker"
     ],
     "author": "Prabeesh Keezhathra",
-    "readingTime": 13,
-    "wordCount": 2482,
+    "readingTime": 4,
+    "wordCount": 681,
     "category": "blog"
   },
   {

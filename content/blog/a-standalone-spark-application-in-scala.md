@@ -31,9 +31,9 @@ System.setProperty("twitter4j.oauth.consumerSecret", args(2))
 System.setProperty("twitter4j.oauth.accessToken", args(3))  
 System.setProperty("twitter4j.oauth.accessTokenSecret", args(4))  
 ``` 
-If you want to read twitter authentication credential from file, refer this [link](https://github.com/pwendell/spark-twitter-collection/blob/master/TwitterUtils.scala)
+If you want to read Twitter authentication credentials from a file, see this [TwitterUtils example](https://github.com/pwendell/spark-twitter-collection/blob/master/TwitterUtils.scala).
 
-The sbt configuration file. For more detail about sbt [refer](http://www.scala-sbt.org/release/docs/Getting-Started/Setup.html)
+The sbt configuration file. For more detail about sbt, see the [sbt setup guide](http://www.scala-sbt.org/release/docs/Getting-Started/Setup.html).
 ```Scala
 name := "TwitterPopularTags" 
 
