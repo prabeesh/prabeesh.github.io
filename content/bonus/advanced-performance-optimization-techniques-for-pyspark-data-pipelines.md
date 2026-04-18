@@ -13,7 +13,7 @@ keywords:
   - predicate pushdown
   - PySpark caching
   - PySpark memory tuning
-description: Advanced PySpark tuning beyond the basics. Covers adaptive query execution, dynamic partition pruning, predicate pushdown, cost-based optimization, and memory management patterns.
+description: Advanced PySpark tuning beyond the basics. Covers adaptive query execution, dynamic partition pruning, predicate pushdown, and memory management.
 ---
 
 This builds on [Performance Tuning on Apache Spark](/blog/2023/01/06/performance-tuning-on-apache-spark/), which covers the fundamentals (spill, skew, shuffle, storage, serialization). Once those are under control, the next wins come from runtime-adaptive features and smarter caching.

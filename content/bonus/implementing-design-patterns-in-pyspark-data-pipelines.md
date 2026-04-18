@@ -21,7 +21,7 @@ keywords:
   - builder pattern PySpark
   - observer pattern PySpark
   - pipeline pattern PySpark
-description: A hands-on PySpark tutorial showing how to apply five classic software design patterns, factory, singleton, builder, observer, and pipeline, to build cleaner, more maintainable data pipelines. Full code examples you can run.
+description: A hands-on PySpark tutorial applying five classic design patterns, factory, singleton, builder, observer, and pipeline, to data pipelines.
 ---
 
 If you want to write PySpark data pipelines that stay clean as they grow, design patterns are the most reliable tool to reach for. Pipelines get complex quickly: new data sources appear, transformations multiply, one-off scripts turn into production systems. Classic software design patterns give you proven structures to keep that complexity under control.

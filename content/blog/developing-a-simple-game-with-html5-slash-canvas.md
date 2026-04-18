@@ -142,5 +142,3 @@ function firing() {
   }
 ```
 The [source code is available here](https://github.com/prabeesh/Game-Javascript-Canvas-GAE).
-
-To [play game click here](http://prabs-game.appspot.com/)

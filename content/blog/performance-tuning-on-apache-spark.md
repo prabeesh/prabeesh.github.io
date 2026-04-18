@@ -15,7 +15,7 @@ keywords:
   - Spark data skew
   - Spark shuffle optimization
   - Spark memory tuning
-description: "A practical guide to tuning Apache Spark jobs. Covers the five areas that matter most in production: spill, skew, shuffle, storage, and serialization. Includes runnable PySpark examples."
+description: "A practical guide to tuning Apache Spark jobs. Covers the five areas that matter most: spill, skew, shuffle, storage, and serialization."
 ---
 
 Performance tuning decides whether a Spark job runs in 10 minutes or 10 hours. Most slowdowns you'll hit in production come from the same five areas: **spill, skew, shuffle, storage, and serialization**. This guide walks through each one with the cause, how to spot it in the Spark UI, and the PySpark code to fix it.

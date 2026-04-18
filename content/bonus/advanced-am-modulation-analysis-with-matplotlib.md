@@ -14,7 +14,7 @@ keywords:
   - FFT in Python
   - sideband analysis
   - modulation index
-description: Go beyond basic AM waveforms. Build a reusable Matplotlib + NumPy analyzer that calculates modulation index, inspects sidebands via FFT, measures signal quality, and handles noise.
+description: Go beyond basic AM waveforms. Build a Matplotlib + NumPy analyzer that measures modulation index, inspects sidebands via FFT, and handles noise.
 ---
 
 This post builds on [AM Wave Generation and Plotting with Matplotlib](/blog/2011/09/25/am-plot-matplotlib/). Once you can generate an AM waveform, the interesting question is: is it any good? That means measuring modulation index, inspecting the spectrum, and understanding how noise degrades the signal. Below is a reusable `AdvancedAMAnalyzer` class that handles all of it, plus worked examples.

@@ -1,7 +1,7 @@
 [
   {
     "title": "Simple CUDA Program Example: GPU Programming Fundamentals with Parallel Computing",
-    "description": "Learn CUDA programming fundamentals with a complete example. Master GPU memory allocation, data transfer, kernel launching, and parallel computing concepts for high-performance applications using NVIDIA CUDA.",
+    "description": "A simple CUDA program that computes the squares of 64 numbers on the GPU. Covers memory allocation, host-device transfer, and kernel launch.",
     "url": "/blog/2013/03/07/a-simple-cuda-program/",
     "date": "2013-03-07T05:30:00.000Z",
     "tags": [
@@ -30,7 +30,7 @@
   },
   {
     "title": "Standalone Spark Application in Scala: Twitter Streaming Example",
-    "description": "Build a standalone Spark Streaming application in Scala that surfaces popular hashtags from the Twitter firehose, packaged with sbt and developed in the Eclipse IDE.",
+    "description": "Build a standalone Spark Streaming app in Scala that surfaces popular Twitter hashtags, packaged with sbt and developed in the Eclipse IDE.",
     "url": "/blog/2014/04/01/a-standalone-spark-application-in-scala/",
     "date": "2014-04-01T17:26:00.000Z",
     "tags": [
@@ -70,8 +70,8 @@
       "Matlab equivalent Linux"
     ],
     "author": "Prabeesh Keezhathra",
-    "readingTime": 3,
-    "wordCount": 435,
+    "readingTime": 2,
+    "wordCount": 398,
     "category": "blog"
   },
   {
@@ -114,8 +114,8 @@
       "keyboard input canvas"
     ],
     "author": "Prabeesh Keezhathra",
-    "readingTime": 5,
-    "wordCount": 801,
+    "readingTime": 4,
+    "wordCount": 797,
     "category": "blog"
   },
   {
@@ -167,7 +167,7 @@
   },
   {
     "title": "Install Apache Spark 3.5 on Linux (Ubuntu, CentOS)",
-    "description": "Install Apache Spark 3.5 on Linux (Ubuntu, CentOS), binary distribution and from source. Covers Java/Python prerequisites, environment variables, standalone cluster, YARN and Kubernetes deploy modes, and HDFS integration.",
+    "description": "Install Apache Spark 3.5 on Linux (Ubuntu, CentOS). Covers Java/Python prerequisites, standalone cluster setup, YARN and Kubernetes deploy modes.",
     "url": "/blog/2024/11/26/install-apache-spark-3-on-linux/",
     "date": "2024-11-26T06:54:00.000Z",
     "tags": [
@@ -189,7 +189,7 @@
   },
   {
     "title": "Install Apache Spark on Ubuntu 14.04",
-    "description": "Install Apache Spark 1.1.0 on Ubuntu 14.04. Covers Java, Scala, and git prerequisites, the sbt assembly build, the Spark shell, streaming MQTT, and rebuilding against a specific Hadoop version.",
+    "description": "Install Apache Spark 1.1.0 on Ubuntu 14.04. Covers Java, Scala, and git prerequisites, the sbt assembly build, and the Spark shell.",
     "url": "/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/",
     "date": "2014-10-31T08:28:31.000Z",
     "tags": [
@@ -204,12 +204,12 @@
     ],
     "author": "Prabeesh Keezhathra",
     "readingTime": 2,
-    "wordCount": 377,
+    "wordCount": 378,
     "category": "blog"
   },
   {
     "title": "Introduction to AVR Microcontroller Programming",
-    "description": "Master AVR microcontroller programming from scratch. Learn development environment setup, AVR-GCC compilation, programming with USBASP, and create your first LED blinking program with detailed code explanations and hardware concepts.",
+    "description": "Get started with AVR microcontroller programming. Walks through toolchain setup, AVR-GCC, flashing with USBASP, and a first LED blink program.",
     "url": "/blog/2012/02/21/introduction-to-avr-programing/",
     "date": "2012-02-20T21:09:00.000Z",
     "tags": [
@@ -264,8 +264,8 @@
       "MSP430 LaunchPad"
     ],
     "author": "Prabeesh Keezhathra",
-    "readingTime": 9,
-    "wordCount": 1604,
+    "readingTime": 8,
+    "wordCount": 1571,
     "category": "blog"
   },
   {
@@ -287,7 +287,7 @@
     ],
     "author": "Prabeesh Keezhathra",
     "readingTime": 13,
-    "wordCount": 2525,
+    "wordCount": 2482,
     "category": "blog"
   },
   {
@@ -314,7 +314,7 @@
   },
   {
     "title": "HTML5 Canvas Paint Application with JavaScript",
-    "description": "A small browser-based paint app built on an HTML5 canvas. Drawing tools, colors, and mouse-event handling, plus notes on deploying with Google App Engine and Flask.",
+    "description": "A small browser-based paint app on an HTML5 canvas. Covers drawing tools, colors, mouse events, and notes on deploying with Flask.",
     "url": "/blog/2013/03/30/paint-app-using-javascript-and-canvas/",
     "date": "2013-03-30T07:14:00.000Z",
     "tags": [
@@ -330,12 +330,12 @@
     ],
     "author": "Prabeesh Keezhathra",
     "readingTime": 1,
-    "wordCount": 179,
+    "wordCount": 182,
     "category": "blog"
   },
   {
     "title": "Apache Spark Performance Tuning: Spill, Skew, Shuffle, Storage, and Serialization",
-    "description": "A practical guide to tuning Apache Spark jobs. Covers the five areas that matter most in production: spill, skew, shuffle, storage, and serialization. Includes runnable PySpark examples.",
+    "description": "A practical guide to tuning Apache Spark jobs. Covers the five areas that matter most: spill, skew, shuffle, storage, and serialization.",
     "url": "/blog/2023/01/06/performance-tuning-on-apache-spark/",
     "date": "2023-01-06T10:51:39.000Z",
     "tags": [
@@ -360,7 +360,7 @@
   },
   {
     "title": "How to Run a PySpark Notebook with Docker",
-    "description": "Run PySpark in a Jupyter notebook via Docker. Walks through the official jupyter/pyspark-notebook image, a docker-compose setup for persistent work, and how to connect from your browser.",
+    "description": "Run PySpark in a Jupyter notebook with Docker. Uses the official jupyter/pyspark-notebook image plus a docker-compose setup for persistent work.",
     "url": "/blog/2015/06/19/pyspark-notebook-with-docker/",
     "date": "2015-06-19T19:08:08.000Z",
     "tags": [
@@ -404,7 +404,7 @@
   },
   {
     "title": "Running Mesos 0.13 on Ubuntu 12.04",
-    "description": "Install Apache Mesos 0.13 on Ubuntu 12.04 and start a single-master cluster. Covers apt packages, building from source, launching master and slave, and configuring a client machine.",
+    "description": "Install Apache Mesos 0.13 on Ubuntu 12.04 and start a single-master cluster. Covers apt packages, building from source, and configuring clients.",
     "url": "/blog/2013/10/07/running-mesos-0130-on-ubuntu-1204/",
     "date": "2013-10-07T05:23:00.000Z",
     "tags": [
@@ -446,7 +446,7 @@
   },
   {
     "title": "How to Build a USBtinyISP: Low-Cost DIY AVR Programmer",
-    "description": "Build a low-cost DIY USB programmer for AVR microcontrollers. Walks through the circuit, fuse-bit configuration with avrdude, and how to program ATtiny and ATmega chips.",
+    "description": "Build a low-cost DIY USB programmer for AVR microcontrollers. Walks through the circuit, avrdude fuse configuration, and flashing ATtiny/ATmega chips.",
     "url": "/blog/2012/07/04/simplest-and-low-cost-usb-avr/",
     "date": "2012-07-04T14:09:00.000Z",
     "tags": [
@@ -471,7 +471,7 @@
   },
   {
     "title": "Advanced AM Modulation Analysis with Matplotlib",
-    "description": "Go beyond basic AM waveforms. Build a reusable Matplotlib + NumPy analyzer that calculates modulation index, inspects sidebands via FFT, measures signal quality, and handles noise.",
+    "description": "Go beyond basic AM waveforms. Build a Matplotlib + NumPy analyzer that measures modulation index, inspects sidebands via FFT, and handles noise.",
     "url": "/bonus/advanced-am-modulation-analysis-with-matplotlib/",
     "date": "2024-01-25T09:00:00.000Z",
     "tags": [
@@ -495,7 +495,7 @@
   },
   {
     "title": "Advanced PySpark Performance Optimization Techniques",
-    "description": "Advanced PySpark tuning beyond the basics. Covers adaptive query execution, dynamic partition pruning, predicate pushdown, cost-based optimization, and memory management patterns.",
+    "description": "Advanced PySpark tuning beyond the basics. Covers adaptive query execution, dynamic partition pruning, predicate pushdown, and memory management.",
     "url": "/bonus/advanced-performance-optimization-techniques-for-pyspark-data-pipelines/",
     "date": "2024-01-20T09:00:00.000Z",
     "tags": [
@@ -562,7 +562,7 @@
   },
   {
     "title": "PySpark Design Patterns for Data Pipelines",
-    "description": "A hands-on PySpark tutorial showing how to apply five classic software design patterns, factory, singleton, builder, observer, and pipeline, to build cleaner, more maintainable data pipelines. Full code examples you can run.",
+    "description": "A hands-on PySpark tutorial applying five classic design patterns, factory, singleton, builder, observer, and pipeline, to data pipelines.",
     "url": "/bonus/implementing-design-patterns-in-pyspark-data-pipelines/",
     "date": "2023-01-14T13:37:59.000Z",
     "tags": [

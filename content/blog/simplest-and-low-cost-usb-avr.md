@@ -15,7 +15,7 @@ keywords:
   - ATtiny2313
   - ATmega8
   - USB programmer
-description: Build a low-cost DIY USB programmer for AVR microcontrollers. Walks through the circuit, fuse-bit configuration with avrdude, and how to program ATtiny and ATmega chips.
+description: Build a low-cost DIY USB programmer for AVR microcontrollers. Walks through the circuit, avrdude fuse configuration, and flashing ATtiny/ATmega chips.
 ---
 
 Atmel AVR chips power a lot of hobby and embedded projects, small, cheap, well-documented. To get code onto them you need a programmer, and commercial ISPs run $20-$40 for something that's basically an ATtiny running open-source firmware. The USBtinyISP flips that: it's a DIY programmer built around an ATtiny2313, costs a few dollars in parts, and works with almost any AVR target (ATtiny, ATmega, etc.).

@@ -11,7 +11,7 @@ keywords:
   - HTML5 canvas paint
   - JavaScript drawing app
   - canvas mouse events
-description: A small browser-based paint app built on an HTML5 canvas. Drawing tools, colors, and mouse-event handling, plus notes on deploying with Google App Engine and Flask.
+description: A small browser-based paint app on an HTML5 canvas. Covers drawing tools, colors, mouse events, and notes on deploying with Flask.
 ---
 A small browser-based drawing tool built on the HTML5 `<canvas>` element and plain JavaScript.
 
@@ -30,9 +30,9 @@ Each drawing is serialized as a JSON array of shape objects (type, start coordin
 
 Two back-end implementations exist:
 
-| Back-end | Storage | Deployment |
+| Back-end | Storage | Notes |
 | --- | --- | --- |
-| Google App Engine | Google Datastore | [Live demo on appspot.com](http://prabs-paint.appspot.com/) |
+| Google App Engine | Google Datastore | Originally deployed on appspot.com (no longer running) |
 | Flask | SQLite | Local or any WSGI host |
 
 ## Source code

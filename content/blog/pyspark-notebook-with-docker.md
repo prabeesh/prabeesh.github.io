@@ -8,7 +8,7 @@ keywords:
   - Spark Docker
   - PySpark notebook
   - Jupyter Spark
-description: Run PySpark in a Jupyter notebook via Docker. Walks through the official jupyter/pyspark-notebook image, a docker-compose setup for persistent work, and how to connect from your browser.
+description: Run PySpark in a Jupyter notebook with Docker. Uses the official jupyter/pyspark-notebook image plus a docker-compose setup for persistent work.
 ---
 
 Apache Spark works well in a Jupyter notebook: you get iterative development, inline plots, and the ability to poke at intermediate DataFrames. Docker makes the setup reproducible and removes the "works on my machine" problem. This post walks through running PySpark in Jupyter via the official `jupyter/pyspark-notebook` image.

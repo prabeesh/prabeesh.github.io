@@ -12,7 +12,7 @@ keywords:
   - sbt Spark project
   - Eclipse Spark
   - Twitter streaming example
-description: Build a standalone Spark Streaming application in Scala that surfaces popular hashtags from the Twitter firehose, packaged with sbt and developed in the Eclipse IDE.
+description: Build a standalone Spark Streaming app in Scala that surfaces popular Twitter hashtags, packaged with sbt and developed in the Eclipse IDE.
 ---
 This post walks through building a Spark Streaming application in Scala that extracts popular hashtags from the Twitter firehose, packaged with sbt, and runnable from the Eclipse IDE via the sbteclipse plugin.
 

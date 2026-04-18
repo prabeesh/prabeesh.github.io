@@ -7,7 +7,7 @@ keywords:
   - Spark 1.1.0 setup
   - sbt build Spark
   - spark-shell
-description: Install Apache Spark 1.1.0 on Ubuntu 14.04. Covers Java, Scala, and git prerequisites, the sbt assembly build, the Spark shell, streaming MQTT, and rebuilding against a specific Hadoop version.
+description: Install Apache Spark 1.1.0 on Ubuntu 14.04. Covers Java, Scala, and git prerequisites, the sbt assembly build, and the Spark shell.
 ---
 Update: For Spark 2 see the [Ubuntu 16.04 and macOS post](/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/).
 
@@ -70,9 +70,9 @@ In next step install git. Spark build depends on git.
 ```
 sudo apt-get install git
 ```
-Finally, [download spark ditribution](http://d3kbcqa49mib13.cloudfront.net/spark-1.1.0.tgz) 
+Finally, [download the Spark 1.1.0 distribution](https://archive.apache.org/dist/spark/spark-1.1.0/spark-1.1.0.tgz):
 ```
-	$ wget http://d3kbcqa49mib13.cloudfront.net/spark-1.1.0.tgz
+	$ wget https://archive.apache.org/dist/spark/spark-1.1.0/spark-1.1.0.tgz
 	$ tar xvf spark-1.1.0.tgz 
 ```
 ### Building

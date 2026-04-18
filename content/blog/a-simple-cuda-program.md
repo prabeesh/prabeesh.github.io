@@ -13,7 +13,7 @@ keywords:
   - NVIDIA GPU programming
   - CUDA memory management
   - GPU kernel launch
-description: Learn CUDA programming fundamentals with a complete example. Master GPU memory allocation, data transfer, kernel launching, and parallel computing concepts for high-performance applications using NVIDIA CUDA.
+description: A simple CUDA program that computes the squares of 64 numbers on the GPU. Covers memory allocation, host-device transfer, and kernel launch.
 ---
 This blog post is an introduction to the world of GPU programming with CUDA. We will cover the fundamental concepts and tools necessary to get started with CUDA, including:
 

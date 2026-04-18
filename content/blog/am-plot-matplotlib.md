@@ -47,8 +47,8 @@ plt.show()
 ```
 This code will generate an AM wave with a carrier frequency of 50 Hz and a message frequency of 5 Hz, and plot it using Matplotlib. The plot will be displayed using the show function from the matplotlib.pylab module. The resulting plot should look something like the one shown below.
 
-![](/images/am.png)
+![AM waveform plotted in Matplotlib with a 50 Hz carrier and 5 Hz message signal](/images/am.png)
 
-For more details about matplotlib [refer](http://matplotlib.sourceforge.net/users/artists.html)
+For more details about matplotlib, see the [Matplotlib Artist tutorial](https://matplotlib.org/stable/tutorials/artists.html).
 
-This post has hopefully helped you learn how to generate and plot AM waves using the Matplotlib library in Python. With the skills and knowledge you have gained from this tutorial, you can now start creating your own AM wave plots and exploring the full range of features and capabilities offered by Matplotlib. Whether you are a beginner or an experienced developer, this post should have provided you with a basic foundation for using Matplotlib to create beautiful and informative visualizations of data.
+From here, try adjusting `fc` and `fm` to see how the carrier and message frequencies interact, or add noise to the signal and see how the plot changes.

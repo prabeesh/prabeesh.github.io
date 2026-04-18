@@ -9,7 +9,7 @@ keywords:
   - Apache Mesos installation
   - Mesos Ubuntu 12.04
   - Mesos cluster setup
-description: Install Apache Mesos 0.13 on Ubuntu 12.04 and start a single-master cluster. Covers apt packages, building from source, launching master and slave, and configuring a client machine.
+description: Install Apache Mesos 0.13 on Ubuntu 12.04 and start a single-master cluster. Covers apt packages, building from source, and configuring clients.
 ---
 Apache Mesos is a cluster manager that abstracts CPU, memory, and storage across machines so frameworks (like Spark, Marathon, or Chronos) can run workloads without worrying about which physical node they land on. This post covers installing 0.13 on Ubuntu 12.04 and bringing up a minimal master + slave cluster.
 
