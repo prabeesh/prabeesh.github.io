@@ -3,7 +3,15 @@ title: "HTML5 Canvas Paint Application: Building Interactive Drawing Tools with 
 date: 2013-03-30T12:44:00+05:30
 author: Prabeesh Keezhathra
 tags: [JavaScript, HTML5 Canvas, Web Development, Interactive Applications, Google App Engine, Python Flask]
-keywords: HTML5 canvas paint application, JavaScript drawing app, canvas paint tool, interactive web drawing, HTML5 canvas tutorial, JavaScript paint program, web-based drawing application, canvas mouse events
+keywords:
+  - HTML5 canvas paint application
+  - JavaScript drawing app
+  - canvas paint tool
+  - interactive web drawing
+  - HTML5 canvas tutorial
+  - JavaScript paint program
+  - web-based drawing application
+  - canvas mouse events
 description: Build an interactive HTML5 canvas paint application with JavaScript. Learn drawing tools implementation, color selection, shape creation, data persistence with Google App Engine and Flask backends for web-based drawing applications.
 ---
 An application to draw simple drawings using lines, rectangles and circles in different colours. 

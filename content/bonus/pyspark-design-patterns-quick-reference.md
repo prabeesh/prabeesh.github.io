@@ -3,7 +3,12 @@ title: "PySpark Design Patterns Quick Reference: Code Snippets for Common Patter
 date: 2024-01-20T10:00:00+01:00
 draft: false
 tags: [PySpark, design patterns, quick reference, code snippets, data pipelines, factory pattern, singleton pattern, builder pattern, observer pattern, pipeline pattern]
-keywords: PySpark design patterns quick reference, PySpark pattern code snippets, design patterns cheat sheet, PySpark patterns reference guide, data pipeline patterns quick guide
+keywords:
+  - PySpark design patterns quick reference
+  - PySpark pattern code snippets
+  - design patterns cheat sheet
+  - PySpark patterns reference guide
+  - data pipeline patterns quick guide
 description: A quick reference guide with concise code snippets for implementing common design patterns in PySpark data pipelines. Perfect companion to detailed pattern explanations.
 ---
 

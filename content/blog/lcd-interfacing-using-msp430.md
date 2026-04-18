@@ -2,7 +2,14 @@
 title: "Complete Guide to LCD Interfacing with MSP430 Microcontroller: ADC Display Project"
 date: 2012-07-04T2:39:00+05:30
 tags: [MSP430, Embedded Systems, LCD Interfacing, ADC, Microcontroller Programming]
-keywords: MSP430 LCD interface tutorial, MSP430 ADC programming, LCD display microcontroller, embedded systems LCD, MSP430 LaunchPad LCD, potentiometer ADC display, LCD 4-bit interface MSP430
+keywords:
+  - MSP430 LCD interface tutorial
+  - MSP430 ADC programming
+  - LCD display microcontroller
+  - embedded systems LCD
+  - MSP430 LaunchPad LCD
+  - potentiometer ADC display
+  - LCD 4-bit interface MSP430
 description: Learn how to interface an LCD display with the MSP430 microcontroller to create an ADC voltage monitor. This comprehensive tutorial covers circuit connections, code implementation, ADC configuration, and LCD programming techniques for embedded systems development.
 ---
 

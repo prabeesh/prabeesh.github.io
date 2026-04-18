@@ -3,7 +3,15 @@ title: "Creating Uber JARs for Apache Spark Projects: Complete SBT Assembly Guid
 date: 2014-04-08T09:47:00+05:30
 author: Prabeesh Keezhathra
 tags: [Apache Spark, SBT, Scala, Big Data, JAR creation, sbt-assembly, Build Tools]
-keywords: Spark uber jar creation, sbt-assembly plugin tutorial, Apache Spark fat jar, SBT build configuration, Spark project deployment, sbt-assembly merge strategy, standalone Spark jar packaging, Scala Spark build process
+keywords:
+  - Spark uber jar creation
+  - sbt-assembly plugin tutorial
+  - Apache Spark fat jar
+  - SBT build configuration
+  - Spark project deployment
+  - sbt-assembly merge strategy
+  - standalone Spark jar packaging
+  - Scala Spark build process
 description: Master creating executable uber JARs for Apache Spark projects using sbt-assembly. Learn plugin configuration, merge strategies, dependency management, and deployment best practices for production Spark applications.
 ---
 

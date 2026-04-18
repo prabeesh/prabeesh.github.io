@@ -3,7 +3,15 @@ displayTitle: Flask with MongoDB
 title: "Building a Web Paint App with Flask and MongoDB: A Complete Tutorial"
 date: 2013-03-31T21:53:00+05:30
 tags: [NoSQL Database, Python Flask, MongoDB, Web Development, Canvas API]
-keywords: Flask MongoDB integration, Python Flask tutorial, NoSQL database app, web paint application, MongoDB CRUD operations, Flask web development, HTML5 Canvas backend, JavaScript Flask integration
+keywords:
+  - Flask MongoDB integration
+  - Python Flask tutorial
+  - NoSQL database app
+  - web paint application
+  - MongoDB CRUD operations
+  - Flask web development
+  - HTML5 Canvas backend
+  - JavaScript Flask integration
 description: Learn how to build a complete web-based paint application using Python Flask and MongoDB. This comprehensive tutorial covers MongoDB integration, NoSQL database design, Canvas API backend storage, and practical Flask development patterns for modern web applications.
 ---
 

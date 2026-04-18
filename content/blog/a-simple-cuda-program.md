@@ -3,7 +3,16 @@ title: "Simple CUDA Program Example: GPU Programming Fundamentals with Parallel 
 date: 2013-03-07T11:00:00+05:30
 author: Prabeesh Keezhathra
 tags: [CUDA, GPU Programming, Parallel Computing, NVIDIA, High-Performance Computing, C Programming]
-keywords: CUDA programming tutorial, GPU programming examples, CUDA kernel development, nvcc compiler usage, cudaMalloc cudaMemcpy examples, parallel computing CUDA, NVIDIA GPU programming, CUDA memory management, GPU kernel launch
+keywords:
+  - CUDA programming tutorial
+  - GPU programming examples
+  - CUDA kernel development
+  - nvcc compiler usage
+  - cudaMalloc cudaMemcpy examples
+  - parallel computing CUDA
+  - NVIDIA GPU programming
+  - CUDA memory management
+  - GPU kernel launch
 description: Learn CUDA programming fundamentals with a complete example. Master GPU memory allocation, data transfer, kernel launching, and parallel computing concepts for high-performance applications using NVIDIA CUDA.
 ---
 This blog post is an introduction to the world of GPU programming with CUDA. We will cover the fundamental concepts and tools necessary to get started with CUDA, including:

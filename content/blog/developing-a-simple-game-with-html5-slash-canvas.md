@@ -3,7 +3,15 @@ title: "HTML5 Canvas Game Development: Building Interactive Games with JavaScrip
 date: 2013-02-09 10:12:43 +0530
 author: Prabeesh Keezhathra
 tags: [HTML5, JavaScript, Canvas API, Game Development, Web Games, Interactive Graphics]
-keywords: HTML5 canvas game development, JavaScript game programming, HTML5 game tutorial, canvas game creation, web game development, HTML5 canvas animation, JavaScript game mechanics, interactive web games
+keywords:
+  - HTML5 canvas game development
+  - JavaScript game programming
+  - HTML5 game tutorial
+  - canvas game creation
+  - web game development
+  - HTML5 canvas animation
+  - JavaScript game mechanics
+  - interactive web games
 description: Learn HTML5 canvas game development with JavaScript. Master canvas drawing, animation, collision detection, keyboard events, and game mechanics to create engaging interactive web games from scratch.
 ---
 HTML5 is the new HTML standard. One of the most interesting new features in HTML5 is the canvas element **canvas** for 2D drawing. A canvas is a rectangular area on an HTML page. All drawing on the canvas must be done using JavaScript. This post goes through the basics of implementing a 2D canvas context, and using the basic canvas functions for developing a simple game.

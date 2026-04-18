@@ -3,7 +3,14 @@ title: "Advanced PySpark Design Patterns: Real-World Implementation Examples"
 date: 2024-01-15T10:00:00+01:00
 draft: false
 tags: [PySpark, design patterns, advanced patterns, data engineering, best practices, strategy pattern, decorator pattern, command pattern, template method pattern]
-keywords: advanced PySpark design patterns, real-world PySpark patterns, PySpark strategy pattern, PySpark decorator pattern, PySpark command pattern, PySpark template method pattern, data engineering design patterns
+keywords:
+  - advanced PySpark design patterns
+  - real-world PySpark patterns
+  - PySpark strategy pattern
+  - PySpark decorator pattern
+  - PySpark command pattern
+  - PySpark template method pattern
+  - data engineering design patterns
 description: Explore advanced design patterns in PySpark with real-world implementation examples. Learn about Strategy, Decorator, Command, and Template Method patterns to build more sophisticated and maintainable data pipelines.
 ---
 

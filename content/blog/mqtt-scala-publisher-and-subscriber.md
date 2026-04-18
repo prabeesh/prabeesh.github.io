@@ -3,7 +3,15 @@ title: "MQTT Publisher and Subscriber in Scala: Complete IoT Messaging Tutorial 
 date: 2013-08-26T09:41:00+05:30
 author: Prabeesh Keezhathra
 tags: [Big Data, MQTT, Scala, Message Queue, IoT, Eclipse Paho, Mosquitto]
-keywords: MQTT Scala tutorial, Eclipse Paho Scala, MQTT publisher subscriber, IoT messaging protocol, Scala MQTT example, message queue tutorial, MQTT broker setup, IoT data streaming
+keywords:
+  - MQTT Scala tutorial
+  - Eclipse Paho Scala
+  - MQTT publisher subscriber
+  - IoT messaging protocol
+  - Scala MQTT example
+  - message queue tutorial
+  - MQTT broker setup
+  - IoT data streaming
 description: Master MQTT messaging in Scala with Eclipse Paho library. Learn to build robust publisher-subscriber systems for IoT applications, including broker setup, connection handling, error management, and real-world messaging patterns for distributed systems.
 ---
 

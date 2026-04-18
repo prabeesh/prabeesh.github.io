@@ -3,7 +3,15 @@ title: "Complete Introduction to AVR Microcontroller Programming: From Setup to 
 date: 2012-02-21T2:39:00+05:30
 author: Prabeesh Keezhathra
 tags: [AVR, Embedded Systems, Microcontroller Programming, Atmel, C Programming]
-keywords: AVR programming tutorial, Atmel microcontroller programming, AVR development setup, AVR-GCC compiler, embedded C programming, AVR LED blink program, USBASP programmer, microcontroller development tools
+keywords:
+  - AVR programming tutorial
+  - Atmel microcontroller programming
+  - AVR development setup
+  - AVR-GCC compiler
+  - embedded C programming
+  - AVR LED blink program
+  - USBASP programmer
+  - microcontroller development tools
 description: Master AVR microcontroller programming from scratch. Learn development environment setup, AVR-GCC compilation, programming with USBASP, and create your first LED blinking program with detailed code explanations and hardware concepts.
 ---
 

@@ -3,7 +3,15 @@ title: "AM Wave Generation and Plotting with Matplotlib Python: A Detailed Guide
 date: 2011-09-25T1:39:00+05:30
 author: Prabeesh Keezhathra
 tags: [Python, Matplotlib]
-keywords: amplitude modulation, AM generation, Matplotlib Python, signal processing, data visualization, analog communication, carrier signal, Matlab equivalent Linux
+keywords:
+  - amplitude modulation
+  - AM generation
+  - Matplotlib Python
+  - signal processing
+  - data visualization
+  - analog communication
+  - carrier signal
+  - Matlab equivalent Linux
 description: Learn how to generate and plot Amplitude Modulation (AM) waves using the Matplotlib Python library. This tutorial demonstrates how to use Matplotlib to create AM waves with a specified carrier frequency and message frequency, and customize the appearance of the plot. Whether you're a beginner or an experienced developer, this guide will help you get started with AM generation using Matplotlib in Linux. Explore a range of examples and discover the potential of Matplotlib for data visualization and signal processing in Linux.
 ---
 Amplitude Modulation (AM) is a type of analog communication in which the amplitude of a carrier signal is varied in proportion to the message signal. It is one of the oldest and most widely used forms of radio communication, and it is still used in many applications today, including AM radio broadcasting and certain types of military and aviation communications.

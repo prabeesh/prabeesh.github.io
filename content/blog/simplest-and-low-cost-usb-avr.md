@@ -3,7 +3,33 @@ title: "AVR Programming Made Easy: How to Build a USBtinyISP"
 date: 2012-07-04T19:39:00+05:30
 author: Prabeesh Keezhathra
 tags: [AVR, USBtinyISP, attiny2313, microcontroller, embedded systems, usbasp programmer, atmel avr, avr programmer usb]
-keywords: avr programmer, avr microcontroller, atmel microcontroller, atmel avr, attiny programmer, usbasp programmer, atmel attiny, usb asp, atmel 32 bit microcontroller, usb avr, usbtinyisp, atmel avr microcontroller, atmel programmer, atmel avr programmer, atmega 8, programming avr microcontrollers, atmel attiny85, diy avr programmer, avr programmer usb, make avr, avr chips, avr in microcontroller, usb tiny isp programmer, atmega8 programmer, avr serial programmer, c avr
+keywords:
+  - avr programmer
+  - avr microcontroller
+  - atmel microcontroller
+  - atmel avr
+  - attiny programmer
+  - usbasp programmer
+  - atmel attiny
+  - usb asp
+  - atmel 32 bit microcontroller
+  - usb avr
+  - usbtinyisp
+  - atmel avr microcontroller
+  - atmel programmer
+  - atmel avr programmer
+  - atmega 8
+  - programming avr microcontrollers
+  - atmel attiny85
+  - diy avr programmer
+  - avr programmer usb
+  - make avr
+  - avr chips
+  - avr in microcontroller
+  - usb tiny isp programmer
+  - atmega8 programmer
+  - avr serial programmer
+  - c avr
 description: Complete guide to building a DIY AVR programmer using USBtinyISP. Learn how to program Atmel AVR microcontrollers including ATtiny and ATmega8 with this low-cost USB AVR programmer. Perfect for programming AVR microcontrollers and embedded systems development.
 ---
 

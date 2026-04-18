@@ -3,7 +3,12 @@ title: "ATtiny2313 USB Programming Guide: Advanced Techniques and Best Practices
 date: 2025-08-22T10:00:00+01:00
 draft: false
 tags: [AVR, ATtiny2313, USB programming, microcontroller, embedded systems, USBtinyISP, advanced AVR, programming techniques, fuse configuration, circuit design, debugging]
-keywords: ATtiny2313, USB programming, USBtinyISP, AVR fuse configuration, microcontroller USB
+keywords:
+  - ATtiny2313
+  - USB programming
+  - USBtinyISP
+  - AVR fuse configuration
+  - microcontroller USB
 description: Master advanced ATtiny2313 USB programming techniques with this comprehensive guide. Learn fuse configuration, circuit optimization, debugging strategies, and best practices for building reliable USBtinyISP programmers. Build upon basic AVR programming knowledge with professional-grade development techniques.
 ---
 

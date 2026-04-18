@@ -2,7 +2,14 @@
 title: "Complete Guide: Install Apache Spark on Linux (Ubuntu, CentOS) - 2024 Updated"
 date: 2013-11-26T12:24:00+05:30
 tags: [Apache Spark, Big Data, Installation Guide, Linux, Ubuntu]
-keywords: install Apache Spark 3.5, Spark installation Linux, Apache Spark Ubuntu 22.04, Spark setup guide 2024, Spark cluster installation, Scala Spark installation, PySpark installation
+keywords:
+  - install Apache Spark 3.5
+  - Spark installation Linux
+  - Apache Spark Ubuntu 22.04
+  - Spark setup guide 2024
+  - Spark cluster installation
+  - Scala Spark installation
+  - PySpark installation
 description: Complete step-by-step guide to install Apache Spark 3.5 on Linux systems including Ubuntu 22.04, CentOS, and other distributions. Learn standalone installation, cluster configuration, Python/Scala setup, and essential optimization for production environments.
 ---
 
