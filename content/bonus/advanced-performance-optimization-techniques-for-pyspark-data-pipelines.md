@@ -117,7 +117,7 @@ optimized_join = optimizer.optimize_join_strategy(
 
 ## Dynamic Partition Pruning and Predicate Pushdown
 
-Modern PySpark can automatically optimize queries by pushing down predicates and pruning partitions at runtime. This advanced technique builds upon the storage optimization concepts we discussed in our [performance tuning guide](/blog/2023/01/06/performance-tuning-on-apache-spark/), taking them to the next level with automatic optimization.
+Modern PySpark can automatically optimize queries by pushing down predicates and pruning partitions at runtime. This goes beyond the storage advice in the [fundamentals guide](/blog/2023/01/06/performance-tuning-on-apache-spark/) by letting the optimizer handle it for you.
 
 ### Implementing Dynamic Partition Pruning
 
@@ -245,7 +245,7 @@ filtered_sales = partition_optimizer.optimize_time_range_query(
 
 ## Advanced Memory Management and Caching Strategies
 
-While our [previous performance tuning guide](/blog/2023/01/06/performance-tuning-on-apache-spark/) covered basic memory management concepts like preventing spills and using appropriate storage levels, this section explores sophisticated caching frameworks and intelligent memory management strategies for production environments.
+The [fundamentals guide](/blog/2023/01/06/performance-tuning-on-apache-spark/) covered basic memory management (preventing spills, choosing storage levels). This section goes further with caching frameworks and intelligent eviction for production workloads.
 
 ### Intelligent Caching Framework
 
@@ -437,7 +437,7 @@ print(f"Hit rate: {stats['cache_hit_rate']:.2%}")
 
 ## Cost-Based Optimization and Query Planning
 
-Understanding and influencing query planning can significantly improve performance. This section builds upon the shuffle and join optimization concepts from our [performance tuning guide](/blog/2023/01/06/performance-tuning-on-apache-spark/) by introducing sophisticated query plan analysis and optimization techniques.
+Understanding and influencing query plans can yield large speedups. The [fundamentals guide](/blog/2023/01/06/performance-tuning-on-apache-spark/) introduced shuffle and join optimization; this section adds plan-level analysis and hints.
 
 ### Query Plan Analysis and Optimization
 
@@ -617,7 +617,7 @@ print(f"Cost improvement: {comparison['cost_improvement']}")
 
 ## Production Monitoring and Performance Metrics
 
-Comprehensive monitoring is essential for maintaining optimal performance in production. This section extends the monitoring concepts mentioned in our [performance tuning guide](/blog/2023/01/06/performance-tuning-on-apache-spark/) with advanced analytics and alerting capabilities.
+Production pipelines need continuous monitoring. This extends the Spark UI advice from the [fundamentals guide](/blog/2023/01/06/performance-tuning-on-apache-spark/) with automated alerting and metrics export.
 
 ### Advanced Performance Monitoring
 

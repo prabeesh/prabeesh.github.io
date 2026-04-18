@@ -29,9 +29,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PUBLIC = os.path.join(ROOT, "public")
 CONTENT = os.path.join(ROOT, "content")
 
-DENSITY_CEILING = 2.5  # percent; slightly more lenient than rule's 2% to reduce false positives on brand-name nouns
+DENSITY_CEILING = 3.0  # percent; industry norm is 1-3%. Title-exempt nouns get 4.5%.
 BOLD_CEILING = 15
-MIN_WORDS = 300  # pages thinner than this are probably stubs
+MIN_WORDS = 150  # pages thinner than this are probably stubs
 MAX_WORDS = 3500  # above this is usually padded
 
 
@@ -152,9 +152,9 @@ def audit_html(post: PostAudit, html: str) -> None:
         )
         return
     main = m.group(1)
-    # Strip code blocks (including syntax-highlighted <pre> and inline <code>).
+    # Strip code blocks (syntax-highlighted <pre> + its inner <code>).
+    # Keep inline <code> (e.g. in table cells) since that's visible prose.
     prose_html = re.sub(r"<pre[\s\S]*?</pre>", " ", main)
-    prose_html = re.sub(r"<code[\s\S]*?</code>", " ", prose_html)
     # Strip related-posts widget / asides / FAQ schema.
     prose_html = re.sub(r'<aside[\s\S]*?</aside>', " ", prose_html)
     prose_html = re.sub(

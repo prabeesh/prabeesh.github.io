@@ -13,18 +13,29 @@ keywords:
   - canvas mouse events
 description: A small browser-based paint app built on an HTML5 canvas. Drawing tools, colors, and mouse-event handling, plus notes on deploying with Google App Engine and Flask.
 ---
-A small browser app to draw with lines, rectangles, and circles in different colours.
+A small browser-based drawing tool built on the HTML5 `<canvas>` element and plain JavaScript.
 
 <img src="/images/paint.png" alt="Paint Application" loading="lazy" style="width:600px; height:400px;">
 
-The application is developed using JavaScript and HTML5. The canvas feature in HTML5 is used for providing a drawable region. The JavaScript is used to handle drawing functions in this region. The select button to select the different tools to draw. <!--more--> The colour picker is made using the button option. The script basically listens three mouse events mouse down, mouse move and mouse up. This application implemented using two different frameworks Google App Engine and Flask.
+## How it works
 
-### Application with saving facility 
+The page contains a `<canvas>` element that listens for three mouse events: `mousedown`, `mousemove`, and `mouseup`. When you press and drag, the handler draws the currently selected shape (line, rectangle, or circle) in the chosen colour. A toolbar above the canvas lets you pick the tool and colour.
 
-This is done by saving values about each object needed to regenerate the same drawing. When we click the save button the data is transferred to the server as a json string where it is stored along with a name provided by the user. Simply regenerate the drawing using the data received from the server.
+All drawing state lives in the browser; nothing hits the server until you explicitly save.
+<!--more-->
 
-In Google App Engine Google data storage is used for data storage. But in Flask sqlite3 is used for data storage. 
+## Saving and loading drawings
 
-Source code: [App with GAE](https://github.com/prabeesh/Paintapp-Javascript-Canvas-GAE) and [App with Flask](https://github.com/prabeesh/Paintapp-Javascript-Canvas-Flask)
+Each drawing is serialized as a JSON array of shape objects (type, start coordinates, end coordinates, colour). When you click **Save**, that JSON is sent to the server with a user-provided name. Loading a drawing fetches the JSON back and replays each shape onto a fresh canvas.
 
-The app is deployed in appspot.com, You can find [the application here](http://prabs-paint.appspot.com/)
+Two back-end implementations exist:
+
+| Back-end | Storage | Deployment |
+| --- | --- | --- |
+| Google App Engine | Google Datastore | [Live demo on appspot.com](http://prabs-paint.appspot.com/) |
+| Flask | SQLite | Local or any WSGI host |
+
+## Source code
+
+- [App with GAE](https://github.com/prabeesh/Paintapp-Javascript-Canvas-GAE)
+- [App with Flask](https://github.com/prabeesh/Paintapp-Javascript-Canvas-Flask)

@@ -13,27 +13,25 @@ keywords:
 description: Measure an RC time constant in hardware using the ATmega8's ADC and timer. Covers the circuit, the C code, and a couple of test runs with different R-C values.
 ---
 
-The time constant(sec) of an RC circuit is equal to the product of the resistance and the capacitance of the circuit.
+The time constant of an RC circuit equals `R * C` (in seconds). It is the time for the capacitor to charge through the resistor to 63.2% of the supply voltage, or to discharge to 36.8% of its starting level.
 
-It is the time required to charge the capacitor through the resistor to 63. 2% of full charge,or to discharge it to 36.8% of its initial voltage.
+## Approach
 
-The voltage of the RC circuit is measured using adc of the ATmega8, input voltage for RC circuit is given from PB0. The timer is started at the time of the PB0 making 1 .
+The ATmega8's ADC samples the voltage across the capacitor continuously. A digital output pin (PB0) supplies the input voltage to the RC network. The moment PB0 goes high, Timer1 starts counting. When the ADC reading hits 63.2% of the rail (roughly 161 out of 255 for a 5 V supply), we capture the timer value.
 
-The adc of ATmega8(ADCH) is 8 bit long so corresponding to 5V get 255 in ADCH. The TCNT1 value is taken to a variable when the output voltage of the RC circuit become 63.2% of the input voltage.That is  3.16 v corresponding to these voltage ADCH show 161(appr).
+Timer1 is a 16-bit counter, clocked at 8 MHz with a 1024 prescaler. To convert timer ticks to seconds, multiply by `1024 / 8000000`. An LCD shows both the raw tick count and the ADC reading.
 
-Using an LCD can show the TCNT1 value. TCNT1 is 16 bit long.Here ATmega8 running in 8MHz clock,timer prescaled by 1024.
+## Test results
+<!--more-->
 
-So if you get the real time multiply the TCNT1 value to (1024/8000000).
+| R | C | Calculated RC | Timer ticks | Measured RC |
+| --- | --- | --- | --- | --- |
+| 1 kOhm | 100 uF | 0.100 s | 846 | 0.108 s |
+| 2 kOhm | 100 uF | 0.200 s | 1864 | 0.239 s |
 
-Some test examples: <!--more-->
-```
-	 R=1kΩ  C=100µF  the calculated RC constant is 0.1S.
-```
-The value of  TCNT1 is 846.Which is equal to 0.108288s.
-```
-	 R=2kΩ  C=100µF  the calculated RC constant is 0.2S.
-```
-The value of  TCNT1 is 1864.Which is equal to 0.238592s.
+Both within ~20% of the ideal value, which is typical for low-precision components.
+
+## Code
 
 
 ```c

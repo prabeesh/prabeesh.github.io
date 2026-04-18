@@ -67,3 +67,19 @@ To build against a specific Hadoop version:
 ```
 
 See the [official building docs](http://spark.apache.org/docs/latest/building-spark.html#specifying-the-hadoop-version) for more options. For the older Spark 1 install walkthrough, see the [Ubuntu 14.04 post](/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/).
+
+## Environment variables
+
+After a successful build, make sure the shell knows where to find the binaries. Add these to `~/.bashrc`:
+
+```bash
+export SPARK_HOME=/usr/local/share/spark/spark-2.0.2
+export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+```
+
+Then reload with `source ~/.bashrc` and confirm with `spark-shell --version`.
+
+## Next steps
+
+- [Performance tuning](/blog/2023/01/06/performance-tuning-on-apache-spark/) once you have jobs running
+- The [Spark 3.5 install guide](/blog/2013/11/26/installing-apache-spark-on-ubuntu-1204/) if you want the latest version
