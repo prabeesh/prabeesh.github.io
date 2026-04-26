@@ -6,5 +6,8 @@ node_modules
 public/
 resources/_gen/
 
+# Generated at build time
+static/llms-full.txt
+
 # Cursor:
 .cursor/

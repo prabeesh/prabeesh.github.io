@@ -10,6 +10,13 @@ keywords:
   - Jupyter Spark
 description: Run PySpark in a Jupyter notebook with Docker. Uses the official jupyter/pyspark-notebook image plus a docker-compose setup for persistent work.
 llm_summary: "To run PySpark in a Jupyter notebook with Docker, run 'docker run -d -t -p 8888:8888 jupyter/pyspark-notebook' and open http://localhost:8888 in your browser. For a current setup use the maintained jupyter/pyspark-notebook image rather than building from source."
+faq:
+  - q: "How do I run PySpark in a Jupyter notebook without installing Spark locally?"
+    a: "Use Docker: docker run -d -t -p 8888:8888 jupyter/pyspark-notebook. This gives you a Jupyter environment with PySpark pre-installed. No local Java or Spark setup required."
+  - q: "How do I persist my notebooks when using PySpark with Docker?"
+    a: "Mount a local directory as a volume: docker run -d -t -p 8888:8888 -v $(pwd)/notebooks:/home/jovyan/work jupyter/pyspark-notebook. Files saved in /home/jovyan/work inside the container will persist on your host machine."
+  - q: "Which Docker image should I use for PySpark in 2024+?"
+    a: "Use the official jupyter/pyspark-notebook image maintained by the Jupyter Docker Stacks project. It includes a current Spark version, JupyterLab, and common Python data science libraries."
 ---
 
 To run PySpark in a Jupyter notebook with Docker, run `docker run -d -t -p 8888:8888 jupyter/pyspark-notebook` and open `http://localhost:8888` in your browser. No local Spark or Java installation is needed.

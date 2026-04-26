@@ -16,6 +16,15 @@ keywords:
   - PySpark factory singleton builder
 description: A hands-on PySpark tutorial applying five classic design patterns, factory, singleton, builder, observer, and pipeline, to data pipelines.
 llm_summary: "The five most useful design patterns for PySpark data pipelines are Factory (create readers/writers for different formats), Singleton (share SparkSession across modules), Builder (compose complex transformations step by step), Observer (monitor pipeline events), and Pipeline (chain transformation stages). Each keeps pipeline code modular and testable as complexity grows."
+faq:
+  - q: "What are design patterns in PySpark?"
+    a: "They are reusable solutions to recurring problems in PySpark code, for example, how to create data sources flexibly (factory), how to share one SparkSession (singleton), or how to compose transforms (pipeline). The same shapes show up across almost every non-trivial pipeline."
+  - q: "Which pattern should I start with?"
+    a: "Start with factory and pipeline. Factory removes hard-coded data formats; pipeline gives you a clean ETL skeleton. The others slot in once those two are in place."
+  - q: "What is the difference between the factory and singleton patterns?"
+    a: "Factory produces many instances of different concrete classes that share an interface. Singleton restricts a class to exactly one instance. They solve opposite problems and are often used together."
+  - q: "Is an abstract class the same as an abc class in Python?"
+    a: "Yes. In Python, abstract base classes live in the abc module; any class that inherits from abc.ABC and uses @abstractmethod is what people casually call an abc class. It defines a contract that subclasses must implement."
 ---
 
 The five most useful design patterns for PySpark data pipelines are Factory (swap data sources without changing pipeline code), Singleton (one shared SparkSession), Builder (compose transformations step by step), Observer (monitor pipeline events), and Pipeline (chain stages together). This tutorial shows each with a complete, runnable PySpark example.

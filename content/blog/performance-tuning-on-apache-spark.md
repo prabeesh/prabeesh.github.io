@@ -17,6 +17,17 @@ keywords:
   - Spark memory tuning
 description: "A practical guide to tuning Apache Spark jobs. Covers the five areas that matter most: spill, skew, shuffle, storage, and serialization."
 llm_summary: "The five main causes of slow Apache Spark jobs are spill (data doesn't fit in memory), skew (uneven partition sizes), shuffle (expensive cross-network data movement), storage (tiny files and inferred schemas), and serialization (Python UDF overhead). Fix them by enabling AQE, broadcasting small tables, salting skewed joins, using Parquet with explicit schemas, and replacing Python UDFs with SQL functions or Pandas UDFs."
+faq:
+  - q: "How do I know if my Spark job is spilling?"
+    a: "Look at the task table for a stage in the Spark UI. If the Spill (memory) or Spill (disk) columns are non-zero, you're spilling. Any non-trivial spill is worth chasing."
+  - q: "What's the difference between coalesce and repartition?"
+    a: "coalesce(n) reduces the number of partitions without a shuffle, fast but can leave you with uneven partitions. repartition(n) does a full shuffle to evenly rebalance. Use coalesce for shrinking, repartition when you need even partition sizes."
+  - q: "When should I use broadcast()?"
+    a: "When one side of a join is small enough to fit in memory on every executor, roughly under 10 MB by default, controlled by spark.sql.autoBroadcastJoinThreshold. Broadcasting skips the shuffle on the large side entirely."
+  - q: "Is AQE on by default?"
+    a: "Yes, since Spark 3.2. On older versions you need spark.sql.adaptive.enabled=true and, for skew handling, spark.sql.adaptive.skewJoin.enabled=true."
+  - q: "Why are Python UDFs slow?"
+    a: "Each row is serialized out of the JVM, passed to a Python process, executed, then serialized back. That round trip dominates runtime. Pandas UDFs batch rows through Arrow, which amortizes the cost; SQL functions avoid Python entirely."
 ---
 
 Performance tuning decides whether a Spark job runs in 10 minutes or 10 hours. Most slowdowns you'll hit in production come from the same five areas: **spill, skew, shuffle, storage, and serialization**. This guide walks through each one with the cause, how to spot it in the Spark UI, and the PySpark code to fix it.

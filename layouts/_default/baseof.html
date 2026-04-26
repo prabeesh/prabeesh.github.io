@@ -112,6 +112,25 @@
           ]
         }
       </script>
+      {{ with .Params.faq }}
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {{ range $i, $item := . }}{{ if $i }},{{ end }}
+            {
+              "@type": "Question",
+              "name": "{{ $item.q }}",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{ $item.a }}"
+              }
+            }{{ end }}
+          ]
+        }
+      </script>
+      {{ end }}
       
       {{/* Enhanced Open Graph tags */}}
       <meta property="og:type" content="article">
@@ -134,7 +153,7 @@
       {{/* Open Graph for non-article pages */}}
       <meta property="og:type" content="website">
       <meta property="og:title" content="{{ .Title }}">
-      <meta property="og:description" content="{{ .Params.description }}">
+      <meta property="og:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
       <meta property="og:url" content="{{ .Permalink }}">
       <meta property="og:site_name" content="{{ .Site.Title }}">
     {{ end }}

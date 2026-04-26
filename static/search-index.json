@@ -41,8 +41,8 @@
       "Twitter streaming example"
     ],
     "author": "Prabeesh Keezhathra",
-    "readingTime": 3,
-    "wordCount": 470,
+    "readingTime": 2,
+    "wordCount": 337,
     "category": "blog"
   },
   {
@@ -85,7 +85,7 @@
     ],
     "author": "Prabeesh Keezhathra",
     "readingTime": 3,
-    "wordCount": 451,
+    "wordCount": 431,
     "category": "blog"
   },
   {
@@ -107,7 +107,7 @@
     ],
     "author": "Prabeesh Keezhathra",
     "readingTime": 4,
-    "wordCount": 797,
+    "wordCount": 784,
     "category": "blog"
   },
   {
@@ -175,8 +175,8 @@
       "PySpark installation"
     ],
     "author": "Prabeesh Keezhathra",
-    "readingTime": 5,
-    "wordCount": 989,
+    "readingTime": 7,
+    "wordCount": 1253,
     "category": "blog"
   },
   {
@@ -196,7 +196,7 @@
     ],
     "author": "Prabeesh Keezhathra",
     "readingTime": 2,
-    "wordCount": 379,
+    "wordCount": 381,
     "category": "blog"
   },
   {
@@ -223,7 +223,7 @@
     ],
     "author": "Prabeesh Keezhathra",
     "readingTime": 3,
-    "wordCount": 493,
+    "wordCount": 411,
     "category": "blog"
   },
   {
@@ -231,15 +231,25 @@
     "description": "GPU parallel programming basics and the CUDA platform, summarised from the Udacity Intro to Parallel Programming course.",
     "url": "/blog/2013/02/22/introduction-to-parallel-programming/",
     "date": "2013-02-22T17:46:54.000Z",
-    "tags": [],
-    "keywords": "",
+    "tags": [
+      "parallel programming",
+      "GPU computing",
+      "CUDA"
+    ],
+    "keywords": [
+      "GPU parallel programming",
+      "CUDA programming model",
+      "GPGPU computing",
+      "parallel computing GPU",
+      "Udacity parallel programming"
+    ],
     "author": "Prabeesh Keezhathra",
     "readingTime": 3,
-    "wordCount": 565,
+    "wordCount": 452,
     "category": "blog"
   },
   {
-    "title": "LCD Interfacing with an MSP430 Microcontroller: Displaying ADC Readings",
+    "title": "MSP430 LCD Interfacing: Displaying ADC Readings",
     "description": "Wire a 16x2 LCD to an MSP430 LaunchPad and display live voltage readings from the onboard ADC. Covers the 4-bit interface, ADC configuration, and the C code.",
     "url": "/blog/2012/07/04/lcd-interfacing-using-msp430/",
     "date": "2012-07-03T21:09:00.000Z",
@@ -257,7 +267,7 @@
     ],
     "author": "Prabeesh Keezhathra",
     "readingTime": 8,
-    "wordCount": 1571,
+    "wordCount": 1435,
     "category": "blog"
   },
   {
@@ -300,8 +310,8 @@
       "MongoDB CRUD Python"
     ],
     "author": "Prabeesh Keezhathra",
-    "readingTime": 4,
-    "wordCount": 633,
+    "readingTime": 7,
+    "wordCount": 1309,
     "category": "blog"
   },
   {
@@ -326,7 +336,7 @@
     "category": "blog"
   },
   {
-    "title": "Apache Spark Performance Tuning: Spill, Skew, Shuffle, Storage, and Serialization",
+    "title": "Apache Spark Performance Tuning: Spill, Skew, Shuffle, Storage",
     "description": "A practical guide to tuning Apache Spark jobs. Covers the five areas that matter most: spill, skew, shuffle, storage, and serialization.",
     "url": "/blog/2023/01/06/performance-tuning-on-apache-spark/",
     "date": "2023-01-06T10:51:39.000Z",
@@ -370,8 +380,8 @@
       "Jupyter Spark"
     ],
     "author": "Prabeesh Keezhathra",
-    "readingTime": 5,
-    "wordCount": 821,
+    "readingTime": 4,
+    "wordCount": 798,
     "category": "blog"
   },
   {
@@ -391,7 +401,7 @@
     ],
     "author": "Prabeesh Keezhathra",
     "readingTime": 2,
-    "wordCount": 235,
+    "wordCount": 229,
     "category": "blog"
   },
   {
@@ -411,7 +421,7 @@
     ],
     "author": "Prabeesh Keezhathra",
     "readingTime": 2,
-    "wordCount": 311,
+    "wordCount": 312,
     "category": "blog"
   },
   {
@@ -433,7 +443,7 @@
     ],
     "author": "Prabeesh Keezhathra",
     "readingTime": 2,
-    "wordCount": 323,
+    "wordCount": 319,
     "category": "blog"
   },
   {
@@ -559,26 +569,19 @@
       "PySpark",
       "design patterns",
       "data pipelines",
-      "factory pattern",
-      "singleton pattern",
-      "builder pattern",
-      "observer pattern",
-      "pipeline pattern",
       "data engineering"
     ],
     "keywords": [
       "PySpark design patterns",
       "PySpark tutorial",
       "data pipeline design patterns",
-      "factory pattern PySpark",
-      "singleton pattern PySpark",
-      "builder pattern PySpark",
-      "observer pattern PySpark",
-      "pipeline pattern PySpark"
+      "creational design patterns PySpark",
+      "PySpark pipeline architecture",
+      "PySpark factory singleton builder"
     ],
     "author": "Prabeesh Keezhathra",
     "readingTime": 12,
-    "wordCount": 2309,
+    "wordCount": 2338,
     "category": "bonus"
   },
   {
@@ -593,12 +596,12 @@
     ],
     "keywords": [
       "PySpark patterns cheat sheet",
-      "factory builder singleton PySpark",
+      "PySpark design patterns reference card",
       "data pipeline patterns reference"
     ],
     "author": "Prabeesh Keezhathra",
     "readingTime": 4,
-    "wordCount": 615,
+    "wordCount": 614,
     "category": "bonus"
   }
 ]
