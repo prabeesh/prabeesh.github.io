@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "build:llms": "node scripts/generate-llms-txt.js",
+    "build:search": "node scripts/generate-search-index.js"
+  },
   "dependencies": {
     "gray-matter": "^4.0.3"
   }
