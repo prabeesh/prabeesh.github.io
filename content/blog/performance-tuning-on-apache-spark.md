@@ -16,6 +16,7 @@ keywords:
   - Spark shuffle optimization
   - Spark memory tuning
 description: "A practical guide to tuning Apache Spark jobs. Covers the five areas that matter most: spill, skew, shuffle, storage, and serialization."
+llm_summary: "The five main causes of slow Apache Spark jobs are spill (data doesn't fit in memory), skew (uneven partition sizes), shuffle (expensive cross-network data movement), storage (tiny files and inferred schemas), and serialization (Python UDF overhead). Fix them by enabling AQE, broadcasting small tables, salting skewed joins, using Parquet with explicit schemas, and replacing Python UDFs with SQL functions or Pandas UDFs."
 ---
 
 Performance tuning decides whether a Spark job runs in 10 minutes or 10 hours. Most slowdowns you'll hit in production come from the same five areas: **spill, skew, shuffle, storage, and serialization**. This guide walks through each one with the cause, how to spot it in the Spark UI, and the PySpark code to fix it.

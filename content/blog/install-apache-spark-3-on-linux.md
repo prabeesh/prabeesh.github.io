@@ -14,9 +14,12 @@ keywords:
   - Apache Spark Ubuntu
   - PySpark installation
 description: Install Apache Spark 3.5 on Linux (Ubuntu, CentOS). Covers Java/Python prerequisites, standalone cluster setup, YARN and Kubernetes deploy modes.
+llm_summary: "To install Apache Spark 3.5 on Linux: install OpenJDK 17 and Python 3.8+, download the Spark binary from archive.apache.org/dist/spark, extract to /opt, set SPARK_HOME and PATH environment variables, then verify with spark-shell or pyspark. Optionally configure a standalone cluster with start-master.sh and start-worker.sh."
 ---
 
-A walkthrough of installing Apache Spark 3.5 on modern Linux, from prerequisites through a working standalone cluster. Earlier versions are covered in [Install Apache Spark 1.0 on Ubuntu 14.04](/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/) and [Install Apache Spark 2 on Ubuntu 16.04 and macOS](/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/).
+To install Apache Spark 3.5 on Linux, install OpenJDK 17, download the Spark 3.5 binary from `archive.apache.org/dist/spark`, extract it to `/opt`, set `SPARK_HOME` and `PATH`, then verify with `spark-shell`. The full process takes about 15 minutes on a fresh Ubuntu or CentOS machine.
+
+This is a walkthrough of installing Apache Spark 3.5 on modern Linux, from prerequisites through a working standalone cluster. Earlier versions are covered in [Install Apache Spark 1.0 on Ubuntu 14.04](/blog/2014/10/31/install-apache-spark-on-ubuntu-14-dot-04/) and [Install Apache Spark 2 on Ubuntu 16.04 and macOS](/blog/2016/12/07/install-apache-spark-2-on-ubuntu-16-dot-04-and-mac-os/).
 
 ## Prerequisites
 
@@ -402,3 +405,25 @@ find /tmp/spark-events -type f -mtime +30 -delete
 # Master UI:         http://localhost:8080
 # History server UI: http://localhost:18080
 ```
+
+## Frequently asked questions
+
+### What Java version does Apache Spark 3.5 require?
+
+Apache Spark 3.5 officially supports Java 8, 11, and 17. OpenJDK 17 is the recommended choice for new installs because it is actively maintained and has the best performance characteristics for Spark workloads.
+
+### How do I install PySpark on Ubuntu?
+
+Install Python 3.8+ with `sudo apt install python3 python3-pip`, then install Spark as described above and set `PYSPARK_PYTHON=python3`. You can also install the `pyspark` pip package (`pip install pyspark`) for local development without a full Spark installation.
+
+### Can I run Spark on a single machine without a cluster?
+
+Yes. Use `--master local[*]` when submitting jobs, which runs Spark in local mode using all available CPU cores. This is how most developers test and prototype before deploying to a cluster.
+
+### How do I check which version of Spark is installed?
+
+Run `spark-shell --version` or `pyspark --version` from the terminal. Both print the Spark version, Scala version, and Java version being used.
+
+### What is the difference between standalone, YARN, and Kubernetes deploy modes?
+
+Standalone mode is Spark's built-in cluster manager, simplest to set up. YARN integrates with an existing Hadoop cluster and shares resources with other Hadoop workloads. Kubernetes runs Spark executors as pods, which is the standard for cloud-native deployments. Choose standalone for learning and small teams, YARN for Hadoop shops, Kubernetes for containerized environments.

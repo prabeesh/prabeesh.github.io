@@ -1,0 +1,31 @@
+# This is One of the Solutions
+
+> Technical blog by Prabeesh Keezhathra covering Apache Spark installation and performance tuning, PySpark design patterns, CUDA and GPU programming, embedded systems (AVR, MSP430, Arduino), and web development with Python and JavaScript.
+
+## About
+
+- Author: Prabeesh Keezhathra
+- Site: https://blog.prabeeshk.com/
+- Topics: Apache Spark, PySpark, data engineering, CUDA, embedded systems, web development
+- Language: English
+
+## Key Pages
+
+- [Install Apache Spark 3.5 on Linux](https://blog.prabeeshk.com/blog/2024/11/26/install-apache-spark-3-on-linux/): Step-by-step Spark 3.5 installation on Ubuntu and CentOS with Java 17, PySpark, standalone cluster, YARN, and Kubernetes deploy modes.
+- [Apache Spark Performance Tuning](https://blog.prabeeshk.com/blog/2023/01/06/performance-tuning-on-apache-spark/): Practical guide to tuning Spark jobs covering spill, skew, shuffle, storage, and serialization with PySpark examples.
+- [PySpark Design Patterns for Data Pipelines](https://blog.prabeeshk.com/bonus/implementing-design-patterns-in-pyspark-data-pipelines/): Hands-on tutorial applying factory, singleton, builder, observer, and pipeline patterns to PySpark data pipelines.
+- [Advanced PySpark Design Patterns](https://blog.prabeeshk.com/bonus/advanced-pyspark-design-patterns-implementation/): Strategy, decorator, and template method patterns applied to PySpark pipelines with runnable examples.
+- [PySpark Design Patterns Quick Reference](https://blog.prabeeshk.com/bonus/pyspark-design-patterns-quick-reference/): One-page cheat sheet with runnable snippets for five core PySpark design patterns.
+- [Advanced PySpark Performance Optimization](https://blog.prabeeshk.com/bonus/advanced-performance-optimization-techniques-for-pyspark-data-pipelines/): AQE, dynamic partition pruning, predicate pushdown, caching strategies, and memory tuning for PySpark.
+- [How to Run a PySpark Notebook with Docker](https://blog.prabeeshk.com/blog/2015/06/19/pyspark-notebook-with-docker/): Run PySpark in Jupyter using Docker with the official jupyter/pyspark-notebook image.
+- [Standalone Spark Application in Scala](https://blog.prabeeshk.com/blog/2014/04/01/a-standalone-spark-application-in-scala/): Build a Spark Streaming app in Scala for Twitter hashtag analysis, packaged with sbt.
+- [A Simple CUDA Program](https://blog.prabeeshk.com/blog/2013/03/07/a-simple-cuda-program/): CUDA program that squares 64 numbers on the GPU, covering cudaMalloc, cudaMemcpy, and kernel launch.
+- [Introduction to Parallel Programming](https://blog.prabeeshk.com/blog/2013/02/22/introduction-to-parallel-programming/): GPU parallel programming basics and the CUDA platform from the Udacity course.
+- [How to Build a USBtinyISP](https://blog.prabeeshk.com/blog/2012/07/04/simplest-and-low-cost-usb-avr/): Build a low-cost DIY USB programmer for AVR microcontrollers (ATtiny2313, ATmega8).
+- [Introduction to AVR Programming](https://blog.prabeeshk.com/blog/2012/02/21/introduction-to-avr-programing/): Get started with AVR microcontrollers, AVR-GCC, USBASP, and a first LED blink program.
+
+## Optional
+
+- [Full content for LLMs](https://blog.prabeeshk.com/llms-full.txt): Complete blog content in Markdown for comprehensive ingestion.
+- [RSS Feed](https://blog.prabeeshk.com/feed.xml): RSS feed with latest posts.
+- [Sitemap](https://blog.prabeeshk.com/sitemap.xml): Full sitemap for all pages.

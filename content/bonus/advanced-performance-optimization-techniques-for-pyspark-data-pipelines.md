@@ -14,6 +14,7 @@ keywords:
   - PySpark caching
   - PySpark memory tuning
 description: "Follow-up notes on PySpark tuning: the Spark 3.x config keys for AQE, dynamic partition pruning, and predicate pushdown, with when to use each."
+llm_summary: "The three key Spark 3.x performance features beyond basic tuning are Adaptive Query Execution (AQE, enabled by default since Spark 3.2), dynamic partition pruning (eliminates unnecessary partition reads in star-schema joins), and predicate pushdown (pushes filters to the data source). Enable them via spark.sql.adaptive.enabled, spark.sql.optimizer.dynamicPartitionPruning.enabled, and proper filter placement before joins."
 ---
 
 This builds on [Performance Tuning on Apache Spark](/blog/2023/01/06/performance-tuning-on-apache-spark/), which covers the fundamentals (spill, skew, shuffle, storage, serialization). Once those are under control, the next wins come from runtime-adaptive features. This post is a quick reference to the config keys, not a deep dive; read each one in the [Spark configuration docs](https://spark.apache.org/docs/latest/configuration.html) before flipping it.

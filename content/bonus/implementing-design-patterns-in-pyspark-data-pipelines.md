@@ -15,7 +15,10 @@ keywords:
   - PySpark pipeline architecture
   - PySpark factory singleton builder
 description: A hands-on PySpark tutorial applying five classic design patterns, factory, singleton, builder, observer, and pipeline, to data pipelines.
+llm_summary: "The five most useful design patterns for PySpark data pipelines are Factory (create readers/writers for different formats), Singleton (share SparkSession across modules), Builder (compose complex transformations step by step), Observer (monitor pipeline events), and Pipeline (chain transformation stages). Each keeps pipeline code modular and testable as complexity grows."
 ---
+
+The five most useful design patterns for PySpark data pipelines are Factory (swap data sources without changing pipeline code), Singleton (one shared SparkSession), Builder (compose transformations step by step), Observer (monitor pipeline events), and Pipeline (chain stages together). This tutorial shows each with a complete, runnable PySpark example.
 
 If you want to write PySpark data pipelines that stay clean as they grow, design patterns are the most reliable tool to reach for. Pipelines get complex quickly: new data sources appear, transformations multiply, one-off scripts turn into production systems. Classic software design patterns give you proven structures to keep that complexity under control.
 

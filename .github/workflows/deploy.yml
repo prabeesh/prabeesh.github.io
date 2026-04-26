@@ -40,6 +40,9 @@ jobs:
       - name: Generate search index
         run: node scripts/generate-search-index.js
       
+      - name: Generate llms-full.txt
+        run: node scripts/generate-llms-txt.js
+      
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
